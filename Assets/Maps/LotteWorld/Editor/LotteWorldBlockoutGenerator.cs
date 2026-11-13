@@ -1,13 +1,8 @@
-// 롯데월드 어드벤처 1층 블록아웃 생성기.
-// 가이드맵 픽셀을 미터로 바꿔 배치한다. 메뉴 Tools/LotteWorld/Generate Blockout 을
-// 다시 실행하면 씬의 Blockout 루트만 지우고 같은 규칙으로 다시 만든다.
+// 롯데월드 어드벤처 1층 블록아웃.
+// Tools/LotteWorld/Generate Blockout 을 다시 실행하면 씬의 Blockout 루트만 갈아끼운다.
 //
-// 단위 1 = 1m. 원점 (0,0,0) = 아이스링크 보이드 중심 = 픽셀 (560, 400).
-// +X = 동쪽, +Z = 북쪽(픽셀 Y가 작아지는 쪽), +Y = 위.
-// X = (px - 560) * MetersPerPixel
-// Z = -(py - 400) * MetersPerPixel * IsoDepthFactor
-// 가로 픽셀은 MetersPerPixel, 세로 픽셀은 IsoDepthFactor 까지 곱한다.
-// 원형 놀이기구는 가로 픽셀 지름만 쓴 진원이다. 보이드 양 끝 반원은 깊이 36m를 지름으로 하는 진원이다.
+// 단위 m. 원점 = 아이스링크 중심. +X 동쪽, +Z 북쪽. 회전은 Y축 도, 위에서 봤을 때 시계방향 +.
+// 위치·크기·높이는 배치표 그대로다. 겹치거나 바닥 밖으로 나가도 옮기지 않는다.
 
 using System;
 using System.Collections.Generic;
@@ -25,81 +20,39 @@ public static class LotteWorldBlockoutGenerator
 {
     const string ScenePath = "Assets/Maps/LotteWorld/Map3_LotteWorld.unity";
     const string MaterialDir = "Assets/Maps/LotteWorld/Materials";
+    const string MeshDir = "Assets/Maps/LotteWorld/GeneratedMeshes";
     const string UrpBasicTemplate =
         "Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Basic.scenetemplate";
     const string RootName = "Blockout";
 
-    // 이 값 하나로 맵 전체 크기가 바뀐다. 보이드 가로 280px = 아이스링크 약 65m.
-    const float MetersPerPixel = 0.23f;
-    // 가이드맵은 비스듬한 조감도라 세로가 눌려 있다. 세로(Z)만 늘린다.
-    const float IsoDepthFactor = 1.12f; // 아이스링크 36m 기록 기준
-    const float OriginPx = 560f;
-    const float OriginPy = 400f;
-
-    const float FloorMargin = 20f;
-    static float FloorCenterX;
-    static float FloorCenterZ;
-    static float FloorWidth = 80f;
-    static float FloorDepth = 80f;
     const float FloorY = 0f;
     const float FloorThickness = 0.4f;
-    const float FloorCellSize = 1f;
-
     const float B1Y = -6f;
     const float IceThickness = 0.4f;
 
-    // 보이드. 픽셀 280 x 140 스타디움. 양 끝은 깊이 36m를 지름으로 하는 진짜 반원.
-    const float MaxNudge = 8f;
-    const float VoidCapPx = 70f;
-    const float ShaftThickness = 0.7f;
-    const float ShaftOuterBias = 0.55f;
-    const float RailingHeight = 1.1f;
-    const float RailingThickness = 0.35f;
-    const float RailingInnerBias = 0.6f;
-
-    // 퍼레이드. 보이드 가장자리 바깥 7m, 폭 6m. 스타디움과 가든스테이지 우회로.
-    const float ParadeClearance = 7f;
+    const float VoidHalfX = 32.5f;
+    const float VoidHalfZ = 18f;
+    const float ParadeHalfX = 66f;
+    const float ParadeHalfZ = 43f;
     const float ParadeWidth = 6f;
     const float ParadeLift = 0.02f;
     const float ParadeThickness = 0.03f;
     const int ParadeWaypointCount = 12;
+    const float KeepOutBeyondOuter = 5f;
 
-    const float StageHeight = 1.5f;
-    const float StageBackHeight = 12f;
-    const float StageBackThickness = 0.45f;
-    const float StageBackSign = -1f;
+    const float RailingHeight = 1.1f;
+    const float RailingThickness = 0.35f;
+    const float ShaftThickness = 0.5f;
 
-    const float ShipHullHeight = 3f;
-    const float ShipSupportThickness = 0.7f;
-
-    const float FlumeChannelWidth = 3f;
-    const float FlumeChannelDrop = 1f;
-
-    const float ShutterWidth = 8f;
-    const float ShutterHeight = 4f;
-    const float ShutterThickness = 0.4f;
-
-    // 정문 에스컬레이터. 상단 픽셀 (700, 500)에서 남쪽으로 B1 까지. 수평 이동 14m.
-    const float EscTopPx = 700f;
-    const float EscTopPy = 500f;
-    const float EscWidth = 4f;
-    const float EscRun = 14f;
     const float EscThickness = 0.3f;
     const float EscShutterHeight = 4f;
-
-    const float HallSizeX = 20f;
-    const float HallSizeZ = 15f;
+    const float ShutterThickness = 0.35f;
+    const float HallAlong = 15f;
+    const float HallAcross = 20f;
     const float HallWallHeight = 4f;
     const float HallWallThickness = 0.4f;
-    const float HallJoin = 1f;
     const float GateWidth = 6f;
     const float GateHeight = 3.2f;
-
-    // 기둥·링은 가로세로가 같은 진원. 링 지름 20m.
-    const float GyroRadius = 2.4f;
-    const float GyroHeight = 18f;
-    const float GyroRingRadius = 10f;
-    const float GyroRingThickness = 0.45f;
 
     const float Balcony2Y = 9f;
     const float Balcony3Y = 18f;
@@ -107,35 +60,14 @@ public static class LotteWorldBlockoutGenerator
     const float BalconyThickness = 0.3f;
     const float BalconyRailHeight = 1.1f;
     const float BalconyRailThickness = 0.22f;
-    const float BalconyCutPadding = 0.4f;
-    const float StairBlockWidth = 4f;
-    const float StairBlockHeight = 3f;
     const float DomeY = 40f;
     const float DomeMargin = 6f;
     const float DomeThickness = 0.2f;
-
-    const float FrenchRailWidth = 2f;
-    const float FrenchRailThickness = 0.4f;
-    const float FrenchRailMinY = 12f;
-    const float FrenchRailMaxY = 28f;
-    const float FrenchLoopRadius = (FrenchRailMaxY - FrenchRailMinY) * 0.5f;
-    const float FrenchRailStep = 3f;
-
-    const float BalloonDiameter = 4f;
-    const float BalloonBasket = 1.5f;
     const float WallHeight = 40f;
     const float WallThickness = 0.5f;
-    const float PlazaSizeX = 12f;
-    const float PlazaSizeZ = 8f;
     const float MarkerHover = 0.1f;
-    const float GroundSink = 0.02f;
-
-    static readonly Vector3[] BalloonSpots =
-    {
-        new Vector3(-14f, 33f, 8f),
-        new Vector3(16f, 34f, -6f),
-        new Vector3(4f, 35f, 12f),
-    };
+    const float HideClearance = 1.2f;
+    const float TouchEpsilon = 0.05f;
 
     static readonly Color GrayColor = new Color(0.62f, 0.62f, 0.64f, 1f);
     static readonly Color DarkColor = new Color(0.11f, 0.11f, 0.12f, 1f);
@@ -147,123 +79,37 @@ public static class LotteWorldBlockoutGenerator
     static readonly Color FoodColor = new Color(0.95f, 0.46f, 0.12f, 1f);
     static readonly Color ShopColor = new Color(0.56f, 0.30f, 0.76f, 1f);
 
-    enum PlaceKind { Box, Ellipse, Ship, Flume, Carousel, Stage }
-    enum Slot { Ride, Food, Shop, Dark }
+    static readonly Color LabelRide = new Color(0.95f, 0.15f, 0.12f);
+    static readonly Color LabelFood = new Color(1f, 0.45f, 0.72f);
+    static readonly Color LabelShop = new Color(0.62f, 0.32f, 0.95f);
+    static readonly Color LabelDark = new Color(0.72f, 0.72f, 0.74f);
+
+    enum Slot { Ride, Food, Shop, Dark, Plaza, Escalator }
+    enum Shape { Rect, Circle, Poly }
+    enum StaticMode { None, Walkable, Background }
 
     struct Place
     {
-        public string name;
-        public float px, py, spx, spy, height;
-        public PlaceKind kind;
+        public string id, title;
         public Slot slot;
-        public Place(string name, float px, float py, float spx, float spy, float height, PlaceKind kind, Slot slot)
+        public Shape shape;
+        public float x, z, w, d, rot, h;
+        public Vector2[] points;
+
+        public Place(string id, string title, Slot slot, Shape shape, float x, float z, float w, float d, float rot, float h, Vector2[] points)
         {
-            this.name = name;
-            this.px = px;
-            this.py = py;
-            this.spx = spx;
-            this.spy = spy;
-            this.height = height;
-            this.kind = kind;
+            this.id = id;
+            this.title = title;
             this.slot = slot;
+            this.shape = shape;
+            this.x = x;
+            this.z = z;
+            this.w = w;
+            this.d = d;
+            this.rot = rot;
+            this.h = h;
+            this.points = points;
         }
-    }
-
-    // 높이 지정이 없는 놀이기구는 6~10m 안에서 고정했다.
-    static readonly Place[] Places =
-    {
-        new Place("A06_신밧드의모험", 200f, 380f, 70f, 60f, 10f, PlaceKind.Box, Slot.Ride),
-        new Place("A07_스페인해적선", 145f, 495f, 90f, 60f, 17.5f, PlaceKind.Ship, Slot.Ride),
-        new Place("A08_후룸라이드", 255f, 600f, 140f, 90f, 16f, PlaceKind.Flume, Slot.Ride),
-        new Place("A09_회전바구니", 405f, 590f, 70f, 0f, 8f, PlaceKind.Ellipse, Slot.Ride),
-        new Place("A10_로티트레인", 685f, 470f, 40f, 30f, 6f, PlaceKind.Box, Slot.Ride),
-        new Place("A11_배틀그라운드", 805f, 418f, 50f, 40f, 7f, PlaceKind.Box, Slot.Ride),
-        new Place("A12_플라이벤처", 875f, 470f, 180f, 150f, 25f, PlaceKind.Box, Slot.Ride),
-        new Place("A13_회전목마", 828f, 330f, 80f, 0f, 12f, PlaceKind.Carousel, Slot.Ride),
-        new Place("A14_황야의무법자", 685f, 268f, 50f, 40f, 8f, PlaceKind.Box, Slot.Ride),
-        new Place("A15_키즈토리아", 770f, 275f, 70f, 50f, 9f, PlaceKind.Box, Slot.Ride),
-        new Place("A16_드래곤와일드슈팅", 910f, 327f, 50f, 40f, 8f, PlaceKind.Box, Slot.Ride),
-        new Place("A17_어린이범퍼카", 918f, 250f, 50f, 40f, 7f, PlaceKind.Box, Slot.Ride),
-        new Place("A18_햇님달님", 970f, 208f, 40f, 40f, 6f, PlaceKind.Box, Slot.Ride),
-        new Place("A19_점핑피쉬", 960f, 158f, 40f, 40f, 7f, PlaceKind.Box, Slot.Ride),
-        new Place("A20_언더씨킹덤", 825f, 100f, 80f, 60f, 10f, PlaceKind.Box, Slot.Ride),
-        new Place("A21_유레카", 780f, 118f, 40f, 40f, 6f, PlaceKind.Box, Slot.Ride),
-        new Place("A22_스윙팡팡", 745f, 135f, 40f, 40f, 7f, PlaceKind.Box, Slot.Ride),
-        new Place("A23_매직붕붕카", 680f, 103f, 60f, 40f, 8f, PlaceKind.Box, Slot.Ride),
-        new Place("A24_어린이동화극장", 628f, 125f, 60f, 50f, 9f, PlaceKind.Box, Slot.Ride),
-        new Place("A25_카트라이더", 573f, 252f, 50f, 40f, 8f, PlaceKind.Box, Slot.Ride),
-        new Place("GardenStage", 330f, 470f, 150f, 100f, StageHeight, PlaceKind.Stage, Slot.Ride),
-        new Place("X_언더랜드건물", 390f, 130f, 260f, 140f, 15f, PlaceKind.Box, Slot.Dark),
-
-        new Place("F07", 213f, 383f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F08", 300f, 362f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F09", 322f, 378f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F10", 313f, 410f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F11", 278f, 420f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F12", 308f, 453f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F13", 475f, 532f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F14", 446f, 575f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F15", 511f, 560f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F16", 639f, 490f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F17", 828f, 282f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F18", 937f, 207f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F19", 746f, 338f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F20", 665f, 240f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F21", 575f, 278f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-        new Place("F23", 280f, 268f, 30f, 25f, 5f, PlaceKind.Box, Slot.Food),
-
-        new Place("S04", 432f, 308f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S05", 348f, 333f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S06", 380f, 374f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S07", 575f, 535f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S08", 605f, 505f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S09", 778f, 485f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-        new Place("S10", 718f, 318f, 30f, 25f, 5f, PlaceKind.Box, Slot.Shop),
-    };
-
-    struct ShutterPx
-    {
-        public string name;
-        public float px, py;
-        public ShutterPx(string name, float px, float py)
-        {
-            this.name = name;
-            this.px = px;
-            this.py = py;
-        }
-    }
-
-    static readonly ShutterPx[] Shutters =
-    {
-        new ShutterPx("X_언더랜드", 380f, 200f),
-        new ShutterPx("X_매직아일랜드", 240f, 300f),
-        new ShutterPx("X_원더도어", 165f, 555f),
-        new ShutterPx("X_피크닉2층", 500f, 650f),
-        new ShutterPx("X_민속박물관", 710f, 600f),
-    };
-
-    enum Edge { North, South, East, West }
-
-    struct BarrierSpec
-    {
-        public string name;
-        public Edge edge;
-        public float along;
-        public BarrierSpec(string name, Edge edge, float along)
-        {
-            this.name = name;
-            this.edge = edge;
-            this.along = along;
-        }
-    }
-
-    static BarrierSpec[] StairBlocks = new BarrierSpec[0];
-
-    enum StaticMode { None, Walkable, Background }
-
-    struct Mats
-    {
-        public Material gray, dark, red, path, ride, rail, ice, food, shop;
     }
 
     struct Stadium
@@ -271,74 +117,83 @@ public static class LotteWorldBlockoutGenerator
         public float straightHalf, radiusX, radiusZ;
     }
 
-    struct Footprint
+    class Footprint
     {
-        public string name;
-        public float x, z, sx, sz;
-        public Footprint(string name, float x, float z, float sx, float sz)
-        {
-            this.name = name;
-            this.x = x;
-            this.z = z;
-            this.sx = sx;
-            this.sz = sz;
-        }
+        public string id;
+        public bool circle;
+        public Vector2 center;
+        public float radius;
+        public List<Vector2> poly;
     }
 
-    class Body
+    struct Mats
     {
-        public string name;
-        public Slot slot;
-        public bool stall;
-        public bool kids;
-        public bool building;
-        public float x, z, sx, sz;
-        public float originX, originZ;
-        public float moved;
+        public Material gray, dark, red, path, ride, rail, ice, food, shop;
     }
 
-    static readonly string[] KidsNames =
+    static readonly Vector2[] FloorOutline =
     {
-        "A14_황야의무법자", "A15_키즈토리아", "A16_드래곤와일드슈팅", "A17_어린이범퍼카", "A18_햇님달님", "A19_점핑피쉬",
-        "A20_언더씨킹덤", "A21_유레카", "A22_스윙팡팡", "A23_매직붕붕카", "A24_어린이동화극장",
+        new Vector2(-198.3f, 141.8f), new Vector2(-133f, 141.8f), new Vector2(-133f, 194.8f),
+        new Vector2(14.3f, 194.8f), new Vector2(14.3f, 216.2f), new Vector2(168.4f, 219.7f),
+        new Vector2(230.2f, 180.6f), new Vector2(242.8f, 124.1f), new Vector2(233.9f, 35.4f),
+        new Vector2(225.1f, -74.4f), new Vector2(180.6f, -102.7f), new Vector2(101.1f, -141.7f),
+        new Vector2(81.5f, -177.1f), new Vector2(-17.7f, -180.6f), new Vector2(-92.1f, -191.4f),
+        new Vector2(-191.4f, -180.6f), new Vector2(-288.7f, -127.5f), new Vector2(-287f, -53.1f),
+        new Vector2(-278.2f, 92.1f), new Vector2(-225.1f, 131.1f),
     };
 
-    static readonly List<Footprint> Solids = new List<Footprint>();
-    static readonly List<Body> BodyList = new List<Body>();
-    static readonly Dictionary<string, Body> Bodies = new Dictionary<string, Body>();
-    static readonly List<Vector2> ParadePoints = new List<Vector2>();
-    static readonly List<Vector2> Waypoints = new List<Vector2>();
-    static string OverlapNote = "";
-
-    static float PxToX(float px) => (px - OriginPx) * MetersPerPixel;
-    static float PyToZ(float py) => -(py - OriginPy) * MetersPerPixel * IsoDepthFactor;
-    static float PxSize(float pixels) => pixels * MetersPerPixel;
-    static float PySize(float pixels) => pixels * MetersPerPixel * IsoDepthFactor;
-    static Vector2 Map(float px, float py) => new Vector2(PxToX(px), PyToZ(py));
-
-    static float EscTopX => PxToX(EscTopPx);
-    static float EscTopZ => PyToZ(EscTopPy);
-    static float PlayerSpawnX => PxToX(580f);
-    static float PlayerSpawnZ => PyToZ(210f);
-
-    static Stadium VoidShape
+    static readonly Place[] Places =
     {
-        get
-        {
-            // 세로 140px = 36m 가 반원 지름. 가로는 280px 를 유지하고 직선 구간이 나머지를 맡는다.
-            float radius = PySize(140f) * 0.5f;
-            return new Stadium
-            {
-                straightHalf = PxSize(280f) * 0.5f - radius,
-                radiusX = radius,
-                radiusZ = radius,
-            };
-        }
+        P("A06", "신밧드의모험", Slot.Ride, Shape.Poly, -254f, 84f, 112f, 120f, 12f, V(-20f, -15f), V(20f, -15f), V(56f, 60f), V(-20f, 15f)),
+        P("A07", "스페인해적선", Slot.Ride, Shape.Poly, -252f, -46f, 44f, 142f, 17.5f, V(-22f, -71f), V(16.5f, -63.5f), V(17f, 40f), V(-19f, 40f)),
+        P("후룸라이드", "후룸라이드", Slot.Ride, Shape.Poly, -115f, -147f, 344f, 168f, 16f, V(-101f, -28f), V(172f, -26f), V(19f, 12f), V(-4f, 18f), V(-99f, 84f)),
+        P("A09", "회전바구니", Slot.Ride, Shape.Circle, -107f, -109f, 42f, 42f, 4f),
+        P("A11", "배틀그라운드", Slot.Ride, Shape.Rect, 77f, -53f, 23f, 20f, 8f),
+        P("A12", "플라이벤처(성)", Slot.Ride, Shape.Poly, 119f, -93f, 102f, 170f, 25f, V(-47f, -85f), V(46.5f, -15f), V(51f, 17f), V(-46.5f, 15f)),
+        P("A13", "회전목마", Slot.Ride, Shape.Circle, 135f, -14f, 42f, 42f, 12f),
+        P("A15", "키즈토리아", Slot.Ride, Shape.Poly, 131f, 61f, 118f, 180f, 8f, V(-36.5f, -28.5f), V(49f, -35f), V(59f, 90f), V(-36.5f, 28.5f)),
+        P("롤러코스터", "롤러코스터", Slot.Ride, Shape.Poly, 207f, 86f, 80f, 386f, 6f, V(-40f, -193f), V(17f, -162f), V(37f, 73f), V(-13.5f, 73.5f)),
+        P("GardenStage", "가든스테이지", Slot.Ride, Shape.Rect, -139f, -27f, 97f, 95f, 12f),
+        P("5", "건물", Slot.Shop, Shape.Rect, -23f, 68f, 22f, 9f, 5f),
+        P("S06", "기프트숍", Slot.Shop, Shape.Rect, -59f, 65f, 20f, 18f, 5f),
+        P("MeetingPlaza", "만남의 광장", Slot.Plaza, Shape.Rect, 5f, 78f, 30f, 12f, 0f),
+        P("E_Escalator", "정문 에스컬레이터", Slot.Escalator, Shape.Rect, -122f, 191f, 18f, 8f, 0f),
+        P("S_new1", "새 구조물", Slot.Shop, Shape.Rect, -51f, 142f, 65f, 106f, 6f),
+        P("A15_2", "키즈토리아", Slot.Ride, Shape.Poly, 84f, 119f, 244f, 154f, 8f, V(-81.5f, -29.5f), V(81.5f, -29.5f), V(122f, 77f), V(-109f, 75f)),
+        P("폭포", "폭포", Slot.Dark, Shape.Rect, -8f, 102f, 20f, 26f, 6f),
+        P("F_new1", "새 구조물", Slot.Food, Shape.Rect, -147f, 107f, 56f, 67f, 6f),
+        P("F_new2", "새 구조물", Slot.Food, Shape.Rect, -92f, 171f, 17f, 48f, 6f),
+        P("출입구(ES)", "정문 에스컬레이터", Slot.Escalator, Shape.Rect, -42f, -80f, 9f, 28f, 0f),
+        P("건물", "건물", Slot.Ride, Shape.Poly, 10f, -129f, 96f, 124f, 25f, V(-48f, -18f), V(45.5f, -41f), V(40f, 62f), V(-47f, 62f)),
+    };
+
+    static readonly List<Footprint> Footprints = new List<Footprint>();
+    static readonly List<Vector2> Waypoints = new List<Vector2>();
+    static float FloorCenterX;
+    static float FloorCenterZ;
+    static float FloorWidth = 80f;
+    static float FloorDepth = 80f;
+    static string ReportNote = "";
+
+    static Vector2 V(float x, float z) => new Vector2(x, z);
+
+    static Place P(string id, string title, Slot slot, Shape shape, float x, float z, float w, float d, float h, params Vector2[] points)
+    {
+        return new Place(id, title, slot, shape, x, z, w, d, 0f, h, points == null || points.Length == 0 ? null : points);
     }
 
-    static float VoidWidth => PxSize(280f);
-    static float VoidDepth => PySize(140f);
-    static float CarouselDiameter => PxSize(80f);
+    static Stadium MakeStadium(float halfX, float halfZ)
+    {
+        return new Stadium
+        {
+            straightHalf = halfX - halfZ,
+            radiusX = halfZ,
+            radiusZ = halfZ,
+        };
+    }
+
+    static Stadium VoidShape => MakeStadium(VoidHalfX, VoidHalfZ);
+    static Stadium ParadeShape => MakeStadium(ParadeHalfX, ParadeHalfZ);
 
     [MenuItem("Tools/LotteWorld/Generate Blockout", false, 1)]
     public static void Generate()
@@ -366,7 +221,9 @@ public static class LotteWorldBlockoutGenerator
         {
             EditorUtility.DisplayProgressBar("LotteWorld", "머티리얼 준비", 0.05f);
             EnsureAssetFolder(MaterialDir);
+            ClearGeneratedMeshes();
             Mats mats = EnsureMaterials();
+            MeasureFloor();
 
             EditorUtility.DisplayProgressBar("LotteWorld", "씬 열기", 0.15f);
             bool createdScene = OpenOrCreateScene();
@@ -377,12 +234,17 @@ public static class LotteWorldBlockoutGenerator
                 return;
             }
 
+            Transform carousel = FindNamed("Carousel_A13");
+            if (carousel != null && IsUnderNamed(carousel, RootName))
+                carousel.SetParent(null, true);
+
             var root = new GameObject("__BlockoutNew");
             ApplyStatic(root, StaticMode.Walkable);
             try
             {
-                EditorUtility.DisplayProgressBar("LotteWorld", "배치", 0.3f);
-                PrepareLayout();
+                EditorUtility.DisplayProgressBar("LotteWorld", "배치", 0.35f);
+                Footprints.Clear();
+                Waypoints.Clear();
 
                 Transform floor1 = CreateGroup(root.transform, "Floor1", StaticMode.Walkable);
                 Transform b1 = CreateGroup(root.transform, "B1", StaticMode.Walkable);
@@ -390,21 +252,23 @@ public static class LotteWorldBlockoutGenerator
                 Transform blocked = CreateGroup(root.transform, "Blocked", StaticMode.Walkable);
                 Transform markers = CreateGroup(root.transform, "Markers", StaticMode.None);
 
-                int floorTiles = BuildFloor(floor1, mats);
-                BuildVoidEdge(floor1, mats);
+                BuildFloor(floor1, mats);
+                BuildVoid(floor1, mats);
                 BuildParade(floor1, mats);
                 BuildPlaces(floor1, blocked, mats);
-                BuildPlaza(floor1, mats);
+                Place mainExit = FindPlace("출입구(ES)");
+                BuildGateHall(b1, mats, mainExit);
+                BuildIce(b1, mats);
                 BuildOuterWalls(floor1, mats);
-                BuildEscape(floor1, mats);
-
-                EditorUtility.DisplayProgressBar("LotteWorld", "B1 / 배경", 0.7f);
-                BuildBlocked(blocked, mats);
-                int iceTiles = BuildB1(b1, mats);
                 BuildBackground(background, mats);
                 BuildMarkers(markers);
+                BuildKeepOut(markers);
+                ReportNote = BuildReport();
 
                 ReplaceOldRoot(root);
+                PlaceCarousel(root.transform, carousel);
+                PlacePlayer();
+
                 Selection.activeGameObject = root;
                 EditorSceneManager.MarkSceneDirty(active);
                 EditorSceneManager.SaveScene(active);
@@ -417,11 +281,9 @@ public static class LotteWorldBlockoutGenerator
                 Debug.Log(
                     "롯데월드 블록아웃 생성 완료. 바닥 "
                     + FloorWidth.ToString("0.0", culture) + " x " + FloorDepth.ToString("0.0", culture)
-                    + "m. 보이드 " + VoidWidth.ToString("0.0", culture) + " x " + VoidDepth.ToString("0.0", culture)
-                    + "m. 회전목마 지름 " + CarouselDiameter.ToString("0.0", culture)
-                    + "m. 바닥 조각 " + floorTiles + " / 아이스 " + iceTiles
-                    + " / 메시 " + (ProBuilderPrimitives.Available ? "ProBuilder" : "Primitive")
-                    + ". " + OverlapNote);
+                    + "m, 중심 (" + FloorCenterX.ToString("0.0", culture) + ", " + FloorCenterZ.ToString("0.0", culture)
+                    + "). 메시 " + (ProBuilderPrimitives.Available ? "ProBuilder" : "Mesh")
+                    + ". " + ReportNote);
             }
             catch (Exception)
             {
@@ -443,446 +305,545 @@ public static class LotteWorldBlockoutGenerator
     [MenuItem("Tools/LotteWorld/Generate Blockout", true)]
     static bool ValidateGenerate() => !EditorApplication.isPlaying;
 
-    static void PrepareLayout()
+    static void MeasureFloor()
     {
-        Solids.Clear();
-        Waypoints.Clear();
-        BuildBodies();
-        CacheParade();
-        ResolveOverlaps();
-
-        for (int i = 0; i < BodyList.Count; i++)
+        float minX = float.PositiveInfinity, maxX = float.NegativeInfinity;
+        float minZ = float.PositiveInfinity, maxZ = float.NegativeInfinity;
+        for (int i = 0; i < FloorOutline.Length; i++)
         {
-            Body body = BodyList[i];
-            Solids.Add(new Footprint(body.name, body.x, body.z, body.sx, body.sz));
+            minX = Mathf.Min(minX, FloorOutline[i].x);
+            maxX = Mathf.Max(maxX, FloorOutline[i].x);
+            minZ = Mathf.Min(minZ, FloorOutline[i].y);
+            maxZ = Mathf.Max(maxZ, FloorOutline[i].y);
         }
-
-        float rampZ = EscTopZ - EscRun * 0.5f;
-        Solids.Add(new Footprint("정문 에스컬레이터", EscTopX, rampZ, EscWidth, EscRun));
-        float rampEnd = EscTopZ - EscRun;
-        float hallNorth = rampEnd + HallJoin;
-        float hallSouth = rampEnd - HallSizeZ;
-        Solids.Add(new Footprint("게이트 홀", EscTopX, (hallNorth + hallSouth) * 0.5f, HallSizeX, hallNorth - hallSouth));
-
-        float minX = float.PositiveInfinity;
-        float maxX = float.NegativeInfinity;
-        float minZ = float.PositiveInfinity;
-        float maxZ = float.NegativeInfinity;
-        for (int i = 0; i < Solids.Count; i++)
-            Include(ref minX, ref maxX, ref minZ, ref maxZ, Solids[i].x, Solids[i].z, Solids[i].sx, Solids[i].sz);
-
-        Include(ref minX, ref maxX, ref minZ, ref maxZ, PlayerSpawnX, PlayerSpawnZ, PlazaSizeX, PlazaSizeZ);
-
-        List<Vector2> outer = SampleStadium(VoidShape, ParadeClearance + ParadeWidth * 0.5f, 16, 8);
-        for (int i = 0; i < outer.Count; i++)
-            Include(ref minX, ref maxX, ref minZ, ref maxZ, outer[i].x, outer[i].y, 0f, 0f);
-
-        List<Vector2> loop = SampleStadium(VoidShape, ParadeClearance, 16, 8);
-        List<Vector2> branch = GardenBranch(loop);
-        for (int i = 0; i < branch.Count; i++)
-            Include(ref minX, ref maxX, ref minZ, ref maxZ, branch[i].x, branch[i].y, ParadeWidth, ParadeWidth);
-
         FloorCenterX = (minX + maxX) * 0.5f;
         FloorCenterZ = (minZ + maxZ) * 0.5f;
-        FloorWidth = (maxX - minX) + FloorMargin * 2f;
-        FloorDepth = (maxZ - minZ) + FloorMargin * 2f;
+        FloorWidth = maxX - minX;
+        FloorDepth = maxZ - minZ;
+    }
 
-        StairBlocks = new[]
+    static void BuildFloor(Transform parent, Mats mats)
+    {
+        List<Vector2> outer = new List<Vector2>(FloorOutline);
+        var holes = new List<List<Vector2>>
         {
-            new BarrierSpec("MainEscalator", Edge.South, EscTopX),
-            new BarrierSpec("Plaza", Edge.North, PlayerSpawnX),
-            new BarrierSpec("Underland", Edge.North, PxToX(390f)),
-            new BarrierSpec("Sinbad", Edge.North, PxToX(200f)),
+            SampleStadium(VoidShape, 0f, 16, 6),
         };
-        OverlapNote = DescribeResolution();
+        for (int i = 0; i < Places.Length; i++)
+        {
+            if (Places[i].slot != Slot.Escalator)
+                continue;
+            holes.Add(RectPoly(Places[i].x, Places[i].z, Places[i].w, Places[i].d));
+        }
+        CreatePrism(parent, "Floor", outer, holes, FloorY - FloorThickness, FloorThickness, mats.gray, StaticMode.Walkable, true, true);
     }
 
-    static void Include(ref float minX, ref float maxX, ref float minZ, ref float maxZ, float x, float z, float sx, float sz)
+    static void BuildVoid(Transform parent, Mats mats)
     {
-        minX = Mathf.Min(minX, x - sx * 0.5f);
-        maxX = Mathf.Max(maxX, x + sx * 0.5f);
-        minZ = Mathf.Min(minZ, z - sz * 0.5f);
-        maxZ = Mathf.Max(maxZ, z + sz * 0.5f);
+        Transform shaft = CreateGroup(parent, "VoidShaft", StaticMode.Walkable);
+        Transform railing = CreateGroup(parent, "VoidRailing", StaticMode.Walkable);
+        List<Vector2> edge = SampleStadium(VoidShape, 0f, 18, 8);
+        int index = 0;
+        float shaftY = (FloorY + B1Y) * 0.5f;
+        EmitRibbon(shaft, "VoidShaft_", edge, true, ShaftThickness, FloorY - B1Y, shaftY, mats.gray, StaticMode.Walkable, null, ref index);
+        index = 0;
+        List<Vector2> rail = SampleStadium(VoidShape, RailingThickness * 0.5f, 18, 8);
+        EmitRibbon(railing, "VoidRailing_", rail, true, RailingThickness, RailingHeight, FloorY + RailingHeight * 0.5f, mats.rail, StaticMode.Walkable, null, ref index);
     }
 
-    static void BuildBodies()
+    static void BuildParade(Transform parent, Mats mats)
     {
-        BodyList.Clear();
-        Bodies.Clear();
+        Transform group = CreateGroup(parent, "ParadeLoop", StaticMode.Walkable);
+        List<Vector2> loop = SampleStadium(ParadeShape, 0f, 20, 8);
+        int index = 0;
+        float y = FloorY + ParadeLift - ParadeThickness * 0.5f;
+        EmitRibbon(group, "Parade_", loop, true, ParadeWidth, ParadeThickness, y, mats.path, StaticMode.Walkable, null, ref index);
+
+        Waypoints.Clear();
+        int start = ClosestIndex(loop, new Vector2(ParadeHalfX, 0f));
+        List<Vector2> even = EvenPoints(loop, ParadeWaypointCount, start);
+        for (int i = 0; i < even.Count; i++)
+            Waypoints.Add(even[i]);
+    }
+
+    static void BuildPlaces(Transform floor1, Transform blocked, Mats mats)
+    {
+        Transform food = CreateGroup(floor1, "Restaurants", StaticMode.Walkable);
+        Transform shops = CreateGroup(floor1, "GiftShops", StaticMode.Walkable);
+        Transform escape = CreateGroup(floor1, "Escape", StaticMode.Walkable);
         for (int i = 0; i < Places.Length; i++)
         {
             Place place = Places[i];
-            PlaceSize(place, out float sx, out float sz);
-            bool kids = false;
-            for (int k = 0; k < KidsNames.Length; k++)
+            Footprints.Add(MakeFootprint(place));
+            switch (place.slot)
             {
-                if (KidsNames[k] == place.name)
-                {
-                    kids = true;
+                case Slot.Escalator:
+                    BuildEscalator(escape, place, mats);
                     break;
-                }
-            }
-            AddBody(place.name, place.slot, PxToX(place.px), PyToZ(place.py), sx, sz, kids);
-        }
-        for (int i = 0; i < Shutters.Length; i++)
-        {
-            ShutterPx shutter = Shutters[i];
-            AddBody(shutter.name, Slot.Dark, PxToX(shutter.px), PyToZ(shutter.py), ShutterWidth, ShutterThickness, false, true);
-        }
-    }
-
-    static void AddBody(string name, Slot slot, float x, float z, float sx, float sz, bool kids, bool passage = false)
-    {
-        var body = new Body
-        {
-            name = name,
-            slot = slot,
-            stall = slot == Slot.Food || slot == Slot.Shop,
-            kids = kids,
-            building = (slot == Slot.Ride || slot == Slot.Dark) && !passage,
-            x = x,
-            z = z,
-            sx = sx,
-            sz = sz,
-            originX = x,
-            originZ = z,
-        };
-        BodyList.Add(body);
-        Bodies.Add(name, body);
-    }
-
-    static void CacheParade()
-    {
-        ParadePoints.Clear();
-        List<Vector2> loop = SampleStadium(VoidShape, ParadeClearance, 24, 12);
-        ParadePoints.AddRange(loop);
-        ParadePoints.AddRange(GardenBranch(loop));
-    }
-
-    static void ResolveOverlaps()
-    {
-        ShrinkKids();
-        TryAttachToFront(Bodies["A11_배틀그라운드"], Bodies["A12_플라이벤처"]);
-        TryAttachToFront(Bodies["X_언더랜드"], Bodies["X_언더랜드건물"]);
-        ResolveStallsAgainstBuildings();
-        ResolveStallsAgainstStalls();
-    }
-
-    static void ShrinkKids()
-    {
-        for (int iter = 0; iter < 24; iter++)
-        {
-            var hit = new HashSet<Body>();
-            for (int i = 0; i < BodyList.Count; i++)
-            {
-                Body a = BodyList[i];
-                if (!a.kids)
-                    continue;
-                for (int j = i + 1; j < BodyList.Count; j++)
-                {
-                    Body b = BodyList[j];
-                    if (!b.kids || !Overlaps(a, b))
-                        continue;
-                    hit.Add(a);
-                    hit.Add(b);
-                }
-            }
-            if (hit.Count == 0)
-                return;
-            foreach (Body body in hit)
-            {
-                body.sx *= 0.8f;
-                body.sz *= 0.8f;
+                case Slot.Plaza:
+                    BuildPlaza(floor1, place, mats);
+                    break;
+                default:
+                    Transform parent = floor1;
+                    if (place.slot == Slot.Food)
+                        parent = food;
+                    else if (place.slot == Slot.Shop)
+                        parent = shops;
+                    else if (place.slot == Slot.Dark)
+                        parent = blocked;
+                    BuildSolid(parent, place, SlotMaterial(place.slot, mats), LabelColor(place.slot));
+                    break;
             }
         }
     }
 
-    static void ResolveStallsAgainstBuildings()
+    static void BuildSolid(Transform parent, Place place, Material mat, Color label)
     {
-        for (int pass = 0; pass < 4; pass++)
+        GameObject go;
+        if (place.shape == Shape.Circle)
         {
-            bool moved = false;
-            for (int i = 0; i < BodyList.Count; i++)
-            {
-                Body stall = BodyList[i];
-                if (!stall.stall)
-                    continue;
-                Body building = DeepestBuilding(stall);
-                if (building == null)
-                    continue;
-                ShrinkStall(stall);
-                building = DeepestBuilding(stall);
-                if (building == null)
-                    continue;
-                float x0 = stall.x;
-                float z0 = stall.z;
-                float moved0 = stall.moved;
-                if (TryAttachToFront(stall, building) && !Overlaps(stall, building))
-                    moved = true;
-                else
-                {
-                    stall.x = x0;
-                    stall.z = z0;
-                    stall.moved = moved0;
-                }
-            }
-            if (!moved)
-                return;
+            go = CreateCylinder(parent, place.id, new Vector3(place.x, place.h * 0.5f, place.z),
+                place.w * 0.5f, place.w * 0.5f, place.h, Quaternion.Euler(0f, -place.rot, 0f), mat, StaticMode.Walkable);
         }
-    }
-
-    static Body DeepestBuilding(Body stall)
-    {
-        Body best = null;
-        float bestArea = 0f;
-        for (int i = 0; i < BodyList.Count; i++)
+        else if (place.shape == Shape.Poly)
         {
-            Body other = BodyList[i];
-            if (!other.building || !Overlaps(stall, other))
-                continue;
-            float overlapX = (stall.sx + other.sx) * 0.5f - Mathf.Abs(stall.x - other.x);
-            float overlapZ = (stall.sz + other.sz) * 0.5f - Mathf.Abs(stall.z - other.z);
-            float area = Mathf.Max(0f, overlapX) * Mathf.Max(0f, overlapZ);
-            if (area > bestArea)
-            {
-                bestArea = area;
-                best = other;
-            }
+            go = CreatePrism(parent, place.id, WorldPoly(place), null, 0f, place.h, mat, StaticMode.Walkable, true, true);
         }
-        return best;
-    }
-
-    static void ResolveStallsAgainstStalls()
-    {
-        for (int pass = 0; pass < 16; pass++)
-        {
-            bool moved = false;
-            for (int i = 0; i < BodyList.Count; i++)
-            {
-                Body a = BodyList[i];
-                if (!a.stall)
-                    continue;
-                for (int j = i + 1; j < BodyList.Count; j++)
-                {
-                    Body b = BodyList[j];
-                    if (!b.stall || !Overlaps(a, b))
-                        continue;
-                    ShrinkStall(a);
-                    ShrinkStall(b);
-                    if (!Overlaps(a, b))
-                        continue;
-                    Body mover = SmallerStall(a, b);
-                    Body other = mover == a ? b : a;
-                    float x0 = mover.x;
-                    float z0 = mover.z;
-                    if (TrySlideToClear(mover, candidate => Overlaps(candidate, other) || OverlapsAnyBuilding(candidate)))
-                        moved = true;
-                    else
-                    {
-                        mover.x = x0;
-                        mover.z = z0;
-                        NoteMove(mover);
-                    }
-                }
-            }
-            if (!moved)
-                return;
-        }
-    }
-
-    static void ShrinkStall(Body stall)
-    {
-        float sx = PxSize(20f);
-        float sz = PySize(16f);
-        if (stall.sx > sx)
-            stall.sx = sx;
-        if (stall.sz > sz)
-            stall.sz = sz;
-    }
-
-    static Body SmallerStall(Body a, Body b)
-    {
-        float areaA = a.sx * a.sz;
-        float areaB = b.sx * b.sz;
-        if (areaA < areaB - 0.01f)
-            return a;
-        if (areaB < areaA - 0.01f)
-            return b;
-        float da = (NearestParade(new Vector2(a.x, a.z)) - new Vector2(a.x, a.z)).sqrMagnitude;
-        float db = (NearestParade(new Vector2(b.x, b.z)) - new Vector2(b.x, b.z)).sqrMagnitude;
-        if (Mathf.Abs(da - db) > 0.01f)
-            return da > db ? a : b;
-        return string.Compare(a.name, b.name, StringComparison.Ordinal) > 0 ? a : b;
-    }
-
-    // 건물 앞면(퍼레이드 쪽)에 바깥으로 붙인다. 필요한 이동이 8m 를 넘으면 그대로 둔다.
-    static bool TryAttachToFront(Body mover, Body building)
-    {
-        Vector2 normal = FrontNormal(building);
-        float face = normal.x != 0f
-            ? building.x + normal.x * building.sx * 0.5f
-            : building.z + normal.y * building.sz * 0.5f;
-        float half = normal.x != 0f ? mover.sx * 0.5f : mover.sz * 0.5f;
-        float target = face + (normal.x != 0f ? normal.x : normal.y) * half;
-        float current = normal.x != 0f ? mover.x : mover.z;
-        if (Mathf.Abs(target - current) > MaxNudge)
-            return false;
-        if (normal.x != 0f)
-            mover.x = target;
         else
-            mover.z = target;
-        NoteMove(mover);
-        if (mover.moved > MaxNudge + 0.001f)
         {
-            mover.x = mover.originX;
-            mover.z = mover.originZ;
-            mover.moved = 0f;
-            return false;
+            go = CreateBox(parent, place.id, new Vector3(place.x, place.h * 0.5f, place.z),
+                new Vector3(place.w, place.h, place.d), Quaternion.Euler(0f, -place.rot, 0f), mat, StaticMode.Walkable);
         }
-        return true;
+        AddLabel(go, CaptionOf(place), label);
     }
 
-    static Vector2 FrontNormal(Body building)
+    static void BuildPlaza(Transform parent, Place place, Mats mats)
     {
-        Vector2 to = NearestParade(new Vector2(building.x, building.z)) - new Vector2(building.x, building.z);
-        Vector2 best = Vector2.right;
-        float bestDot = float.NegativeInfinity;
-        Vector2[] normals = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
-        for (int i = 0; i < normals.Length; i++)
-        {
-            float dot = Vector2.Dot(normals[i], to);
-            if (dot > bestDot)
-            {
-                bestDot = dot;
-                best = normals[i];
-            }
-        }
-        return best;
+        GameObject go = CreateBox(parent, place.id, new Vector3(place.x, FloorY + 0.03f, place.z),
+            new Vector3(place.w, 0.04f, place.d), Quaternion.identity, mats.gray, StaticMode.Walkable);
+        AddLabel(go, CaptionOf(place), Color.white);
     }
 
-    static bool TrySlideToClear(Body mover, Func<Body, bool> blocked)
+    static void BuildEscalator(Transform parent, Place place, Mats mats)
     {
-        Vector2 origin = new Vector2(mover.originX, mover.originZ);
-        Vector2 pos = new Vector2(mover.x, mover.z);
-        Vector2 dir = NearestParade(pos) - pos;
-        if (dir.sqrMagnitude < 0.0001f)
-            return false;
+        EscalatorEnds(place, out Vector2 entrance, out Vector2 exit, out float width, out Vector2 down);
+        Vector3 p0 = new Vector3(entrance.x, FloorY, entrance.y);
+        Vector3 p1 = new Vector3(exit.x, B1Y, exit.y);
+        Vector3 delta = p1 - p0;
+        float length = delta.magnitude;
+        Vector3 forward = delta / length;
+        Vector3 up = Vector3.Cross(Vector3.right, forward);
+        if (up.sqrMagnitude < 0.0001f)
+            up = Vector3.up;
+        up.Normalize();
+        if (up.y < 0f)
+            up = -up;
+        Vector3 walkCenter = (p0 + p1) * 0.5f;
+        Vector3 boxCenter = walkCenter - up * (EscThickness * 0.5f);
+        Transform group = CreateGroup(parent, place.id, StaticMode.Walkable);
+        GameObject ramp = CreateBox(group, "Ramp", boxCenter, new Vector3(width, EscThickness, length),
+            Quaternion.LookRotation(forward, up), mats.red, StaticMode.Walkable);
+        AddLabel(ramp, CaptionOf(place), LabelRide);
+
+        bool escape = place.id == "출입구(ES)";
+        Quaternion yaw = Quaternion.LookRotation(new Vector3(down.x, 0f, down.y), Vector3.up);
+        CreateBox(group, escape ? "EscapeShutter" : "Shutter",
+            new Vector3(entrance.x, FloorY + EscShutterHeight * 0.5f, entrance.y),
+            new Vector3(width, EscShutterHeight, ShutterThickness), yaw,
+            escape ? mats.red : mats.dark, StaticMode.None, true, true);
+    }
+
+    static void BuildGateHall(Transform parent, Mats mats, Place place)
+    {
+        EscalatorEnds(place, out _, out Vector2 exit, out float rampWidth, out Vector2 down);
+        Transform group = CreateGroup(parent, "GateHall", StaticMode.Walkable);
+        Vector2 side = new Vector2(-down.y, down.x);
+        Vector2 center = exit + down * (HallAlong * 0.5f);
+        Vector2 far = exit + down * HallAlong;
+        Quaternion yaw = Quaternion.LookRotation(new Vector3(down.x, 0f, down.y), Vector3.up);
+        CreateBox(group, "GateHall_Floor", new Vector3(center.x, B1Y - 0.2f, center.y),
+            new Vector3(HallAcross, 0.4f, HallAlong), yaw, mats.gray, StaticMode.Walkable);
+
+        float wallY = B1Y + HallWallHeight * 0.5f;
+        WallWithGap(group, "GateHall_Wall_Near", exit, side, HallAcross, rampWidth, HallWallThickness, HallWallHeight, wallY, yaw, mats.gray);
+        WallWithGap(group, "GateHall_Wall_Far", far, side, HallAcross, GateWidth, HallWallThickness, HallWallHeight, wallY, yaw, mats.gray);
+        Vector2 left = center + side * (HallAcross * 0.5f);
+        Vector2 right = center - side * (HallAcross * 0.5f);
+        CreateBox(group, "GateHall_Wall_L", new Vector3(left.x, wallY, left.y),
+            new Vector3(HallWallThickness, HallWallHeight, HallAlong), yaw, mats.gray, StaticMode.Walkable);
+        CreateBox(group, "GateHall_Wall_R", new Vector3(right.x, wallY, right.y),
+            new Vector3(HallWallThickness, HallWallHeight, HallAlong), yaw, mats.gray, StaticMode.Walkable);
+        CreateBox(group, "MainGate", new Vector3(far.x, B1Y + GateHeight * 0.5f, far.y),
+            new Vector3(GateWidth, GateHeight, HallWallThickness), yaw, mats.red, StaticMode.None, true, true);
+    }
+
+    static void WallWithGap(Transform parent, string name, Vector2 at, Vector2 side, float length, float gap, float thickness, float height, float y, Quaternion yaw, Material mat)
+    {
+        float piece = (length - gap) * 0.5f;
+        if (piece < 0.05f)
+            return;
+        float offset = gap * 0.5f + piece * 0.5f;
+        Vector2 a = at + side * offset;
+        Vector2 b = at - side * offset;
+        CreateBox(parent, name + "_A", new Vector3(a.x, y, a.y), new Vector3(piece, height, thickness), yaw, mat, StaticMode.Walkable);
+        CreateBox(parent, name + "_B", new Vector3(b.x, y, b.y), new Vector3(piece, height, thickness), yaw, mat, StaticMode.Walkable);
+    }
+
+    static void EscalatorEnds(Place place, out Vector2 entrance, out Vector2 exit, out float width, out Vector2 down)
+    {
+        bool alongX = place.w >= place.d;
+        float halfLong = (alongX ? place.w : place.d) * 0.5f;
+        width = alongX ? place.d : place.w;
+        Vector2 axis = alongX ? Vector2.right : Vector2.up;
+        Vector2 center = new Vector2(place.x, place.z);
+        Vector2 positive = center + axis * halfLong;
+        Vector2 negative = center - axis * halfLong;
+        if (positive.sqrMagnitude <= negative.sqrMagnitude)
+        {
+            entrance = positive;
+            exit = negative;
+        }
+        else
+        {
+            entrance = negative;
+            exit = positive;
+        }
+        down = exit - entrance;
+        if (down.sqrMagnitude > 0.0001f)
+            down.Normalize();
+        else
+            down = Vector2.down;
+    }
+
+    static void BuildIce(Transform parent, Mats mats)
+    {
+        Transform group = CreateGroup(parent, "IceRink", StaticMode.Walkable);
+        CreatePrism(group, "Ice", SampleStadium(VoidShape, 0f, 16, 6), null, B1Y - IceThickness, IceThickness, mats.ice, StaticMode.Walkable, true, true);
+    }
+
+    static void BuildOuterWalls(Transform parent, Mats mats)
+    {
+        Transform group = CreateGroup(parent, "OuterWalls", StaticMode.Walkable);
+        int index = 0;
+        EmitRibbon(group, "Wall_", new List<Vector2>(FloorOutline), true, WallThickness, WallHeight, FloorY + WallHeight * 0.5f, mats.gray, StaticMode.Walkable, null, ref index);
+    }
+
+    static void BuildBackground(Transform parent, Mats mats)
+    {
+        List<Vector2> outer = new List<Vector2>(FloorOutline);
+        EnsureWinding(outer, true);
+        List<Vector2> inner = OffsetPolygon(outer, BalconyWidth);
+        BuildBalcony(parent, "Balcony2F", Balcony2Y, outer, inner, mats);
+        BuildBalcony(parent, "Balcony3F", Balcony3Y, outer, inner, mats);
+
+        List<Vector2> dome = OffsetPolygon(outer, -DomeMargin);
+        CreatePrism(parent, "GlassDome", dome, null, DomeY - DomeThickness * 0.5f, DomeThickness, mats.gray, StaticMode.Background, false, false);
+    }
+
+    static void BuildBalcony(Transform parent, string name, float levelY, List<Vector2> outer, List<Vector2> inner, Mats mats)
+    {
+        Transform group = CreateGroup(parent, name, StaticMode.Background);
+        var holes = new List<List<Vector2>> { new List<Vector2>(inner) };
+        CreatePrism(group, name + "_Slab", new List<Vector2>(outer), holes, levelY - BalconyThickness, BalconyThickness, mats.gray, StaticMode.Background, true, true);
+        int index = 0;
+        float railY = levelY + BalconyRailHeight * 0.5f;
+        EmitRibbon(group, name + "_Rail_", inner, true, BalconyRailThickness, BalconyRailHeight, railY, mats.rail, StaticMode.Background, null, ref index);
+    }
+
+    static void BuildMarkers(Transform parent)
+    {
+        Place plaza = FindPlace("MeetingPlaza");
+        CreateMarker(parent, "PlayerSpawn", plaza.x, plaza.z);
+        for (int i = 0; i < Waypoints.Count; i++)
+            CreateMarker(parent, "ParadeWaypoint_" + i.ToString("00"), Waypoints[i].x, Waypoints[i].y);
+
+        int hide = 0;
+        for (int i = 0; i < Places.Length; i++)
+        {
+            if (Places[i].slot != Slot.Ride)
+                continue;
+            hide++;
+            Vector2 spot = HideSpot(Places[i]);
+            CreateMarker(parent, "HideSpot_" + hide.ToString("00"), spot.x, spot.y);
+        }
+    }
+
+    static void BuildKeepOut(Transform parent)
+    {
+        float outward = ParadeWidth * 0.5f + KeepOutBeyondOuter;
+        List<Vector2> loop = SampleStadium(ParadeShape, outward, 24, 10);
+        var go = new GameObject("ParadeKeepOut");
+        go.transform.SetParent(parent, false);
+        ApplyStatic(go, StaticMode.None);
+        var gizmo = go.AddComponent<ParadeKeepOutGizmo>();
+        gizmo.Points = new Vector3[loop.Count];
+        for (int i = 0; i < loop.Count; i++)
+            gizmo.Points[i] = new Vector3(loop[i].x, FloorY + 0.2f, loop[i].y);
+    }
+
+    static Vector2 HideSpot(Place place)
+    {
+        Vector2 center = new Vector2(place.x, place.z);
+        Vector2 dir = center;
+        if (dir.sqrMagnitude < 0.01f)
+            dir = Vector2.up;
         dir.Normalize();
-        float maxT = MaxTravel(pos, origin, dir, MaxNudge);
-        if (maxT <= 0.02f)
-            return false;
-
-        bool Clears(float t)
+        float maxT = 0f;
+        bool hit = false;
+        if (place.shape == Shape.Circle)
         {
-            mover.x = pos.x + dir.x * t;
-            mover.z = pos.y + dir.y * t;
-            return !blocked(mover);
+            maxT = place.w * 0.5f;
+            hit = true;
         }
-
-        if (!Clears(maxT))
+        else
         {
-            mover.x = pos.x;
-            mover.z = pos.y;
-            return false;
-        }
-
-        float lo = 0f;
-        float hi = maxT;
-        for (int i = 0; i < 22; i++)
-        {
-            float mid = (lo + hi) * 0.5f;
-            if (Clears(mid))
-                hi = mid;
-            else
-                lo = mid;
-        }
-        mover.x = pos.x + dir.x * hi;
-        mover.z = pos.y + dir.y * hi;
-        NoteMove(mover);
-        return true;
-    }
-
-    static float MaxTravel(Vector2 pos, Vector2 origin, Vector2 dir, float radius)
-    {
-        Vector2 fromHome = pos - origin;
-        float along = Vector2.Dot(fromHome, dir);
-        float disc = along * along - fromHome.sqrMagnitude + radius * radius;
-        if (disc < 0f)
-            return 0f;
-        return Mathf.Max(0f, -along + Mathf.Sqrt(disc));
-    }
-
-    static void NoteMove(Body body)
-    {
-        body.moved = Vector2.Distance(new Vector2(body.x, body.z), new Vector2(body.originX, body.originZ));
-    }
-
-    static Vector2 NearestParade(Vector2 point)
-    {
-        Vector2 best = ParadePoints[0];
-        float bestD = float.MaxValue;
-        for (int i = 0; i < ParadePoints.Count; i++)
-        {
-            float d = (ParadePoints[i] - point).sqrMagnitude;
-            if (d < bestD)
+            List<Vector2> poly = WorldPoly(place);
+            for (int i = 0; i < poly.Count; i++)
             {
-                bestD = d;
-                best = ParadePoints[i];
+                if (RaySegment(center, dir, poly[i], poly[(i + 1) % poly.Count], out float t) && t > maxT)
+                {
+                    maxT = t;
+                    hit = true;
+                }
+            }
+            if (!hit)
+            {
+                for (int i = 0; i < poly.Count; i++)
+                    maxT = Mathf.Max(maxT, Vector2.Dot(poly[i] - center, dir));
             }
         }
-        return best;
+        return center + dir * (maxT + HideClearance);
     }
 
-    static bool Overlaps(Body a, Body b)
+    static void PlaceCarousel(Transform root, Transform carousel)
     {
-        return Mathf.Abs(a.x - b.x) < (a.sx + b.sx) * 0.5f - 0.05f
-            && Mathf.Abs(a.z - b.z) < (a.sz + b.sz) * 0.5f - 0.05f;
-    }
-
-    static bool OverlapsAnyBuilding(Body stall)
-    {
-        for (int i = 0; i < BodyList.Count; i++)
+        if (carousel == null)
         {
-            Body other = BodyList[i];
-            if (other.building && Overlaps(stall, other))
+            Debug.Log("Carousel_A13 인스턴스가 없어 A13 블록아웃은 켜 두었습니다.");
+            return;
+        }
+        carousel.position = new Vector3(135f, 0f, -14f);
+        Transform block = FindChild(root, "A13");
+        if (block != null)
+            block.gameObject.SetActive(false);
+        Debug.Log("Carousel_A13 을 (135, 0, -14)로 옮기고 A13 블록아웃을 껐습니다.");
+    }
+
+    static void PlacePlayer()
+    {
+        Place plaza = FindPlace("MeetingPlaza");
+        Transform player = FindNamed("PlayerCapsule");
+        if (player == null)
+        {
+            Debug.LogWarning("PlayerCapsule 을 찾지 못했습니다.");
+            return;
+        }
+        player.position = new Vector3(plaza.x, 0.1f, plaza.z);
+    }
+
+    static string BuildReport()
+    {
+        var outside = new List<string>();
+        var overlaps = new List<string>();
+        for (int i = 0; i < Footprints.Count; i++)
+        {
+            if (IsOutside(Footprints[i]))
+                outside.Add(Footprints[i].id);
+        }
+        for (int i = 0; i < Footprints.Count; i++)
+        {
+            for (int j = i + 1; j < Footprints.Count; j++)
+            {
+                if (Overlaps(Footprints[i], Footprints[j]))
+                    overlaps.Add(Footprints[i].id + "↔" + Footprints[j].id);
+            }
+        }
+        string outText = outside.Count == 0
+            ? "바닥 밖으로 나간 구조물 없음."
+            : "바닥 밖: " + string.Join(", ", outside) + ".";
+        string overText = overlaps.Count == 0
+            ? "겹침 없음."
+            : "겹침: " + string.Join(", ", overlaps) + ".";
+        return outText + " " + overText + " 위치는 표 그대로 두었습니다.";
+    }
+
+    static bool IsOutside(Footprint shape)
+    {
+        if (shape.circle)
+        {
+            if (!PointInPoly(shape.center, FloorOutline))
+                return true;
+            const int samples = 48;
+            for (int i = 0; i < samples; i++)
+            {
+                float t = i * Mathf.PI * 2f / samples;
+                var p = new Vector2(shape.center.x + Mathf.Cos(t) * shape.radius, shape.center.y + Mathf.Sin(t) * shape.radius);
+                if (!PointInPoly(p, FloorOutline))
+                    return true;
+            }
+            return false;
+        }
+        for (int i = 0; i < shape.poly.Count; i++)
+        {
+            if (!PointInPoly(shape.poly[i], FloorOutline))
+                return true;
+        }
+        for (int i = 0; i < shape.poly.Count; i++)
+        {
+            Vector2 a = shape.poly[i];
+            Vector2 b = shape.poly[(i + 1) % shape.poly.Count];
+            for (int k = 0; k < FloorOutline.Length; k++)
+            {
+                if (ProperCross(a, b, FloorOutline[k], FloorOutline[(k + 1) % FloorOutline.Length]))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    static bool Overlaps(Footprint a, Footprint b)
+    {
+        if (a.circle && b.circle)
+            return Vector2.Distance(a.center, b.center) < a.radius + b.radius - TouchEpsilon;
+        if (a.circle)
+            return CircleHitsPoly(a.center, a.radius, b.poly);
+        if (b.circle)
+            return CircleHitsPoly(b.center, b.radius, a.poly);
+        return PolysOverlap(a.poly, b.poly);
+    }
+
+    static bool CircleHitsPoly(Vector2 center, float radius, List<Vector2> poly)
+    {
+        if (PointInPoly(center, poly))
+            return true;
+        for (int i = 0; i < poly.Count; i++)
+        {
+            if (DistanceToSegment(center, poly[i], poly[(i + 1) % poly.Count]) < radius - TouchEpsilon)
                 return true;
         }
         return false;
     }
 
-    static string DescribeResolution()
+    static bool PolysOverlap(List<Vector2> a, List<Vector2> b)
     {
-        var moves = new List<string>();
-        for (int i = 0; i < BodyList.Count; i++)
+        for (int i = 0; i < a.Count; i++)
         {
-            Body body = BodyList[i];
-            if (body.moved > 0.05f)
-                moves.Add(body.name + " " + body.moved.ToString("0.0", CultureInfo.InvariantCulture) + "m");
-        }
-
-        var pairs = new List<string>();
-        for (int i = 0; i < Solids.Count; i++)
-        {
-            for (int j = i + 1; j < Solids.Count; j++)
+            Vector2 a0 = a[i];
+            Vector2 a1 = a[(i + 1) % a.Count];
+            for (int j = 0; j < b.Count; j++)
             {
-                Footprint a = Solids[i];
-                Footprint b = Solids[j];
-                if ((a.name == "정문 에스컬레이터" && b.name == "게이트 홀")
-                    || (a.name == "게이트 홀" && b.name == "정문 에스컬레이터"))
-                    continue;
-                if (Mathf.Abs(a.x - b.x) < (a.sx + b.sx) * 0.5f - 0.05f
-                    && Mathf.Abs(a.z - b.z) < (a.sz + b.sz) * 0.5f - 0.05f)
-                    pairs.Add(a.name + "↔" + b.name);
+                if (ProperCross(a0, a1, b[j], b[(j + 1) % b.Count]))
+                    return true;
             }
         }
+        for (int i = 0; i < a.Count; i++)
+        {
+            if (StrictlyInside(a[i], b))
+                return true;
+        }
+        for (int i = 0; i < b.Count; i++)
+        {
+            if (StrictlyInside(b[i], a))
+                return true;
+        }
+        return false;
+    }
 
-        string moveText = moves.Count == 0
-            ? "이동한 구조물 없음."
-            : "이동: " + string.Join(", ", moves) + ".";
-        string leftText = pairs.Count == 0
-            ? "해결 못 한 겹침 없음."
-            : "해결 못 한 겹침: " + string.Join(", ", pairs) + ".";
-        return moveText + " " + leftText;
+    static bool StrictlyInside(Vector2 point, List<Vector2> poly)
+    {
+        if (!PointInPoly(point, poly))
+            return false;
+        float best = float.MaxValue;
+        for (int i = 0; i < poly.Count; i++)
+            best = Mathf.Min(best, DistanceToSegment(point, poly[i], poly[(i + 1) % poly.Count]));
+        return best > TouchEpsilon;
+    }
+
+    static Footprint MakeFootprint(Place place)
+    {
+        var footprint = new Footprint { id = place.id, center = new Vector2(place.x, place.z) };
+        if (place.shape == Shape.Circle)
+        {
+            footprint.circle = true;
+            footprint.radius = place.w * 0.5f;
+        }
+        else
+        {
+            footprint.poly = WorldPoly(place);
+        }
+        return footprint;
+    }
+
+    static List<Vector2> WorldPoly(Place place)
+    {
+        float rad = -place.rot * Mathf.Deg2Rad;
+        float cos = Mathf.Cos(rad);
+        float sin = Mathf.Sin(rad);
+        if (place.shape == Shape.Poly && place.points != null)
+        {
+            var list = new List<Vector2>(place.points.Length);
+            for (int i = 0; i < place.points.Length; i++)
+            {
+                Vector2 local = place.points[i];
+                float x = local.x * cos + local.y * sin;
+                float z = -local.x * sin + local.y * cos;
+                list.Add(new Vector2(place.x + x, place.z + z));
+            }
+            return list;
+        }
+        return RectPoly(place.x, place.z, place.w, place.d);
+    }
+
+    static List<Vector2> RectPoly(float cx, float cz, float w, float d)
+    {
+        float hx = w * 0.5f;
+        float hz = d * 0.5f;
+        return new List<Vector2>
+        {
+            new Vector2(cx - hx, cz - hz),
+            new Vector2(cx + hx, cz - hz),
+            new Vector2(cx + hx, cz + hz),
+            new Vector2(cx - hx, cz + hz),
+        };
+    }
+
+    static Place FindPlace(string id)
+    {
+        for (int i = 0; i < Places.Length; i++)
+        {
+            if (Places[i].id == id)
+                return Places[i];
+        }
+        throw new InvalidOperationException("배치를 찾지 못했습니다: " + id);
+    }
+
+    static string CaptionOf(Place place)
+    {
+        if (string.IsNullOrEmpty(place.title) || place.title == place.id)
+            return place.id;
+        return place.id + " | " + place.title;
+    }
+
+    static Material SlotMaterial(Slot slot, Mats mats)
+    {
+        switch (slot)
+        {
+            case Slot.Food: return mats.food;
+            case Slot.Shop: return mats.shop;
+            case Slot.Dark: return mats.dark;
+            default: return mats.ride;
+        }
+    }
+
+    static Color LabelColor(Slot slot)
+    {
+        switch (slot)
+        {
+            case Slot.Food: return LabelFood;
+            case Slot.Shop: return LabelShop;
+            case Slot.Dark: return LabelDark;
+            default: return LabelRide;
+        }
     }
 
     static void ReplaceOldRoot(GameObject fresh)
@@ -940,20 +901,18 @@ public static class LotteWorldBlockoutGenerator
         Scene active = SceneManager.GetActiveScene();
         if (string.IsNullOrEmpty(active.path))
             EditorSceneManager.SaveScene(active, ScenePath);
-        FrameNewSceneCamera();
         return true;
     }
 
     static void FrameNewSceneCamera()
     {
         Camera cam = Camera.main;
-        if (cam != null)
-        {
-            Vector3 target = new Vector3(FloorCenterX, 1f, FloorCenterZ);
-            cam.transform.position = new Vector3(FloorCenterX, 14f, FloorCenterZ - 49f);
-            cam.transform.rotation = Quaternion.LookRotation(target - cam.transform.position, Vector3.up);
-            cam.farClipPlane = 600f;
-        }
+        if (cam == null)
+            return;
+        Vector3 target = new Vector3(FloorCenterX, 1f, FloorCenterZ);
+        cam.transform.position = new Vector3(FloorCenterX, 40f, FloorCenterZ - 80f);
+        cam.transform.rotation = Quaternion.LookRotation(target - cam.transform.position, Vector3.up);
+        cam.farClipPlane = 800f;
     }
 
     static void FrameView()
@@ -962,616 +921,48 @@ public static class LotteWorldBlockoutGenerator
         if (view == null)
             return;
         view.Frame(new Bounds(
-            new Vector3(FloorCenterX, DomeY * 0.35f, FloorCenterZ),
-            new Vector3(FloorWidth * 0.92f, DomeY + 8f, FloorDepth * 0.92f)), false);
+            new Vector3(FloorCenterX, DomeY * 0.25f, FloorCenterZ),
+            new Vector3(FloorWidth, DomeY + 8f, FloorDepth)), false);
         view.Repaint();
     }
 
-    static int BuildFloor(Transform parent, Mats mats)
+    static Transform FindNamed(string objectName)
     {
-        Transform group = CreateGroup(parent, "Floor", StaticMode.Walkable);
-        bool[,] solid = MakeGrid(out float originX, out float originZ, out float cellX, out float cellZ, out int nx, out int nz);
-        Stadium stadium = VoidShape;
-        for (int z = 0; z < nz; z++)
+        Scene scene = SceneManager.GetActiveScene();
+        GameObject[] roots = scene.GetRootGameObjects();
+        for (int i = 0; i < roots.Length; i++)
         {
-            for (int x = 0; x < nx; x++)
+            Transform[] all = roots[i].GetComponentsInChildren<Transform>(true);
+            for (int j = 0; j < all.Length; j++)
             {
-                CellCenter(originX, originZ, cellX, cellZ, x, z, out float cx, out float cz);
-                solid[x, z] = !InStadium(cx, cz, stadium)
-                    && !InFlumeChannel(cx, cz)
-                    && !InEscalatorSlot(cx, cz);
+                if (all[j].name == objectName)
+                    return all[j];
             }
         }
-        float centerY = FloorY - FloorThickness * 0.5f;
-        return EmitGrid(group, "Floor_", originX, originZ, cellX, cellZ, solid, centerY, FloorThickness, mats.gray, StaticMode.Walkable);
+        return null;
     }
 
-    static void BuildVoidEdge(Transform parent, Mats mats)
+    static Transform FindChild(Transform root, string objectName)
     {
-        Transform shaft = CreateGroup(parent, "VoidShaft", StaticMode.Walkable);
-        Transform railing = CreateGroup(parent, "VoidRailing", StaticMode.Walkable);
-        float floorBottom = FloorY - FloorThickness;
-        float shaftTop = floorBottom + 0.06f;
-        float shaftBottom = B1Y - 0.02f;
-        float shaftHeight = shaftTop - shaftBottom;
-        float shaftY = (shaftTop + shaftBottom) * 0.5f;
-        float shaftBias = ShaftOuterBias - ShaftThickness * 0.5f;
-        List<Vector2> shaftLine = SampleStadium(VoidShape, shaftBias, 18, 10);
-        int index = 0;
-        EmitRibbon(shaft, "VoidShaft_", shaftLine, true, ShaftThickness, shaftHeight, shaftY, mats.gray, StaticMode.Walkable, null, ref index);
-
-        float railY = FloorY + RailingHeight * 0.5f - 0.02f;
-        float railBias = RailingInnerBias + RailingThickness * 0.5f;
-        List<Vector2> railLine = SampleStadium(VoidShape, railBias, 18, 10);
-        index = 0;
-        EmitRibbon(railing, "VoidRailing_", railLine, true, RailingThickness, RailingHeight, railY, mats.rail, StaticMode.Walkable, null, ref index);
-    }
-
-    static void BuildParade(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "ParadeLoop", StaticMode.Walkable);
-        float y = FloorY + ParadeLift - ParadeThickness * 0.5f;
-        List<Vector2> loop = SampleStadium(VoidShape, ParadeClearance, 20, 12);
-        int index = 0;
-        EmitRibbon(group, "Parade_", loop, true, ParadeWidth, ParadeThickness, y, mats.path, StaticMode.Walkable, ParadeHitsStage, ref index);
-
-        List<Vector2> branch = GardenBranch(loop);
-        Transform branchGroup = CreateGroup(parent, "GardenStageParade", StaticMode.Walkable);
-        EmitRibbon(branchGroup, "GardenParade_", branch, false, ParadeWidth, ParadeThickness, y, mats.path, StaticMode.Walkable, null, ref index);
-
-        Waypoints.Clear();
-        int start = ClosestIndex(loop, Map(400f, 310f));
-        for (int i = 0; i < ParadeWaypointCount; i++)
+        Transform[] all = root.GetComponentsInChildren<Transform>(true);
+        for (int i = 0; i < all.Length; i++)
         {
-            int idx = (start + i * loop.Count / ParadeWaypointCount) % loop.Count;
-            Waypoints.Add(loop[idx]);
+            if (all[i].name == objectName)
+                return all[i];
         }
-        for (int i = 1; i < branch.Count; i++)
-            Waypoints.Add(branch[i]);
+        return null;
     }
 
-    static bool ParadeHitsStage(Vector2 mid)
+    static bool IsUnderNamed(Transform t, string objectName)
     {
-        Place stage = FindPlace("GardenStage");
-        Placed(stage, out float x, out float z, out float sx, out float sz);
-        return InRect(mid.x, mid.y, x, z, sx + 1f, sz + 1f);
-    }
-
-    // 보이드 왼쪽 위 (400, 310)에서 출발해 (300, 420), (175, 575)를 지나
-    // 가든스테이지 서쪽을 빠져 남쪽을 돌아 큰 순환로로 돌아온다.
-    static List<Vector2> GardenBranch(List<Vector2> loop)
-    {
-        Place stage = FindPlace("GardenStage");
-        Placed(stage, out float cx, out float cz, out float sx, out float sz);
-        Vector2 north = Map(300f, 420f);
-        Vector2 southWest = Map(175f, 575f);
-        float clear = ParadeWidth * 0.5f;
-        Vector2 westGate = new Vector2(cx - sx * 0.5f - clear, north.y);
-        Vector2 pastSouth = new Vector2(cx + sx * 0.5f + clear, southWest.y);
-        int start = ClosestIndex(loop, Map(400f, 310f));
-        int end = ClosestIndex(loop, pastSouth);
-        return new List<Vector2>
+        Transform cursor = t.parent;
+        while (cursor != null)
         {
-            loop[start],
-            north,
-            westGate,
-            southWest,
-            pastSouth,
-            loop[end],
-        };
-    }
-
-    static void BuildPlaces(Transform floor1, Transform blocked, Mats mats)
-    {
-        Transform food = CreateGroup(floor1, "Restaurants", StaticMode.Walkable);
-        Transform shops = CreateGroup(floor1, "GiftShops", StaticMode.Walkable);
-        for (int i = 0; i < Places.Length; i++)
-        {
-            Place place = Places[i];
-            Transform parent = floor1;
-            if (place.slot == Slot.Food)
-                parent = food;
-            else if (place.slot == Slot.Shop)
-                parent = shops;
-            else if (place.slot == Slot.Dark)
-                parent = blocked;
-            Material mat = SlotMaterial(place.slot, mats);
-            switch (place.kind)
-            {
-                case PlaceKind.Ship:
-                    BuildShip(parent, place, mat);
-                    break;
-                case PlaceKind.Flume:
-                    BuildFlume(parent, place, mat);
-                    break;
-                case PlaceKind.Carousel:
-                    BuildCarousel(parent, place, mat);
-                    break;
-                case PlaceKind.Stage:
-                    BuildStage(parent, place, mat);
-                    break;
-                case PlaceKind.Ellipse:
-                    BuildEllipseRide(parent, place, mat);
-                    break;
-                default:
-                    Placed(place, out float x, out float z, out float sx, out float sz);
-                    AddLabel(CreateStandingBox(parent, place.name, x, z, sx, place.height, sz, mat, StaticMode.Walkable));
-                    break;
-            }
-        }
-    }
-
-    static void BuildStage(Transform parent, Place place, Material mat)
-    {
-        Transform group = CreateGroup(parent, place.name, StaticMode.Walkable);
-        AddLabel(group.gameObject);
-        Placed(place, out float x, out float z, out float sx, out float sz);
-        CreateStandingBox(group, "Platform", x, z, sx, StageHeight, sz, mat, StaticMode.Walkable);
-        float wallX = x + StageBackSign * sx * 0.5f;
-        CreateStandingBox(group, "BackWall", wallX, z, StageBackThickness, StageBackHeight, sz, mat, StaticMode.Walkable);
-    }
-
-    static void BuildShip(Transform parent, Place place, Material mat)
-    {
-        Transform group = CreateGroup(parent, place.name, StaticMode.Walkable);
-        AddLabel(group.gameObject);
-        Placed(place, out float x, out float z, out float sx, out float sz);
-        CreateStandingBox(group, "Base", x, z, sx, 0.4f, sz, mat, StaticMode.Walkable);
-        float supportH = place.height;
-        float offset = sz * 0.28f;
-        CreateStandingBox(group, "Support_N", x, z + offset, sx * 0.55f, supportH, ShipSupportThickness, mat, StaticMode.Walkable);
-        CreateStandingBox(group, "Support_S", x, z - offset, sx * 0.55f, supportH, ShipSupportThickness, mat, StaticMode.Walkable);
-        // 선체는 수평으로 정지. 회전하지 않는다.
-        CreateBox(group, "Hull", new Vector3(x, FloorY + supportH, z),
-            new Vector3(sx * 0.72f, ShipHullHeight, sz * 0.42f), Quaternion.identity, mat, StaticMode.Walkable);
-    }
-
-    static void BuildFlume(Transform parent, Place place, Material mat)
-    {
-        Transform group = CreateGroup(parent, place.name, StaticMode.Walkable);
-        AddLabel(group.gameObject);
-        Placed(place, out float x, out float z, out float sx, out float sz);
-        float side = (sz - FlumeChannelWidth) * 0.5f;
-        if (side > 0.3f)
-        {
-            float north = z + FlumeChannelWidth * 0.5f + side * 0.5f;
-            float south = z - FlumeChannelWidth * 0.5f - side * 0.5f;
-            CreateStandingBox(group, "Shell_N", x, north, sx, place.height, side, mat, StaticMode.Walkable);
-            CreateStandingBox(group, "Shell_S", x, south, sx, place.height, side, mat, StaticMode.Walkable);
-        }
-        float channelTop = FloorY - FlumeChannelDrop;
-        float thick = 0.35f;
-        CreateBox(group, "Channel", new Vector3(x, channelTop - thick * 0.5f, z),
-            new Vector3(sx, thick, FlumeChannelWidth), Quaternion.identity, mat, StaticMode.Walkable);
-    }
-
-    static void BuildCarousel(Transform parent, Place place, Material mat)
-    {
-        Transform group = CreateGroup(parent, place.name, StaticMode.Walkable);
-        AddLabel(group.gameObject);
-        Placed(place, out float x, out float z, out float sx, out float sz);
-        float rx = sx * 0.5f;
-        float rz = sz * 0.5f;
-        CreateCylinder(group, "Disc", new Vector3(x, FloorY + 0.2f, z), rx, rz, 0.4f, Quaternion.identity, mat, StaticMode.Walkable);
-        CreateCylinder(group, "Pole", new Vector3(x, FloorY + 5.7f, z), 0.45f, 0.45f, 10.6f, Quaternion.identity, mat, StaticMode.Walkable);
-        float roofThick = 2f;
-        float roofCenter = place.height - roofThick * 0.5f;
-        CreateCylinder(group, "Roof", new Vector3(x, FloorY + roofCenter, z), rx * 1.08f, rz * 1.08f, roofThick, Quaternion.identity, mat, StaticMode.Walkable);
-    }
-
-    static void BuildEllipseRide(Transform parent, Place place, Material mat)
-    {
-        Transform group = CreateGroup(parent, place.name, StaticMode.Walkable);
-        AddLabel(group.gameObject);
-        Placed(place, out float x, out float z, out float sx, out float sz);
-        CreateCylinder(group, "Disc", new Vector3(x, FloorY + 0.2f, z), sx * 0.5f, sz * 0.5f, 0.4f, Quaternion.identity, mat, StaticMode.Walkable);
-        CreateCylinder(group, "Hub", new Vector3(x, FloorY + place.height * 0.5f, z), 1.3f, 1.3f, place.height, Quaternion.identity, mat, StaticMode.Walkable);
-    }
-
-    static void BuildPlaza(Transform parent, Mats mats)
-    {
-        AddLabel(CreateBox(parent, "MeetingPlaza", new Vector3(PlayerSpawnX, FloorY + 0.03f, PlayerSpawnZ),
-            new Vector3(PlazaSizeX, 0.04f, PlazaSizeZ), Quaternion.identity, mats.gray, StaticMode.Walkable));
-    }
-
-    static void BuildOuterWalls(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "OuterWalls", StaticMode.Walkable);
-        FloorBounds(out float minX, out float maxX, out float minZ, out float maxZ);
-        float top = FloorY + WallHeight;
-        float bottom = FloorY - GroundSink;
-        float height = top - bottom;
-        float y = (bottom + top) * 0.5f;
-        float t = WallThickness;
-        float embed = 0.05f;
-        float northZ = maxZ + t * 0.5f - embed;
-        float southZ = minZ - t * 0.5f + embed;
-        float spanX0 = minX - t;
-        float spanX1 = maxX + t;
-        CreateBox(group, "Wall_North", new Vector3((spanX0 + spanX1) * 0.5f, y, northZ),
-            new Vector3(spanX1 - spanX0, height, t), Quaternion.identity, mats.gray, StaticMode.Walkable);
-
-        float gap0 = EscTopX - EscWidth * 0.5f - 0.5f;
-        float gap1 = EscTopX + EscWidth * 0.5f + 0.5f;
-        CreateBox(group, "Wall_South_W", new Vector3((spanX0 + gap0) * 0.5f, y, southZ),
-            new Vector3(gap0 - spanX0, height, t), Quaternion.identity, mats.gray, StaticMode.Walkable);
-        CreateBox(group, "Wall_South_E", new Vector3((gap1 + spanX1) * 0.5f, y, southZ),
-            new Vector3(spanX1 - gap1, height, t), Quaternion.identity, mats.gray, StaticMode.Walkable);
-
-        float westX = minX - t * 0.5f + embed;
-        float eastX = maxX + t * 0.5f - embed;
-        CreateBox(group, "Wall_West", new Vector3(westX, y, (minZ + maxZ) * 0.5f),
-            new Vector3(t, height, maxZ - minZ), Quaternion.identity, mats.gray, StaticMode.Walkable);
-        CreateBox(group, "Wall_East", new Vector3(eastX, y, (minZ + maxZ) * 0.5f),
-            new Vector3(t, height, maxZ - minZ), Quaternion.identity, mats.gray, StaticMode.Walkable);
-    }
-
-    static void BuildEscape(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "Escape", StaticMode.Walkable);
-        Vector3 p0 = new Vector3(EscTopX, FloorY, EscTopZ);
-        Vector3 p1 = new Vector3(EscTopX, B1Y, EscTopZ - EscRun);
-        Vector3 delta = p1 - p0;
-        float length = delta.magnitude;
-        Vector3 forward = delta / length;
-        Vector3 up = Vector3.Cross(Vector3.right, forward);
-        if (up.sqrMagnitude < 0.0001f)
-            up = Vector3.up;
-        up.Normalize();
-        if (up.y < 0f)
-            up = -up;
-
-        Vector3 walkCenter = (p0 + p1) * 0.5f;
-        Vector3 boxCenter = walkCenter - up * (EscThickness * 0.5f);
-        CreateBox(group, "EscapeRamp", boxCenter, new Vector3(EscWidth, EscThickness, length),
-            Quaternion.LookRotation(forward, up), mats.red, StaticMode.Walkable);
-
-        FloorBounds(out _, out _, out float minZ, out _);
-        float curbZ1 = Mathf.Min(EscTopZ, minZ);
-        float curbLen = EscTopZ - curbZ1;
-        if (curbLen > 0.2f)
-        {
-            float curbY = FloorY + RailingHeight * 0.5f - GroundSink * 0.5f;
-            float curbH = RailingHeight + GroundSink;
-            float curbT = 0.25f;
-            float z = (EscTopZ + curbZ1) * 0.5f;
-            float left = EscTopX - EscWidth * 0.5f - curbT * 0.5f;
-            float right = EscTopX + EscWidth * 0.5f + curbT * 0.5f;
-            CreateBox(group, "EscapeCurb_L", new Vector3(left, curbY, z),
-                new Vector3(curbT, curbH, curbLen), Quaternion.identity, mats.rail, StaticMode.Walkable);
-            CreateBox(group, "EscapeCurb_R", new Vector3(right, curbY, z),
-                new Vector3(curbT, curbH, curbLen), Quaternion.identity, mats.rail, StaticMode.Walkable);
-        }
-
-        float shutterT = 0.35f;
-        float shutterZ = EscTopZ + shutterT * 0.5f + 0.08f;
-        CreateStandingBox(group, "EscapeShutter", EscTopX, shutterZ, EscWidth + 0.8f, EscShutterHeight, shutterT, mats.red, StaticMode.None, true);
-    }
-
-    static void BuildBlocked(Transform parent, Mats mats)
-    {
-        for (int i = 0; i < Shutters.Length; i++)
-        {
-            ShutterPx shutter = Shutters[i];
-            Body body = Bodies[shutter.name];
-            AddLabel(CreateStandingBox(parent, shutter.name, body.x, body.z,
-                body.sx, ShutterHeight, body.sz, mats.dark, StaticMode.Walkable));
-        }
-    }
-
-    static int BuildB1(Transform parent, Mats mats)
-    {
-        Transform ice = CreateGroup(parent, "IceRink", StaticMode.Walkable);
-        bool[,] solid = MakeGrid(out float originX, out float originZ, out float cellX, out float cellZ, out int nx, out int nz);
-        Stadium stadium = VoidShape;
-        for (int z = 0; z < nz; z++)
-        {
-            for (int x = 0; x < nx; x++)
-            {
-                CellCenter(originX, originZ, cellX, cellZ, x, z, out float cx, out float cz);
-                solid[x, z] = InStadium(cx, cz, stadium);
-            }
-        }
-        int tiles = EmitGrid(ice, "Ice_", originX, originZ, cellX, cellZ, solid, B1Y - IceThickness * 0.5f, IceThickness, mats.ice, StaticMode.Walkable);
-
-        Transform gyro = CreateGroup(parent, "Gyroscope", StaticMode.Walkable);
-        CreateCylinder(gyro, "Gyroscope_Column", new Vector3(0f, B1Y + GyroHeight * 0.5f, 0f),
-            GyroRadius, GyroRadius, GyroHeight, Quaternion.identity, mats.gray, StaticMode.Walkable);
-        float ringY = B1Y + GyroRingRadius;
-        CreateCylinder(gyro, "Gyroscope_Ring", new Vector3(0f, ringY, 0f),
-            GyroRingRadius, GyroRingRadius, GyroRingThickness, Quaternion.Euler(0f, 0f, 90f), mats.gray, StaticMode.Walkable);
-
-        BuildGateHall(parent, mats);
-        return tiles;
-    }
-
-    static void BuildGateHall(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "GateHall", StaticMode.Walkable);
-        float rampEndZ = EscTopZ - EscRun;
-        float northEdge = rampEndZ + HallJoin;
-        float southEdge = rampEndZ - HallSizeZ;
-        float sizeZ = northEdge - southEdge;
-        float centerZ = (northEdge + southEdge) * 0.5f;
-        float floorThick = 0.4f;
-        CreateBox(group, "GateHall_Floor", new Vector3(EscTopX, B1Y - floorThick * 0.5f, centerZ),
-            new Vector3(HallSizeX, floorThick, sizeZ), Quaternion.identity, mats.gray, StaticMode.Walkable);
-
-        float wallH = HallWallHeight + GroundSink;
-        float wallY = B1Y - GroundSink + wallH * 0.5f;
-        float t = HallWallThickness;
-        float halfX = HallSizeX * 0.5f;
-        AddWallRunX(group, "GateHall_Wall_N", EscTopX, rampEndZ, HallSizeX, wallH, wallY, t, EscWidth + 0.4f, mats.gray);
-        AddWallRunX(group, "GateHall_Wall_S", EscTopX, southEdge, HallSizeX, wallH, wallY, t, GateWidth, mats.gray);
-        CreateBox(group, "GateHall_Wall_W", new Vector3(EscTopX - halfX, wallY, centerZ),
-            new Vector3(t, wallH, sizeZ), Quaternion.identity, mats.gray, StaticMode.Walkable);
-        CreateBox(group, "GateHall_Wall_E", new Vector3(EscTopX + halfX, wallY, centerZ),
-            new Vector3(t, wallH, sizeZ), Quaternion.identity, mats.gray, StaticMode.Walkable);
-        CreateBox(group, "MainGate", new Vector3(EscTopX, B1Y + GateHeight * 0.5f, southEdge),
-            new Vector3(GateWidth, GateHeight, t), Quaternion.identity, mats.red, StaticMode.None, true, true);
-    }
-
-    static void AddWallRunX(Transform parent, string name, float centerX, float z, float length, float height, float y, float thickness, float gap, Material mat)
-    {
-        float minX = centerX - length * 0.5f;
-        float maxX = centerX + length * 0.5f;
-        float gap0 = centerX - gap * 0.5f;
-        float gap1 = centerX + gap * 0.5f;
-        if (gap0 - minX > 0.05f)
-        {
-            CreateBox(parent, name + "_W", new Vector3((minX + gap0) * 0.5f, y, z),
-                new Vector3(gap0 - minX, height, thickness), Quaternion.identity, mat, StaticMode.Walkable);
-        }
-        if (maxX - gap1 > 0.05f)
-        {
-            CreateBox(parent, name + "_E", new Vector3((gap1 + maxX) * 0.5f, y, z),
-                new Vector3(maxX - gap1, height, thickness), Quaternion.identity, mat, StaticMode.Walkable);
-        }
-    }
-
-    static void BuildBackground(Transform parent, Mats mats)
-    {
-        BuildBalcony(parent, "Balcony2F", Balcony2Y, mats);
-        BuildBalcony(parent, "Balcony3F", Balcony3Y, mats);
-        BuildFrenchRevolution(parent, mats);
-        BuildBalloons(parent, mats);
-        CreateBox(parent, "GlassDome", new Vector3(FloorCenterX, DomeY, FloorCenterZ),
-            new Vector3(FloorWidth + DomeMargin * 2f, DomeThickness, FloorDepth + DomeMargin * 2f),
-            Quaternion.identity, mats.gray, StaticMode.Background, false, false);
-    }
-
-    static void BuildBalcony(Transform parent, string name, float levelY, Mats mats)
-    {
-        Transform group = CreateGroup(parent, name, StaticMode.Background);
-        bool[,] solid = MakeGrid(out float originX, out float originZ, out float cellX, out float cellZ, out int nx, out int nz);
-        float innerW = FloorWidth - BalconyWidth * 2f;
-        float innerD = FloorDepth - BalconyWidth * 2f;
-        float slabMin = levelY - BalconyThickness;
-        float slabMax = levelY;
-        for (int z = 0; z < nz; z++)
-        {
-            for (int x = 0; x < nx; x++)
-            {
-                CellCenter(originX, originZ, cellX, cellZ, x, z, out float cx, out float cz);
-                bool ring = !InRect(cx, cz, FloorCenterX, FloorCenterZ, innerW, innerD);
-                solid[x, z] = ring && !BlocksBalcony(cx, cz, slabMin, slabMax) && !FrenchRailCutsSlab(cx, cz, slabMin, slabMax);
-            }
-        }
-        EmitGrid(group, name + "_", originX, originZ, cellX, cellZ, solid, levelY - BalconyThickness * 0.5f, BalconyThickness, mats.gray, StaticMode.Background);
-
-        FloorBounds(out float minX, out float maxX, out float minZ, out float maxZ);
-        float innerMinX = minX + BalconyWidth;
-        float innerMaxX = maxX - BalconyWidth;
-        float innerMinZ = minZ + BalconyWidth;
-        float innerMaxZ = maxZ - BalconyWidth;
-        float railY = levelY + BalconyRailHeight * 0.5f - 0.02f;
-        EmitEdgeRail(group, name + "_Rail_N", Edge.North, true, innerMaxZ, minX, maxX, railY, slabMin, levelY + BalconyRailHeight, mats);
-        EmitEdgeRail(group, name + "_Rail_S", Edge.South, true, innerMinZ, minX, maxX, railY, slabMin, levelY + BalconyRailHeight, mats);
-        EmitEdgeRail(group, name + "_Rail_W", Edge.West, false, innerMinX, innerMinZ, innerMaxZ, railY, slabMin, levelY + BalconyRailHeight, mats);
-        EmitEdgeRail(group, name + "_Rail_E", Edge.East, false, innerMaxX, innerMinZ, innerMaxZ, railY, slabMin, levelY + BalconyRailHeight, mats);
-
-        for (int i = 0; i < StairBlocks.Length; i++)
-        {
-            BarrierSpec spec = StairBlocks[i];
-            BalconyPoint(spec.edge, spec.along, out float x, out float z);
-            if (BlocksBalcony(x, z, slabMin, levelY + 1f))
-                continue;
-            Vector3 size = spec.edge == Edge.North || spec.edge == Edge.South
-                ? new Vector3(StairBlockWidth, StairBlockHeight, BalconyWidth)
-                : new Vector3(BalconyWidth, StairBlockHeight, StairBlockWidth);
-            CreateBox(group, name + "_StairBlock_" + spec.name, new Vector3(x, levelY + StairBlockHeight * 0.5f - 0.02f, z),
-                size, Quaternion.identity, mats.dark, StaticMode.Background);
-        }
-    }
-
-    static void BuildMarkers(Transform parent)
-    {
-        CreateMarker(parent, "PlayerSpawn", PlayerSpawnX, PlayerSpawnZ);
-        for (int i = 0; i < Waypoints.Count; i++)
-            CreateMarker(parent, "ParadeWaypoint_" + i.ToString("00"), Waypoints[i].x, Waypoints[i].y);
-
-        Place stage = FindPlace("GardenStage");
-        Place ship = FindPlace("A07_스페인해적선");
-        Place sinbad = FindPlace("A06_신밧드의모험");
-        Place castle = FindPlace("A12_플라이벤처");
-        Place kids = FindPlace("A15_키즈토리아");
-        Place flume = FindPlace("A08_후룸라이드");
-        Place carousel = FindPlace("A13_회전목마");
-        HideBeside(parent, "HideSpot_01", stage, StageBackSign, 0f);
-        HideBeside(parent, "HideSpot_02", ship, -1f, 0f);
-        HideBeside(parent, "HideSpot_03", ship, 1f, 0f);
-        HideBeside(parent, "HideSpot_04", sinbad, 0f, 1f);
-        HideBeside(parent, "HideSpot_05", castle, 1f, 0f);
-        HideBeside(parent, "HideSpot_06", kids, 0f, 1f);
-        HideBeside(parent, "HideSpot_07", flume, 0f, -1f);
-        HideBeside(parent, "HideSpot_08", carousel, 1f, 0f);
-    }
-
-    static void HideBeside(Transform parent, string name, Place place, float signX, float signZ)
-    {
-        Placed(place, out float cx, out float cz, out float sx, out float sz);
-        float x = cx + signX * (sx * 0.5f + 1.2f);
-        float z = cz + signZ * (sz * 0.5f + 1.2f);
-        CreateMarker(parent, name, x, z);
-    }
-
-    static bool BlocksBalcony(float x, float z, float y0, float y1)
-    {
-        float pad = BalconyCutPadding;
-        for (int i = 0; i < Places.Length; i++)
-        {
-            Place place = Places[i];
-            float top = place.kind == PlaceKind.Ship ? place.height + ShipHullHeight * 0.5f : place.height;
-            if (place.kind == PlaceKind.Stage)
-                top = StageBackHeight;
-            if (!Band(y0, y1, FloorY, FloorY + top))
-                continue;
-
-            Placed(place, out float cx, out float cz, out float sx, out float sz);
-            if (place.kind == PlaceKind.Stage)
-            {
-                if (InRect(x, z, cx + StageBackSign * sx * 0.5f, cz, StageBackThickness + pad, sz + pad))
-                    return true;
-                continue;
-            }
-            if (place.kind == PlaceKind.Ellipse || place.kind == PlaceKind.Carousel)
-            {
-                if (InEllipse(x, z, cx, cz, sx * 0.5f + pad, sz * 0.5f + pad))
-                    return true;
-            }
-            else if (InRect(x, z, cx, cz, sx + pad, sz + pad))
-            {
+            if (cursor.name == objectName)
                 return true;
-            }
+            cursor = cursor.parent;
         }
         return false;
-    }
-
-    static bool Band(float a0, float a1, float b0, float b1) => a0 < b1 && b0 < a1;
-
-    static void BuildFrenchRevolution(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "FrenchRevolution", StaticMode.Background);
-        Vector2 a = Map(780f, 40f);
-        Vector2 b = Map(1000f, 250f);
-        Vector2 c = Map(960f, 450f);
-        float len0 = Vector2.Distance(a, b);
-        float len1 = Vector2.Distance(b, c);
-        float total = Mathf.Max(0.01f, len0 + len1);
-        int index = 0;
-        index = EmitFrenchSpan(group, a, b, 0f, len0, total, mats, index);
-        EmitFrenchSpan(group, b, c, len0, len1, total, mats, index);
-        BuildFrenchLoop(group, b, (b - a).normalized, mats);
-    }
-
-    static int EmitFrenchSpan(Transform parent, Vector2 from, Vector2 to, float along0, float length, float total, Mats mats, int index)
-    {
-        if (length < 0.2f)
-            return index;
-        Vector2 dir = (to - from) / length;
-        float yaw = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
-        int steps = Mathf.Max(1, Mathf.CeilToInt(length / FrenchRailStep));
-        float step = length / steps;
-        for (int i = 0; i < steps; i++)
-        {
-            float along = along0 + (i + 0.5f) * step;
-            float u = Mathf.Clamp01(along / total);
-            float y = FrenchRailMinY + (FrenchRailMaxY - FrenchRailMinY) * Mathf.Sin(Mathf.PI * u);
-            Vector2 p = from + dir * ((i + 0.5f) * step);
-            CreateBox(parent, "FrenchRail_" + index.ToString("00"), new Vector3(p.x, y, p.y),
-                new Vector3(FrenchRailWidth, FrenchRailThickness, step + 0.15f), Quaternion.Euler(0f, yaw, 0f),
-                mats.gray, StaticMode.Background, true, false, false);
-            index++;
-        }
-        return index;
-    }
-
-    static void BuildFrenchLoop(Transform parent, Vector2 at, Vector2 dir, Mats mats)
-    {
-        Vector3 forward = new Vector3(dir.x, 0f, dir.y);
-        if (forward.sqrMagnitude < 0.0001f)
-            forward = Vector3.forward;
-        forward.Normalize();
-        Vector3 center = new Vector3(at.x, (FrenchRailMinY + FrenchRailMaxY) * 0.5f, at.y);
-        int steps = 16;
-        for (int i = 0; i < steps; i++)
-        {
-            float t0 = i * Mathf.PI * 2f / steps;
-            float t1 = (i + 1) * Mathf.PI * 2f / steps;
-            Vector3 p0 = FrenchLoopPoint(center, forward, t0);
-            Vector3 p1 = FrenchLoopPoint(center, forward, t1);
-            Vector3 mid = (p0 + p1) * 0.5f;
-            Vector3 tangent = p1 - p0;
-            float len = tangent.magnitude;
-            if (len < 0.05f)
-                continue;
-            CreateBox(parent, "FrenchLoop_" + i.ToString("00"), mid,
-                new Vector3(FrenchRailWidth, FrenchRailThickness, len + 0.2f),
-                Quaternion.LookRotation(tangent.normalized, Vector3.up),
-                mats.gray, StaticMode.Background, true, false, false);
-        }
-    }
-
-    static Vector3 FrenchLoopPoint(Vector3 center, Vector3 forward, float theta)
-    {
-        return center + forward * (Mathf.Cos(theta) * FrenchLoopRadius) + Vector3.up * (Mathf.Sin(theta) * FrenchLoopRadius);
-    }
-
-    static void BuildBalloons(Transform parent, Mats mats)
-    {
-        Transform group = CreateGroup(parent, "BalloonFlight", StaticMode.Background);
-        for (int i = 0; i < BalloonSpots.Length; i++)
-        {
-            Vector3 spot = BalloonSpots[i];
-            string id = (i + 1).ToString("00");
-            CreateSphere(group, "Balloon_" + id, spot, BalloonDiameter, mats.gray, StaticMode.Background);
-            float basketY = spot.y - BalloonDiameter * 0.5f - BalloonBasket * 0.5f;
-            CreateBox(group, "BalloonBasket_" + id, new Vector3(spot.x, basketY, spot.z),
-                new Vector3(BalloonBasket, BalloonBasket, BalloonBasket), Quaternion.identity,
-                mats.gray, StaticMode.Background, true, false, false);
-        }
-    }
-
-    static bool FrenchRailCutsSlab(float x, float z, float y0, float y1)
-    {
-        Vector2 a = Map(780f, 40f);
-        Vector2 b = Map(1000f, 250f);
-        Vector2 c = Map(960f, 450f);
-        float len0 = Vector2.Distance(a, b);
-        float len1 = Vector2.Distance(b, c);
-        float total = Mathf.Max(0.01f, len0 + len1);
-        if (ClosestOnSegment(x, z, a, b, out float along0, out float dist0) && dist0 <= FrenchRailWidth * 0.5f + 0.75f)
-        {
-            float y = FrenchRailMinY + (FrenchRailMaxY - FrenchRailMinY) * Mathf.Sin(Mathf.PI * Mathf.Clamp01(along0 / total));
-            if (y0 < y + 0.4f && y1 > y - 0.4f)
-                return true;
-        }
-        if (ClosestOnSegment(x, z, b, c, out float along1, out float dist1) && dist1 <= FrenchRailWidth * 0.5f + 0.75f)
-        {
-            float y = FrenchRailMinY + (FrenchRailMaxY - FrenchRailMinY) * Mathf.Sin(Mathf.PI * Mathf.Clamp01((len0 + along1) / total));
-            if (y0 < y + 0.4f && y1 > y - 0.4f)
-                return true;
-        }
-
-        float dx = x - b.x;
-        float dz = z - b.y;
-        if (dx * dx + dz * dz <= (FrenchLoopRadius + 1.2f) * (FrenchLoopRadius + 1.2f)
-            && y1 >= FrenchRailMinY && y0 <= FrenchRailMaxY)
-            return true;
-        return false;
-    }
-
-    static bool ClosestOnSegment(float x, float z, Vector2 a, Vector2 b, out float along, out float distance)
-    {
-        Vector2 v = b - a;
-        float len2 = v.sqrMagnitude;
-        float t = len2 < 0.0001f ? 0f : Mathf.Clamp01(((x - a.x) * v.x + (z - a.y) * v.y) / len2);
-        Vector2 c = a + v * t;
-        float dx = x - c.x;
-        float dz = z - c.y;
-        along = Mathf.Sqrt(len2) * t;
-        distance = Mathf.Sqrt(dx * dx + dz * dz);
-        return true;
     }
 
     static List<Vector2> SampleStadium(Stadium stadium, float outward, int capSteps, int straightSteps)
@@ -1630,9 +1021,45 @@ public static class LotteWorldBlockoutGenerator
                 continue;
             float yaw = Mathf.Atan2(dx, dz) * Mathf.Rad2Deg;
             CreateBox(parent, prefix + index.ToString("00"), new Vector3(mid.x, y, mid.y),
-                new Vector3(width, height, len + 0.12f), Quaternion.Euler(0f, yaw, 0f), mat, mode);
+                new Vector3(width, height, len + 0.08f), Quaternion.Euler(0f, yaw, 0f), mat, mode);
             index++;
         }
+    }
+
+    static List<Vector2> EvenPoints(List<Vector2> loop, int count, int startIndex)
+    {
+        int n = loop.Count;
+        var seg = new float[n];
+        float total = 0f;
+        for (int i = 0; i < n; i++)
+        {
+            seg[i] = Vector2.Distance(loop[i], loop[(i + 1) % n]);
+            total += seg[i];
+        }
+        float startDist = 0f;
+        for (int i = 0; i < startIndex; i++)
+            startDist += seg[i];
+        var result = new List<Vector2>(count);
+        for (int k = 0; k < count; k++)
+        {
+            float target = startDist + total * k / count;
+            target %= total;
+            if (target < 0f)
+                target += total;
+            float acc = 0f;
+            for (int i = 0; i < n; i++)
+            {
+                float next = acc + seg[i];
+                if (target <= next + 0.0001f || i == n - 1)
+                {
+                    float t = seg[i] < 0.0001f ? 0f : (target - acc) / seg[i];
+                    result.Add(Vector2.Lerp(loop[i], loop[(i + 1) % n], Mathf.Clamp01(t)));
+                    break;
+                }
+                acc = next;
+            }
+        }
+        return result;
     }
 
     static int ClosestIndex(List<Vector2> pts, Vector2 target)
@@ -1651,236 +1078,496 @@ public static class LotteWorldBlockoutGenerator
         return best;
     }
 
-    static bool InStadium(float x, float z, Stadium stadium)
+    static GameObject CreatePrism(Transform parent, string name, List<Vector2> outer, List<List<Vector2>> holes, float y0, float height, Material mat, StaticMode mode, bool collider, bool shadows)
     {
-        float ax = Mathf.Abs(x);
-        if (ax <= stadium.straightHalf)
-            return Mathf.Abs(z) <= stadium.radiusZ;
-        float dx = (ax - stadium.straightHalf) / stadium.radiusX;
-        float dz = z / stadium.radiusZ;
-        return dx * dx + dz * dz <= 1f;
-    }
-
-    static bool InEllipse(float x, float z, float cx, float cz, float rx, float rz)
-    {
-        float dx = (x - cx) / Mathf.Max(0.001f, rx);
-        float dz = (z - cz) / Mathf.Max(0.001f, rz);
-        return dx * dx + dz * dz <= 1f;
-    }
-
-    static bool InRect(float x, float z, float cx, float cz, float sizeX, float sizeZ)
-    {
-        return Mathf.Abs(x - cx) <= sizeX * 0.5f && Mathf.Abs(z - cz) <= sizeZ * 0.5f;
-    }
-
-    static bool InFlumeChannel(float x, float z)
-    {
-        Place flume = FindPlace("A08_후룸라이드");
-        Placed(flume, out float fx, out float fz, out float sx, out _);
-        return InRect(x, z, fx, fz, sx, FlumeChannelWidth);
-    }
-
-    static bool InEscalatorSlot(float x, float z)
-    {
-        float half = EscWidth * 0.5f;
-        return Mathf.Abs(x - EscTopX) <= half && z <= EscTopZ && z >= EscTopZ - EscRun;
-    }
-
-    static Place FindPlace(string name)
-    {
-        for (int i = 0; i < Places.Length; i++)
+        var ring = new List<Vector2>(outer);
+        RemoveDuplicates(ring);
+        EnsureWinding(ring, true);
+        var holeRings = new List<List<Vector2>>();
+        if (holes != null)
         {
-            if (Places[i].name == name)
-                return Places[i];
-        }
-        throw new InvalidOperationException("배치를 찾지 못했습니다: " + name);
-    }
-
-    static void PlaceSize(Place place, out float sx, out float sz)
-    {
-        if (place.kind == PlaceKind.Ellipse || place.kind == PlaceKind.Carousel)
-        {
-            float diameter = PxSize(place.spx);
-            sx = diameter;
-            sz = diameter;
-            return;
-        }
-        sx = PxSize(place.spx);
-        sz = PySize(place.spy);
-    }
-
-    static void Placed(Place place, out float x, out float z, out float sx, out float sz)
-    {
-        Body body = Bodies[place.name];
-        x = body.x;
-        z = body.z;
-        sx = body.sx;
-        sz = body.sz;
-    }
-
-    static Material SlotMaterial(Slot slot, Mats mats)
-    {
-        switch (slot)
-        {
-            case Slot.Food: return mats.food;
-            case Slot.Shop: return mats.shop;
-            case Slot.Dark: return mats.dark;
-            default: return mats.ride;
-        }
-    }
-
-    static bool[,] MakeGrid(out float originX, out float originZ, out float cellX, out float cellZ, out int nx, out int nz)
-    {
-        float cell = Mathf.Max(0.25f, FloorCellSize);
-        nx = Mathf.Max(1, Mathf.RoundToInt(FloorWidth / cell));
-        nz = Mathf.Max(1, Mathf.RoundToInt(FloorDepth / cell));
-        cellX = FloorWidth / nx;
-        cellZ = FloorDepth / nz;
-        FloorBounds(out originX, out _, out originZ, out _);
-        return new bool[nx, nz];
-    }
-
-    static void FloorBounds(out float minX, out float maxX, out float minZ, out float maxZ)
-    {
-        minX = FloorCenterX - FloorWidth * 0.5f;
-        maxX = FloorCenterX + FloorWidth * 0.5f;
-        minZ = FloorCenterZ - FloorDepth * 0.5f;
-        maxZ = FloorCenterZ + FloorDepth * 0.5f;
-    }
-
-    static void CellCenter(float originX, float originZ, float cellX, float cellZ, int x, int z, out float cx, out float cz)
-    {
-        cx = originX + (x + 0.5f) * cellX;
-        cz = originZ + (z + 0.5f) * cellZ;
-    }
-
-    static int EmitGrid(Transform parent, string prefix, float originX, float originZ, float cellX, float cellZ, bool[,] solid, float centerY, float thickness, Material mat, StaticMode mode)
-    {
-        int nx = solid.GetLength(0);
-        int nz = solid.GetLength(1);
-        bool[,] used = new bool[nx, nz];
-        int count = 0;
-        for (int z = 0; z < nz; z++)
-        {
-            for (int x = 0; x < nx; x++)
+            for (int i = 0; i < holes.Count; i++)
             {
-                if (!solid[x, z] || used[x, z])
+                var hole = new List<Vector2>(holes[i]);
+                RemoveDuplicates(hole);
+                hole = PullInside(hole, ring, 0.15f);
+                EnsureWinding(hole, false);
+                if (hole.Count >= 3)
+                    holeRings.Add(hole);
+            }
+            holeRings.Sort((a, b) => MaxX(b).CompareTo(MaxX(a)));
+        }
+
+        List<Vector2> merged = new List<Vector2>(ring);
+        for (int i = 0; i < holeRings.Count; i++)
+            merged = LinkHole(merged, holeRings[i]);
+        RemoveCollinear(merged);
+        List<int> tris = EarClip(merged);
+        if (tris == null || tris.Count != (merged.Count - 2) * 3)
+            throw new InvalidOperationException(name + " 다각형을 삼각분할하지 못했습니다.");
+
+        var vertices = new List<Vector3>(merged.Count * 2);
+        var uvs = new List<Vector2>(merged.Count * 2);
+        for (int i = 0; i < merged.Count; i++)
+        {
+            vertices.Add(new Vector3(merged[i].x, y0 + height, merged[i].y));
+            uvs.Add(merged[i] * 0.02f);
+        }
+        for (int i = 0; i < merged.Count; i++)
+        {
+            vertices.Add(new Vector3(merged[i].x, y0, merged[i].y));
+            uvs.Add(merged[i] * 0.02f);
+        }
+
+        var triangles = new List<int>(tris.Count * 2);
+        for (int i = 0; i < tris.Count; i += 3)
+        {
+            triangles.Add(tris[i]);
+            triangles.Add(tris[i + 2]);
+            triangles.Add(tris[i + 1]);
+        }
+        int bottom = merged.Count;
+        for (int i = 0; i < tris.Count; i += 3)
+        {
+            triangles.Add(tris[i] + bottom);
+            triangles.Add(tris[i + 1] + bottom);
+            triangles.Add(tris[i + 2] + bottom);
+        }
+
+        Vector3 probe = Vector3.Cross(vertices[triangles[1]] - vertices[triangles[0]], vertices[triangles[2]] - vertices[triangles[0]]);
+        if (probe.y < 0f)
+        {
+            for (int i = 0; i < triangles.Count; i += 3)
+            {
+                int swap = triangles[i + 1];
+                triangles[i + 1] = triangles[i + 2];
+                triangles[i + 2] = swap;
+            }
+        }
+
+        AddSideWall(vertices, uvs, triangles, ring, y0, y0 + height);
+        for (int i = 0; i < holeRings.Count; i++)
+            AddSideWall(vertices, uvs, triangles, holeRings[i], y0, y0 + height);
+
+        var mesh = new Mesh { name = name };
+        mesh.SetVertices(vertices);
+        mesh.SetUVs(0, uvs);
+        mesh.SetTriangles(triangles, 0);
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+
+        GameObject go = ProBuilderPrimitives.CreateTriangles(vertices.ToArray(), triangles.ToArray());
+        if (go == null)
+            go = CreateMeshAssetObject(name, mesh);
+        else
+            UnityEngine.Object.DestroyImmediate(mesh);
+        return FinishMeshObject(go, parent, name, mat, mode, collider, shadows);
+    }
+
+    // 외곽은 반시계, 구멍은 시계. 진행 방향의 오른쪽(바깥 / 구멍 안)을 보도록 옆면을 만든다.
+    static void AddSideWall(List<Vector3> vertices, List<Vector2> uvs, List<int> triangles, List<Vector2> ring, float y0, float y1)
+    {
+        int n = ring.Count;
+        int start = vertices.Count;
+        for (int i = 0; i < n; i++)
+        {
+            vertices.Add(new Vector3(ring[i].x, y0, ring[i].y));
+            uvs.Add(ring[i] * 0.02f);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            vertices.Add(new Vector3(ring[i].x, y1, ring[i].y));
+            uvs.Add(ring[i] * 0.02f);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            int i1 = (i + 1) % n;
+            int b0 = start + i;
+            int b1 = start + i1;
+            int t0 = start + n + i;
+            int t1 = start + n + i1;
+            triangles.Add(b1);
+            triangles.Add(b0);
+            triangles.Add(t0);
+            triangles.Add(b1);
+            triangles.Add(t0);
+            triangles.Add(t1);
+        }
+    }
+
+    static GameObject FinishMeshObject(GameObject go, Transform parent, string name, Material mat, StaticMode mode, bool collider, bool shadows)
+    {
+        go.name = name;
+        go.transform.SetParent(parent, true);
+        MeshRenderer renderer = go.GetComponent<MeshRenderer>();
+        if (renderer == null)
+            renderer = go.AddComponent<MeshRenderer>();
+        renderer.sharedMaterial = mat;
+        renderer.shadowCastingMode = shadows ? ShadowCastingMode.On : ShadowCastingMode.Off;
+        renderer.receiveShadows = true;
+        ApplyStatic(go, mode);
+        if (collider)
+        {
+            MeshFilter filter = go.GetComponent<MeshFilter>();
+            MeshCollider meshCollider = go.GetComponent<MeshCollider>();
+            if (meshCollider == null)
+                meshCollider = go.AddComponent<MeshCollider>();
+            meshCollider.sharedMesh = null;
+            meshCollider.sharedMesh = filter.sharedMesh;
+            meshCollider.convex = false;
+        }
+        return go;
+    }
+
+    static GameObject CreateMeshAssetObject(string name, Mesh mesh)
+    {
+        EnsureAssetFolder(MeshDir);
+        string path = MeshDir + "/" + Sanitize(name) + ".asset";
+        AssetDatabase.CreateAsset(mesh, path);
+        var go = new GameObject(name);
+        MeshFilter filter = go.AddComponent<MeshFilter>();
+        go.AddComponent<MeshRenderer>();
+        filter.sharedMesh = mesh;
+        return go;
+    }
+
+    static string Sanitize(string name)
+    {
+        char[] bad = Path.GetInvalidFileNameChars();
+        var chars = name.ToCharArray();
+        for (int i = 0; i < chars.Length; i++)
+        {
+            for (int j = 0; j < bad.Length; j++)
+            {
+                if (chars[i] == bad[j])
+                    chars[i] = '_';
+            }
+        }
+        return new string(chars);
+    }
+
+    static void ClearGeneratedMeshes()
+    {
+        if (!AssetDatabase.IsValidFolder(MeshDir))
+            return;
+        string[] guids = AssetDatabase.FindAssets(string.Empty, new[] { MeshDir });
+        for (int i = 0; i < guids.Length; i++)
+            AssetDatabase.DeleteAsset(AssetDatabase.GUIDToAssetPath(guids[i]));
+    }
+
+    static List<Vector2> PullInside(List<Vector2> hole, List<Vector2> outer, float margin)
+    {
+        var result = new List<Vector2>(hole.Count);
+        for (int i = 0; i < hole.Count; i++)
+        {
+            Vector2 p = hole[i];
+            if (PointInPoly(p, outer))
+            {
+                result.Add(p);
+                continue;
+            }
+            float best = float.MaxValue;
+            Vector2 closest = p;
+            int edge = 0;
+            for (int k = 0; k < outer.Count; k++)
+            {
+                Vector2 a = outer[k];
+                Vector2 b = outer[(k + 1) % outer.Count];
+                Vector2 q = ClosestOnSegment(p, a, b);
+                float d = (q - p).sqrMagnitude;
+                if (d < best)
+                {
+                    best = d;
+                    closest = q;
+                    edge = k;
+                }
+            }
+            Vector2 inward = LeftNormal(outer[(edge + 1) % outer.Count] - outer[edge]);
+            result.Add(closest + inward * margin);
+        }
+        return result;
+    }
+
+    static List<Vector2> LinkHole(List<Vector2> poly, List<Vector2> hole)
+    {
+        int hi = 0;
+        for (int i = 1; i < hole.Count; i++)
+        {
+            if (hole[i].x > hole[hi].x)
+                hi = i;
+        }
+        Vector2 m = hole[hi];
+        int connect = -1;
+        float best = float.MaxValue;
+        for (int i = 0; i < poly.Count; i++)
+        {
+            if ((poly[i] - m).sqrMagnitude < 1e-8f)
+                continue;
+            if (!Visible(poly, m, poly[i], hole))
+                continue;
+            float d = (poly[i] - m).sqrMagnitude;
+            if (d < best)
+            {
+                best = d;
+                connect = i;
+            }
+        }
+        if (connect < 0)
+            throw new InvalidOperationException("바닥 구멍을 외곽선에 잇지 못했습니다.");
+
+        var merged = new List<Vector2>(poly.Count + hole.Count + 2);
+        for (int i = 0; i <= connect; i++)
+            merged.Add(poly[i]);
+        for (int k = 0; k <= hole.Count; k++)
+            merged.Add(hole[(hi + k) % hole.Count]);
+        for (int i = connect; i < poly.Count; i++)
+            merged.Add(poly[i]);
+        return merged;
+    }
+
+    static bool Visible(List<Vector2> poly, Vector2 a, Vector2 b, List<Vector2> hole)
+    {
+        Vector2 mid = (a + b) * 0.5f;
+        if (!PointInPoly(mid, poly))
+            return false;
+        for (int i = 0; i < poly.Count; i++)
+        {
+            if (ProperCross(a, b, poly[i], poly[(i + 1) % poly.Count]))
+                return false;
+        }
+        if (hole != null)
+        {
+            for (int i = 0; i < hole.Count; i++)
+            {
+                if (ProperCross(a, b, hole[i], hole[(i + 1) % hole.Count]))
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    static List<int> EarClip(List<Vector2> poly)
+    {
+        var idx = new List<int>(poly.Count);
+        for (int i = 0; i < poly.Count; i++)
+            idx.Add(i);
+        var tris = new List<int>((poly.Count - 2) * 3);
+        int guard = 0;
+        while (idx.Count > 3 && guard++ < 20000)
+        {
+            int n = idx.Count;
+            bool found = false;
+            for (int i = 0; i < n; i++)
+            {
+                int i0 = idx[(i + n - 1) % n];
+                int i1 = idx[i];
+                int i2 = idx[(i + 1) % n];
+                Vector2 a = poly[i0];
+                Vector2 b = poly[i1];
+                Vector2 c = poly[i2];
+                if (Cross(a, b, c) <= 1e-7f)
                     continue;
-                int w = 1;
-                while (x + w < nx && solid[x + w, z] && !used[x + w, z])
-                    w++;
-                int h = 1;
-                while (z + h < nz)
+                bool bad = false;
+                for (int k = 0; k < idx.Count; k++)
                 {
-                    bool row = true;
-                    for (int i = 0; i < w; i++)
+                    int j = idx[k];
+                    if (j == i0 || j == i1 || j == i2)
+                        continue;
+                    Vector2 p = poly[j];
+                    if (Cross(a, b, p) > 1e-7f && Cross(b, c, p) > 1e-7f && Cross(c, a, p) > 1e-7f)
                     {
-                        if (!solid[x + i, z + h] || used[x + i, z + h])
-                        {
-                            row = false;
-                            break;
-                        }
-                    }
-                    if (!row)
+                        bad = true;
                         break;
-                    h++;
+                    }
                 }
-                for (int zz = z; zz < z + h; zz++)
-                {
-                    for (int xx = x; xx < x + w; xx++)
-                        used[xx, zz] = true;
-                }
+                if (bad)
+                    continue;
+                tris.Add(i0);
+                tris.Add(i1);
+                tris.Add(i2);
+                idx.RemoveAt(i);
+                found = true;
+                break;
+            }
+            if (!found)
+                return null;
+        }
+        if (idx.Count == 3)
+        {
+            tris.Add(idx[0]);
+            tris.Add(idx[1]);
+            tris.Add(idx[2]);
+        }
+        return tris;
+    }
 
-                float sx = w * cellX;
-                float sz = h * cellZ;
-                float cx = originX + x * cellX + sx * 0.5f;
-                float cz = originZ + z * cellZ + sz * 0.5f;
-                CreateBox(parent, prefix + count.ToString("000"), new Vector3(cx, centerY, cz),
-                    new Vector3(sx, thickness, sz), Quaternion.identity, mat, mode);
-                count++;
+    static List<Vector2> OffsetPolygon(List<Vector2> ccw, float dist)
+    {
+        int n = ccw.Count;
+        var result = new List<Vector2>(n);
+        for (int i = 0; i < n; i++)
+        {
+            Vector2 prev = ccw[(i + n - 1) % n];
+            Vector2 cur = ccw[i];
+            Vector2 next = ccw[(i + 1) % n];
+            Vector2 n0 = LeftNormal(cur - prev);
+            Vector2 n1 = LeftNormal(next - cur);
+            Vector2 a0 = prev + n0 * dist;
+            Vector2 a1 = cur + n0 * dist;
+            Vector2 b0 = cur + n1 * dist;
+            Vector2 b1 = next + n1 * dist;
+            if (!LineIntersect(a0, a1, b0, b1, out Vector2 hit))
+                hit = a1;
+            result.Add(hit);
+        }
+        return result;
+    }
+
+    static void EnsureWinding(List<Vector2> poly, bool ccw)
+    {
+        if ((SignedArea(poly) > 0f) != ccw)
+            poly.Reverse();
+    }
+
+    static void RemoveDuplicates(List<Vector2> poly)
+    {
+        for (int i = poly.Count - 1; i >= 0; i--)
+        {
+            Vector2 next = poly[(i + 1) % poly.Count];
+            if ((poly[i] - next).sqrMagnitude < 1e-8f)
+                poly.RemoveAt(i);
+        }
+    }
+
+    static void RemoveCollinear(List<Vector2> poly)
+    {
+        bool removed = true;
+        int guard = 0;
+        while (removed && poly.Count > 3 && guard++ < poly.Count * 3)
+        {
+            removed = false;
+            for (int i = 0; i < poly.Count; i++)
+            {
+                Vector2 a = poly[(i + poly.Count - 1) % poly.Count];
+                Vector2 b = poly[i];
+                Vector2 c = poly[(i + 1) % poly.Count];
+                if (Mathf.Abs(Cross(a, b, c)) > 1e-4f)
+                    continue;
+                Vector2 ab = b - a;
+                Vector2 ac = c - a;
+                float dot = Vector2.Dot(ab, ac);
+                if (dot < -1e-4f || dot > ac.sqrMagnitude + 1e-4f)
+                    continue;
+                poly.RemoveAt(i);
+                removed = true;
+                break;
             }
         }
-        return count;
     }
 
-    static void EmitEdgeRail(Transform parent, string name, Edge edge, bool alongX, float fixedCoord, float from, float to, float y, float blockY0, float blockY1, Mats mats)
+    static float MaxX(List<Vector2> poly)
     {
-        float span = to - from;
-        if (span <= 0.1f)
-            return;
-        int count = Mathf.Max(1, Mathf.RoundToInt(span));
-        float cell = span / count;
-        int run = -1;
-        int piece = 0;
-        for (int i = 0; i <= count; i++)
+        float x = poly[0].x;
+        for (int i = 1; i < poly.Count; i++)
+            x = Mathf.Max(x, poly[i].x);
+        return x;
+    }
+
+    static float SignedArea(List<Vector2> poly)
+    {
+        float area = 0f;
+        for (int i = 0; i < poly.Count; i++)
         {
-            bool solid = false;
-            if (i < count)
-            {
-                float c = from + (i + 0.5f) * cell;
-                float x = alongX ? c : fixedCoord;
-                float z = alongX ? fixedCoord : c;
-                solid = !BlocksBalcony(x, z, blockY0, blockY1) && !StairGap(edge, c);
-            }
-            if (solid)
-            {
-                if (run < 0)
-                    run = i;
-            }
-            else if (run >= 0)
-            {
-                EmitRailPiece(parent, name, alongX, fixedCoord, from, cell, run, i, y, mats, piece);
-                piece++;
-                run = -1;
-            }
+            Vector2 a = poly[i];
+            Vector2 b = poly[(i + 1) % poly.Count];
+            area += a.x * b.y - b.x * a.y;
         }
+        return area * 0.5f;
     }
 
-    static void EmitRailPiece(Transform parent, string name, bool alongX, float fixedCoord, float from, float cell, int run, int end, float y, Mats mats, int piece)
+    static float Cross(Vector2 a, Vector2 b, Vector2 c)
     {
-        float a = from + run * cell;
-        float b = from + end * cell;
-        float mid = (a + b) * 0.5f;
-        float len = b - a;
-        Vector3 pos = alongX ? new Vector3(mid, y, fixedCoord) : new Vector3(fixedCoord, y, mid);
-        Vector3 size = alongX
-            ? new Vector3(len, BalconyRailHeight, BalconyRailThickness)
-            : new Vector3(BalconyRailThickness, BalconyRailHeight, len);
-        CreateBox(parent, name + "_" + piece.ToString("00"), pos, size, Quaternion.identity, mats.rail, StaticMode.Background);
+        return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
     }
 
-    static bool StairGap(Edge edge, float along)
+    static Vector2 LeftNormal(Vector2 edge)
     {
-        for (int i = 0; i < StairBlocks.Length; i++)
+        float m = edge.magnitude;
+        if (m < 1e-6f)
+            return Vector2.up;
+        return new Vector2(-edge.y / m, edge.x / m);
+    }
+
+    static bool LineIntersect(Vector2 p, Vector2 p2, Vector2 q, Vector2 q2, out Vector2 hit)
+    {
+        Vector2 r = p2 - p;
+        Vector2 s = q2 - q;
+        float den = r.x * s.y - r.y * s.x;
+        if (Mathf.Abs(den) < 1e-8f)
         {
-            if (StairBlocks[i].edge == edge && Mathf.Abs(StairBlocks[i].along - along) <= StairBlockWidth * 0.5f)
-                return true;
+            hit = p2;
+            return false;
+        }
+        float t = ((q.x - p.x) * s.y - (q.y - p.y) * s.x) / den;
+        hit = p + r * t;
+        return true;
+    }
+
+    static bool PointInPoly(Vector2 point, IList<Vector2> poly)
+    {
+        bool inside = false;
+        int n = poly.Count;
+        for (int i = 0; i < n; i++)
+        {
+            Vector2 a = poly[i];
+            Vector2 b = poly[(i + 1) % n];
+            if ((a.y > point.y) != (b.y > point.y)
+                && point.x < (b.x - a.x) * (point.y - a.y) / (b.y - a.y) + a.x)
+                inside = !inside;
+        }
+        return inside;
+    }
+
+    static bool ProperCross(Vector2 a, Vector2 b, Vector2 c, Vector2 d)
+    {
+        float c1 = Cross(a, b, c);
+        float c2 = Cross(a, b, d);
+        float c3 = Cross(c, d, a);
+        float c4 = Cross(c, d, b);
+        if (Mathf.Abs(c1) < 1e-6f || Mathf.Abs(c2) < 1e-6f || Mathf.Abs(c3) < 1e-6f || Mathf.Abs(c4) < 1e-6f)
+            return false;
+        return (c1 > 0f) != (c2 > 0f) && (c3 > 0f) != (c4 > 0f);
+    }
+
+    static bool RaySegment(Vector2 origin, Vector2 dir, Vector2 a, Vector2 b, out float t)
+    {
+        Vector2 v = b - a;
+        float den = dir.x * v.y - dir.y * v.x;
+        t = 0f;
+        if (Mathf.Abs(den) < 1e-8f)
+            return false;
+        Vector2 w = a - origin;
+        float tt = (w.x * v.y - w.y * v.x) / den;
+        float u = (w.x * dir.y - w.y * dir.x) / den;
+        if (tt > 0.001f && u >= -0.001f && u <= 1.001f)
+        {
+            t = tt;
+            return true;
         }
         return false;
     }
 
-    static void BalconyPoint(Edge edge, float along, out float x, out float z)
+    static float DistanceToSegment(Vector2 p, Vector2 a, Vector2 b)
     {
-        FloorBounds(out float minX, out float maxX, out float minZ, out float maxZ);
-        switch (edge)
-        {
-            case Edge.North:
-                x = along;
-                z = maxZ - BalconyWidth * 0.5f;
-                break;
-            case Edge.South:
-                x = along;
-                z = minZ + BalconyWidth * 0.5f;
-                break;
-            case Edge.East:
-                x = maxX - BalconyWidth * 0.5f;
-                z = along;
-                break;
-            default:
-                x = minX + BalconyWidth * 0.5f;
-                z = along;
-                break;
-        }
+        return Vector2.Distance(p, ClosestOnSegment(p, a, b));
+    }
+
+    static Vector2 ClosestOnSegment(Vector2 p, Vector2 a, Vector2 b)
+    {
+        Vector2 v = b - a;
+        float l2 = v.sqrMagnitude;
+        float t = l2 < 1e-8f ? 0f : Mathf.Clamp01(Vector2.Dot(p - a, v) / l2);
+        return a + v * t;
     }
 
     static Transform CreateGroup(Transform parent, string name, StaticMode mode)
@@ -1898,27 +1585,15 @@ public static class LotteWorldBlockoutGenerator
         go.transform.position = new Vector3(x, FloorY + MarkerHover, z);
     }
 
-    static Vector3 StandingCenter(float x, float height, float z)
-    {
-        float h = height + GroundSink;
-        return new Vector3(x, FloorY - GroundSink + h * 0.5f, z);
-    }
-
-    static Vector3 StandingSize(float sx, float height, float sz) => new Vector3(sx, height + GroundSink, sz);
-
-    static GameObject CreateStandingBox(Transform parent, string name, float x, float z, float sx, float height, float sz, Material mat, StaticMode mode, bool door = false)
-    {
-        return CreateBox(parent, name, StandingCenter(x, height, z), StandingSize(sx, height, sz), Quaternion.identity, mat, mode, true, door);
-    }
-
-    static void AddLabel(GameObject go)
+    static void AddLabel(GameObject go, string caption, Color color)
     {
         if (go == null)
             return;
         BlockoutLabel label = go.GetComponent<BlockoutLabel>();
         if (label == null)
             label = go.AddComponent<BlockoutLabel>();
-        label.Set(go.name);
+        label.Set(caption);
+        label.LabelColor = color;
     }
 
     static GameObject CreateBox(Transform parent, string name, Vector3 center, Vector3 size, Quaternion rotation, Material mat, StaticMode mode, bool castShadows = true, bool door = false, bool withCollider = true)
@@ -1929,12 +1604,6 @@ public static class LotteWorldBlockoutGenerator
     static GameObject CreateCylinder(Transform parent, string name, Vector3 center, float radiusX, float radiusZ, float height, Quaternion rotation, Material mat, StaticMode mode)
     {
         return CreatePrimitive(parent, name, center, new Vector3(radiusX * 2f, height, radiusZ * 2f), rotation, mat, mode, true, true, false, true);
-    }
-
-    static GameObject CreateSphere(Transform parent, string name, Vector3 center, float diameter, Material mat, StaticMode mode)
-    {
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        return FinishPrimitive(go, parent, name, center, Vector3.one * diameter, Quaternion.identity, mat, mode, true, false, false);
     }
 
     static GameObject CreatePrimitive(Transform parent, string name, Vector3 center, Vector3 size, Quaternion rotation, Material mat, StaticMode mode, bool cylinder, bool castShadows, bool door, bool withCollider)
@@ -2083,6 +1752,7 @@ public static class LotteWorldBlockoutGenerator
         static Type s_Shape;
         static Type s_Pivot;
         static Type s_Mesh;
+        static Type s_Face;
         static object s_Center;
 
         public static bool Available
@@ -2145,10 +1815,52 @@ public static class LotteWorldBlockoutGenerator
             }
         }
 
+        public static GameObject CreateTriangles(Vector3[] vertices, int[] triangles)
+        {
+            Ensure();
+            if (!s_Available)
+                return null;
+            try
+            {
+                ConstructorInfo ctor = s_Face.GetConstructor(new[] { typeof(IEnumerable<int>) });
+                MethodInfo create = null;
+                MethodInfo[] methods = s_Mesh.GetMethods(BindingFlags.Public | BindingFlags.Static);
+                for (int i = 0; i < methods.Length; i++)
+                {
+                    if (methods[i].Name != "Create")
+                        continue;
+                    ParameterInfo[] parameters = methods[i].GetParameters();
+                    if (parameters.Length == 2)
+                    {
+                        create = methods[i];
+                        break;
+                    }
+                }
+                if (ctor == null || create == null)
+                    return Fail("ProBuilder Face");
+
+                int faceCount = triangles.Length / 3;
+                Array faces = Array.CreateInstance(s_Face, faceCount);
+                for (int i = 0; i < faceCount; i++)
+                {
+                    faces.SetValue(ctor.Invoke(new object[]
+                    {
+                        new[] { triangles[i * 3], triangles[i * 3 + 1], triangles[i * 3 + 2] }
+                    }), i);
+                }
+                object mesh = create.Invoke(null, new object[] { vertices, faces });
+                return Finalize(mesh);
+            }
+            catch (Exception e)
+            {
+                return Fail(e.GetBaseException().Message);
+            }
+        }
+
         static GameObject Fail(string reason)
         {
             if (!s_Failed)
-                Debug.LogWarning("ProBuilder 메시를 만들지 못해 기본 Primitive 를 사용합니다: " + reason);
+                Debug.LogWarning("ProBuilder 메시를 만들지 못해 기본 메시를 사용합니다: " + reason);
             s_Failed = true;
             return null;
         }
@@ -2161,7 +1873,8 @@ public static class LotteWorldBlockoutGenerator
             s_Shape = Type.GetType("UnityEngine.ProBuilder.ShapeGenerator, Unity.ProBuilder");
             s_Pivot = Type.GetType("UnityEngine.ProBuilder.PivotLocation, Unity.ProBuilder");
             s_Mesh = Type.GetType("UnityEngine.ProBuilder.ProBuilderMesh, Unity.ProBuilder");
-            if (s_Shape == null || s_Pivot == null || s_Mesh == null)
+            s_Face = Type.GetType("UnityEngine.ProBuilder.Face, Unity.ProBuilder");
+            if (s_Shape == null || s_Pivot == null || s_Mesh == null || s_Face == null)
                 return;
             s_Center = Enum.Parse(s_Pivot, "Center");
             s_Available = true;
