@@ -9002,6 +9002,63 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1001 &192593245
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100.89229
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000002491263
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.467472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
+      propertyPath: m_Name
+      value: Carousel_A13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15f56822671f1894cbc4e62c2b1ff5cc, type: 3}
 --- !u!43 &192613957
 Mesh:
   m_ObjectHideFlags: 0
@@ -112726,6 +112783,7 @@ GameObject:
   - component: {fileID: 2111334836}
   - component: {fileID: 2111334834}
   - component: {fileID: 2111334833}
+  - component: {fileID: 2111334837}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -112827,6 +112885,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2111334837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111334831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717823f8190f6434ea3e2b5d1af62fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParadeKeepOutGizmo
+  Points: []
 --- !u!1 &2121616909
 GameObject:
   m_ObjectHideFlags: 0
@@ -115404,3 +115475,4 @@ SceneRoots:
   - {fileID: 1764820069}
   - {fileID: 1763417636}
   - {fileID: 1107067472}
+  - {fileID: 192593245}
