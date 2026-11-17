@@ -3,7 +3,102 @@ guid: 15f56822671f1894cbc4e62c2b1ff5cc
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Base
+    second: {fileID: 2100000, guid: ce9de2c6e0e80484f8bc282fab44814f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Gold
+    second: {fileID: 2100000, guid: 7d38d85a566f28645b428f39f508825d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base_Step
+    second: {fileID: 2100000, guid: 88ff342b403a1334180b3b549a76e621, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulbOn
+    second: {fileID: 2100000, guid: 414ab0c3cca9da14eb95ea2d64c7e1dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Blanket
+    second: {fileID: 2100000, guid: 8d231f73fbffe5045b6f25b759f3f67a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Brass
+    second: {fileID: 2100000, guid: 34114b2b896b6dd4182f6813609a9d4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_BulbOff
+    second: {fileID: 2100000, guid: b0dee3b2cbc1f904380ea716f24e58f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Cream
+    second: {fileID: 2100000, guid: a9a3302aba9ed424a8f8f260cd5deceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Face
+    second: {fileID: 2100000, guid: 2c4170eda0a6e734ab3127aafdad1c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Floor
+    second: {fileID: 2100000, guid: 1004a6046fe50f94fb22dc6caf23d095, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Gold
+    second: {fileID: 2100000, guid: 8e19dff3f53a9b74287396e78e125372, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Green
+    second: {fileID: 2100000, guid: 86036e1f5704b89488afed1c1d9d9162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_HorseWhite
+    second: {fileID: 2100000, guid: f08b43868cef28542bfa9efd1d7c6000, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Mane
+    second: {fileID: 2100000, guid: 66a19f2debda5a94db50deaf1aad68b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Mint
+    second: {fileID: 2100000, guid: e037c6cc596e08644a2ef86d457bbc9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Mirror
+    second: {fileID: 2100000, guid: 5c1a3f2a97eb95742a5e26270c53627b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Saddle
+    second: {fileID: 2100000, guid: 9fa3cc64c5389d447b959aaae89ad413, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_White
+    second: {fileID: 2100000, guid: 16d7a63984cc55f45ad9367e7b212cbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Yellow
+    second: {fileID: 2100000, guid: ca2b40a1d4a6ccc4296348948f540ba9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +148,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

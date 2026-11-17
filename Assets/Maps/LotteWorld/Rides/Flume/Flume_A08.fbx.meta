@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 0eb6269970b11a34ea64a8cf9d70a8c7
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat1_BoatBlue
+    second: {fileID: 2100000, guid: 97c514f196353f540a445feb538f1249, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat1_BoatBrown
+    second: {fileID: 2100000, guid: 767bac80afe1cde4b8af852b92f7d115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat1_BoatWhite
+    second: {fileID: 2100000, guid: 696d06564ac7b19499c84355ab26c4ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat1_Seat
+    second: {fileID: 2100000, guid: 6fec22e155c60db4aaa100eb15d3006e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat2_BoatBlue
+    second: {fileID: 2100000, guid: 88ea5b0960c040746ae9c257f1174b70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat2_BoatBrown
+    second: {fileID: 2100000, guid: af64ed8a4f2bdd84f984f2bd9ef55679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat2_BoatWhite
+    second: {fileID: 2100000, guid: 5d0cb5694d641b74389ec540dd3d2d06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat2_Seat
+    second: {fileID: 2100000, guid: f1d6ff9aecc9f7a4eba7119505a13858, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat3_BoatBlue
+    second: {fileID: 2100000, guid: 5e998abf01d8566499c66f6d932ae59d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat3_BoatBrown
+    second: {fileID: 2100000, guid: 62019ecf8df78714ab91385deb85adb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat3_BoatWhite
+    second: {fileID: 2100000, guid: 9c20935999e11e845bdb1f3efdf704b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat3_Seat
+    second: {fileID: 2100000, guid: f07726367d75ed34bae20a9b9776eaab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat4_BoatBlue
+    second: {fileID: 2100000, guid: 8740c6603bc86a441987ad9a6e5ec6f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat4_BoatBrown
+    second: {fileID: 2100000, guid: 2cbeff20b0b24f0488dcafc7e42a89af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat4_BoatWhite
+    second: {fileID: 2100000, guid: 3b484e3d7f90c52488d85f10d29a821d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat4_Seat
+    second: {fileID: 2100000, guid: f65944b20bd8fc94599733cbff81806c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat5_BoatBlue
+    second: {fileID: 2100000, guid: 9d63dc9ebc7eb2f46b1dfd53e21b151e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat5_BoatBrown
+    second: {fileID: 2100000, guid: a8f68adaabc8f0d4585ea5a91f725e64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat5_BoatWhite
+    second: {fileID: 2100000, guid: b3d1f559a956aae418236983a1cb95e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boat5_Seat
+    second: {fileID: 2100000, guid: 78001b893a9e5af45987f04db262955a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulbOn
+    second: {fileID: 2100000, guid: 2deeb93ce14f001498f32896bd205573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DinoEye
+    second: {fileID: 2100000, guid: 8c27132113455284ca7935afa2216483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Bush
+    second: {fileID: 2100000, guid: 1e8a481b65959f74e901a3f1900e9a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_DeckWood
+    second: {fileID: 2100000, guid: 7729dbc14e043544da8c60f3458f5ab1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_DinoBrown
+    second: {fileID: 2100000, guid: d950c2a75d9399643b6e14adea569af6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_DinoGreen
+    second: {fileID: 2100000, guid: b735fe66c98a3c44b92de8d895a14f06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_FlowerPink
+    second: {fileID: 2100000, guid: fa0ccd37d20087147ba7e7df366ea5ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_FlowerYellow
+    second: {fileID: 2100000, guid: 48f741af78a846f42b4e680749c8697a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Flume
+    second: {fileID: 2100000, guid: 44dc620933db25c4fae0dc1b77af3f88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_GreenTile
+    second: {fileID: 2100000, guid: 7993098fe814ee948a7c38f456d060e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Iron
+    second: {fileID: 2100000, guid: ce4148c667d6b704eb5effe34275df9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LogBark
+    second: {fileID: 2100000, guid: 247fe6aaef1758e43953540f29fdbb59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_PalmLeaf
+    second: {fileID: 2100000, guid: 7b74f9f0f0e637543b5798e7caff7a89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_PalmTrunk
+    second: {fileID: 2100000, guid: bb8d6adabf237cd43a36717168bdf92a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Plaster
+    second: {fileID: 2100000, guid: d746fee3ae55f00489b22f7decebed15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Pond
+    second: {fileID: 2100000, guid: 074923510335b0947b151d26fd246fde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Rock
+    second: {fileID: 2100000, guid: 41515a699cbbded469e907ca1c6b7995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_RockDark
+    second: {fileID: 2100000, guid: 9f11691e862ccab4fbd52b3c9db2ab91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_RockGray
+    second: {fileID: 2100000, guid: 0957841f165410b4ea2c857002e7b8da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_RockGrayDark
+    second: {fileID: 2100000, guid: 9fefa084cc047d44dbc9480ba64de7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Shingle
+    second: {fileID: 2100000, guid: 57ba63259219ab546a632685c0961544, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Soil
+    second: {fileID: 2100000, guid: 10ff7716b45cbe949aec7822073e48d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_StationWood
+    second: {fileID: 2100000, guid: a8cded35d9428a04ba04123985d5ed3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_StoneWall
+    second: {fileID: 2100000, guid: dfeb0a309d5263e48ac483c87fb1456e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Teal
+    second: {fileID: 2100000, guid: ccecbf2307b7917478a3680c4f3d08af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_TimberOrange
+    second: {fileID: 2100000, guid: 27fee1f4857e1f149a781e8e7f89dcbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_TimberRed
+    second: {fileID: 2100000, guid: 6b8a680266acb744fb5e8153681bf3d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Water
+    second: {fileID: 2100000, guid: 305335e46cadff64bb4be96f847ce116, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

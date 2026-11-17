@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 5536edec3aaa1ee4fafe8cf67fa349b4
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_A_LW_Brown
+    second: {fileID: 2100000, guid: c1d13a03d1a96d34195db95458897bb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_A_LW_Gold
+    second: {fileID: 2100000, guid: f0c9042124707514abbed5cc86fd9f45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_A_LW_Timber
+    second: {fileID: 2100000, guid: 113d89c83335340489dc8601bdc8d671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_B_LW_Brown
+    second: {fileID: 2100000, guid: 167297d25b1a4e84087e1ab1412f8b10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_B_LW_Gold
+    second: {fileID: 2100000, guid: 5145e017cde319643985cf127d294568, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Arcade_B_LW_Timber
+    second: {fileID: 2100000, guid: 7c66456298df98949bf94b2369c9c532, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE1_LW_Brown
+    second: {fileID: 2100000, guid: c7de07f093e9b094fb6642c4eb399ac3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE1_LW_Gold
+    second: {fileID: 2100000, guid: d1db8f39f7c332a4c94eab8defad3c3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE1_LW_Timber
+    second: {fileID: 2100000, guid: c89d12e863703324a83c7c531e82d3ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE2_LW_Brown
+    second: {fileID: 2100000, guid: a3e4907b164c931459cbb8ff4b95a7b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE2_LW_Gold
+    second: {fileID: 2100000, guid: d70ac19941361d14badaa1191d3a001c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE2_LW_Timber
+    second: {fileID: 2100000, guid: 4cfdd8764ccd2004498bd65f1136fbd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE3_LW_Brown
+    second: {fileID: 2100000, guid: e84b3d7b4ef6f0549bf9b79a9c545fc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE3_LW_Gold
+    second: {fileID: 2100000, guid: 7234479c5a9180a43a37f947d4c0dc11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE3_LW_Timber
+    second: {fileID: 2100000, guid: 42e301225c2afc8498ff82b052525fc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE4_LW_Brown
+    second: {fileID: 2100000, guid: 97b1eae386abc5c40a7109aea3039000, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE4_LW_Gold
+    second: {fileID: 2100000, guid: 490a10786c0ec8640b4b7f845c7303ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeE4_LW_Timber
+    second: {fileID: 2100000, guid: baede3add7228d24a81aa7c5c90cd5c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW1_LW_Brown
+    second: {fileID: 2100000, guid: 121095acfd8c7b843b5eb4edbfae36da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW1_LW_Gold
+    second: {fileID: 2100000, guid: 91fddde099a945242b0ba1b18c32d0e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW1_LW_Timber
+    second: {fileID: 2100000, guid: fa4467bd5975306498feaeb5b0b287da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW2_LW_Brown
+    second: {fileID: 2100000, guid: 7f03c829a4c8c974db0d1f6fc4ea0067, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW2_LW_Gold
+    second: {fileID: 2100000, guid: 272503971cd495741b848960911b350b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW2_LW_Timber
+    second: {fileID: 2100000, guid: 5bba87e3942e4a9468c2d514f1f4a033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW3_LW_Brown
+    second: {fileID: 2100000, guid: 2d50c70a59bdba342a34574daa4ec77b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW3_LW_Gold
+    second: {fileID: 2100000, guid: e2e40f27b5cc0a84ab8b8f622eb68484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_RangeW3_LW_Timber
+    second: {fileID: 2100000, guid: 70024358808082a40b6b929ed7472322, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop10_LW_Brown
+    second: {fileID: 2100000, guid: 88ce7b1867edefe4391cd4c398a330a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop10_LW_Gold
+    second: {fileID: 2100000, guid: 1823afd32aeb10941ba0583a5b1425af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop10_LW_Timber
+    second: {fileID: 2100000, guid: b3c1f4eba757fff4c98b3c6926e08e68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_TimberHouse_LW_Brown
+    second: {fileID: 2100000, guid: f3f84ff090a4c5448854d6c84ee08bf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_TimberHouse_LW_Gold
+    second: {fileID: 2100000, guid: 1aed8a19f51a7a843ac54172dcf08e85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_TimberHouse_LW_Timber
+    second: {fileID: 2100000, guid: fb75ad885614b7e4491b77d79d130b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_CheckerRed
+    second: {fileID: 2100000, guid: 24a8f8e7da5f7e140bb5d36988010025, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_CreamWhite
+    second: {fileID: 2100000, guid: 1cc185c79a4f22d428986f5b823a3838, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_DarkRock
+    second: {fileID: 2100000, guid: 6d28eee9b43c4e34b8079f30dc034520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Floor
+    second: {fileID: 2100000, guid: 8d418c9126ebd6d418505e4cc4294d69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Gold
+    second: {fileID: 2100000, guid: 915fe526a0b138e4dbe37008ef261b23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_GreenDome
+    second: {fileID: 2100000, guid: a494e27ba4e43fd47a0a817247bcccf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Opening
+    second: {fileID: 2100000, guid: eb4198dd149c74b488baf03c364cfd8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_PastelBlue
+    second: {fileID: 2100000, guid: 897b50d9f4d16ce4fb219e74330a9d06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_PinkWhite
+    second: {fileID: 2100000, guid: 094501e6b94f4b349a2c285ede5abfd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_RockLight
+    second: {fileID: 2100000, guid: 30262b722fa32124fb04e545329e4aab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Steel
+    second: {fileID: 2100000, guid: 07a95d07500e9b84680cf743733daad4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_StoneGrey
+    second: {fileID: 2100000, guid: b78bdd404594cbc4787d45e5ad02f0e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Terracotta
+    second: {fileID: 2100000, guid: ca9622a839ca2804dbc2f17a59b21d15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Timber
+    second: {fileID: 2100000, guid: 14e0f7240d9482745b96d9fd42e40901, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_WarmBeige
+    second: {fileID: 2100000, guid: 732600424c015cf4d96360ec1191271e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Yellow
+    second: {fileID: 2100000, guid: 82588e3315f78bb42bbf76d73db0437d, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

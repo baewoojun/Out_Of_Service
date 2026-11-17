@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: fe3b30b67265d8b45a15137250f52c9a
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulbOn
+    second: {fileID: 2100000, guid: 8b725b28fbd5cc548947edbd4ecd69f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_BasketRim
+    second: {fileID: 2100000, guid: 9d0fc97b36e62e4468010f22f1f7980b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Brass
+    second: {fileID: 2100000, guid: e098f83010f9aca4cb06e1079b2cd7b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_DiscEdge
+    second: {fileID: 2100000, guid: b36f9d706aa613641a293563439acfd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_DiscTop
+    second: {fileID: 2100000, guid: 4016a892d86095c4f9e1cfde749e15bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Iron
+    second: {fileID: 2100000, guid: 83e3e4f8a0e03a846bf970a76e66374c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_Seat
+    second: {fileID: 2100000, guid: 48f7798f45f28d9439f13e7044e2ef8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_SnakeSkin
+    second: {fileID: 2100000, guid: a1243b7134c74cd49831baac9b498b29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rotor_WickerDark
+    second: {fileID: 2100000, guid: 83dfa9febd68efe4da1f7100b90fad6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnakeEye
+    second: {fileID: 2100000, guid: c54a075aaeebd4c4fbbf3b6fe453e1c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Brass
+    second: {fileID: 2100000, guid: a28f241537f05794c981e704a49cb6da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Iron
+    second: {fileID: 2100000, guid: 7fa03bb1a489407478905b2712e0971e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Plaster
+    second: {fileID: 2100000, guid: 484c2adc9f8e58345b1d9f14b7658ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_StoneWall
+    second: {fileID: 2100000, guid: 9ed4ef4f380a3a44f9a76eff79baab00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Teal
+    second: {fileID: 2100000, guid: a5301d90b42ff244fa921e61c47e4d16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_BasketRim
+    second: {fileID: 2100000, guid: 80326f83482eeb34b8a2054e6787586d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_Brass
+    second: {fileID: 2100000, guid: e11d1953628a6454081dc9c012f82bfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_Iron
+    second: {fileID: 2100000, guid: 105a03a99bcef684387772ee30fadee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_Seat
+    second: {fileID: 2100000, guid: 1dd4f1fec5eef7a4b8aa0eb10574815d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_SubTop
+    second: {fileID: 2100000, guid: b8b4bce7f0bcf7b4d933e1421740c06b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_Wicker
+    second: {fileID: 2100000, guid: d28591447a743d4438a9b115e109dfd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub1_WickerDark
+    second: {fileID: 2100000, guid: 5c6d14e8b786a84459ab5c32e4054fdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_BasketRim
+    second: {fileID: 2100000, guid: f884a0f7f0554c64f94f47fffcce7945, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_Brass
+    second: {fileID: 2100000, guid: aa0e5b74b4ed47142acee21feddb9972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_Iron
+    second: {fileID: 2100000, guid: 85a5fa9d824859144827fe345aa8a230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_Seat
+    second: {fileID: 2100000, guid: 560ffed7143354d4e861841dac4fc7ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_SubTop
+    second: {fileID: 2100000, guid: 77ecfb47796c7e849a29b0ce4c1723b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_Wicker
+    second: {fileID: 2100000, guid: b3bd1eadcdad9e74db9b4bf8db34db1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub2_WickerDark
+    second: {fileID: 2100000, guid: eac5bd5196ae3294581adec1073c3a97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_BasketRim
+    second: {fileID: 2100000, guid: b4660b3cc1a29de4f84a687f7d216147, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_Brass
+    second: {fileID: 2100000, guid: 3d3db3e2eae53874c941bb1120b247f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_Iron
+    second: {fileID: 2100000, guid: fcf1480e29e49aa44a81ee957839a833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_Seat
+    second: {fileID: 2100000, guid: a1acc0da6e46c4e4e9b3efe61be2b380, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_SubTop
+    second: {fileID: 2100000, guid: 24841bd8b7002214183d6d513fe47720, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_Wicker
+    second: {fileID: 2100000, guid: 397754df0177ad24c9130fa6c360ec23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sub3_WickerDark
+    second: {fileID: 2100000, guid: 791d727b75c7fba47ac855d8b427202d, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
