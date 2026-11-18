@@ -380,11 +380,17 @@ namespace LotteWorld.Props
         {
             GameObject pf = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabDir + "/Prop_ChainSeg.prefab");
             if (pf == null) { Debug.LogError("[Props] Prop_ChainSeg 프리팹 없음 — 1번 먼저"); return; }
-            Renderer loop = null;
-            foreach (Renderer r in UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
-                if (r.name == "ParadeLoop") { loop = r; break; }
-            if (loop == null) { Debug.LogError("[Props] ParadeLoop 렌더러를 못 찾음 (Blockout/Floor1/ParadeLoop)"); return; }
-            Bounds bb = loop.bounds; float y = bb.min.y;
+            // ParadeLoop 은 렌더러 없는 부모 + 자식 조각(Parade_*) 구조 -> 자식 렌더러 bounds 를 전부 합침
+            Bounds bb = new Bounds(); bool found = false; int parts = 0;
+            foreach (Transform t in UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (t.name != "ParadeLoop") continue;
+                foreach (Renderer r in t.GetComponentsInChildren<Renderer>(true)) { if (!found) { bb = r.bounds; found = true; } else bb.Encapsulate(r.bounds); parts++; }
+                if (found) break;
+            }
+            if (!found) { Debug.LogError("[Props] ParadeLoop 과 그 자식 렌더러를 못 찾음"); return; }
+            Debug.Log("[Props] ParadeLoop 조각 " + parts + "개 합침: 중심 " + bb.center + ", 반폭 " + bb.extents.x.ToString("F2") + " x " + bb.extents.z.ToString("F2"));
+            float y = bb.min.y;
             float hx = bb.extents.x + chainOffset, hz = bb.extents.z + chainOffset; Vector3 c = bb.center;
             bool alongX = hx >= hz; float rr = alongX ? hz : hx, half = (alongX ? hx : hz) - rr;
             // stadium perimeter sampled every ~2 m

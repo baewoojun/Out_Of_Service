@@ -10,7 +10,7 @@ namespace LotteWorld.Shell
     {
         public float H = 58f;                                   // 평천장 높이
         public float DomeK = 3f;                                // 돔 넓이 배수 (면적)
-        public Vector2 LoopC = new Vector2(-5f, 9f);            // 퍼레이드 루프 중심 / 반폭
+        public Vector2 LoopC = new Vector2(0f, 0f);             // 퍼레이드 루프 중심 / 반폭 (씬 ParadeLoop 실측 11/18)
         public float LoopHX = 44.85f, LoopHZ = 29.9f;
         public bool Ice = false;                                // 얼음판도 만들지 (팀 씬에 이미 있으면 끔)
         public float DomeHX { get { return 72f * Mathf.Sqrt(DomeK); } }
@@ -24,7 +24,7 @@ namespace LotteWorld.Shell
             new Vector2(-124.35f, -117.16f), new Vector2(-187.5f, -82.8f), new Vector2(-186.3f, -34.5f), new Vector2(-180.65f, 59.75f), new Vector2(-146.2f, 85.0f),
         };
         public const int GateWall = 2; public const float GateX0 = -64f, GateX1 = -46f;   // Wall_02 정문 구멍
-        public static readonly Vector2 ColumnPos = new Vector2(-36.18f, -84.53f);          // 돔(3배) 남쪽 끝 테두리 보 아래
+        public static readonly Vector2 ColumnPos = new Vector2(-31.18f, -93.53f);          // 돔(3배) 남쪽 끝 테두리 보 아래
         public static readonly float[] Gal = { 7f, 14f, 21f, 28f };
         public const float Band0 = 35f;
     }
