@@ -138,6 +138,9 @@ namespace LotteWorld.MagicIsland
             new PrefabDef("Ride_FantasyDream",      "Rides",      Buildings.FantasyDream),
         };
 
+        /// <summary>Scene objects (not prefabs) that get a baked FBX too: MagicIsland/Baked/Scene/&lt;name&gt;/&lt;name&gt;.fbx.</summary>
+        public static readonly string[] BakedSceneNodes = { "Bridge_Main", "Dock_MoonBoat_20", "Atlantis_Track", "StoneExpress_40_Track" };
+
         // ---------------- coaster routes (module x, y, z) ----------------
         public static readonly float[] AtlantisRoute =
         {
@@ -402,16 +405,20 @@ namespace LotteWorld.MagicIsland
             Func<float, float, Vector3> P = (t, o) => { Vector2 q = A + d * t + s * o; return new Vector3(q.x, 0f, q.y); };
             float yaw = Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg;
             b.Push(P(0f, 0f), yaw);
+            b.Begin("Deck");
             b.BoxMM(-hw, -0.9f, 0f, hw, 0.06f, L, M.CastleCream);
             Lib.TileFloor(b, -hw + 0.4f, hw - 0.4f, 0f, L, 0.06f, 1.5f, M.PavingDark, M.Paving);
+            int pier = 0;
             for (float t = 6f; t < L - 3f; t += 12f)
             {
+                b.Begin("Pier_" + (++pier).ToString("00"));
                 b.BoxMM(-hw - 0.3f, BedY, t - 1.2f, hw + 0.3f, -0.9f, t + 1.2f, M.StoneGrey);
                 b.BoxMM(-hw - 0.5f, -1.6f, t - 1.4f, hw + 0.5f, -0.9f, t + 1.4f, M.CastlePink);
             }
             b.Pop();
             float kt = 30f;                                                          // kiosk 41 platform on the west side
             Vector3 pc = P(kt, -hw - 4.5f);
+            b.Begin("Platform_Kiosk41");
             b.Push(pc, yaw);
             b.BoxMM(-4.5f, -0.9f, -5f, 4.5f, 0.04f, 5f, M.CastleCream);
             b.BoxMM(-4f, BedY, -4f, 4f, -0.9f, 4f, M.StoneGrey);
@@ -423,6 +430,7 @@ namespace LotteWorld.MagicIsland
             foreach (float sd in new[] { -1f, 1f })
             {
                 float o = sd * (hw - 0.2f);
+                b.Begin(sd < 0f ? "Balustrade_West" : "Balustrade_East");
                 if (sd < 0f) { Lib.Balustrade(b, P(0f, o), P(kt - 5.2f, o), M.CastleCream); Lib.Balustrade(b, P(kt + 5.2f, o), P(L, o), M.CastleCream); }
                 else Lib.Balustrade(b, P(0f, o), P(L, o), M.CastleCream);
             }
@@ -450,7 +458,9 @@ namespace LotteWorld.MagicIsland
         {
             var b = new MeshBuilder();
             var line = new List<Vector2> { new Vector2(-174f, 89f), new Vector2(-181f, 74f) };
+            b.Begin("Deck");
             b.Ribbon(line, 3.2f, -0.35f, 0.25f, M.Wood, M.Timber, 0f);
+            b.Begin("Piles");
             Vector2 d = (line[1] - line[0]).normalized, s = new Vector2(d.y, -d.x);
             for (float t = 0f; t <= 16.6f; t += 3f)
                 foreach (float sd in new[] { -1.4f, 1.4f })
@@ -459,6 +469,7 @@ namespace LotteWorld.MagicIsland
                     b.Cyl(new Vector3(q.x, BedY, q.y), 0.18f, 0.18f, 4.3f, 6, M.Timber);
                 }
             var rl = new List<Vector3> { new Vector3(line[0].x + s.x * 1.5f, -0.1f, line[0].y + s.y * 1.5f), new Vector3(line[1].x + s.x * 1.5f, -0.1f, line[1].y + s.y * 1.5f) };
+            b.Begin("Railing");
             Lib.Railing(b, rl, M.Timber, 1.0f);
             var node = new Node("Dock_MoonBoat_20", b);
             g.Add(node);

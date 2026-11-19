@@ -273,39 +273,16 @@ namespace LotteWorld.Shell
                 float g0 = -1, g1 = -1;
                 if (idx == ShellSettings.GateWall) { float t0 = (ShellSettings.GateX0 - a2.x) / u2.x, t1 = (ShellSettings.GateX1 - a2.x) / u2.x; g0 = Mathf.Min(t0, t1); g1 = Mathf.Max(t0, t1); }
                 bool hasGap = g1 > g0;
-                MB cream = Get(set, "Plaster"), white = Get(set, "White"), dark = Get(set, "Recess"), teal = Get(set, "Teal"), plinth = Get(set, "Plinth");
-                // cladding (gate: leave a 16 x 9 m hole)
-                if (hasGap)
+                MB white = Get(set, "White"), teal = Get(set, "Teal");
+                // v3 (11/19): 1층 꾸밈(받침·크림 벽·막힌 아치·흰 기둥·빈 간판·크림 띠) 삭제 -> 바닥부터 천장까지 청록 한 면
+                if (hasGap)                                                                                  // 정문: 9 m 높이 구멍만 남김
                 {
-                    plinth.BoxW(o, u, n, g0 / 2, 0.6f, 0.25f, g0, 1.2f, 0.5f); plinth.BoxW(o, u, n, (g1 + L) / 2, 0.6f, 0.25f, L - g1, 1.2f, 0.5f);
-                    cream.BoxW(o, u, n, g0 / 2, 4.1f, 0.1f, g0, 5.8f, 0.2f); cream.BoxW(o, u, n, (g1 + L) / 2, 4.1f, 0.1f, L - g1, 5.8f, 0.2f);
-                    teal.BoxW(o, u, n, g0 / 2, 8f, 0.1f, g0, 2f, 0.2f); teal.BoxW(o, u, n, (g1 + L) / 2, 8f, 0.1f, L - g1, 2f, 0.2f);
-                    teal.BoxW(o, u, n, (g0 + g1) / 2, 9.5f, 0.1f, g1 - g0, 1f, 0.2f);
-                    white.BoxW(o, u, n, (g0 + g1) / 2, 9.5f, 0.6f, g1 - g0 + 2f, 1f, 1.2f);
+                    teal.BoxW(o, u, n, g0 / 2, H / 2, 0.1f, g0, H, 0.2f); teal.BoxW(o, u, n, (g1 + L) / 2, H / 2, 0.1f, L - g1, H, 0.2f);
+                    teal.BoxW(o, u, n, (g0 + g1) / 2, (9f + H) / 2, 0.1f, g1 - g0, H - 9f, 0.2f);
+                    white.BoxW(o, u, n, (g0 + g1) / 2, 9.5f, 0.6f, g1 - g0 + 2f, 1f, 1.2f);                    // 정문 위 인방
                 }
-                else { plinth.BoxW(o, u, n, L / 2, 0.6f, 0.25f, L, 1.2f, 0.5f); cream.BoxW(o, u, n, L / 2, 4.1f, 0.1f, L, 5.8f, 0.2f); }
-                teal.BoxW(o, u, n, L / 2, (10f + H) / 2, 0.1f, L, H - 10f, 0.2f);                          // 7 m 위는 전부 청록 한 면 (v2: 회랑·칸 없음)
-                if (!hasGap) teal.BoxW(o, u, n, L / 2, 8.5f, 0.1f, L, 3f, 0.2f);
-                cream.BoxW(o, u, n, L / 2, 6.4f, 0.45f, L, 0.4f, 0.5f);
-                white.BoxW(o, u, n, L / 2, H - 3f, 0.7f, L, 1.2f, 1.0f); white.BoxW(o, u, n, L / 2, H - 0.8f, 1.0f, L, 0.8f, 1.6f);
-                int bays = Mathf.Max(1, (int)(L / 6f)); float bw = L / bays;
-                for (int k = 0; k < bays; k++)
-                {
-                    float x = (k + 0.5f) * bw;
-                    if (hasGap && x > g0 - 2 && x < g1 + 2) continue;
-                    dark.BoxW(o, u, n, x, 3.2f, 0.22f, Mathf.Min(3.4f, bw - 1.2f), 3.6f, 0.05f);             // 1F 막힌 아치
-                    float ar = Mathf.Min(1.7f, bw / 2 - 0.6f);
-                    for (int s = 0; s < 8; s++)
-                    {
-                        float t0 = Mathf.PI * s / 8, t1 = Mathf.PI * (s + 1) / 8;
-                        Vector3 p0 = o + u * (x - ar * Mathf.Cos(t0)) + n * 0.24f + Vector3.up * (5f + ar * Mathf.Sin(t0));
-                        Vector3 p1 = o + u * (x - ar * Mathf.Cos(t1)) + n * 0.24f + Vector3.up * (5f + ar * Mathf.Sin(t1));
-                        Vector3 pc = o + u * x + n * 0.22f + Vector3.up * 5f;
-                        dark.Tri(pc, p0, p1, n); white.Member(p0 + n * 0.05f, p1 + n * 0.05f, 0.18f);
-                    }
-                    if (k % 3 == 1) teal.BoxW(o, u, n, x, 6.1f, 0.3f, Mathf.Min(3f, bw - 1.5f), 0.55f, 0.1f);   // 빈 간판
-                    white.BoxW(o, u, n, x - bw / 2, 3.6f, 0.35f, 0.5f, 6f, 0.5f);
-                }
+                else teal.BoxW(o, u, n, L / 2, H / 2, 0.1f, L, H, 0.2f);
+                white.BoxW(o, u, n, L / 2, H - 3f, 0.7f, L, 1.2f, 1.0f); white.BoxW(o, u, n, L / 2, H - 0.8f, 1.0f, L, 0.8f, 1.6f);   // 천장 밑 처마
             }
             return set;
         }

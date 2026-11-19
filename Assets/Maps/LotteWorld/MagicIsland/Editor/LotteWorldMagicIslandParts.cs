@@ -495,6 +495,7 @@ namespace LotteWorld.MagicIsland
             var b = new MeshBuilder();
             float x0 = -3f, x1 = 3f, z0 = -2.2f, z1 = 2.2f, H = 3.2f;
             // front wall with a serving hatch, back and right walls, left wall with the door
+            b.Begin("Walls");
             Lib.WallWithHole(b, x0, x1, 0f, H, z0, z0 + 0.25f, 0f, 3.6f, 1.2f, false, wall);
             b.BoxMM(-1.8f, 0f, z0, 1.8f, 1.05f, z0 + 0.25f, wall);
             b.BoxMM(x0, 0f, z1 - 0.25f, x1, H, z1, wall);
@@ -502,11 +503,15 @@ namespace LotteWorld.MagicIsland
             b.BoxMM(x0, 0f, z0 + 0.25f, x0 + 0.25f, H, -0.45f, wall);
             b.BoxMM(x0, 2.2f, -0.45f, x0 + 0.25f, H, 0.75f, wall);
             b.BoxMM(x0, 0f, 0.75f, x0 + 0.25f, H, z1 - 0.25f, wall);
+            b.Begin("Counter");
             b.BoxMM(-1.85f, 1.05f, z0 - 0.35f, 1.85f, 1.12f, z0 + 0.1f, M.Wood);                 // counter
             b.BoxMM(x0 + 0.25f, 0.9f, z0 + 0.25f, x1 - 0.25f, 0.95f, z0 + 0.8f, M.Metal);      // inner work top
+            b.Begin("Floor_Ceiling");
             Lib.TileFloor(b, x0 + 0.25f, x1 - 0.25f, z0 + 0.25f, z1 - 0.25f, 0f, 1.0f, M.White, M.StoneGrey);
             b.BoxMM(x0 + 0.25f, H - 0.15f, z0 + 0.25f, x1 - 0.25f, H, z1 - 0.25f, M.White);    // ceiling
+            b.Begin("Roof");
             Lib.HipRoof(b, x0, x1, z0, z1, H, 1.6f, 0.5f, roof, M.White);
+            b.Begin("Awning_Sign");
             b.PushFacade(new Vector3(x0, 0f, z0), Vector3.back);
             for (int i = 0; i < 8; i++)                                                         // striped awning
             {
@@ -516,6 +521,7 @@ namespace LotteWorld.MagicIsland
             b.BoxMM(1.4f, 3.35f, -0.08f, 4.6f, 4.1f, 0f, M.White);                               // blank sign board
             b.Pop();
             var n = new Node(name);
+            Furn.Kiosk(b, n, "Store_", new Room(x0 + 0.25f, x1 - 0.25f, z0 + 0.85f, z1 - 0.25f, H - 0.15f, 99f), name.Length * 13);
             n.Add(new Node(name + "_Body", b));
             n.Add(Lib.DoorLeaf("Door_" + name, new Vector3(x0 + 0.125f, 0f, -0.42f), 1.15f, 2.15f, M.Wood, false)).Euler = new Vector3(0f, -90f, 0f);   // leaf runs +Z along the left wall
             return n;
@@ -526,6 +532,7 @@ namespace LotteWorld.MagicIsland
         {
             var b = new MeshBuilder();
             float x0 = -4.5f, x1 = 4.5f, z0 = -3f, z1 = 3f, H = 3.4f, t = 0.25f;
+            b.Begin("Walls");
             Lib2.Openings(b, x0, x1, 0f, H, z0, z0 + t, new[] { -2.2f, 2.2f }, new[] { 1.4f, 1.4f }, new[] { 0f, 0f }, new[] { 2.3f, 2.3f }, M.Plaster);
             b.BoxMM(x0, 0f, z1 - t, x1, H, z1, M.Plaster);
             b.BoxMM(x0, 0f, z0 + t, x0 + t, H, z1 - t, M.Plaster);
@@ -533,12 +540,17 @@ namespace LotteWorld.MagicIsland
             b.BoxMM(-0.12f, 0f, z0 + t, 0.12f, H, z1 - t, M.Plaster);                            // middle wall
             b.BoxMM(-3.4f, 0f, -1.4f, -1.0f, 2.2f, -1.25f, M.Plaster);                           // privacy screens
             b.BoxMM(1.0f, 0f, -1.4f, 3.4f, 2.2f, -1.25f, M.Plaster);
+            b.Begin("Floor");
             Lib.TileFloor(b, x0 + t, x1 - t, z0 + t, z1 - t, 0f, 0.8f, M.White, M.PaleBlue);
+            b.Begin("Roof_Sign");
             b.BoxMM(x0, H, z0, x1, H + 0.3f, z1, M.StoneGrey);
             b.BoxMM(x0 - 0.1f, 0f, z0 - 0.1f, x1 + 0.1f, 0.5f, z0, M.RoofBlueDark);
             b.BoxMM(-1f, H + 0.3f, z0 - 0.06f, 1f, H + 1.1f, z0, M.White);                       // blank sign
             Lib.Bulb(b, new Vector3(-2.2f, H, 0.5f)); Lib.Bulb(b, new Vector3(2.2f, H, 0.5f));
-            var n = new Node("Restroom"); n.Add(new Node("Restroom_Body", b));
+            var n = new Node("Restroom");
+            Furn.Toilets(b, n, "Left_", new Room(x0 + t, -0.12f, z0 + t, z1 - t, H, -2.2f), false);
+            Furn.Toilets(b, n, "Right_", new Room(0.12f, x1 - t, z0 + t, z1 - t, H, 2.2f), true);
+            n.Add(new Node("Restroom_Body", b));
             return n;
         }
     }

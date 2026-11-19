@@ -31,6 +31,19 @@
 - 움직이는 부품(정적 아님): `DropRing`(Y 이동), `Swing_Pivot`(로컬 Z 흔들기) → `Disc_Rotor`(로컬 Y 회전), `Spin_Disc`, `Eos_Ring`, `Train`, 쁘띠카, 문보트 배
 - 가로등 `LampLight`(점광원)는 꺼져 있음 — 밤 장면에 필요한 것만 켜기
 
+## 구운 재질 (11/19)
+- 실내 건물처럼 낡은 재질(얼룩·빗물 자국·벗겨짐, 돌·기와·나무결)을 블렌더에서 구운 FBX가 `MagicIsland/Baked/<프리팹이름>/`에 있으면 그 FBX로 프리팹을 만듦. 다리·선착장·아트란티스/스톤 트랙은 `Baked/Scene/<이름>/`
+- **부품은 안 합침**: 성 = Tower_SW, Keep, Spire, Portal_South … 38개, 집 = Walls_Room, Roof, Chimney, Windows_Upper … 처럼 하나씩 따로 오브젝트(각자 Mesh Collider). 같은 재질을 쓰는 부품끼리 텍스처 한 장을 같이 씀
+- 프리팹은 FBX의 Prefab Variant라서 부품을 옮기거나 지워도 됨(FBX를 다시 구우면 바뀐 부품 메시만 갱신)
+- 땅·포장·잔디·옹벽·아스팔트·호수 바닥·물결은 `MagicIsland/Textures/MI_*.png` 이어지는 텍스처(4 m / 8 m 반복)
+- 처음 한 번: `Tools > LotteWorld > Magic Island > Apply Baked Textures (keep scene edits)` (야외맵 씬 열고) → 구운 프리팹으로 바꾸고 다리·트랙은 같은 자리에서 교체, 씬에서 옮긴 위치는 그대로. 씬 저장은 직접
+  - Rebuild Scene / Rebuild All 도 구운 FBX가 있으면 자동으로 씀
+
+## 실내 꾸밈 (11/19)
+- 문 있는 방 전부 꾸밈(`Editor/LotteWorldMagicIslandInterior.cs`): 가게(선반·진열대·계산대·옷걸이), 식당·카페(카운터·메뉴판·냉장고·테이블 세트·미끄럼 표지판), 대기줄(난간·개찰구·포스터·상자), 매점(선반·냉장고), 화장실(칸·세면대·거울). 넘어진 의자, 흩어진 종이, 꺼진 전구 일부
+- 가구 하나하나 따로 오브젝트(예: `Room_TableSet_03_Chair2`, `Shop19_Shelf_West`). 방마다 `*RoomLight` 점광원(그림자 없음)
+- 프리팹을 다시 만들면 씬 인스턴스 위치가 풀리므로 `Repair Prefab Placement`가 자동으로 같이 돎(Apply Baked Textures 안에서)
+
 ## 고치는 법
 - 위치·회전: 씬에서 오브젝트를 그냥 옮기면 됨(씬 저장)
 - 숫자로 다시 배치: `LotteWorldMagicIslandLayout.cs`의 `Places`(이름, x, z, 방향, 피하는 반경)·섬/호수 외곽선·길 좌표를 고친 뒤 `Rebuild Scene (keep prefabs)` (씬에서 손으로 옮긴 건 초기화됨)

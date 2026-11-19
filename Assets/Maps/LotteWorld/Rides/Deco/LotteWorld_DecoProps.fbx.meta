@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: bd0b76d6331c5174d8d3433109ac12ec
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_BulbOn
+    second: {fileID: 2100000, guid: 599edf47bd3551c43b8250fe4e5ffd66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Cardboard
+    second: {fileID: 2100000, guid: dcaf2c195fe9d1742b1837464922f1b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Cloth
+    second: {fileID: 2100000, guid: cb6b97b13f1adf947bfe092942ef0b57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Cream
+    second: {fileID: 2100000, guid: bcde1ddee62715a4db779eec0130ee23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_BulbOff
+    second: {fileID: 2100000, guid: 783b525a05066fe479708d95bcf93bb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_Churro
+    second: {fileID: 2100000, guid: fe5a74e0ccce1574e883bf5e5daaba0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_Navy
+    second: {fileID: 2100000, guid: 97ed9072827928a4b8c48878e0a7ecd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_Sugar
+    second: {fileID: 2100000, guid: fbab172496508e4429de47f42a5ba84f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_TealDark
+    second: {fileID: 2100000, guid: 4a7c124d7cdc2e44f870bd46c7a8866f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DK_White
+    second: {fileID: 2100000, guid: 476a7d7bd112d4b429b1782766ba03b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Aut1
+    second: {fileID: 2100000, guid: a24ee93f49523c242b2818f06a494ec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Aut2
+    second: {fileID: 2100000, guid: 060e9461b2f574846a22413f73a821ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Bark
+    second: {fileID: 2100000, guid: 4b31654ff1773684cb9da3cbe0ca11ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Curb
+    second: {fileID: 2100000, guid: 189f11fb2312f6a4aa4eb6ffd8ed7e36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_DeadBark
+    second: {fileID: 2100000, guid: 8a82fdbe86c210d4b8ff5e9655b3f443, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Dry1
+    second: {fileID: 2100000, guid: 0ce6b0841d1fd1f4ca4a63dd59639907, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Dry2
+    second: {fileID: 2100000, guid: 6f9f91b972ba0b04b95bb27cfabbb9f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Leaf1
+    second: {fileID: 2100000, guid: e53c5af49d8c91b478ae9f6469f4bb3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Leaf2
+    second: {fileID: 2100000, guid: 160aa5eb03e8252429e604336fcb9c1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_DT_Soil
+    second: {fileID: 2100000, guid: 72fa40ca026401e468dedec79a0ce198, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_FadedBlue
+    second: {fileID: 2100000, guid: 22bcc880ea5ad524886d7286f4d9c7fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_FadedPink
+    second: {fileID: 2100000, guid: da35be685106ce44a82a660b5a5e081d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_FadedRed
+    second: {fileID: 2100000, guid: 053b236ce1965d74ba94ec642cebdece, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_FadedYellow
+    second: {fileID: 2100000, guid: f507116ce166bd34fb511f9e6d540376, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Glass
+    second: {fileID: 2100000, guid: 43a15243f67514046bbf3c66bf5054be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Gold
+    second: {fileID: 2100000, guid: e711e286c98bb8f40a7e6cffff18f1e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_IronBlack
+    second: {fileID: 2100000, guid: 2a5a879450cfd014286a311c5aba4aed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Paper
+    second: {fileID: 2100000, guid: d15bec701b21c0e4984424d1901291de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Rubber
+    second: {fileID: 2100000, guid: d5f4db66318303048888308358a7d3ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Steel
+    second: {fileID: 2100000, guid: b1d5006cad842aa4ea88b694e8ba8ee4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Teal
+    second: {fileID: 2100000, guid: e8c6a097bee9cd2438f3e7d75c3845f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Prop_Wood
+    second: {fileID: 2100000, guid: 4637bef70882e8740b81de5be5b06794, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

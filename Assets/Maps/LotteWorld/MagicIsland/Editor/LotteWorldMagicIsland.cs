@@ -84,8 +84,34 @@ namespace LotteWorld.MagicIsland
             public readonly List<int> T = new List<int>();
         }
 
-        public readonly Dictionary<M, Part> Parts = new Dictionary<M, Part>();
+        /// <summary>Named parts: everything drawn after Begin("Tower_SW") goes into the part 'Tower_SW'. Each part becomes its own
+        /// GameObject (own mesh + collider), so every tower, wall, roof, window set ... can be moved or edited on its own.</summary>
+        public readonly Dictionary<string, Dictionary<M, Part>> Groups = new Dictionary<string, Dictionary<M, Part>>();
+        public readonly List<string> Order = new List<string>();
+        string cur = "";
+        public void Begin(string partName) { cur = partName ?? ""; }
         readonly Stack<Matrix4x4> stack = new Stack<Matrix4x4>();
+
+        /// <summary>All parts merged (per material).</summary>
+        public Dictionary<M, Part> Parts
+        {
+            get
+            {
+                if (Order.Count == 1) return Groups[Order[0]];
+                var o = new Dictionary<M, Part>();
+                foreach (string g in Order)
+                    foreach (KeyValuePair<M, Part> kv in Groups[g])
+                    {
+                        Part d; if (!o.TryGetValue(kv.Key, out d)) { d = new Part(); o[kv.Key] = d; }
+                        int off = d.V.Count; d.V.AddRange(kv.Value.V); d.N.AddRange(kv.Value.N); d.UV.AddRange(kv.Value.UV);
+                        foreach (int t in kv.Value.T) d.T.Add(t + off);
+                    }
+                return o;
+            }
+        }
+        /// <summary>A builder holding just one named part.</summary>
+        public MeshBuilder Only(string g) { var b = new MeshBuilder(); b.Groups[""] = Groups[g]; b.Order.Add(""); return b; }
+        public int PartCount { get { int n = 0; foreach (string g in Order) { int t = 0; foreach (KeyValuePair<M, Part> kv in Groups[g]) t += kv.Value.T.Count; if (t > 0) n++; } return n; } }
         Matrix4x4 mtx = Matrix4x4.identity;
 
         public void Push(Vector3 pos, Quaternion rot) { stack.Push(mtx); mtx = mtx * Matrix4x4.TRS(pos, rot, Vector3.one); }
@@ -97,13 +123,15 @@ namespace LotteWorld.MagicIsland
             Push(origin, Quaternion.LookRotation(-o, Vector3.up));
         }
         public void Pop() { mtx = stack.Pop(); }
-        public bool Empty { get { foreach (KeyValuePair<M, Part> kv in Parts) if (kv.Value.T.Count > 0) return false; return true; } }
-        public int TriangleCount { get { int n = 0; foreach (KeyValuePair<M, Part> kv in Parts) n += kv.Value.T.Count / 3; return n; } }
+        public bool Empty { get { return TriangleCount == 0; } }
+        public int TriangleCount { get { int n = 0; foreach (string g in Order) foreach (KeyValuePair<M, Part> kv in Groups[g]) n += kv.Value.T.Count / 3; return n; } }
 
         Part Get(M k)
         {
+            Dictionary<M, Part> d;
+            if (!Groups.TryGetValue(cur, out d)) { d = new Dictionary<M, Part>(); Groups[cur] = d; Order.Add(cur); }
             Part p;
-            if (!Parts.TryGetValue(k, out p)) { p = new Part(); Parts[k] = p; }
+            if (!d.TryGetValue(k, out p)) { p = new Part(); d[k] = p; }
             return p;
         }
 
@@ -513,6 +541,22 @@ namespace LotteWorld.MagicIsland
         public readonly List<Node> Kids = new List<Node>();
 
         public Node(string name) { Name = name; }
+
+        /// <summary>Turns every mesh drawn in several named parts into one child node per part (named after the part).
+        /// Unnamed geometry keeps the node's own name (as a child '<name>_Main' when there are named parts too).</summary>
+        public static void SplitParts(Node n)
+        {
+            foreach (Node c in n.Kids) SplitParts(c);
+            if (n.Mesh == null || n.Mesh.PartCount < 2) return;
+            MeshBuilder m = n.Mesh; n.Mesh = null;
+            var add = new List<Node>();
+            foreach (string g in m.Order)
+            {
+                MeshBuilder pb = m.Only(g); if (pb.Empty) continue;
+                add.Add(new Node(g == "" ? n.Name + "_Main" : g, pb) { Collider = n.Collider, IsStatic = n.IsStatic });
+            }
+            n.Kids.InsertRange(0, add);
+        }
         public Node(string name, MeshBuilder mesh) { Name = name; Mesh = mesh; }
         public Node Add(Node c) { Kids.Add(c); return c; }
         public Node Group(string name) { var c = new Node(name); Kids.Add(c); return c; }

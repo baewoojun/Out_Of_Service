@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: c110b3abcdacaec4695f4810e7801e03
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_FadedRed
+    second: {fileID: 2100000, guid: 9ff334dc31f808d48a68c9fd47f0054e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_Gold
+    second: {fileID: 2100000, guid: 5b78a66579d65fb41ac91002495dcc56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_Timber
+    second: {fileID: 2100000, guid: 9100cb01e96150f4685748099695e8bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_FadedRed
+    second: {fileID: 2100000, guid: f8013613838b63045882ce293a49f64c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_Gold
+    second: {fileID: 2100000, guid: dbf80e5f94660b44a82706b8ac69a7c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_Timber
+    second: {fileID: 2100000, guid: fea27abd9d4b3954599e950871e7e6c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Gold
+    second: {fileID: 2100000, guid: a63fbc776a445d547b20fef472f6969b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Recess
+    second: {fileID: 2100000, guid: cc6239aca3bb0dd4aab0c57c8e2160cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Timber
+    second: {fileID: 2100000, guid: d4aa210d402384d4f82d38b8c949ac8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Gold
+    second: {fileID: 2100000, guid: 407d00ea03bbbce48880dae50330ebae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Recess
+    second: {fileID: 2100000, guid: 2e00bf0118453d2449e7f2221afe0a23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Timber
+    second: {fileID: 2100000, guid: 3b98da08ee35d894e8518b75d042b30c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Gold
+    second: {fileID: 2100000, guid: 7e215cf9523f3b84bbd1793044b2fbc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Recess
+    second: {fileID: 2100000, guid: e9427ab5e4ca3a64da53c31374efdcce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Timber
+    second: {fileID: 2100000, guid: ca99c996d563c0343a847ad672683da3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Gold
+    second: {fileID: 2100000, guid: a88bda6e4cefb7c4eae5d88770a5f304, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Recess
+    second: {fileID: 2100000, guid: 20cdcc0406f433b498f34a49c002432f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Timber
+    second: {fileID: 2100000, guid: 84df6175a97ab65429e722efb4bcd63b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NW_BulbOn
+    second: {fileID: 2100000, guid: 783cb3746a130fe47ab0fc46a325e579, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Cream
+    second: {fileID: 2100000, guid: 4ed11d0eba229a7458b5e915831366b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_FadedRed
+    second: {fileID: 2100000, guid: 5969f3b6048cac84a965971d1d02588f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Glass
+    second: {fileID: 2100000, guid: cb55d09108db92c4aa8ae2a22f20dae6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Gold
+    second: {fileID: 2100000, guid: 99fd9e2de36f8a142bac638832c7f008, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Plinth
+    second: {fileID: 2100000, guid: 0ff70f14f6f012445a1b4cecab858fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Recess
+    second: {fileID: 2100000, guid: 7eb9a46508062e44dbe14cb260c8e5dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_RoofTile
+    second: {fileID: 2100000, guid: f08481f5685c2c94eab676f40ef1081b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Stone
+    second: {fileID: 2100000, guid: 9c206d2dee941fe4780f7e9e988461bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Teal
+    second: {fileID: 2100000, guid: 71dd917fc6648d34bb6a84cc54218506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_TileA
+    second: {fileID: 2100000, guid: ef9db5393811abe49ae9aecebbca30c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_TileB
+    second: {fileID: 2100000, guid: 11c117fe4bc5c0c4b905a10fc7e4afaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Timber
+    second: {fileID: 2100000, guid: 42842837e023e5f44a7600ea3b45a0ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_White
+    second: {fileID: 2100000, guid: 72f907ecbfb10d6429baf2b7ef23d3c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_WoodFloor
+    second: {fileID: 2100000, guid: d657756f379546f428b0d8fb1d6fde10, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
