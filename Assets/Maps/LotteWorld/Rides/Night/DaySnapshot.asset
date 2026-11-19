@@ -1,0 +1,2901 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164fbbad61a127044aaf8af198e891c3, type: 3}
+  m_Name: DaySnapshot
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::LotteWorld.Night.DaySnapshot
+  nightApplied: 1
+  scenePath: Assets/Maps/LotteWorld/Map3_LotteWorld.unity
+  skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  ambientMode: 0
+  ambientIntensity: 1
+  ambientSky: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  ambientEquator: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  ambientGround: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  ambientLight: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  defaultReflectionMode: 0
+  reflectionIntensity: 1
+  fog: 0
+  fogMode: 3
+  fogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  fogDensity: 0.01
+  fogStart: 0
+  fogEnd: 300
+  sunPath: Directional Light
+  directionals:
+  - path: Directional Light
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+    intensity: 1.15
+    shadows: 2
+    shadowRes: -1
+    shadowStrength: 1
+  - path: MagicIsland/10_Lighting/Sun
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.93, b: 0.82, a: 1}
+    intensity: 1.25
+    shadows: 2
+    shadowRes: -1
+    shadowStrength: 1
+  lights:
+  - path: MagicIsland/08_Props/Lamps/Lamp_016/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Deco_Food_Popcorn/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_025/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.81980956
+    range: 4.99393
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_D_SWCorner/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_041/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 5.1196346
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_01/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Village/TownHouse_04/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 9.559999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Headbands (3)/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_022/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Castle/MagicCastle/Shop19_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 14.059999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_011/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_023/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6865632
+    range: 6.415164
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Headbands (2)/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: Deco_Food_IceCream (4)/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.86778617
+    range: 5.2167516
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.3285885
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.086758
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8254212
+    range: 5.954487
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Churros (4)/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_IceCream/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Popcorn/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.86479187
+    range: 5.623823
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_017/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Village/TownHouse_01/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 10.459999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Churros (3)/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_03/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_029/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.8594117
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.95403063
+    range: 5.4072304
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.2993336
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_006/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Deco_Shop_Headbands/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.8329506
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_021/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Cottages/Cottage_49/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 10.459999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8633347
+    range: 6.301462
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.10132
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.99625033
+    range: 4.955792
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_030/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_IceCream (2)/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.63378733
+    range: 4.6056757
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_023/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_027/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.943534
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.522753
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6685432
+    range: 5.430334
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Kiosks/Kiosk_48_Candy/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.164356
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_014/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6424838
+    range: 4.634112
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_011/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Kiosks/Kiosk_43_Waffle/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_025/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.70707774
+    range: 6.013357
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_044/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_042/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8210161
+    range: 5.0762506
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.5267997
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_004/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 1.25
+    range: 4.9500003
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.966748
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.9468365
+    range: 5.8065095
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 5.169856
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Headbands (1)/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: Deco_Food_Popcorn (4)/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.483226
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_08/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_005/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.8601265
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.68327165
+    range: 6.261514
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: Deco_Shop_Souvenir (1)/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.5686593
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7451387
+    range: 5.513735
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_North/Left_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Churros (2)/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.6105847
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.608763
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_04/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_015/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Churros/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Shops/Cafe_42/Cafe_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 12.259999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_001/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Deco_Food_Popcorn/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_009/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_022/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Plaza_31/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Churros (1)/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.0379167
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_035/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_021/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Deco_Food_IceCream/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_026/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7064891
+    range: 5.614318
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_015/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_019/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Deco_Food_Churros/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Cottages/Cottage_50/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 12.259999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_024/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_IceCream (3)/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.6162934
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Souvenir (2)/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6814953
+    range: 5.7000637
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.57144713
+    range: 5.5809298
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_West/Right_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_South_Street/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.7178917
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Kiosks/Kiosk_51/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_014/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.0957227
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.75610685
+    range: 4.5599318
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Plaza_29/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.326625
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_007/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.4276066
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.2172647
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.689382
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.787121
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_002/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 4.5122666
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Deco_Food_Popcorn/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.57091224
+    range: 5.7263184
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.466805
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_008/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_016/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.56107885
+    range: 6.3546267
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.97914755
+    range: 6.0014963
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8015795
+    range: 6.29463
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.4332395
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.96305716
+    range: 4.9657187
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6258432
+    range: 5.1890297
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Deco_Food_IceCream/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_000/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Deco_Food_Popcorn/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_South_Street/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.5106816
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Popcorn (3)/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.87603724
+    range: 4.600022
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_D_SWCorner/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.67609036
+    range: 4.9828863
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.2839775
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.8184576
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_001/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Sconce_On/Prop_Sconce_On/Prop_Sconce_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 6.495473
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_018/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_010/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.467221
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8062861
+    range: 5.104019
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.70431805
+    range: 4.650762
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7914205
+    range: 4.573685
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_003/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_034/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_013/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.822341
+    range: 4.9506636
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.3892374
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.8383565
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_D_SWCorner/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Plaza_28/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Deco_Shop_Headbands/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.1706676
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/03_Paths/Bridge/Kiosk_41_Bridge/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.68613
+    range: 6.230782
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_06/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.5575925
+    range: 6.299666
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.887162
+    range: 5.1513424
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_012/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_D_SWCorner/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_020/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7555926
+    range: 6.4175043
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.87862206
+    range: 6.4209194
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_008/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_006/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6978512
+    range: 4.5072365
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_D_SWCorner/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.113868
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8503908
+    range: 4.8815765
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_031/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_Kids/Left_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_010/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_017/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.502331
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.56864434
+    range: 6.4372435
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Deco_Food_Churros/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_020/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_038/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.718873
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_IceCream (1)/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_018/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.9458275
+    range: 5.7478533
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_039/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Pendant_On/Prop_Pendant_On/Prop_Pendant_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 6.2569227
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7147946
+    range: 4.805889
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Village/TownHouse_02/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 9.559999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Village/Restaurant_Lakeview_47/Hall_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 23.06
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.816272
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Shop_Headbands/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_F_FlumeFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_033/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_02/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Popcorn (1)/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.949556
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Plaza_30/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.76730585
+    range: 5.5895414
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.614441
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.947629
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_024/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_028/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7831539
+    range: 6.244796
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_South_Street/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.66072416
+    range: 5.625958
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Kiosks/Kiosk_45/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_07/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Deco_Food_Churros/Deco_Food_Churros/Deco_Food_Churros_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Deco_Food_IceCream/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8728172
+    range: 5.5547295
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_00/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_South_Street/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.9977938
+    range: 6.368296
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8918428
+    range: 5.986123
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6017026
+    range: 5.147648
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_002/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_019/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_09/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.793468
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6492253
+    range: 6.367245
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.8265374
+    range: 5.1159286
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_040/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_037/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_032/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_007/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6031766
+    range: 5.254854
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Kiosks/Kiosk_44/Store_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: Deco_Food_Popcorn (2)/Deco_Food_Popcorn/Deco_Food_Popcorn_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.74548095
+    range: 5.038047
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_G_CastleWest/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.93108106
+    range: 5.363763
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7853601
+    range: 6.3764997
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/05_Rides/KidsZone/StoneExpress_40_Station/Station_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 15.86
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.9412086
+    range: 4.98167
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_012/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_North/Right_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_South_Street/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_004/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.645855
+    range: 6.4473944
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_036/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Shops/MapleStore_21/Shop_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 15.86
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_005/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.7220006
+    range: 5.538907
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/05_Rides/CometExpress_38/Lobby_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 24.859999
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/04_Buildings/Village/TownHouse_03_Food46/Room_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 11.36
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6189166
+    range: 5.5848484
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_SE_Plaza/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.5890491
+    range: 4.929705
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.064502
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Basket/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 6.069884
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 5.127961
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_013/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_West/Left_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Sconce_On/Prop_Sconce_On/Prop_Sconce_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 1.25
+    range: 6.1977625
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Deco_Shop_Souvenir/Deco_Shop_Souvenir/Deco_Shop_Souvenir_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_A_GateCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2.5
+    range: 9
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Deco_Shop_Headbands/Deco_Shop_Headbands/Deco_Shop_Headbands_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_B_CarouselNorth/Deco_Food_IceCream/Deco_Food_IceCream/Deco_Food_IceCream_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 2
+    range: 7
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.85555285
+    range: 6.066507
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.7091374
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_009/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_E_FoodCourt/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt1
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.6985268
+    range: 4.6120243
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_026/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Props_NorthGate/Prop_Sconce_On/Prop_Sconce_On/Prop_Sconce_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.78, b: 0.5, a: 1}
+    intensity: 1.25
+    range: 4.9500003
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_C_CastleFront/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.901492
+    range: 5.6459975
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/06_Facilities/Restrooms/Restroom_Kids/Right_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 6.95
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_027/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_043/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Deco/Props/Prop_Lamp_Half/Prop_Lamp_Half/Prop_Lamp_Half_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.67538184
+    range: 4.828164
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_Carousel/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 0.9464286
+    range: 6.3331184
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_Shore_000/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/05_Rides/Atlantis_33/Atlantis_33_Temple/Vestibule_RoomLight
+    enabled: 1
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.1
+    range: 8.66
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Lamps/Lamp_003/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  - path: LotteWorld_Fest/Fest_NE_Walk/Prop_Lamp_On/Prop_Lamp_On/Prop_Lamp_On_LightPt0
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.82, b: 0.55, a: 1}
+    intensity: 2.5
+    range: 4.566703
+    shadows: 0
+    hadFlicker: 1
+    weAddedFlicker: 0
+  - path: MagicIsland/08_Props/Bridge/BridgeLamp_05/LampLight
+    enabled: 0
+    goActive: 1
+    color: {r: 1, g: 0.85, b: 0.62, a: 1}
+    intensity: 1.2
+    range: 10
+    shadows: 0
+    hadFlicker: 0
+    weAddedFlicker: 0
+  emissionRendererPaths: []
+  ceilLightRenderers:
+  - path: LotteWorld_Shell/Ceiling/Ceiling_CeilLightOff
+    materials:
+    - {fileID: 2100000, guid: 35cfba7612e0e644d8a4e3e7d6c720e4, type: 2}
+  - path: LotteWorld_Shell/Ceiling/Ceiling_CeilLightOn
+    materials:
+    - {fileID: 2100000, guid: 35cfba7612e0e644d8a4e3e7d6c720e4, type: 2}
+  createdNightVolume: 0
+  hasNightVolume: 0
+  mainCamHadPost: 1
+  mainCamPath: MainCamera
+  urpRendererPath: 
+  urpPrevMode: 0
+  urpModeChanged: 0
+  skyboxAssetPath: 
