@@ -107,8 +107,8 @@ namespace LotteWorld.Night
         {
             Undo.RecordObject(light, "Flashlight Light");
             light.type = LightType.Spot;
-            light.intensity = 70f;
-            light.range = 150f;
+            light.intensity = 280f;
+            light.range = 450f;
             light.spotAngle = 45f;
             light.innerSpotAngle = 25f;
             light.color = new Color(1f, 0.95f, 0.85f);

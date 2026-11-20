@@ -172,7 +172,7 @@ namespace LotteWorld.Night
             spotLight = light;
             followTarget = cam;
             startOn = startEnabled;
-            _baseIntensity = light != null ? light.intensity : 70f;
+            _baseIntensity = light != null ? light.intensity : 280f;
         }
 #endif
     }

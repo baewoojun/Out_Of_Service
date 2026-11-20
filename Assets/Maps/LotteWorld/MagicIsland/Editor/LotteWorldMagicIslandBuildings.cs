@@ -716,6 +716,12 @@ namespace LotteWorld.MagicIsland
     {
         public static MeshBuilder Build(List<Vector3> ctrl, bool closed, float gauge, M rail, M sup, float supEvery, float groundY, out List<Vector3> path)
         {
+            return Build(ctrl, closed, gauge, rail, sup, supEvery, groundY, null, out path);
+        }
+
+        /// <summary>skipSupport(p): true = no support post here (e.g. it would stand on a walkway); the next segment gets it instead.</summary>
+        public static MeshBuilder Build(List<Vector3> ctrl, bool closed, float gauge, M rail, M sup, float supEvery, float groundY, Func<Vector3, bool> skipSupport, out List<Vector3> path)
+        {
             var b = new MeshBuilder();
             path = Geo.Spline(ctrl, closed, 1.6f);
             int n = path.Count, segs = closed ? n : n - 1;
@@ -732,7 +738,7 @@ namespace LotteWorld.MagicIsland
                 b.Member(p - u * 0.55f, q - u * 0.55f, 0.42f, rail);
                 b.BoxO(p - u * 0.25f, s, u, t, new Vector3(gauge + 0.1f, 0.12f, 0.2f), rail);
                 acc += L;
-                if (acc >= supEvery)
+                if (acc >= supEvery && (skipSupport == null || !skipSupport(p)))
                 {
                     acc = 0f;
                     Vector3 bot = new Vector3(p.x, groundY, p.z), top = p - u * 0.8f;
