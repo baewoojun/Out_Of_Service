@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164fbbad61a127044aaf8af198e891c3, type: 3}
   m_Name: DaySnapshot
   m_EditorClassIdentifier: Assembly-CSharp-Editor::LotteWorld.Night.DaySnapshot
-  nightApplied: 1
+  nightApplied: 0
   scenePath: Assets/Maps/LotteWorld/Map3_LotteWorld.unity
   skybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   ambientMode: 0

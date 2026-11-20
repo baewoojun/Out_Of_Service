@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecad0625baf3de498f257c15cfdcfe1, type: 3}
   m_Name: TodState
   m_EditorClassIdentifier: Assembly-CSharp-Editor::LotteWorld.Night.TodState
-  isNight: 1
+  isNight: 0
   bootstrapped: 1
