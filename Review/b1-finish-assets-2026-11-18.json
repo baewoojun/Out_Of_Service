@@ -1,0 +1,72 @@
+{
+  "checked_on": "2026-11-18",
+  "scope": "B1 flowers, prop surfaces, tenant walls, suspended ceiling and concourse services",
+  "references": [
+    {
+      "name": "Mayra's Bridal Pink garden rose",
+      "author": "Alexandra Farms",
+      "url": "https://www.alexandrafarms.com/varieties/mayras-bridal-pink/",
+      "image_url": "https://www.alexandrafarms.com/wp-content/uploads/2026/08/mayras-bridal-pink-01-v3.jpg",
+      "local_reference": "Review/B1References/garden-rose-reference.jpg",
+      "license": "Copyrighted photo: visual reference only, not redistributed in the game",
+      "observed": "Downloaded photo inspected: overlapping rounded/scalloped cup petals, pale outer petals and darker nested centre. Official page lists a 12 cm rosette bloom.",
+      "interpretation": "Original low-poly game rose approximates overlap and cup depth; not an exact botanical cultivar reconstruction.",
+      "not_confirmed": "Current Korean shop stock, exact stem dimensions or scan geometry",
+      "included_in_build": false
+    },
+    {
+      "name": "KCC Mitone Sky commercial ceiling installation",
+      "author": "KCC",
+      "url": "https://webzine2024.kccworld.co.kr/kcc/cn.do?rid=934",
+      "image_url": "https://webzine2024.kccworld.co.kr/data/cn/934/sky2.jpg",
+      "local_reference": "Review/B1References/ceiling-reference.jpg",
+      "license": "Copyrighted photo: visual reference only",
+      "observed": "Inspected installation photograph shows ceiling profiles, suspended panel/baffle rhythm, metal mesh sections, hanging services and track/linear fixtures. Photograph depicts a library interior, not a verified supermarket.",
+      "interpretation": "Grid, panel thickness, service mounts and recessed vents used as construction cues for an original basement fitout. The 600 mm game grid, duct sizes and maintenance marks are design choices.",
+      "not_confirmed": "Actual Homeplus ceiling system, floor plan, dimensions or fire/sprinkler compliance",
+      "included_in_build": false
+    },
+    {
+      "name": "SNOWFOX FLOWERS store reference, reused",
+      "author": "Snowfox Flowers",
+      "url": "https://m.snowfoxflowers.com/article/store/3001/56/",
+      "local_reference": "Review/B1References/snowfox-store-reference.jpg",
+      "license": "Copyrighted reference only",
+      "observed": "Stepped buckets, grouped cut flowers, wrapped bouquet display and individual cards, visually inspected in preceding pass.",
+      "not_confirmed": "Exact dimensions and present-day inventory",
+      "included_in_build": false
+    }
+  ],
+  "assets": [
+    {
+      "name": "Painted Plaster Wall",
+      "author": "Amal Kumar / Poly Haven",
+      "url": "https://polyhaven.com/a/painted_plaster_wall",
+      "license": "CC0",
+      "license_url": "https://polyhaven.com/license",
+      "original_files": ["Assets/OutOfService/Art/Textures/painted_plaster_wall_Diffuse.jpg", "Assets/OutOfService/Art/Textures/painted_plaster_wall_nor_dx.jpg"],
+      "location": "B1 tenant upper wall finish and maintenance patch",
+      "modifications": "Existing project 2K maps reused, green/beige material tint, reduced normal strength 0.30; physical mesh UVs. Original scan is an exterior plaster, adapted as game interior material.",
+      "compatibility": "Unity 6000.6.8f1, URP 17.6 Lit; existing imported normal map reused. No pipeline setting change."
+    },
+    {
+      "name": "Rose/gerbera heads, botanical leaves and bouquet sleeve variations",
+      "author": "Original project-authored geometry and procedural textures",
+      "url": null,
+      "license": "Original project work; no third-party mesh imported",
+      "original_files": ["Assets/OutOfService/Editor/MarketMallDetailsV7.cs"],
+      "location": "B1 잎새 화원",
+      "modifications": "20 cupped rose petals or 30 narrow gerbera petals combined per head, curved asymmetric leaves, subtle petal fibre/leaf veins, varying flower tilt/size and three folded paper sleeves. Head meshes <= 1200 vertices for existing sector batching. Petal shadow casting disabled to avoid thin-surface shadow-bias artifacts; stems, leaves and vessels retain shadows."
+    },
+    {
+      "name": "B1 timber, clay, enamel, paper, ceiling and maintenance finishes",
+      "author": "Original procedural project textures and meshes",
+      "url": null,
+      "license": "Original project work",
+      "original_files": ["Assets/OutOfService/Editor/MarketBasementFinishV7.cs"],
+      "location": "B1 florist props, sewing equipment, six tenant walls/ceilings and central/service corridors",
+      "modifications": "Shared mipmapped texture families. Static room meshes combine ceiling panels/grid. Concourse ceiling split into seven 12 m sectors. Vents, service hatch, fixed conduits, sprinkler shapes, wall skirting/joints and restrained water tide marks. No new point/spot lights, gameplay interaction, per-flower update loop or network objects."
+    }
+  ],
+  "not_claimed": "A scan-accurate real store, exact L4D2 rendering, fire code design, complete asset quality parity, or full AI/multiplayer performance validation."
+}

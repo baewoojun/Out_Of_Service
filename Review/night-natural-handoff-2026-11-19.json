@@ -1,0 +1,20 @@
+{
+  "title": "다른 대화에 전달할 변경 요약",
+  "date": "2026-11-19",
+  "area": "맵 / 환경 조명",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "changes": [
+    "B1·1F·2F 공통 주변광과 매장 조명을 낮췄다. 일반 등은 기존 강도의 70%, 계단·랜딩·비상등은 88%이며 새로 생성된 조명에 한 번 적용한다.",
+    "어두운 ExpSquared 안개 밀도 0.052, 손전등 거리 17m·외각 54°·내각 24°. 카메라 FOV 75° 및 배터리·스태미나·피해 규칙은 유지했다.",
+    "B1 꽃집 꽃잎, 세탁소 3종 옷, 속이 빈 컵과 카페 장비 세부 구조를 수정했다. 기존 통로·충돌 범위와 2F 의류는 유지했다.",
+    "생성 스크립트에 반영 후 장면·반사 프로브·Windows 빌드를 갱신했다. HUD는 기존처럼 꺼 둔다."
+  ],
+  "affected_areas": [
+    "AI/추격 담당: 시야는 어두워졌으나 AI 감지 거리나 조명 인식은 함께 변경하지 않았다. 실제 추격 공정성은 별도 검증 필요.",
+    "HUD/효과 담당: 새 화면 덮개나 체적 안개를 추가하지 않았다. 상호작용 표시의 가독성은 어두운 새 조명 기준으로 확인할 것.",
+    "다른 맵 작업: 조명을 개별로 또 70% 곱하지 말 것. 새로 생성한 조명에 ApplyAfterHoursLightBalance가 한 번 적용된다. 재생성 후 반사 프로브도 베이크한다."
+  ],
+  "tests": "1920×1080 standalone player: movement 193 PASS, 22 environment views and 19 B1 detail views inspected. Controlled render timings only; first-run spikes remain unresolved.",
+  "report": "Review/night-natural-pass-2026-11-19.json",
+  "references": "Review/b1-natural-assets-2026-11-19.json"
+}

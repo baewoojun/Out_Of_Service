@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-18",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "build": {
+    "build_finished": "2026-11-18T13:18:40.5147036+09:00",
+    "scene_sha256": "4CEDEA576848CB1326E716310B206793CBEDF73AD54AF6237997FB6EF8F5A6C8",
+    "assembly_sha256": "FE79FE7C496D07AC2260E5632397397BCEFABC6A45A071B8CFFAA3810E7A9D46"
+  },
+  "changes": [
+    "B1 몰 / 1F 식품·생활·가전 / 2F 패션·고객센터 배치와 목표 흐름 변경 없음.",
+    "1F 정육/수산 작업실은 기존 위치 유지. 중앙 냉장창고 접근과 출입문 통과 검사를 추가.",
+    "HUD·점프·낙하피해·스태미나·배터리 코드 변경 없음. 새 장식 기계는 조작·네트워크 상태 없음.",
+    "재생성 원본은 MarketFreshPrepDetailV7.cs, MarketFreshFixturesV7.cs, MarketRetailGoodsV7.cs, MarketPackageInformationV7.cs 및 DrawPackInformation.ps1. 장면만 수동 수정한 내용 없음."
+  ],
+  "validation": "161 route checks and 55 held products passed at 1920x1080",
+  "limitations": [
+    "큰 글자는 확인했지만 작은 인쇄는 1080p 근접 화면에서 일부 흐리다. 읽어야 하는 필수 게임 정보는 이 미세 인쇄에 의존하지 않아야 한다.",
+    "일부 병·캔의 표면과 라벨 연결부, 진열의 반복, 장비의 미세 마감은 추가 개선 여지가 있다. 레포데2와 같은 완성도를 달성했다고 판단하지 않는다.",
+    "3층 AI 추격/탈출 전체 흐름, 멀티플레이 동기화 및 장시간 자원 사용은 이번 검사 범위 밖이다."
+  ]
+}

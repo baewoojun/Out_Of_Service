@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-22T09:29:09.8053066+09:00",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_saved": "2026-11-22T09:25:18.0949446+09:00",
+  "scene_sha256": "56412FD6BE23268CDF3B0A7A6F261B9BA4D16FA5610FB4F7E57BF846EB9FB33F",
+  "build": "Builds/MarketReview/Market.exe",
+  "build_completed": "2026-11-22T09:25:55.2533330+09:00",
+  "build_result": "Succeeded",
+  "archive": "Review/Variety2Completed-2026-11-22",
+  "environment": "Unity 6000.6.8f1 / URP 17.6.0 / Windows D3D12 / RTX 4070 SUPER / 1920x1080 / FOV75. Editor remained open. Same workstation; driver caches not cleared.",
+  "floor": "PASS: 273 checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances, four new mall customer route returns, five support rooms with doors, 1F retail loop/cross aisle, 2F fashion loop, appliance/kitchen/family doors, both fresh prep rooms and walk-ins return with staff doors. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.",
+  "functions": "PASS: 27 door and culling regression checks; 81 resting doors verified.",
+  "graphics": "PASS: 42 views at 1920x1080 / FOV75, torch ON/OFF, 29/29 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.",
+  "normal_game_visibility": "PASS: 1920x1080, original backbuffer, normal camera, player enabled, 1 active AI; 240 camera frames. Loading 665.82 ms. Ready-to-first camera end 2.824 ms (partial frame). Subsequent frame cadence p95 6.764 ms / max 7.354 ms / over 16.67ms 0/239. No manual Camera.Render, GPU readback, target allocation, warmup-frame deletion or simulation disabling after loading. Uncapped static starting viewpoint, not a combat/network benchmark or isolated GPU time. Mass visibility off/on transitions: 2, immediately before samples 80 and 160. All transition samples retained.",
+  "normal_game_visibility_transition_ms": [
+    5.386,
+    5.812
+  ],
+  "pepper_normal_camera": "1920x1080 | real startup preparation 686.06 ms / 7 views | normal camera 1526 rendered | distance 6.00 m | p95 3.13 ms | p99 3.52 ms | max 8.26 ms | frames over 16.67ms 0/1526",
+  "mall_normal_camera": "1920x1080 | normal camera | AI disabled | real startup preparation 660.98 ms / 7 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 5311 rendered | 8/8 route legs | distance 38.56 m | p95 3.24 ms | p99 3.67 ms | max 8.40 ms | over 16.67ms 0/5311 | gen0 collections 9",
+  "controlled_render": "1920x1080 controlled render/readback, AI disabled, not full-game FPS. Real startup preparation 631.19 ms / 7 views. First NEW test-target draw after door, light and mass culling toggles 23.30 ms, followed by 180 renders on distinct engine frames: p95 7.71 ms / max 11.07 ms. Whole scripted-loop frame intervals p95 8.66 ms / max 12.84 ms. Main-thread allocations across sample frames including QA/render callbacks 0 bytes. All 181 draws including the initial cold sample are retained in render-stages.tsv; no warmup spikes discarded. Legacy same-frame duplicate render/readback is isolated by -hitchIsolationReview; use -visibilityGameplayReview for normal-backbuffer transition cadence.",
+  "new_area_controlled_timings": [
+    {
+      "view": "family-exterior",
+      "torch": "0",
+      "p95_render_sync_ms": "3.131",
+      "mean_srgb": "0.0256",
+      "black_fraction": "0.7087",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "family-exterior",
+      "torch": "1",
+      "p95_render_sync_ms": "3.006",
+      "mean_srgb": "0.0351",
+      "black_fraction": "0.5963",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "family-interior",
+      "torch": "0",
+      "p95_render_sync_ms": "2.493",
+      "mean_srgb": "0.0405",
+      "black_fraction": "0.6432",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    },
+    {
+      "view": "family-interior",
+      "torch": "1",
+      "p95_render_sync_ms": "2.799",
+      "mean_srgb": "0.0890",
+      "black_fraction": "0.4959",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    },
+    {
+      "view": "nursing-chair",
+      "torch": "0",
+      "p95_render_sync_ms": "2.780",
+      "mean_srgb": "0.0346",
+      "black_fraction": "0.7068",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    },
+    {
+      "view": "nursing-chair",
+      "torch": "1",
+      "p95_render_sync_ms": "2.890",
+      "mean_srgb": "0.0848",
+      "black_fraction": "0.5649",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    },
+    {
+      "view": "cookware-open",
+      "torch": "0",
+      "p95_render_sync_ms": "3.325",
+      "mean_srgb": "0.0252",
+      "black_fraction": "0.5997",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "cookware-open",
+      "torch": "1",
+      "p95_render_sync_ms": "2.873",
+      "mean_srgb": "0.0536",
+      "black_fraction": "0.5074",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "storage-mugs",
+      "torch": "0",
+      "p95_render_sync_ms": "2.778",
+      "mean_srgb": "0.0399",
+      "black_fraction": "0.5054",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "storage-mugs",
+      "torch": "1",
+      "p95_render_sync_ms": "2.806",
+      "mean_srgb": "0.1201",
+      "black_fraction": "0.3552",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "hanging-pans",
+      "torch": "0",
+      "p95_render_sync_ms": "3.114",
+      "mean_srgb": "0.0375",
+      "black_fraction": "0.5869",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "hanging-pans",
+      "torch": "1",
+      "p95_render_sync_ms": "3.000",
+      "mean_srgb": "0.0519",
+      "black_fraction": "0.5156",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "29"
+    },
+    {
+      "view": "customer-seats",
+      "torch": "0",
+      "p95_render_sync_ms": "3.340",
+      "mean_srgb": "0.0599",
+      "black_fraction": "0.3068",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "29"
+    },
+    {
+      "view": "customer-seats",
+      "torch": "1",
+      "p95_render_sync_ms": "3.800",
+      "mean_srgb": "0.0874",
+      "black_fraction": "0.2180",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "29"
+    },
+    {
+      "view": "concourse-bench",
+      "torch": "0",
+      "p95_render_sync_ms": "3.755",
+      "mean_srgb": "0.0230",
+      "black_fraction": "0.5998",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    },
+    {
+      "view": "concourse-bench",
+      "torch": "1",
+      "p95_render_sync_ms": "3.861",
+      "mean_srgb": "0.0560",
+      "black_fraction": "0.4969",
+      "probe_volumes_at_eye": "2",
+      "active_probes": "29"
+    }
+  ],
+  "batching": {
+    "fixed_renderers_merged": 140881,
+    "material_spatial_sectors": 2101,
+    "previous_sectors": 2067,
+    "doors_unchanged": 81,
+    "static_reflection_probes": 29
+  },
+  "hitch_diagnosis": {
+    "baseline": "Review/HitchBaseline-2026-11-22",
+    "evidence": "Two manual Camera.Render + synchronous ReadPixels calls within Unity frame 95833: 25.274ms first draw followed by 42.784ms; second draw CPU 2.242ms and readback wait 40.542ms.",
+    "isolated_reproduction": "242 samples: same-frame double render reproduced 47.356ms; visibility-only 7.000ms; new-target-only 7.492ms. Combined same-frame double 26.888ms. All cold samples retained.",
+    "change": "Yield one Unity frame after the first draw. Graphics/floor snapshot and timed draws are also separated. Ordinary game rendering was not changed to hide samples.",
+    "limit": "The new test-target first draw still costs 23.30ms in final refinement test, reported separately and retained. This is not an ordinary backbuffer frame. No claim that every possible 45ms hitch is eliminated."
+  },
+  "visual_inspection": {
+    "reviewed": "Actual built player: family exterior/interior and nursing chair, cookware table, hanging pans, storage/mug rack, customer seats and B1 bench. Torch ON and family exterior OFF inspected; all 42 fixed views generated and metered.",
+    "repaired_after_first_pass": [
+      "Leaf chiller intersected relocated room and stopped the controller; shortened/moved first leaf bay and reran full route.",
+      "Container body was invisible; authored semi-transparent polypropylene now shows its volume.",
+      "Hanging product cards were sideways; reoriented for the hanging pose and added labels to both aisle sides.",
+      "Waiting-seat supports protruded through pads; moved behind the backrest. Nursing-pad seam artifacts removed, upholstered corners rounded."
+    ],
+    "first_pass_archive": "Review/Variety2FirstPass-2026-11-22"
+  },
+  "limitations": [
+    "Not a full redesign or close inspection of all 186 grocery SKUs.",
+    "No multiplayer, combat or low-end GPU validation in this pass.",
+    "Static cubemaps do not update with dynamic blackout states.",
+    "Normal B1 scripted traversal recorded nine gen0 collections without a >16.67ms frame; allocation source was not isolated and no whole-game zero-allocation claim is made.",
+    "Existing unused DoF/Panini stripped-shader warnings remain; no exception or shadow-atlas reduction warning matched final run logs.",
+    "Other underused areas remain for a separate layout pass; this pass addresses the west family-room/homeware junction and public seating."
+  ],
+  "references": "Review/variety2-reference-register-2026-11-22.json",
+  "placement": "Review/variety2-placement-2026-11-22.json",
+  "handoff": "Review/variety2-handoff-2026-11-22.json"
+}

@@ -1,0 +1,61 @@
+{
+  "checked_date": "2026-11-21",
+  "scope": "Original graphics finishing pass; no newly downloaded or AI-generated image assets.",
+  "visual_reference": {
+    "source": "User-supplied L4D2-style night amusement-park screenshots and Korean supermarket photographs already present in this conversation",
+    "confirmed_from_images": "Bright local practical fixtures against dark surroundings, visible material highlights and grounded objects, selective readable routes.",
+    "not_confirmed": "Game engine settings, actual light intensities, physically measured roughness, performance or exact geometry.",
+    "authored_for_game": "Placement of three task lights, room reflection volumes, surface roughness and local wear. The screenshot pixels are not game textures."
+  },
+  "technical_sources": [
+    {
+      "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/post-processing-ssao.html",
+      "author": "Unity Technologies",
+      "confirmed": "SSAO uses depth and normals to darken nearby intersections; implemented as a renderer feature independently of the volume stack.",
+      "not_confirmed": "The optimal intensity, radius or performance for this project; these are chosen and measured locally."
+    },
+    {
+      "url": "https://docs.unity3d.com/ja/current/Manual/urp/use-built-in-shader-methods-indirect-lighting.html",
+      "author": "Unity Technologies",
+      "confirmed": "GlossyEnvironmentReflection samples reflection probes and uses perceptual roughness for the sampled reflection.",
+      "not_confirmed": "Full indirect diffuse illumination; reflection probes do not replace lightmaps or a complete lighting solution."
+    },
+    {
+      "source": "Library/PackageCache/com.unity.render-pipelines.universal@66a8e36658da/Runtime/UniversalAdditionalLightData.cs",
+      "version": "URP 17.6.0 / Unity 6000.6.8f1",
+      "confirmed": "Public additionalLightsShadowResolutionTier setter is play-mode only; scene generation must serialize the field through the editor API."
+    }
+  ],
+  "assets": [
+    {
+      "name": "Shared 2F sewn garments",
+      "author": "Original project models from the prior laundry refinement",
+      "source_url": null,
+      "license": "Original project content; no third-party model imported",
+      "original_file": "Assets/OutOfService/Editor/MarketLaundryNaturalV7.cs",
+      "usage": "2F ClothingRack, through Assets/OutOfService/Editor/MarketClothingV7.cs",
+      "modifications": "Reuse three sleeved, collared garment meshes and four matte cloth finishes. Preserve rack stock count and adult/child scales. Replace earlier two-panel silhouettes and coarse check print."
+    },
+    {
+      "name": "Spatial surface maps V1",
+      "author": "Project-authored procedural functions",
+      "source_url": null,
+      "license": "Original project content; no third-party pixels",
+      "original_file": "Assets/OutOfService/Editor/MarketSpatialGraphicsV7.cs",
+      "generated_files": "Assets/OutOfService/Generated/Spatial*.asset",
+      "usage": "Metal brushing, enamel/wood/clay/plastic roughness, film creases, grout occlusion, local threshold scuffs, honed quartz counters",
+      "modifications": "Shared 512px mipmapped textures; metre-based UVs on counters; repaired tangents on authored meshes that use normal maps."
+    },
+    {
+      "name": "27 room reflection cubemaps",
+      "author": "Baked from the project scene",
+      "source_url": null,
+      "license": "Generated project scene render; existing source asset licenses remain applicable",
+      "original_file": "Assets/Scenes/MarketPrototype_v7.unity",
+      "generated_files": "Assets/OutOfService/Generated/SpatialReflectionV1_*.exr",
+      "usage": "8 retail volumes, 4 B1 concourse volumes, 15 B1 tenant/support room volumes",
+      "modifications": "128px cube faces, 256px for cafe and beauty; box projection; static capture with player/monster renderers hidden. Fog excluded during capture, restored afterward. No realtime reflection rendering."
+    }
+  ],
+  "existing_asset_licenses": ["Review/refinement-assets-2026-11-21.json", "Assets/OutOfService/Art/Textures/SOURCES.md"]
+}

@@ -1,0 +1,12 @@
+{
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_sha256": "56412FD6BE23268CDF3B0A7A6F261B9BA4D16FA5610FB4F7E57BF846EB9FB33F",
+  "unity": "6000.6.8f1",
+  "selected_file_count": 7654,
+  "selected_bytes": 2746474244,
+  "saved_scene_dependencies": 2784,
+  "missing_dependencies": [],
+  "preserved": "Team scenes, characters, package manifest, build scene list and project settings are not overwritten.",
+  "excluded": "Library/Temp/Builds/Logs/UserSettings, local reference photos and obsolete unreferenced generated batches",
+  "shared_settings": "Saved PC renderer/pipeline/volume dependencies are included; inspect their diff before merging."
+}

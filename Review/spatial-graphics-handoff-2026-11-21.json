@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-21",
+  "purpose": "다른 대화에 전달할 변경 요약 — 맵·그래픽 작업",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "generator": "MarketPrototypeBuilderV7.BuildWithCatalogViews → Build → ShopSurfaceFinish → SpatialGraphicsFinish → ApplyAfterHoursLightBalance → BakeShopReflections → BatchSmallProps",
+  "new_source": "Assets/OutOfService/Editor/MarketSpatialGraphicsV7.cs",
+  "render_pipeline": "Unity 6000.6.8f1 / URP 17.6.0 / PC_Renderer / PC_RPAsset. 파이프라인 교체 없음.",
+  "shared_renderer_change": "PC SSAO intensity 1.05, radius 0.16m, direct strength 0.42, falloff 32m. 기존 full-resolution depth-normal 방식 유지. PC_Renderer를 공유하는 다른 씬에도 적용되므로 HUD/효과 담당이 중복 AO를 추가하지 않도록 주의.",
+  "lighting": "새 작업등 3개: B1 카페 카운터, B1 뷰티 카운터, 1F 계산대. 하우징·디퓨저·매달림 봉 포함. 전역 노출·안개·시야거리·밤 조명 기준은 유지. 기존 파프리카 조명 재사용.",
+  "shadow_budget": "2048 그림자 atlas 유지. 손전등 1024, 작업등 및 사과·파프리카 조명 512, 나머지 건축용 그림자 256. 14개 그림자가 보일 때 모든 그림자 해상도가 강제 절반으로 내려가던 첫 수정의 문제를 해결하기 위한 배분. 손전등 소품 그림자 거리 9m와 장식 가림 처리 유지.",
+  "reflections": "기존 8개 대신 27개 고정 반사 맵. 8개 매장 구역, 4개 B1 통로, 15개 B1 점포·지원실. 카페·뷰티 256px, 나머지 128px. 실시간 반사 렌더 없음. 플레이어/괴물 및 그 조명을 제외하고 캡처, fog는 캡처 후 복구. 반사 맵은 동적인 정전·문·캐릭터 상태를 실시간 반영하지 않는다.",
+  "surfaces": "금속 브러싱·거칠기, 목재·에나멜·플라스틱·점토 표면, 비닐 미세 주름, 타일 줄눈 음영, 점포 문턱/계산대 부근 국소 마찰 흔적. 카페와 서비스 카운터는 미세 입자의 인조석으로 교체하고 metre-based UV 적용. 노멀 맵을 쓰는데 tangent가 없던 자체 메시 보완.",
+  "fashion": "2F 의류 매대의 판형 GarmentMesh 사용을 중단하고 기존 LaundryGarment 3종과 LaundryCotton 4종을 공유한다. 성인/아동 크기·카테고리·매대 위치·수량·충돌 범위 유지. 새 플레이 기능이나 네트워크 상태는 없다.",
+  "qa": "MarketGraphicsReview -graphicsReview: 1920×1080, 실제 게임 FOV75, 9개 위치의 손전등 ON/OFF. MarketRefinementReview에 hitches.tsv 추가: 새 테스트 렌더타깃의 첫 샘플 지연도 포함하며 steady라는 오해를 주는 표현 제거.",
+  "preserved": "B1 몰 / 1F 식품·생활·가전 / 2F 패션·고객센터, 비상계단·에스컬레이터·문·플레이어 이동·스태미나·배터리·피해·HUD 상태 유지.",
+  "sources": "Review/spatial-graphics-sources-2026-11-21.json",
+  "validation": "Review/spatial-graphics-validation-2026-11-21.json",
+  "remaining": "전체 매장의 모델·밀도·작은 글씨·거울 품질을 모두 승인한 결과는 아니다. L4D2 수준 완성 주장 없음. 방별 간접 확산광 베이크, 후면/외곽 반사 사각지대, 일부 반복되는 가구·상품 모델은 추가 작업 대상. AI 추격·멀티플레이 성능은 미검증. 렌더타깃 전환 직후 단발 지연은 검증 기록에서 별도로 확인할 것."
+}

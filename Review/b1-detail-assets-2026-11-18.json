@@ -1,0 +1,81 @@
+{
+  "checked_on": "2026-11-18",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scope": "B1 tenant detail: florist, laundry/repair, cafe, restaurant. Existing floor allocation retained.",
+  "references": [
+    {
+      "name": "SNOWFOX FLOWERS Gangnam 2 store photo",
+      "url": "https://m.snowfoxflowers.com/article/store/3001/56/",
+      "image_url": "https://m.snowfoxflowers.com/file_data/snowfoxbc/2018/10/05/8374ddc9dd242c01371fab5b60ffed33.JPG",
+      "author": "Snowfox Flowers / named photographer not stated",
+      "license": "Copyrighted reference only; no reuse license assumed",
+      "observed": "Store photo visually inspected: stepped white buckets, cut flowers grouped by colour, individual cards, separately wrapped bouquets, work counter.",
+      "not_confirmed": "Exact dimensions, current store layout/inventory, whether a particular Homeplus branch uses this arrangement.",
+      "local_reference_only": "Review/B1References/snowfox-store-reference.jpg",
+      "used_in_build": false,
+      "interpretation": "The arrangement informs an original composite florist; no photo pixels or branding are used as game textures."
+    },
+    {
+      "name": "JUKI DDL-8700 industrial lockstitch machine",
+      "url": "https://www.juki.co.jp/industrial_e/products_e/apparel_e/1needle_lock_e/detail.php?cd=DDL-8700_E",
+      "catalogue_url": "https://www.juki.co.jp/industrial_e/download_e/catalog_e/ddl8700.pdf",
+      "author": "JUKI Corporation",
+      "license": "Manufacturer reference only",
+      "observed": "Official product description and catalogue identify a single-needle industrial machine and its sewing/head/control functions.",
+      "not_confirmed": "No exact machine CAD, full measured profile, or photographed replica was imported. Small components and proportions are original approximations.",
+      "used_in_build": false
+    },
+    {
+      "name": "BUNN thermal airpot coffee equipment",
+      "url": "https://commercial.bunn.com/23001.0116",
+      "author": "Bunn-O-Matic Corporation",
+      "license": "Manufacturer reference only",
+      "observed": "Official product page documents thermal airpot serving equipment and dimensions.",
+      "not_confirmed": "Not a verified Korean tenant fixture or exact model replicated in the map.",
+      "used_in_build": false
+    }
+  ],
+  "assets": [
+    {
+      "name": "Cut flowers, foliage, buckets, pots and folded bouquet sleeves",
+      "source_url": null,
+      "creator": "Original geometry authored for OutOfService in this work session",
+      "license": "Original project-authored assets; no third-party mesh license",
+      "source_files": ["Assets/OutOfService/Editor/MarketMallDetailsV7.cs"],
+      "outputs": ["Assets/OutOfService/Generated/MallDetailV3_*.asset", "Generated procedural FloristVeinsV1 texture"],
+      "location": "B1 tenant - 잎새 화원",
+      "modifications": "Two petal silhouettes, three veined leaf forms, open vessels, six wrapped bouquets, two stepped stock displays and wrapping bench props."
+    },
+    {
+      "name": "Sewing machine, laundry rack, iron and workstation",
+      "source_url": null,
+      "creator": "Original geometry authored for OutOfService; existing project garment meshes and woven textures reused",
+      "license": "Original project-authored assets; no third-party mesh file added",
+      "source_files": ["Assets/OutOfService/Editor/MarketMallDetailsV7.cs", "Assets/OutOfService/Editor/MarketClothingV7.cs"],
+      "location": "B1 tenant - 바늘 세탁·수선",
+      "modifications": "Open machine throat, presser foot, needle, thread guide, pedal, wheel and controls; 11 hanging garments, claim tags, crossed ironing board legs, pointed iron reservoir, baskets."
+    },
+    {
+      "name": "Cafe and restaurant service/kitchen props",
+      "source_url": null,
+      "creator": "Original project-authored geometry; project sink/cup/tray helpers reused",
+      "license": "Original project-authored assets; no external model or texture downloaded into Assets",
+      "source_files": ["Assets/OutOfService/Editor/MarketMallDetailsV7.cs", "Assets/OutOfService/Editor/MarketFreshPrepDetailV7.cs"],
+      "location": "B1 tenant - 모퉁이 커피 / 한끼 식당",
+      "modifications": "Counter panels, napkins, insulated carafe, return trays, receipt, sink, preparation table, cupboards, crockery and food storage."
+    },
+    {
+      "name": "Sixteen original tenant cards and labels",
+      "source_url": null,
+      "creator": "Original text/layout authored for this project",
+      "license": "Original project artwork; no real retail packaging or logo copied",
+      "source_files": ["Tools/DrawMallDetails.ps1"],
+      "original_file": "Assets/OutOfService/Art/MallDetails/mall-detail-atlas.png",
+      "location": "B1 florist / laundry / cafe / restaurant",
+      "modifications": "Leaf shop care cards, bouquet tags, laundry claim tags, cafe service/return signs and order slips. Prices are fictional."
+    }
+  ],
+  "design_inference": "All tenant footprints, stock counts, circulation dimensions and staff work arrangements are game-authored. Public source photos do not establish a measured Homeplus plan.",
+  "runtime_policy": "Small decorative props are static, use shared materials/meshes and existing spatial batching. No individual item networking, new gameplay interaction, or HUD change. Furniture has coarse collision; fine decorative parts do not."
+}
+

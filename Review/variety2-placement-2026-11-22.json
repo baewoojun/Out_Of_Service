@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-22",
+  "type": "Authored composite-store arrangement, not verified Homeplus stock or a real branch planogram",
+  "source_register": "Review/variety2-reference-register-2026-11-22.json",
+  "fixtures": [
+    {
+      "floor": "1F", "zone": "West homeware", "id": "DAMUM-LOW-01",
+      "center_xz": [-36.8, -31.0], "footprint_m": [3.6, 1.2],
+      "families": ["25cm two-handle pot", "18cm saucepan", "28cm shallow pan", "30cm wok"],
+      "prototypes": "Four open vessel profiles, different wall height and base flare, real handles, optional separate glass/steel lids",
+      "label_variants": "DAMUM cards 0 through 3, original Korean names, line drawings and fictional prices",
+      "stock": "8 exposed cookware samples on upper tier; 12 boxed units on lower tier; cards on both aisle sides",
+      "close_view": true, "interactive": false, "collision": "Fixture legs and shelf boxes; decorative stock has no per-item collider or network state",
+      "asset_source": "Assets/OutOfService/Editor/MarketHomewaresV7.cs"
+    },
+    {
+      "floor": "1F", "zone": "West homeware", "id": "DAMUM-RACK-01",
+      "center_xz": [-32, -31], "footprint_m": [1.5, 1.0],
+      "families": ["Clipped food containers, two sizes", "Open ceramic mugs, two glazes"],
+      "prototypes": "Rounded translucent container with gasket lid and locking wings; hollow mug with separate loop handle",
+      "label_variants": "DAMUM cards 4 and 5; original Korean packaging art",
+      "stock": "30 containers on two lower tiers; 15 mugs on upper tier",
+      "close_view": true, "interactive": false, "collision": "Rack uprights and shelf boxes only",
+      "asset_source": "Assets/OutOfService/Editor/MarketHomewaresV7.cs"
+    },
+    {
+      "floor": "1F", "zone": "West homeware", "id": "DAMUM-HANG-01",
+      "center_xz": [-36.8, -27.7], "footprint_m": [3.5, 0.6],
+      "families": ["Shallow pans", "Woks"], "prototypes": "Real handle openings held on metal hooks",
+      "label_variants": "DAMUM cards 2 and 3 oriented upright in hanging pose",
+      "stock": "6 hanging pans, alternating profiles in a planned display",
+      "close_view": true, "interactive": false, "collision": "Stabilising feet; decorative pans do not add colliders",
+      "asset_source": "Assets/OutOfService/Editor/MarketHomewaresV7.cs"
+    },
+    {
+      "floor": "1F", "zone": "Leaf-vegetable refrigerated wall", "id": "LEAF-WEST-01",
+      "center_xz": [-46.2, -18.7], "footprint_m": [2.5, 3.8],
+      "families": ["Loose leaves", "Packed ssam leaves"],
+      "prototypes": "Existing individually modelled leaves and creased transparent sleeves",
+      "label_variants": "Existing fresh pack 5, own-label 쌈채소",
+      "stock": "7 columns x 2 positions x 3 tiers; short bay clears the new family-room entrance",
+      "close_view": true, "interactive": false, "collision": "Chiller base and shelves; no individual leaf collision",
+      "asset_source": "Assets/OutOfService/Editor/MarketPrototypeBuilderV7.cs / BuildProduceWall"
+    }
+  ]
+}

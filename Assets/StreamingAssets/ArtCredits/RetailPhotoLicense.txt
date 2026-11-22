@@ -1,0 +1,8 @@
+Retail print artwork. OutOfService, 2026-11-16.
+RetailPhotography.json lists ingredient photographers, original files, license links and the affected textures. Photographs were cropped, resized, masked and combined with original lettering and illustration. Where the source is ShareAlike, the adapted print is offered under the same license identified in its entry. Credit does not imply photographer endorsement.
+Three previously acquired sources used in these prints:
+Almonds.jpg — Koyaanis Qatsi / Ericd, public domain, https://commons.wikimedia.org/wiki/File:Almonds.jpg
+Blueberries (fruits).jpg — Raju Babu, CC0, https://commons.wikimedia.org/wiki/File:Blueberries_(fruits).jpg
+Cut Broccoli.jpg — Alabama Extension, CC0, https://commons.wikimedia.org/wiki/File:Cut_Broccoli.jpg
+CC0 terms: https://creativecommons.org/publicdomain/zero/1.0/
+Blueberries and cut broccoli also appear on FrozenFilm_23_0.png and FrozenFilm_23_1.png. The frozen bag wraps reuse the credited front-panel adaptations.

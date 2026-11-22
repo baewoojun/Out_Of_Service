@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-21",
+  "unity": "6000.6.8f1 / URP 17.6.0 / Windows D3D12 / RTX 4070 SUPER",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_saved_local": "2026-11-21T00:54:44+09:00",
+  "build": "Builds/MarketReview/Market.exe",
+  "build_succeeded_local": "2026-11-21T00:55:20+09:00",
+  "implemented": [
+    "장미: 3개 공유 원형, 16개 겹치는 굽은 꽃잎, 꽃당 1952 정점. 꽃잎 미세 표면과 중심부를 수정했다.",
+    "고무나무와 스파티필룸: 줄기에 붙는 잎과 뿌리에서 뭉쳐 자라는 잎을 구분하고 잎자루·새잎·불염포·토양을 만들었다.",
+    "실사 화분: CC0 Potted Plant 04를 30cm 높이로 정규화하고 1K 색·노멀·금속/거칠기/AO 맵으로 URP에 적용했다. 장식 3개가 메시와 재질을 공유한다.",
+    "세탁소: 소매 곡률·어깨 연결·셔츠 앞섶·단추·주머니·밑단 봉제선·직물 노멀을 수정했다. 근접 옷 모델은 1190 정점 이내다.",
+    "카페: 종이컵·도자기·브러시드 금속의 표면을 분리하고 머신·피처에 공유 미세 표면을 적용했다.",
+    "정지한 여닫이문의 매 프레임 회전 재할당을 제거했다.",
+    "장식 컬링 OFF가 기존에 숨긴 장식들을 복원하지 않던 오류를 수정했다.",
+    "실제 게임 시작 시 7개 주요 시점과 손전등 상태를 로딩 화면 뒤에서 미리 그린다. 완료 후 카메라·시간 배율·플레이어·괴물·손전등의 이전 상태를 복원한다."
+  ],
+  "regression": {
+    "result": "PASS",
+    "checks": 15,
+    "resting_doors": 74,
+    "coverage": "시작 준비 완료 및 상태 복원, 문 정지·이동 중 반전·직접 상태 변경, 장식 컬링 ON/OFF",
+    "evidence": "Review/RefinementCompleted-2026-11-21/RefinementReview/checks.txt"
+  },
+  "routes": {
+    "result": "PASS",
+    "checks": 193,
+    "coverage": "비상문 6개, 양쪽 계단 B1~2F 왕복, 에스컬레이터 4구간 양방향, 지하 6개 점포 입구, 1F/2F 순환 동선, 정육·수산 작업실과 워크인 출입",
+    "evidence": "Review/RefinementCompleted-2026-11-21/FloorReview/result.txt"
+  },
+  "performance_method": {
+    "resolution": "1920x1080",
+    "mode": "동일 PC의 Windows 단독 실행 파일. 숨긴 창에서 Camera.Render와 1픽셀 ReadPixels 동기화. 실제 CharacterController 경로 이동. AI 비활성화.",
+    "qualification": "전체 게임 FPS 또는 멀티플레이 성능이 아니다. 단일 검사 결과이며 OS/드라이버 캐시 상태를 통제하지 않았다. 재료 최초 표시가 지연의 원인이라는 판단은 추정이다.",
+    "startup_cost": "아래 준비 시간은 장면 Start 이후 렌더 준비 단계만 측정한다. 실행 파일 기동 및 전체 장면 로딩 시간은 포함하지 않는다."
+  },
+  "flower_shop": {
+    "original_before_this_pass": {"p95_ms":5.66,"max_ms":21.77,"frames_over_16_67":1,"samples":2679},
+    "refined_assets_before_preparation": {"p95_ms":4.85,"max_ms":122.25,"frames_over_16_67":1,"samples":3128},
+    "final_after_real_startup_preparation": {"preparation_ms":557.01,"prepared_views":7,"test_target_initialization_ms":35.37,"distance_m":38.58,"route_legs":8,"p95_ms":5.77,"p99_ms":6.78,"max_ms":14.85,"frames_over_16_67":0,"samples":2672,"gen0_collections":0},
+    "interpretation": "준비 단계를 추가한 실행에서 꽃집 첫 방문의 큰 지연이 사라졌다. p95까지 빨라졌다는 결과는 아니다.",
+    "evidence_before": "Review/BeforeRenderPreparation-2026-11-21/mall-walk-hitches.txt",
+    "evidence_after": "Review/RefinementCompleted-2026-11-21/mall-first-visit.txt"
+  },
+  "pepper_aisle": {
+    "preparation_ms":533.86,
+    "distance_m":6,
+    "p95_ms":5.54,
+    "p99_ms":6.44,
+    "max_ms":8.80,
+    "frames_over_16_67":0,
+    "samples":903,
+    "evidence":"Review/RefinementCompleted-2026-11-21/pepper-first-visit.txt"
+  },
+  "separate_regression_render_sample": {
+    "preparation_ms":602.99,
+    "first_test_target_draw_ms":27.56,
+    "render_p95_ms":8.37,
+    "render_max_ms":76.52,
+    "whole_coroutine_interval_p95_ms":9.47,
+    "whole_coroutine_interval_max_ms":78.53,
+    "main_thread_allocated_bytes_over_180_sample_frames":0,
+    "qualification":"별도 렌더 검사에는 순간 지연이 남았다. 전체 게임의 모든 지연이 해결됐다고 판단하지 않는다.",
+    "evidence":"Review/RefinementCompleted-2026-11-21/RefinementReview/render.txt"
+  },
+  "visual_review": {
+    "review_camera_fov":60,
+    "normal_game_camera_fov":75,
+    "directly_inspected_views":["garden-rose-close","potted-foliage","succulent-close","laundry-pocket-close","cafe-service-close"],
+    "observed":"잎의 생장 형태와 화분 자갈·잎 무늬, 셔츠 단추·주머니·바느질, 금속과 도자기의 반사 차이가 표시된다. 확인한 가격표와 세탁표의 앞면 글자는 정방향이다.",
+    "remaining":"장미의 꽃잎 가장자리와 옷 접힘은 아직 단순하고 절차적으로 보인다. L4D2 완성도에 도달했다고 평가하지 않는다. 모든 186개 상품을 이번에 다시 검사한 것은 아니다."
+  },
+  "remaining_system_work": [
+    "AI 추격의 장애물·층간 이동·감지 공정성과 전체 목표 진행을 별도 구현·검증해야 한다.",
+    "네트워크 패키지와 멀티 동기화는 미구현/미검증 상태다.",
+    "낮은 사양 GPU 및 AI가 동작하는 실제 플레이 프레임 시간을 별도 측정해야 한다.",
+    "빌드 로그에 비활성 DOF/Panini 셰이더 스트리핑 경고가 있다. 활성 후처리 전체 실패로 해석하지 않았다."
+  ],
+  "asset_registry":"Review/refinement-assets-2026-11-21.json",
+  "cross_chat_handoff":"Review/refinement-handoff-2026-11-21.json"
+}
+

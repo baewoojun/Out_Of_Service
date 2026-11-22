@@ -1,0 +1,5 @@
+# Preserve serialized mesh/scene bytes and keep generated geometry out of text diffs.
+Assets/OutOfService/Generated/*.asset -text -diff
+Assets/OutOfService/Generated/Batches/*.asset -text -diff
+Assets/OutOfService/Generated/*.exr -text -diff
+Assets/Scenes/MarketPrototype_v7.unity -text -diff

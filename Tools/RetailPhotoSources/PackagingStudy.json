@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "00_0",
+    "lookup": "신라면",
+    "sample": "Shin Ramyun Display in Supermarket",
+    "source": "https://www.eroun.net/news/articleView.html?idxno=54256",
+    "image": "https://cdn.eroun.net/news/photo/202503/54256_101763_3656.jpg"
+  },
+  {
+    "id": "00_1",
+    "lookup": "닭칼국수",
+    "sample": "Chamfree Rich Chicken Kalguksu Noodles",
+    "source": "https://www.megamart.com/product/13370442",
+    "image": "https://static.megamart.com/site/product/review/20221024/26fb42d3-ddc9-49d9-9d98-ddd00231a63f.jpg"
+  },
+  {
+    "id": "00_2",
+    "lookup": "Jin Jjambbong Korean spicy seafood ramen 130g buy red bag",
+    "sample": "Otogi Jin Jjambbong Spicy Korean Instant Ramen",
+    "source": "https://item.rakuten.co.jp/kanshoku/8801045522678/",
+    "image": "https://shop.r10s.jp/kanshoku/cabinet/10961866/imgrc0144933487.jpg"
+  },
+  {
+    "id": "00_3",
+    "lookup": "버섯칼국수",
+    "sample": "bibigo Spicy Mushroom Kalguksu Package",
+    "source": "https://mobile.missyusa.com/mainpage/boards/board_read.asp?id=talk39&idx=6119197&level=0&step=1",
+    "image": "https://mobile.missyusa.com/fileServer/ImageServer/upload/talk39/20215/2021050315101937691.jpeg"
+  },
+  {
+    "id": "00_4",
+    "lookup": "Chapagetti 140 g bag Nongshim Korea black bean noodles",
+    "sample": "Nongshim Chapaghetti Instant Noodles",
+    "source": "https://dunyong.com/products/instant-noodle-chapaghetti-nong-shim-140g",
+    "image": "https://dunyong.com/cdn/shop/files/1304-front-def.jpg?v=1684394688&width=480"
+  },
+  {
+    "id": "00_5",
+    "lookup": "비빔면",
+    "sample": "Paldo Bibim Men Instant Noodles on Display",
+    "source": "https://busan.fnnews.com/news/202504070918349773",
+    "image": "https://busan.fnnews.com/resource/media/image/2025/03/12/202503121649288538_l.jpg"
+  },
+  {
+    "id": "01_0",
+    "lookup": "육개장사발면",
+    "sample": "Nongshim Yukgaejang Cup Ramen Selection",
+    "source": "https://note.com/korea_jp/n/ncf615ac6797c",
+    "image": "https://assets.st-note.com/img/1750248859-me4KUDsfXYav58RbcNi7FjzJ.png?fit=bounds&height=2000&quality=85&width=2000"
+  },
+  {
+    "id": "01_1",
+    "lookup": "해물컵라면",
+    "sample": "Korean Seafood Cup Ramen",
+    "source": "https://www.kaldi.co.jp/ec/pro/disp/1/8809845008743",
+    "image": "https://www.kaldi.co.jp/ec/img/743/8809845008743_M_1m.jpg"
+  },
+  {
+    "id": "01_2",
+    "lookup": "신라면컵",
+    "sample": "Nongshim Shin Ramyun Cup",
+    "source": "https://nongshimmall.com/product/신라면컵65g1/2711/",
+    "image": "https://m.nongshimmall.com/web/product/big/202511/9f46242e17ce73011627b22ea149b79a.jpg"
+  },
+  {
+    "id": "01_3",
+    "lookup": "Nongshim Kimchi big bowl noodles soup 86g Korean grocery",
+    "sample": "Nongshim Kimchi Shin Big Bowl Instant Ramen",
+    "source": "https://www.hachi8.com.br/alimentos/caixa-de-lamen-coreano-kimchi-ramyun-picante-big-bowl-112g-16-copos",
+    "image": "https://2519.cdn.simplo7.net/static/2519/sku/alimentos-caixa-de-lamen-coreano-kimchi-ramyun-picante-big-bowl-112g-16-copos-1724957547496.jpg"
+  },
+  {
+    "id": "01_4",
+    "lookup": "튀김우동",
+    "sample": "Nongshim Tempura Udon Cup Noodle",
+    "source": "https://reiwa00502.hatenablog.com/entry/2023/03/30/000000",
+    "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/r/reiwa00502/20230327/20230327211156.png"
+  },
+  {
+    "id": "01_5",
+    "lookup": "짜장범벅",
+    "sample": "Nongshim Chapagetti Bumbuk Cup Noodles",
+    "source": "https://shopee.vn/M%C3%AC-Tr%E1%BB%99n-T%C6%B0%C6%A1ng-%C4%90en-Chapageti-Bumbuk-Kh%C3%B4ng-Cay-Nongshim-H%C3%A0n-Qu%E1%BB%91c-C%E1%BB%91c-70G-%EB%86%8D%EC%8B%AC%29-%EC%A7%9C%ED%8C%8C%EA%B2%8C%ED%8B%B0-%EB%B2%94%EB%B2%85-70G-i.1278666756.27452423352",
+    "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwe57qvnli3f8f"
+  },
+  {
+    "id": "02_0",
+    "lookup": "햇반",
+    "sample": "Полки с корейским быстрорисом в супермаркете",
+    "source": "https://russian.korea.net/NewsFocus/Business/view?articleId=256958",
+    "image": "https://russian.korea.net/upload/content/image/d6bb6a33681f4284af1dd21440c3fb6a_20240819111035.jpg"
+  },
+  {
+    "id": "02_1",
+    "lookup": "보리밥",
+    "sample": "Harim The Misik Barley Rice Instant Meal",
+    "source": "https://prod.danawa.com/info/?pcode=52065851",
+    "image": "https://img.danawa.com/prod_img/500000/851/065/img/52065851_1.jpg?_v=20240507144031&shrink=360%3A360"
+  },
+  {
+    "id": "02_2",
+    "lookup": "잡곡밥",
+    "sample": "Korean Instant Multi-Grain Rice Bowl",
+    "source": "https://blog.naver.com/ektha4505/223189631945",
+    "image": "https://mblogthumb-phinf.pstatic.net/MjAyMzA4MjFfMTE5/MDAxNjkyNjA5MDk3NTE3.2V6K65QeWlvkKuy0mCtyD8bpiPRG5u1B4pwD9Qe286Ug.GR2JQa1vIJMgKNRSCtGS6H9AeBKcivlsEmiOTF6PTEgg.JPEG.ektha4505/KakaoTalk_20230821_175348028_03.jpg?type=w800"
+  },
+  {
+    "id": "02_3",
+    "lookup": "현미밥",
+    "sample": "Hetbahn Sprouted Brown Rice Meal",
+    "source": "https://www.cjthemarket.com/pc/prod/prodDetail?areaNum=47&plnId=300004&prdCd=40119245",
+    "image": "https://img.cjthemarket.com/images/file/product/648/20220726090212574.jpg"
+  },
+  {
+    "id": "02_4",
+    "lookup": "곤드레밥",
+    "sample": "CJ 햇반 솥반 곤드레 감자 영양밥 200g",
+    "source": "https://prod.danawa.com/info/?pcode=30213368",
+    "image": "https://img.danuri.io/catalog-image/368/213/030/a3d3665e3e0a461ea4b553f77cbbe392.jpg?_v=20260416210207&shrink=360%3A360"
+  },
+  {
+    "id": "02_5",
+    "lookup": "흑미밥",
+    "sample": "Packaged Korean Cooked Black Rice",
+    "source": "https://blog.naver.com/ektha4505/223189631945",
+    "image": "https://mblogthumb-phinf.pstatic.net/MjAyMzA4MjFfNTIg/MDAxNjkyNjA5MTE2MDUx.Q1ywpH9ynqMUqDFKbu6qcZW_ty6OoaQXeH92uVDTZjUg.1Jzsw_dqWXe96bMtQPXDzQORo4mWpOQMBJADRUh1HyMg.JPEG.ektha4505/KakaoTalk_20230821_175348028_05.jpg?type=w800"
+  },
+  {
+    "id": "03_0",
+    "lookup": "사골곰탕",
+    "sample": "Korean Ox Bone Soup Pouches",
+    "source": "https://note.com/ryokouikouyo/n/n05bc31176f0b",
+    "image": "https://assets.st-note.com/img/1778228946-xHd9JY8niuheLw5gEakPOBKs.jpg?width=1200"
+  },
+  {
+    "id": "03_1",
+    "lookup": "육개장",
+    "sample": "Ottogi Yukgaejang Spicy Beef Soup",
+    "source": "https://dovumart.vn/products/sup-thit-bo-ham-cay-ottogi-han-quoc-500g",
+    "image": "https://file.hstatic.net/1000372317/file/z3386444623412_a514e72b6f2df38e2e3cafdf0573e70d_c323dae0f3c346e381f2789aba02350e_grande.jpg"
+  },
+  {
+    "id": "03_2",
+    "lookup": "순두부찌개",
+    "sample": "Cheongjeongwon Home:ings Spicy Soft Tofu Stew",
+    "source": "https://prod.danawa.com/info/?pcode=12573083",
+    "image": "https://img.danawa.com/prod_img/500000/083/573/img/12573083_1.jpg?_v=20231027101103"
+  },
+  {
+    "id": "03_3",
+    "lookup": "김치찌개",
+    "sample": "Discounted bibigo Pork Kimchi Soybean Stew",
+    "source": "https://gathering-at-seoul.hatenablog.com/entry/2020/05/19/170001",
+    "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/g/gathering_at_seoul/20200516/20200516044148.jpg"
+  },
+  {
+    "id": "03_4",
+    "lookup": "미역국",
+    "sample": "bibigo Korean Seaweed Soup Ready-to-Eat",
+    "source": "https://fado.vn/us/amazon/bibigo-korean-seaweed-soup-miyeok-guk-ready-to-eat-17-ounce-1-pack-B07C3CWGT3.html",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71b3Gh5P8dL.jpg"
+  },
+  {
+    "id": "03_5",
+    "lookup": "bibigo Korean soybean paste soup pouch doenjang",
+    "sample": "Bibigo Doenjangjjigae Soybean Paste Stew",
+    "source": "https://www.hanyangmart.com/products/bibigo-soybean-stew-460g",
+    "image": "https://www.hanyangmart.com/cdn/shop/files/IMG_1903.jpg?v=1747015250&width=1024"
+  },
+  {
+    "id": "04_0",
+    "lookup": "참치캔",
+    "sample": "Korean Supermarket Tuna Aisle",
+    "source": "https://ameblo.jp/jsokorea/entry-11919815530.html",
+    "image": "https://stat.ameba.jp/user_images/20140904/12/jsokorea/e3/59/p/o0600045013056098389.png"
+  },
+  {
+    "id": "04_1",
+    "lookup": "Dongwon Richam original 200 g luncheon ham can",
+    "sample": "Dongwon Richam Original Luncheon Meat",
+    "source": "https://prod.danawa.com/info/?pcode=11278665",
+    "image": "https://img.danawa.com/prod_img/500000/665/278/img/11278665_1.jpg?_v=20230731092626&shrink=360%3A360"
+  },
+  {
+    "id": "04_2",
+    "lookup": "골뱅이",
+    "sample": "Yudong Natural Canned Whelk",
+    "source": "https://www.ksqld.com.au/product-page/yudong-canned-whelk-bai-top-shells-400g-24",
+    "image": "https://static.wixstatic.com/media/0a3803_3667bab2d6a9464a8894f45ba9f21eb6~mv2.png/v1/fit/w_500%2Ch_500%2Cq_90/file.png"
+  },
+  {
+    "id": "04_3",
+    "lookup": "꽁치캔",
+    "sample": "Sajo Natural Pacific Saury Can",
+    "source": "https://www.coupang.com/vp/products/8244521723",
+    "image": "https://image.coupangcdn.com/image/vendor_inventory/823f/a3144683cbdc28649684e97d3a2312dc992d10a32a880940f2f51921d742.jpg"
+  },
+  {
+    "id": "04_4",
+    "lookup": "황도",
+    "sample": "Sampo Canned Yellow Peaches",
+    "source": "https://www.foodspring.co.kr/category/goods_detail/273",
+    "image": "https://content.foodspring.co.kr/vendor/2583/images/48_0804176376_r.png"
+  },
+  {
+    "id": "04_5",
+    "lookup": "Del Monte sweet corn can Korean grocery 340g",
+    "sample": "Del Monte Super Sweet Corn Packaging",
+    "source": "https://www.megamart.com/product/13738631",
+    "image": "https://static.megamart.com/product/image/1373/13738631/13738631_6_960.jpg"
+  },
+  {
+    "id": "05_0",
+    "lookup": "농심 새우깡",
+    "sample": "Nongshim Shrimp Crackers on Display",
+    "source": "https://news.nate.com/view/20251211n11760",
+    "image": "https://news.nateimg.co.kr/orgImg/nt/2025/12/11/1765416262693a1d460b6d8.jpg"
+  },
+  {
+    "id": "05_1",
+    "lookup": "포카칩 오리지널",
+    "sample": "Orion Poca Chips Original",
+    "source": "https://1source.com/products/orion-poca-chips-original",
+    "image": "https://s3-us-west-1.amazonaws.com/1source-upstream/product_photo/256197_front_1547277948.jpg"
+  },
+  {
+    "id": "05_2",
+    "lookup": "롯데 꼬깔콘 고소한맛",
+    "sample": "Lotte Kkokkalcorn Savory Cone Snack",
+    "source": "https://www.kurly.com/goods/1001397631",
+    "image": "https://product-image.kurly.com/product/image/5b3dc7cf-d3b1-49c6-9c85-21c4baaa07a1.jpg"
+  },
+  {
+    "id": "05_3",
+    "lookup": "Orion squid peanut ball snack ojingeo 98g blue bag",
+    "sample": "Orion Peanut Ball Snack",
+    "source": "https://mi.alpremium.ca/products/alp-o000880111798430?srsltid=AfmBOoro__GmQkkhgPi0bk8TsolOuBW3IQw9hU14UKxc_G6K7OME6zdW",
+    "image": "https://mi.alpremium.ca/cdn/shop/files/8801117984304-1.jpg?v=1700837445"
+  },
+  {
+    "id": "05_4",
+    "lookup": "농심 양파링",
+    "sample": "Nongshim Onion Flavored Rings",
+    "source": "https://bestofkorea.com/best-korean-snacks-20-you-must-try/",
+    "image": "https://bestofkorea.com/wp-content/uploads/2020/08/IMG_8725.jpg"
+  },
+  {
+    "id": "05_5",
+    "lookup": "삼양 짱구 치즈",
+    "sample": "Orion Cheese-Coated Chicken Pop Snack",
+    "source": "https://www.coupang.com/vp/products/8450126035",
+    "image": "https://image.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/04bef177-a6de-45a6-91fd-cb931d1193f7_1753171835408.jpeg"
+  },
+  {
+    "id": "06_0",
+    "lookup": "칙촉 초코칩쿠키",
+    "sample": "Lotte Chocochip Real Chocolate Cookies",
+    "source": "https://ameblo.jp/dejyamo/entry-12934363950.html",
+    "image": "https://stat.ameba.jp/user_images/20250928/21/dejyamo/ee/52/j/o1080081015685100197.jpg?caw=800"
+  },
+  {
+    "id": "06_1",
+    "lookup": "크라운 버터와플",
+    "sample": "Crown Butter Waffles Snack Box",
+    "source": "https://www.crown.co.kr/product/view?idx=137",
+    "image": "https://www.crown.co.kr/upload/system/item/%EB%B2%84%ED%84%B0%EC%99%80%ED%94%8C%28%EB%8C%80%29_%EC%9E%85%EC%B2%B4%EC%9D%B4%EB%AF%B8%EC%A7%800.png"
+  },
+  {
+    "id": "06_2",
+    "lookup": "롯데 제크 통곡물",
+    "sample": "Haitai ACE Cracker Snack",
+    "source": "https://shinfood.com/products/haitai-susenky-ace-cracker-121g",
+    "image": "https://shinfood.com/cdn/shop/products/snack-ace02_1024x1024.jpg?v=1661758289"
+  },
+  {
+    "id": "06_3",
+    "lookup": "Haitai Ivy crackers 135g Korean cracker packaging",
+    "sample": "Haitai Ivy Sugar-Free Crackers",
+    "source": "https://prod.danawa.com/info/?pcode=3525722",
+    "image": "https://img.danawa.com/prod_img/500000/722/525/img/3525722_1.jpg?_v=20161129160402&shrink=360%3A360"
+  },
+  {
+    "id": "06_4",
+    "lookup": "롯데 마가렛트",
+    "sample": "simplus Milk Biscuits Packaging",
+    "source": "https://my.homeplus.co.kr/exclusive/simplus/item/detail?itemNo=071232176",
+    "image": "https://image.homeplus.kr/td/81339e53-8f0b-4ab8-b797-353eb324075d"
+  },
+  {
+    "id": "06_5",
+    "lookup": "크라운 딸기 웨하스",
+    "sample": "Crown Twin Kicker Strawberry Wafer Snack",
+    "source": "https://ameblo.jp/togimoti/entry-12732889631.html",
+    "image": "https://stat.ameba.jp/user_images/20220320/12/togimoti/73/c1/j/o0960101615090313869.jpg"
+  },
+  {
+    "id": "07_0",
+    "lookup": "Lotte Ghana milk chocolate 70g red bar",
+    "sample": "Lotte Ghana Milk Chocolate Bar",
+    "source": "https://www.coupang.com/vp/products/9285323495",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b53d/a7aca06e50099339cf0bf6e78dd406ca08272b39c92c58f62aa3a9b484f2.jpg"
+  },
+  {
+    "id": "07_1",
+    "lookup": "해태 자유시간 땅콩바",
+    "sample": "Haitai Free Time Chocolate Peanut Bars",
+    "source": "https://shopee.ph/Haitai-Korean-Free-Time-Chocolate-Bar-Snack-Bar-36g-i.267521894.21789984086",
+    "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7qukz-li72u9syudek93"
+  },
+  {
+    "id": "07_2",
+    "lookup": "Lotte Dream Cacao 56% chocolate cubes jar",
+    "sample": "Lotte Dream Cacao 56% Dark Chocolate",
+    "source": "https://shop.11665.com/list0/50002766/50008055/n_38549527194.html",
+    "image": "https://gw.alicdn.com/bao/uploaded/i2/T1adXrFFJbXXXXXXXX_%21%210-item_pic.jpg"
+  },
+  {
+    "id": "07_3",
+    "lookup": "롯데 크런키",
+    "sample": "Lotte Crunky Chocolate Bar Packaging",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000117848453",
+    "image": "https://sitem.ssgcdn.com/53/84/84/item/1000117848453_i1_750.jpg"
+  },
+  {
+    "id": "07_4",
+    "lookup": "Lotte Ghana dark chocolate black pack Korea",
+    "sample": "Lotte Ghana Black Chocolate Packaging",
+    "source": "https://item.rakuten.co.jp/takaoka/4903333258840er-20/",
+    "image": "https://tshop.r10s.jp/takaoka/cabinet/03820086/08816980/4903333214327.jpg?fitin=720%3A720"
+  },
+  {
+    "id": "07_5",
+    "lookup": "롯데 아몬드 초코볼",
+    "sample": "LOTTE Almond Choco Ball Korean Snack",
+    "source": "https://www.ebay.com/itm/262765099724",
+    "image": "https://i.ebayimg.com/images/g/pDkAAOSwImRYU8Pb/s-l1200.jpg"
+  },
+  {
+    "id": "08_0",
+    "lookup": "Kellogg corn frost cereal Korea 600g box",
+    "sample": "Kellogg's Corn Frost Cereal Box",
+    "source": "https://m.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1389151005",
+    "image": "https://image2.lotteimall.com/goods/05/10/15/1389151005_1.jpg"
+  },
+  {
+    "id": "08_1",
+    "lookup": "켈로그 첵스초코",
+    "sample": "Kellogg’s Chex Choco Cereal Box",
+    "source": "https://www.metroseoul.co.kr/article/20201217500362",
+    "image": "https://cdn.emetro.co.kr/data2/content/image/2020/12/17/.cache/512/20201217500363.jpg"
+  },
+  {
+    "id": "08_2",
+    "lookup": "켈로그 오곡푸레이크",
+    "sample": "Kellogg’s Multigrain Flakes Package",
+    "source": "https://prod.danawa.com/info/?pcode=5952499",
+    "image": "https://img.danawa.com/prod_img/500000/271/260/img/9260271_1.jpg?_v=20190813160602&shrink=360%3A360"
+  },
+  {
+    "id": "08_3",
+    "lookup": "켈로그 고소한 현미 그래놀라",
+    "sample": "Kellogg’s Brown Rice Granola Package",
+    "source": "https://dovumart.vn/products/ngu-coc-granola-gao-lut-brown-rice-granola-kelloggs-han-quoc-goi-500g-500g",
+    "image": "https://file.hstatic.net/1000372317/file/z5362067152279_cb7299f1f837d6f7bb925fe53df45990_e261e2ec60164c438e6e71d7e7a5cb1d_grande.jpg"
+  },
+  {
+    "id": "08_4",
+    "lookup": "켈로그 후루트링",
+    "sample": "Kellogg’s Korean Froot Ring Cereal",
+    "source": "https://www.qoo10.jp/gmkt.inc/Mobile/Goods/Goods.aspx?goodscode=711229368",
+    "image": "https://gd.image-qoo10.jp/ai/899/123/4458123899_01.g_600-w-st_g.jpg"
+  },
+  {
+    "id": "08_5",
+    "lookup": "포스트 오곡 코코볼",
+    "sample": "Post 오곡 코코볼 Cereal Packaging",
+    "source": "https://m.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=2059628500",
+    "image": "https://image2.lotteimall.com/goods/15/85/46/3073468515_1.jpg/dims/resizemc/550x550/optimize"
+  },
+  {
+    "id": "09_0",
+    "lookup": "하루견과",
+    "sample": "Haru Nuts Signature Mixed Nuts",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000545382378",
+    "image": "https://sitem.ssgcdn.com/78/23/38/item/1000545382378_i1_1200.jpg"
+  },
+  {
+    "id": "09_1",
+    "lookup": "아몬드",
+    "sample": "Kirkland Signature Almonds Bulk Pack",
+    "source": "https://m.orangenamu.com/product/%EC%BB%A4%ED%81%B4%EB%9E%9C%EB%93%9C-%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98-%EB%AF%B8%EA%B5%AD%EC%82%B0-%EC%83%9D%EC%95%84%EB%AA%AC%EB%93%9C-%EA%B0%84%EC%8B%9D-%EC%95%88%EC%A3%BC-136kg-%EC%BD%94%EC%8A%A4%ED%8A%B8%EC%BD%94/4443/",
+    "image": "https://m.orangenamu.com/web/product/big/202602/aa63402991f0262ec87a40180f2a9fc9.jpg"
+  },
+  {
+    "id": "09_2",
+    "lookup": "호두",
+    "sample": "오늘좋은 호두 700g 대용량 팩",
+    "source": "https://lottemartzetta.com/products/OS0430011032125/details",
+    "image": "https://lottemartzetta.com/images-v3/932dcbc7-fca8-4d43-bcde-f73d1ce3cc7d/d5172ff7-c130-4e9c-9ffb-d02378264428/410x410.jpg"
+  },
+  {
+    "id": "09_3",
+    "lookup": "땅콩",
+    "sample": "Packaged Peanuts on Supermarket Shelves",
+    "source": "https://www.fnnews.com/news/202607071826367047",
+    "image": "https://image.fnnews.com/resource/media/image/2026/07/07/202607071203034749_e.jpg"
+  },
+  {
+    "id": "09_4",
+    "lookup": "캐슈넛",
+    "sample": "Roasted Cashew Nuts Pack",
+    "source": "https://gaonfood.com/product/%EB%B3%B6%EC%9D%80-%EC%BA%90%EC%8A%88%EB%84%9B-400g/123/",
+    "image": "https://gaonfood.com/web/product/big/202510/141b7d80b291902d78cb8f8ac97804da.jpg"
+  },
+  {
+    "id": "09_5",
+    "lookup": "피스타치오",
+    "sample": "Wonderful Roasted No Salt Pistachios",
+    "source": "https://www.coupang.com/vp/products/8180112241",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/80c6/8d92cb6b42ce484099f51092463ff8b6b0a9b29ca231891494431b154a93.jpg"
+  },
+  {
+    "id": "10_0",
+    "lookup": "제주 삼다수 500ml",
+    "sample": "Jeju SamDaSoo Promotion at Seoul Convenience Store",
+    "source": "https://www.newstomato.com/readNewspaper.aspx?no=1055358",
+    "image": "https://newsroom.etomato.com/userfiles/NISI20191017_0015712507.jpg"
+  },
+  {
+    "id": "10_1",
+    "lookup": "백산수 500ml",
+    "sample": "Nongshim Baeksansu Price Hike",
+    "source": "https://www.chosunonline.com/site/data/html_dir/2024/11/26/2024112680123.html",
+    "image": "https://www.chosunonline.com/site/data/img_dir/2024/11/26/2024112680121_1.jpg"
+  },
+  {
+    "id": "10_2",
+    "lookup": "아이시스 500ml",
+    "sample": "Lotte ICIS 500ml x20 Bottled Water",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000471902547",
+    "image": "https://sitem.ssgcdn.com/47/25/90/item/1000471902547_i1_1200.jpg"
+  },
+  {
+    "id": "10_3",
+    "lookup": "석수 생수 2L",
+    "sample": "Seoksu 2L Natural Mineral Water",
+    "source": "https://www.kurly.com/goods/5053097",
+    "image": "https://product-image.kurly.com/hdims/resize/%3E1010x/quality/90/src/hdims/resize/%3E1010x/quality/90/src/product/description/notice/ba6a6c61-304b-4088-be7f-067d5b9662ac.jpg"
+  },
+  {
+    "id": "10_4",
+    "lookup": "동원샘물 500ml",
+    "sample": "Dongwon Sammul 500ml Bottled Water Pack",
+    "source": "https://www.lotteon.com/csearch/search/search?mallId=1&platform=pc&q=%EC%83%9D%EC%88%98500ml&render=search&sort=ranking",
+    "image": "https://contents.lotteon.com/itemimage/20260513111551/LO/22/30/58/96/18/_2/23/05/89/61/9/LO2230589618_2230589619_1.png/dims/optimize/resizemc/400x400"
+  },
+  {
+    "id": "10_5",
+    "lookup": "풀무원샘물",
+    "sample": "Pulmuone 2L Bottled Water Pack",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000038330709",
+    "image": "https://sitem.ssgcdn.com/09/07/33/item/1000038330709_i1_750.jpg"
+  },
+  {
+    "id": "11_0",
+    "lookup": "콜라",
+    "sample": "Coca‑Cola Price Display in South Korea",
+    "source": "https://pikabu.ru/story/tsenyi_v_yuzhnoy_koree_10212639",
+    "image": "https://cs13.pikabu.ru/post_img/big/2023/05/06/8/168337689412272536.jpg"
+  },
+  {
+    "id": "11_1",
+    "lookup": "사이다",
+    "sample": "Supermarket Beverage Aisle",
+    "source": "https://biz.chosun.com/en/en-retail/2025/02/21/2GTEMTSJMRBKVPRN3P2XARWA3Q/",
+    "image": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/5I3SBX7VODCZJUARGM52AL6MZA.jpg"
+  },
+  {
+    "id": "11_2",
+    "lookup": "제로콜라",
+    "sample": "Coca‑Cola Zero Sugar Display in Supermarket",
+    "source": "https://news.nate.com/view/20250905n32823",
+    "image": "https://thumbnews.nateimg.co.kr/view610/news.nateimg.co.kr/orgImg/se/2025/09/05/2GXSA3UO3R_2.jpg"
+  },
+  {
+    "id": "11_3",
+    "lookup": "오렌지 탄산",
+    "sample": "Supermarket Orange Soda Promotion",
+    "source": "https://blog.naver.com/joohee_lee0703/223084604645",
+    "image": "https://mblogthumb-phinf.pstatic.net/MjAyMzA0MjVfMzkg/MDAxNjgyMzk1NTY2MzI4.dMZXSrzzeIOWWLk4Pzga2kOZn64WfWu3G22vNEfwRnEg.ZpUG_uPCxmDMsA17CEHpPj41jhajLMb72uyP2cHvMmgg.JPEG.joohee_lee0703/IMG_6933.jpg?type=w800"
+  },
+  {
+    "id": "11_4",
+    "lookup": "밀키스",
+    "sample": "Supermarket Display of Milkis and Sodas",
+    "source": "https://www.wikitree.co.kr/articles/1065873",
+    "image": "https://cdnweb01.wikitree.co.kr/webdata/editor/202507/17/img_20250717104205_b702c573.webp"
+  },
+  {
+    "id": "11_5",
+    "lookup": "진저에일",
+    "sample": "Canada Dry Ginger Ale Six-Pack",
+    "source": "https://lottemartzetta.com/products/OS8801094983031/details",
+    "image": "https://lottemartzetta.com/images-v3/932dcbc7-fca8-4d43-bcde-f73d1ce3cc7d/e30d26ec-e920-4f97-9225-73d712a358aa/500x500.jpg"
+  },
+  {
+    "id": "12_0",
+    "lookup": "포카리스웨트 500ml",
+    "sample": "Pocari Sweat 500ml Bottle",
+    "source": "https://coffeehome.co.kr/product/%ED%8F%AC%EC%B9%B4%EB%A6%AC%EC%8A%A4%EC%9B%A8%ED%8A%B8-500mlx20%ED%8E%AB/4187/",
+    "image": "https://coffeehome.co.kr/web/product/big/202205/2fa902ee0df1f923af6b78349ba7e118.jpg"
+  },
+  {
+    "id": "12_1",
+    "lookup": "파워에이드 마운틴 블라스트",
+    "sample": "Powerade Mountain Blast 700ml Bottle",
+    "source": "https://dpon.gift/en/shops/merchandise/704/powerade-mountain-600ml/",
+    "image": "https://imagecdn.dpon.gift/images/merchandises/%EC%9D%B4%EB%A7%88%ED%8A%B824%ED%8C%8C%EC%9B%8C%EC%97%90%EC%9D%B4%EB%93%9C%EB%A7%88%EC%9A%B4%ED%8B%B4600ml_600.jpg"
+  },
+  {
+    "id": "12_2",
+    "lookup": "파워에이드 퍼플스톰",
+    "sample": "Powerade Purple Storm Sports Drink",
+    "source": "https://www.lghnh.com/global/brand/detail.jsp?bid1=R008&gbn=3",
+    "image": "https://www.lghnh.com/global/images/brand/best/refreshing/R008_4.jpg"
+  },
+  {
+    "id": "12_3",
+    "lookup": "토레타 500ml",
+    "sample": "Coca‑Cola Toreta 500ml Electrolyte Drink",
+    "source": "https://prod.danawa.com/info/?pcode=13728455",
+    "image": "https://img.danuri.io/catalog-image/455/728/013/aebae326be6447b48e34316c6557fdb0.jpg"
+  },
+  {
+    "id": "12_4",
+    "lookup": "Gatorade orange 600ml bottle Korea",
+    "sample": "Gatorade Orange 600ml Bottle",
+    "source": "https://prod.danawa.com/info/?pcode=14284790",
+    "image": "https://img.danawa.com/prod_img/500000/790/284/img/14284790_1.jpg?_v=20220603144430&shrink=360%3A360"
+  },
+  {
+    "id": "12_5",
+    "lookup": "핫식스 캔",
+    "sample": "HOT6ix Energy Drink Can",
+    "source": "https://company.lottechilsung.co.kr/eng/brand/hot6/contentsid/779/index.do",
+    "image": "https://company.lottechilsung.co.kr/common_en/images/product_view0106_bh1.jpg"
+  },
+  {
+    "id": "13_0",
+    "lookup": "오렌지주스",
+    "sample": "Supermarket Orange Juice Display",
+    "source": "https://www.kangnamtimes.com/korea/article/58846/",
+    "image": "https://contents-cdn.viewus.co.kr/image/2023/11/CP-2023-0067/image-78d920c4-dda5-4b89-a7b1-5cb593e48736.jpeg"
+  },
+  {
+    "id": "13_1",
+    "lookup": "포도주스",
+    "sample": "Del Monte Cold Grape Juice Carton",
+    "source": "https://www.megamart.com/product/13339807",
+    "image": "https://static.megamart.com/product/image/1333/13339807/13339807_6_960.jpg"
+  },
+  {
+    "id": "13_2",
+    "lookup": "배주스",
+    "sample": "Woongjin 170 Days Pear Juice",
+    "source": "https://www.totomart.vn/products/nuoc-ep-le-ghien-woongjin-han-quoc-1-5l",
+    "image": "https://file.hstatic.net/200000245115/file/318337332_528662072633813_7947388088462820097_n_9fa1974731be4d02abb872c7de8d7e1d.jpg"
+  },
+  {
+    "id": "13_3",
+    "lookup": "감귤주스",
+    "sample": "Unique Citrus Juices at Hanaro Mart",
+    "source": "https://v.daum.net/v/XjNVVrzTMT",
+    "image": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202508%2F31%2F551515-eNMwo05%2F20250831221019879hjid.jpg"
+  },
+  {
+    "id": "13_4",
+    "lookup": "Del Monte Korea grape juice carton 190ml pack",
+    "sample": "Del Monte Grape Drink Pack",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=0000007899374",
+    "image": "https://sitem.ssgcdn.com/74/93/89/item/0000007899374_i1_750.jpg"
+  },
+  {
+    "id": "13_5",
+    "lookup": "사과주스",
+    "sample": "Korean 170 Days Apple Juice",
+    "source": "https://cherryhousehcm.vn/nuoc-ep-tao-han-quoc-15l",
+    "image": "https://cherryhousehcm.vn/upload/product/z468928706247564d63bc9253cf0dbc8eab12621c84a1f-4908.jpg"
+  },
+  {
+    "id": "14_0",
+    "lookup": "Kwangdong corn silk tea Korean drink bottle 500 ml",
+    "sample": "Kwangdong V-Line Corn Silk Tea",
+    "source": "https://store.baemin.com/product/10168024",
+    "image": "https://cmprd-content.baemin.com/upload/product/main/b2e9dd45-3cea-4050-bf4f-adeec6ebf454.jpg"
+  },
+  {
+    "id": "14_1",
+    "lookup": "보리차",
+    "sample": "Supermarket Display of Haneulbori Barley Tea",
+    "source": "https://www.mt.co.kr/living/2023/06/09/2023060714553599533",
+    "image": "https://thumb.mt.co.kr/cdn-cgi/image/f%3Davif/21/2023/06/2023060714553599533_1.jpg"
+  },
+  {
+    "id": "14_2",
+    "lookup": "녹차 음료",
+    "sample": "Bottled Green Tea Aisle",
+    "source": "https://www.akb48matomemory.com/archives/1055696008.html",
+    "image": "https://livedoor.blogimg.jp/akb48matomemory/imgs/6/6/66c08b93.jpg"
+  },
+  {
+    "id": "14_3",
+    "lookup": "Kwangdong raisin tea 500ml bottle",
+    "sample": "Kwangdong Oriental Raisin Tea Drink",
+    "source": "https://goldencrop.fi/zh_CN/shop/60230-500ml-kwangdong-hutkae-drink-hovenia-dulcis-500ml-10149",
+    "image": "https://goldencrop.fi/web/image/product.template/10149/image_1024?unique=c72fd1a"
+  },
+  {
+    "id": "14_4",
+    "lookup": "보리차",
+    "sample": "Supermarket Display of Haneulbori Barley Tea",
+    "source": "https://www.mt.co.kr/living/2023/06/09/2023060714553599533",
+    "image": "https://thumb.mt.co.kr/cdn-cgi/image/f%3Davif/21/2023/06/2023060714553599533_1.jpg"
+  },
+  {
+    "id": "14_5",
+    "lookup": "17차",
+    "sample": "Namyang 17차 Zero-Calorie Tea",
+    "source": "https://www.musinsa.com/products/5858739",
+    "image": "https://image.msscdn.net/thumbnails/images/goods_img/20251229/5858739/5858739_17684611096022_big.jpg?w=1200"
+  },
+  {
+    "id": "15_0",
+    "lookup": "원두커피",
+    "sample": "Supermarket Coffee Bean Display",
+    "source": "https://www.yna.co.kr/view/AKR20250125020900030",
+    "image": "https://img8.yna.co.kr/photo/yna/YH/2024/12/23/PYH2024122308900001300_P4.jpg"
+  },
+  {
+    "id": "15_1",
+    "lookup": "다크로스트",
+    "sample": "Starbucks Espresso Roast Dark Roast Whole Bean Coffee",
+    "source": "https://www.tesco.com/groceries/en-GB/products/285644732",
+    "image": "https://digitalcontent.api.tesco.com/v2/media/ghs/536390f2-afdf-4881-9fdb-a180d2a94f49/4c913ea1-3c66-4258-aeb2-747035b8000f_627397255.jpeg"
+  },
+  {
+    "id": "15_2",
+    "lookup": "블렌드 원두",
+    "sample": "Barista Brazil Blend Coffee Beans",
+    "source": "https://m.ruliweb.com/community/board/300143/read/64379853",
+    "image": "https://i3.ruliweb.com/img/24/01/02/18cc8883c2f21abee.jpg"
+  },
+  {
+    "id": "15_3",
+    "lookup": "블렌드 원두",
+    "sample": "Barista Brazil Blend Coffee Beans",
+    "source": "https://m.ruliweb.com/community/board/300143/read/64379853",
+    "image": "https://i3.ruliweb.com/img/24/01/02/18cc8883c2f21abee.jpg"
+  },
+  {
+    "id": "15_4",
+    "lookup": "원두커피",
+    "sample": "Supermarket Coffee Bean Display",
+    "source": "https://www.yna.co.kr/view/AKR20250125020900030",
+    "image": "https://img8.yna.co.kr/photo/yna/YH/2024/12/23/PYH2024122308900001300_P4.jpg"
+  },
+  {
+    "id": "15_5",
+    "lookup": "Ediya decaf coffee beans bag Korea",
+    "sample": "Ediya Coffee Home Café Whole Bean Collection",
+    "source": "https://www.newslock.co.kr/news/articleView.html?idxno=75647",
+    "image": "https://cdn.newslock.co.kr/news/photo/202305/75647_64286_4730.jpg"
+  },
+  {
+    "id": "16_0",
+    "lookup": "모카골드",
+    "sample": "Maxim Instant Coffee Mix Display",
+    "source": "https://www.koreatimes.co.kr/business/companies/20250523/coffee-prices-rise-across-south-korea-amid-raw-material-cost-increase",
+    "image": "https://newsimg.koreatimes.co.kr/2025/05/23/3bc4fbca-fa50-448f-bd3b-4076e8095c32.jpg"
+  },
+  {
+    "id": "16_1",
+    "lookup": "카누",
+    "sample": "KANU Mini Americano Coffee Display",
+    "source": "https://ameblo.jp/0818otake0818/entry-12846489002.html",
+    "image": "https://stat.ameba.jp/user_images/20240414/09/0818otake0818/cc/9b/j/o0865108015425593558.jpg"
+  },
+  {
+    "id": "16_2",
+    "lookup": "Kanu latte instant coffee sticks box Korea",
+    "sample": "KANU Latte Instant Coffee Sticks",
+    "source": "https://www.tw.coupang.com/products/166016868909058",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/515258666162432-246e6ff3-f761-4b67-86f2-1731e5dfbff8.jpg"
+  },
+  {
+    "id": "16_3",
+    "lookup": "헤이즐넛 커피",
+    "sample": "Mcnulty iBrew Hazelnut Flavor Instant Coffee",
+    "source": "https://www.gobizkorea.com/mobile/mobileGoodsDetail.do?goods_no=GS2020042390228",
+    "image": "https://www.gobizkorea.com/image/goodsImage.do?goods_no=GS2020042390228&image_se_code=MAIN_THUMB10A"
+  },
+  {
+    "id": "16_4",
+    "lookup": "아메리카노 스틱",
+    "sample": "EDIYA Original Americano Instant Coffee",
+    "source": "https://www.hanchao.com/contents/hot_report_detail.html?id=16628",
+    "image": "https://www.hanchao.com/varimg/photogallery/Article_Photo/10680/big_374897.jpg"
+  },
+  {
+    "id": "16_5",
+    "lookup": "커피믹스",
+    "sample": "Maxim Coffee Mix Display",
+    "source": "https://www.hanchao.com/contents/shop_detail.html?id=18530",
+    "image": "https://www.hanchao.com/varimg/photogallery/Article_Photo/12132/big_217289.jpg"
+  },
+  {
+    "id": "17_0",
+    "lookup": "컵커피",
+    "sample": "PBICK Cup Coffee Launch at CU",
+    "source": "https://www.news1.kr/industry/distribution/5899499",
+    "image": "https://i3n.news1.kr/system/photos/2025/9/3/7474579/high.jpg"
+  },
+  {
+    "id": "17_1",
+    "lookup": "캔커피",
+    "sample": "7-Eleven’s New 900‑Won Canned Coffees",
+    "source": "https://v.daum.net/v/20250727151102552?f=p",
+    "image": "https://t1.daumcdn.net/news/202507/27/chosunbiz/20250727151104136pfuj.jpg"
+  },
+  {
+    "id": "17_2",
+    "lookup": "OKF caffe mocha canned coffee Korea",
+    "sample": "OKF Caffe Mocha 240ml",
+    "source": "https://www.koreamart.com.br/k-food/bebidas/cafe/cafe-mocha-240ml",
+    "image": "https://images.tcdn.com.br/img/img_prod/1019583/cafe_mocha_240ml_2697_1_6317ef2937bbb3946600bf8e32c17232.jpg"
+  },
+  {
+    "id": "17_3",
+    "lookup": "Korean espresso canned coffee Lets Be can 175ml",
+    "sample": "Lotte Let's Be Espresso Canned Coffee",
+    "source": "https://korfood.ru/catalog/napitki/kholodnyy-kofe/napitok-kofeynyy-letc-bi-espresso-lotte-240-ml/",
+    "image": "https://korfood.ru/upload/iblock/e84/wwhh64aeojdkmltsibqmpuwew4p3mgar/napitok_kofeynyy_letc_bi_espresso_lotte_240_ml.jpg"
+  },
+  {
+    "id": "17_4",
+    "lookup": "카라멜마키아토",
+    "sample": "OKF Caramel Macchiato Canned Coffee",
+    "source": "https://www.koreamart.com.br/k-food/bebidas/cafe/cafe-caramel-macchiato-240ml",
+    "image": "https://images.tcdn.com.br/img/img_prod/1019583/cafe_caramel_macchiato_240ml_2693_1_5ccd027d11a111bc7abeaa849c98b712.jpg"
+  },
+  {
+    "id": "17_5",
+    "lookup": "블랙커피",
+    "sample": "B’S The Black Canned Coffee",
+    "source": "https://jjmall.shop/product/%EB%8C%80%EC%9D%BC-%EB%B9%84%EC%8A%A4%EB%8D%94%EB%B8%94%EB%9E%99-%EC%BA%94%EC%BB%A4%ED%94%BC-175ml-x30%EC%BA%94-%EC%97%85%EC%86%8C%EC%9A%A9-%EB%AF%B8%EB%8B%88%EB%8B%A8%EC%BA%94-%EC%9D%8C%EB%A3%8C%EC%88%98/1223/",
+    "image": "https://jjmall.shop/web/product/big/202408/7595d59f49ba2abc515097ee6d8bcc4a.jpg"
+  },
+  {
+    "id": "18_0",
+    "lookup": "유자차",
+    "sample": "Traders Deal Honey Citron Tea Jar",
+    "source": "https://health.baidu.com/m/detail/ar_3854437418876667525",
+    "image": "https://selfpage-gips.cdn.bcebos.com/c00e1fa9889d30ebbdb9d928b6b70fa3?x-bce-process=image%2Fauto-orient%2Co_1%2Fresize%2Cw_1242%2Climit_1%2Fquality%2CQ_86%2Fformat%2Cf_auto%2Fauto-orient%2Co_1"
+  },
+  {
+    "id": "18_1",
+    "lookup": "생강차",
+    "sample": "No Brand Ginger Tea on Store Shelf",
+    "source": "https://v.daum.net/v/ZSZ6FjKGXP?f=p",
+    "image": "https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202508%2F08%2F551515-eNMwo05%2F20250808203336284kkvg.jpg"
+  },
+  {
+    "id": "18_2",
+    "lookup": "대추차",
+    "sample": "Emart Jujube Tea 20T",
+    "source": "https://prod.danawa.com/info/?pcode=4911565",
+    "image": "https://img.danawa.com/prod_img/500000/565/911/img/4911565_1.jpg?_v=20170216145806"
+  },
+  {
+    "id": "18_3",
+    "lookup": "율무차",
+    "sample": "Emart Adlay Tea with Ceramic Mug",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000009929675",
+    "image": "https://sitem.ssgcdn.com/75/96/92/item/1000009929675_i1_750.jpg"
+  },
+  {
+    "id": "18_4",
+    "lookup": "쌍화차",
+    "sample": "No Brand Ssanghwa Tea Box",
+    "source": "https://emartamerica.com/products/ssanghwa-tea-30ea",
+    "image": "https://emartamerica.com/cdn/shop/files/NoBrandSsanghwaTea30ea.jpg?v=1752528821"
+  },
+  {
+    "id": "18_5",
+    "lookup": "매실청",
+    "sample": "Beksul Korean Concentrated Plum Extract",
+    "source": "https://dovumart.vn/products/nuoc-chiet-xuat-trai-mo-dam-dac-uong-va-nau-an-beksul-han-quoc-1025g",
+    "image": "https://product.hstatic.net/1000372317/product/dd1aea0aeec92f9776d8_601a0ec37ad64e2ebd29b11a6be233a0.jpg"
+  },
+  {
+    "id": "19_0",
+    "lookup": "Sempio naturally brewed soy sauce 501 bottle",
+    "sample": "Sempio Naturally Brewed Soy Sauce 501",
+    "source": "https://shopee.co.th/%E0%B8%8B%E0%B8%AD%E0%B8%AA%E0%B8%96%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4-501-%E0%B8%95%E0%B8%A3%E0%B8%B2-%E0%B9%80%E0%B8%8B%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%B5%E0%B8%A2%E0%B8%A7-%28Naturally-Brewed-Soy-Sauce-501-SEMPIO-BRAND%29-500ml-860ml-i.305196356.28952873749",
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7ras9-m6es4fip158504"
+  },
+  {
+    "id": "19_1",
+    "lookup": "고추장",
+    "sample": "슈퍼마켓 선반의 청정원 순창 고추장",
+    "source": "https://v.daum.net/v/ysibm0kPg6",
+    "image": "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202412%2F19%2Ftenbody%2F20241219190004054pbli.jpg"
+  },
+  {
+    "id": "19_2",
+    "lookup": "참기름",
+    "sample": "Ottogi Premium Roasted Sesame Oil in Seoul Supermarket",
+    "source": "https://www.cntraveller.in/story/the-best-supermarket-snacks-in-seoul-chef-jungsiks-picks/",
+    "image": "https://assets.cntraveller.in/photos/68cb97e6460fbf2d12879abf/master/w_1600%2Cc_limit/89838B7D-3035-4C21-BA07-EEFD9A474AE9.JPG"
+  },
+  {
+    "id": "19_3",
+    "lookup": "쌈장",
+    "sample": "Haechandle Ssamjang Fermented Soybean Paste",
+    "source": "https://www.happywok.hu/p/2653/fermentalt-szojapaszta-keverve-500-g",
+    "image": "https://www.happywok.hu/resize/e/800/800/files/stella-digit/409203-fermentovana-sojova-pasta-500-g.png"
+  },
+  {
+    "id": "19_4",
+    "lookup": "현미식초",
+    "sample": "Ottogi 100% Fermented Brown Rice Vinegar",
+    "source": "https://v.daum.net/v/9bW1XRg2wN?f=p",
+    "image": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202506%2F23%2Ftenbody%2F20250623160003532zhek.jpg"
+  },
+  {
+    "id": "19_5",
+    "lookup": "맛술",
+    "sample": "LOTTE Mirim Cooking Wine 2L",
+    "source": "https://m.gsshop.com/prd/prd.gs?bnclick=prd-b02_prdb02A_apiPrdBrand&mseq=437159&prdid=1093846378",
+    "image": "https://asset.m-gs.kr/prod/1093846378/1/550"
+  },
+  {
+    "id": "20_0",
+    "lookup": "비비고 왕교자",
+    "sample": "Bibigo Frozen Dumplings Promotion",
+    "source": "https://www.mt.co.kr/living/2023/12/04/2023120414110023014",
+    "image": "https://thumb.mt.co.kr/cdn-cgi/image/w%3D1200%2Ch%3D795%2Cfit%3Dcover%2Cbg%3Dwhilte%2Cf%3Dauto%2Cquality%3Dhigh%2Csharpen%3D2%2Cg%3Dface/21/2023/12/2023120414110023014_1.jpg"
+  },
+  {
+    "id": "20_1",
+    "lookup": "풀무원 납작지짐만두",
+    "sample": "Pulmuone Flat Fried Dumplings Display",
+    "source": "https://emile.emarteveryday.co.kr/product/ProductView?skuCode=8801114121788",
+    "image": "https://images.emarteveryday.co.kr/images/productreview/XWkc6Dy1PMpqDXiA/Nx6Ne9gshWR1SHZm.jpg"
+  },
+  {
+    "id": "20_2",
+    "lookup": "비비고 김치왕교자",
+    "sample": "Bibigo Kimchi Wang Gyoza Package",
+    "source": "https://prod.danawa.com/info/?pcode=28208138",
+    "image": "https://img.danuri.io/catalog-image/138/208/028/fbfae75d60d64867872e65c57c4fe587.jpg?_v=20260407234442"
+  },
+  {
+    "id": "20_3",
+    "lookup": "풀무원 부추잡채군만두",
+    "sample": "Pulmuone Buchu Japchae Fried Dumplings",
+    "source": "https://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1147830052",
+    "image": "https://image2.lotteimall.com/goods/52/00/83/1147830052_1.jpg/dims/resizemc/550x550/optimize"
+  },
+  {
+    "id": "20_4",
+    "lookup": "풀무원 얇은피 꽉찬속 만두",
+    "sample": "Pulmuone Thin Skin Meat Dumplings",
+    "source": "https://www.thingoolmarket.com/goods/goods_view.php?goodsNo=1000031088",
+    "image": "https://thingotr4652.cdn-nhncommerce.com/data/goods/23/02/07/1000031088/t50_register_detail_085.jpg"
+  },
+  {
+    "id": "20_5",
+    "lookup": "고향 바삭군만두",
+    "sample": "Haitai Gohyang Crispy Fried Dumplings",
+    "source": "https://www.megamart.com/product/09398269",
+    "image": "https://static.megamart.com/product/image/0939/09398269/09398269_1_960.jpg"
+  },
+  {
+    "id": "21_0",
+    "lookup": "빙그레 메로나",
+    "sample": "Binggrae Melona Ice Bar Packaging",
+    "source": "https://busan.fnnews.com/news/202508221447489499",
+    "image": "https://image.fnnews.com/resource/media/image/2025/08/22/202508221440004761_e.jpg"
+  },
+  {
+    "id": "21_1",
+    "lookup": "롯데 월드콘 바닐라",
+    "sample": "Lotte World Con Ice Cream Display",
+    "source": "https://www.mk.co.kr/en/business/11234853",
+    "image": "https://wimg.mk.co.kr/news/cms/202502/06/news-p.v1.20250206.c21787f011264d98a4d672ba63518acb_P1.jpg"
+  },
+  {
+    "id": "21_2",
+    "lookup": "빙그레 투게더 미니컵",
+    "sample": "Binggrae Together Original Vanilla Miniature Ice Cream",
+    "source": "https://www.kurly.com/goods/1002114706",
+    "image": "https://product-image.kurly.com/hdims/resize/%5E%3E720x%3E936/cropcenter/720x936/quality/85/src/product/image/c381d042-4cc7-4c39-9eb9-decb3d6b639c.png"
+  },
+  {
+    "id": "21_3",
+    "lookup": "빙그레 투게더 오리지널 바닐라",
+    "sample": "Binggrae Together Original Vanilla Ice Cream",
+    "source": "https://www.etoday.co.kr/news/view/1836974",
+    "image": "https://img.etoday.co.kr/pto_db/2019/12/20191222102444_1404707_1200_1028.jpg"
+  },
+  {
+    "id": "21_4",
+    "lookup": "롯데 돼지바",
+    "sample": "Lotte Dwaejiba Crunch Ice Bar",
+    "source": "https://ameblo.jp/ygpapa5733/entry-12915314245.html",
+    "image": "https://stat.ameba.jp/user_images/20250708/16/ygpapa5733/7b/92/p/o0620082715630987157.png"
+  },
+  {
+    "id": "21_5",
+    "lookup": "빙그레 비비빅",
+    "sample": "Binggrae B.B.BIG Red Bean Ice Bar",
+    "source": "https://budgetbox.ph/products/binggrae-b-b-big-ice-cream-bar-70ml",
+    "image": "https://budgetbox.ph/cdn/shop/products/6-8801104123181.jpg?v=1749004578"
+  },
+  {
+    "id": "22_0",
+    "lookup": "오뚜기 김치볶음밥 냉동",
+    "sample": "Ottogi Kimchi Fried Rice (Frozen)",
+    "source": "https://www.coupang.com/vp/products/5353786545",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2021/04/13/15/9/2e9f9a8f-7635-4c73-a4fa-7ee969e6f90f.jpg"
+  },
+  {
+    "id": "22_1",
+    "lookup": "오뚜기 콤비네이션 피자 냉동",
+    "sample": "Ottogi Stone-Baked Combination Pizza",
+    "source": "https://emile.emarteveryday.co.kr/product/ProductView?skuCode=8801045750088",
+    "image": "https://images.emarteveryday.co.kr/images/app/webapps/evd_web2/share/SKU/mall/88/00/8801045750088_1.png"
+  },
+  {
+    "id": "22_2",
+    "lookup": "풀무원 모짜렐라 감자핫도그",
+    "sample": "Pulmuone Saenggadeuk Mozzarella Hot Dog",
+    "source": "https://news.pulmuone.co.kr/pulmuone/newsroom/viewNewsroom.do?id=889",
+    "image": "https://news.pulmuone.co.kr/webfile/webedit/20170630/20170630142310_%EC%82%AC%EC%A7%841_%ED%92%80%EB%AC%B4%EC%9B%90%20%EC%83%9D%EA%B0%80%EB%93%9D%20%EB%AA%A8%EC%A7%9C%EB%A0%90%EB%9D%BC%20%ED%95%AB%EB%8F%84%EA%B7%B8_%EB%89%B4%EC%8A%A4%EB%A3%B8.jpg"
+  },
+  {
+    "id": "22_3",
+    "lookup": "고메 바삭튀겨낸 돈카츠",
+    "sample": "CJ Gourmet Pork Cutlet 450g",
+    "source": "https://www.cjthemarket.com/the/product/product-main?prdCd=40156354",
+    "image": "https://img.cjthemarket.com/images/file/product/920/20260402084521335.jpg"
+  },
+  {
+    "id": "22_4",
+    "lookup": "Bibigo Namdo Tteokgalbi 450g Korean patties frozen pouch",
+    "sample": "CJ Bibigo Namdo Tteokgalbi Package",
+    "source": "https://www.megamart.com/product/10248997",
+    "image": "https://static.megamart.com/product/image/1024/10248997/10248997_6_960.jpg"
+  },
+  {
+    "id": "22_5",
+    "lookup": "모짜렐라 치즈스틱 냉동",
+    "sample": "Chefood Mozzarella Cheese Sticks",
+    "source": "https://www.woodnote.kr/mall/products.php?productId=2358331274",
+    "image": "https://img2c.coupangcdn.com/image/retail/images/7474466102672085-a43c25f0-0c1d-4daa-89f5-b1b191fb1689.jpg"
+  },
+  {
+    "id": "23_0",
+    "lookup": "냉동 블루베리 봉지 1kg 마트 풀무원",
+    "sample": "gomgom IQF Frozen Blueberries",
+    "source": "https://blog.naver.com/xodwk48666/222226208960?viewType=pc",
+    "image": "https://mblogthumb-phinf.pstatic.net/MjAyMTAxMzFfMTMy/MDAxNjEyMDU0MzEyMTg5.R-9i7Qr9HOgBKRmn28A7vJDd0jziwbswP3BDe0JryJMg.ZCU9_HYA1g6H2QdBm17xFT-kJ2WMHCaGZQZB3X8MKD4g.JPEG.xodwk48666/1612053913030.jpg?type=w800"
+  },
+  {
+    "id": "23_1",
+    "lookup": "냉동 브로콜리 1kg 냉동채소 봉지",
+    "sample": "Welluts Frozen Mini Broccoli 1kg",
+    "source": "https://m.welluts.com/product/%EC%9B%B0%EB%A3%A8%EC%B8%A0-%EB%83%89%EB%8F%99-%EB%AF%B8%EB%8B%88-%EB%B8%8C%EB%A1%9C%EC%BD%9C%EB%A6%AC-1kg/942/",
+    "image": "https://m.welluts.com/web/product/big/202505/6e2e1fdf01370b522e94cfc706878216.jpg"
+  },
+  {
+    "id": "23_2",
+    "lookup": "냉동 혼합야채 봉지 홈플러스",
+    "sample": "Premium Frozen Mixed Vegetables",
+    "source": "https://mfront.homeplus.co.kr/item?itemNo=10000301978767&storeType=DS",
+    "image": "https://image.homeplus.kr/rtd/0b1b3183-4fb8-4518-9bf3-fa6e7d961329?w=750"
+  },
+  {
+    "id": "23_3",
+    "lookup": "냉동 딸기 봉지 홈플러스",
+    "sample": "Homeplus 1kg Frozen Strawberries",
+    "source": "https://prod.danawa.com/info/?pcode=32296331",
+    "image": "https://img.danawa.com/prod_img/500000/331/296/img/32296331_1.jpg?_v=20240814131055&shrink=360%3A360"
+  },
+  {
+    "id": "23_4",
+    "lookup": "냉동 망고 다이스 봉지 홈플러스",
+    "sample": "Homeplus Signature Frozen Mango",
+    "source": "https://www.11st.co.kr/products/5404078712",
+    "image": "https://cdn.011st.com/11dims/resize/1000X1000/quality/75/11src/review/32903202/5404078712/02c9911fecd54f9f9539b617c10a99da.jpg"
+  },
+  {
+    "id": "23_5",
+    "lookup": "냉동 시금치 봉지 한국",
+    "sample": "Frozen Spinach Package",
+    "source": "https://www.coupang.com/vp/products/8032975407",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/rs_quotation_api/zw0n3q8v/4d6ce07824cf4765b142f2bc3232bf8c.jpg"
+  },
+  {
+    "id": "24_0",
+    "lookup": "부침두부",
+    "sample": "Pulmuone Korean Frying Tofu Package",
+    "source": "https://blog.handphone.com/%ED%92%80%EB%AC%B4%EC%9B%90-%EC%86%8C-%EB%B6%80%EC%B9%A8%EB%91%90%EB%B6%80-290g-1%EA%B0%9C/",
+    "image": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/711826603427062-2bf6b3d6-790d-43ba-b91f-8ab7086d6fb9.jpg"
+  },
+  {
+    "id": "24_1",
+    "lookup": "콩나물",
+    "sample": "Pulmuone Pesticide-Free Bean Sprouts",
+    "source": "https://m.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=2964030351",
+    "image": "https://image2.lotteimall.com/goods/51/03/03/2964030351_1.jpg/dims/resizemc/550x550/optimize"
+  },
+  {
+    "id": "24_2",
+    "lookup": "포기김치",
+    "sample": "Packaged Kimchi Popularity in Seoul Supermarkets",
+    "source": "https://life.chosunonline.com/site/data/html_dir/2024/09/27/2024092780213.html",
+    "image": "https://www.chosunonline.com/site/data/img_dir/2024/09/26/2024092680224_2.jpg"
+  },
+  {
+    "id": "24_3",
+    "lookup": "백김치",
+    "sample": "Bibigo White Kimchi Package",
+    "source": "https://www.ssg.com/search.ssg?query=%EB%B9%84%EB%B9%84%EA%B3%A0%EC%95%84%EA%B8%B0%EB%B0%B1%EA%B9%80%EC%B9%98",
+    "image": "https://sitem.ssgcdn.com/68/00/60/item/1000772600068_i1_500.jpg"
+  },
+  {
+    "id": "24_4",
+    "lookup": "Bibigo sliced radish kimchi pouch kkakdugi 500g",
+    "sample": "Bibigo Diced Radish Kimchi (500g)",
+    "source": "https://www.kurly.com/goods/5156487",
+    "image": "https://product-image.kurly.com/product/image/0bfef970-cae9-47f7-a661-57bb607be46d.jpg"
+  },
+  {
+    "id": "24_5",
+    "lookup": "연두부",
+    "sample": "Pulmuone Soft Tofu Package",
+    "source": "https://www.highwaymart.co.kr/Mall/Goods/~2147478010",
+    "image": "https://www.highwaymart.co.kr/Data/Upload/Custom/8801114101575_s.jpg"
+  },
+  {
+    "id": "25_0",
+    "lookup": "체다치즈",
+    "sample": "Seoul Milk Cheddar Cheese Display",
+    "source": "https://www.asiae.co.kr/en/article/2025040116464285775",
+    "image": "https://cphoto.asiae.co.kr/listimglink/1/2023121313083387248_1702440513.jpg"
+  },
+  {
+    "id": "25_1",
+    "lookup": "모짜렐라",
+    "sample": "Seoulmilk Fresh Mozzarella Cheese",
+    "source": "https://www.kpinews.kr/newsView/1065576516886955",
+    "image": "https://www.kpinews.kr/data/upi/image/2024/11/29/p1065576516886955_559_thum.jpg"
+  },
+  {
+    "id": "25_2",
+    "lookup": "무염버터",
+    "sample": "Seoul Milk Unsalted Butter 450g",
+    "source": "https://www.keyzard.cc/jomiho7767/nb/222316286931",
+    "image": "https://mblogthumb-phinf.pstatic.net/MjAyMTA0MjBfOTAg/MDAxNjE4ODc0MjMwMzY0.nLrvm1rzIjIaTDzlCGaxjvUw10ddNYqd1BnPFsl9Sv0g.SVEIuCFMYzJ_iDg1zD8Cod5Mzx_ldjxXWi4MbJeJfNMg.JPEG.jomiho7767/1.jpg?type=w2"
+  },
+  {
+    "id": "25_3",
+    "lookup": "스트링치즈",
+    "sample": "Homeplus Signature String Cheese",
+    "source": "https://www.ssg.com/search.ssg?query=%EB%85%B8%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%8A%A4%ED%8A%B8%EB%A7%81%EC%B9%98%EC%A6%88",
+    "image": "https://sitem.ssgcdn.com/80/47/56/item/1000791564780_i1_500.jpg"
+  },
+  {
+    "id": "25_4",
+    "lookup": "고다치즈",
+    "sample": "Gouda Cheese Block (200g)",
+    "source": "https://sib.kr/kr/product/detail/111DP289",
+    "image": "https://sib.kr/theme/webs01_kr/images/sunin_upload/item/111DP289.jpg"
+  },
+  {
+    "id": "25_5",
+    "lookup": "크림치즈",
+    "sample": "Original Philadelphia Cream Cheese Tub",
+    "source": "https://www.ehomebakery.com/m/product.html?REFPP=board&branduid=2078403",
+    "image": "https://www.ehomebakery.com/shopimages/homebakery/0010060001353.jpg"
+  },
+  {
+    "id": "26_0",
+    "lookup": "흰우유",
+    "sample": "Seoul Milk Cartons on Supermarket Shelf",
+    "source": "https://mobile.newsis.com/view/NISX20221110_0002081326",
+    "image": "https://img1.newsis.com/2022/11/10/NISI20221110_0019450877_web.jpg"
+  },
+  {
+    "id": "26_1",
+    "lookup": "저지방우유",
+    "sample": "Seoul Milk Low-Fat High-Calcium Promotion",
+    "source": "https://www.chosun.com/english/industry-en/2026/03/24/YSYRU5AMMNBH7DK6BWR72LO5BQ/",
+    "image": "https://www.chosun.com/resizer/v2/SRDFSKVLJRPFDJWFFHKZ3HDJZU.jpg?auth=d953450c47ac100ad74146379df1edd734db462514fb159d6106ce2d87169038&height=630&smart=true&width=1200"
+  },
+  {
+    "id": "26_2",
+    "lookup": "딸기요거트",
+    "sample": "Seoul Milk Yoheim Strawberry Yogurt Drink",
+    "source": "https://www.ssg.com/search.ssg?query=%EC%84%9C%EC%9A%B8%EC%9A%B0%EC%9C%A0%EC%9A%94%EA%B5%AC%EB%A5%B4%ED%8A%B8750",
+    "image": "https://sitem.ssgcdn.com/15/29/39/item/1000688392915_i1_500.jpg"
+  },
+  {
+    "id": "26_3",
+    "lookup": "우유",
+    "sample": "Korean Supermarket Milk Aisle",
+    "source": "https://www.enewstoday.co.kr/news/articleView.html?idxno=1621319",
+    "image": "https://cdn.enewstoday.co.kr/news/photo/202212/1621319_677745_2929.jpg"
+  },
+  {
+    "id": "26_4",
+    "lookup": "바나나우유",
+    "sample": "Iconic Banana-Flavored Milk Display",
+    "source": "https://www.newsway.co.kr/news/view?ud=2024111116502568052",
+    "image": "https://nimage.newsway.co.kr/photo/2024/11/11/20241111000043_1200.jpg"
+  },
+  {
+    "id": "26_5",
+    "lookup": "플레인요거트",
+    "sample": "Seoul Milk Plain Yogurt 1.8L",
+    "source": "https://www.globalfood.co.kr/product/%EC%84%9C%EC%9A%B8%EC%9A%B0%EC%9C%A0-%ED%94%8C%EB%A0%88%EC%9D%B8-%EC%9A%94%EA%B1%B0%ED%8A%B8-18l-1%EA%B8%89a%EC%9B%90%EC%9C%A0/5120/display/1/",
+    "image": "https://www.globalfood.co.kr/web/product/big/202505/da77cd38f7bbe7eb6a20647a6e9f25e7.jpg"
+  },
+  {
+    "id": "27_0",
+    "lookup": "액체세제",
+    "sample": "Tech Baking Soda Liquid Detergent",
+    "source": "https://prod.danawa.com/info/?pcode=14077991",
+    "image": "https://img.danawa.com/prod_img/500000/991/077/img/14077991_1.jpg?_v=20210503145755&shrink=360%3A360"
+  },
+  {
+    "id": "27_1",
+    "lookup": "섬유유연제",
+    "sample": "Seoul Supermarket Fabric Softener Aisle",
+    "source": "https://ameblo.jp/sayahina0816/entry-12821787245.html",
+    "image": "https://stat.ameba.jp/user_images/20230924/17/sayahina0816/14/fc/j/o1080144015342233771.jpg"
+  },
+  {
+    "id": "27_2",
+    "lookup": "주방세제",
+    "sample": "Korean Supermarket Dishwashing Detergents",
+    "source": "https://ameblo.jp/annhaksoon/entry-12585248178.html",
+    "image": "https://stat.ameba.jp/user_images/20200327/22/annhaksoon/0f/07/j/o0810108014734802844.jpg"
+  },
+  {
+    "id": "27_3",
+    "lookup": "세탁세제",
+    "sample": "AKAYEONG LiQ Basic Laundry Detergent 4L Pack",
+    "source": "https://m.gsshop.com/prd/prd.gs?mseq=402535-7_5-180864&prdid=1044945541",
+    "image": "https://asset.m-gs.kr/prod/1044945541/1/2000"
+  },
+  {
+    "id": "27_4",
+    "lookup": "섬유유연제",
+    "sample": "Seoul Supermarket Fabric Softener Aisle",
+    "source": "https://ameblo.jp/sayahina0816/entry-12821787245.html",
+    "image": "https://stat.ameba.jp/user_images/20230924/17/sayahina0816/14/fc/j/o1080144015342233771.jpg"
+  },
+  {
+    "id": "27_5",
+    "lookup": "주방세제",
+    "sample": "Korean Supermarket Dishwashing Detergents",
+    "source": "https://ameblo.jp/annhaksoon/entry-12585248178.html",
+    "image": "https://stat.ameba.jp/user_images/20200327/22/annhaksoon/0f/07/j/o0810108014734802844.jpg"
+  },
+  {
+    "id": "28_0",
+    "lookup": "롤화장지",
+    "sample": "Korean Supermarket Toilet Paper Aisle",
+    "source": "https://ameblo.jp/annhaksoon/entry-12575936828.html",
+    "image": "https://stat.ameba.jp/user_images/20200217/22/annhaksoon/ed/8a/j/o0902108014714814122.jpg"
+  },
+  {
+    "id": "28_1",
+    "lookup": "미용티슈",
+    "sample": "Clean Country Natural Soft Facial Tissues",
+    "source": "https://prod.danawa.com/info/?pcode=3619352",
+    "image": "https://img.danawa.com/prod_img/500000/352/619/img/3619352_1.jpg?_v=20230224131056"
+  },
+  {
+    "id": "28_2",
+    "lookup": "키친타올",
+    "sample": "Clean Country Daily Kitchen Paper Towels",
+    "source": "https://www.ssg.com/item/itemView.ssg?itemId=1000589813983",
+    "image": "https://sitem.ssgcdn.com/83/39/81/item/1000589813983_i1_750.jpg"
+  },
+  {
+    "id": "28_3",
+    "lookup": "포켓티슈",
+    "sample": "Watsons Floral Pocket Tissues",
+    "source": "https://ameblo.jp/jmatk-tohojj/entry-12192551367.html",
+    "image": "https://stat.ameba.jp/user_images/20160822/18/jmatk-tohojj/fd/ea/j/o0480061013729771751.jpg"
+  },
+  {
+    "id": "28_4",
+    "lookup": "두루마리",
+    "sample": "깨끗한나라 Pure & Deco 30롤 화장지",
+    "source": "https://prod.danawa.com/info/?pcode=3620914",
+    "image": "https://img.danawa.com/prod_img/500000/914/620/img/3620914_2.jpg?_v=20251213052320&shrink=360%3A360"
+  },
+  {
+    "id": "28_5",
+    "lookup": "화장지",
+    "sample": "Korean Supermarket Toilet Paper Aisle",
+    "source": "https://ameblo.jp/annhaksoon/entry-12575936828.html",
+    "image": "https://stat.ameba.jp/user_images/20200217/22/annhaksoon/ed/8a/j/o0902108014714814122.jpg"
+  },
+  {
+    "id": "29_0",
+    "lookup": "연어 사료",
+    "sample": "ANF Soft Salmon Dog Food",
+    "source": "https://fallcent.com/product/4MIh7HsXOfCItWmwHuF8DAzhv9klcqi1/",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/38fa/8f95d66ba19115296503f61ba2df28bfc3f3189f1ab1fae21987253b485b.jpg"
+  },
+  {
+    "id": "29_1",
+    "lookup": "닭고기 사료",
+    "sample": "Harim The Real Chicken Adult Dog Food",
+    "source": "https://www.costco.co.kr/BabyKidsToysPets/Pet-Supplies/Dog-Foods/Harim-Dog-Food-Chicken-Adult-36kg/p/617180",
+    "image": "https://www.costco.co.kr/medias/sys_master/images/hd3/hbc/14044009168926.jpg"
+  },
+  {
+    "id": "29_2",
+    "lookup": "강아지 간식",
+    "sample": "Colioli Pet Snack Display at Lotte Mart Zettaplex",
+    "source": "https://www.koreatodo.com/lotte-mart",
+    "image": "https://static.wixstatic.com/media/0505b9_8e7142be899d42c688844cce4a71ceb4~mv2.jpg/v1/fill/w_980%2Ch_810%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/0505b9_8e7142be899d42c688844cce4a71ceb4~mv2.jpg"
+  },
+  {
+    "id": "29_3",
+    "lookup": "소고기 사료",
+    "sample": "The Real Crunchy Beef Adult Dog Food",
+    "source": "https://prod.danawa.com/info/?pcode=5510517",
+    "image": "https://img.danawa.com/prod_img/500000/517/510/img/5510517_1.jpg?_v=20230816140807&shrink=360%3A360"
+  },
+  {
+    "id": "29_4",
+    "lookup": "참치 고양이",
+    "sample": "Dongwon Nutri Plan Tuna & Anchovy Cat Food",
+    "source": "https://fallcent.com/product/?item_id=24145413258&product_id=6070980773",
+    "image": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/eff9/117fa93860cfa9f4cb6febce0142204e3ad10734c3591362ce8bf6c2c61a.jpg"
+  },
+  {
+    "id": "29_5",
+    "lookup": "오리 큐브",
+    "sample": "Gooday Duck Meat Cube Dog Treats",
+    "source": "https://m.pet-friends.co.kr/product/detail/45375",
+    "image": "https://images.pet-friends.co.kr/storage/pet_friends/product/id/1/0/0/6/d/9/c/1006d9cf9d28694eaabe54b3d3152c7e/10001/d629ab5785b5e1b76c61be02f7a282d1.jpeg"
+  }
+]
