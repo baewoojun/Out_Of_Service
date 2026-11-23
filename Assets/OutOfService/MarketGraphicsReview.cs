@@ -28,6 +28,7 @@ namespace OutOfService
             player.bareHandsModel.SetActive(false);player.flashlightModel.SetActive(false);
             Application.runInBackground=true;QualitySettings.vSyncCount=0;Application.targetFrameRate=-1;
             var camera=player.viewCamera;camera.enabled=false;camera.fieldOfView=75;
+            if(Array.IndexOf(Environment.GetCommandLineArgs(),"-reviewNoAA")>=0)camera.GetUniversalAdditionalCameraData().antialiasing=AntialiasingMode.None;
             var target=new RenderTexture(1920,1080,24);var picture=new Texture2D(1920,1080,TextureFormat.RGB24,false);
             var pixel=new Texture2D(1,1,TextureFormat.RGB24,false);camera.targetTexture=target;
             string[] names={"cafe-metal","cafe-room","b1-shopfront","beauty-counter","produce-contact","fridge-glass","checkout-floor","2f-fashion","wall-grazing","cafe-seat","restaurant-seat","beauty-range","appliance-lid"};
@@ -44,6 +45,14 @@ namespace OutOfService
             Add("hanging-pans",new(-36.7f,1.65f,-25.8f),new(-36.8f,1.45f,-27.7f));
             Add("customer-seats",new(9.5f,6.65f,-24),new(11,5.7f,-24));
             Add("concourse-bench",new(4.4f,-3.35f,-30),new(6,-4.3f,-30));
+            Add("shirt-collar",new(-37.25f,6.68f,-31.75f),new(-37.5f,6.28f,-30.85f));
+            Add("coat-tailoring",new(-36.72f,6.58f,-29.95f),new(-37.5f,6.22f,-29.56f));
+            Add("tee-fabric",new(-36.75f,6.52f,-28.65f),new(-37.5f,6.23f,-28.27f));
+            Add("shirt-merchandising",new(-35.8f,6.65f,-31.8f),new(-37.5f,6.1f,-29.8f));
+            Add("staff-room",new(17,6.65f,32.8f),new(19,6.1f,39));
+            Add("staff-lockers",new(13.4f,6.65f,41.9f),new(13.4f,6.1f,43.45f));
+            Add("staff-kitchen",new(22.4f,6.65f,41.8f),new(22.4f,6,43.1f));
+            Add("staff-vending",new(24.6f,6.65f,33.5f),new(24.8f,6,34.7f));
             names=viewNames.ToArray();eyes=viewEyes.ToArray();aims=viewAims.ToArray();
             var probes=FindObjectsByType<ReflectionProbe>();
             using(var report=new StreamWriter(Path.Combine(folder,"frames.tsv"))){

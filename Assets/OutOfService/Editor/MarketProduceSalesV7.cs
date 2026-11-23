@@ -42,8 +42,15 @@ public static partial class MarketPrototypeBuilderV7
         {
             int count=kind==6?4:3;
             for(int row=0;row<count;row++)
-            for(int col=0;col<count;col++)
-                ProduceSalePack(kind,title,center+new Vector3((col-(count-1)*.5f)*(kind==6?.43f:.50f),0,(row-(count-1)*.5f)*(kind==6?.41f:.48f)),stand);
+            for(int col=0;col<count;col++){
+                uint stock=StockSeed(center,kind,row*17+col);
+                if(col>0 && col<count-1 && stock%17==0)continue;
+                Vector3 foot=center+new Vector3((col-(count-1)*.5f)*(kind==6?.43f:.50f),0,(row-(count-1)*.5f)*(kind==6?.41f:.48f));
+                var pack=new GameObject("slightly handled produce carton").transform;pack.SetParent(stand);pack.position=foot;
+                ProduceSalePack(kind,title,foot,pack);
+                pack.rotation=Quaternion.Euler(0,((stock&255)/127.5f-1)*3.2f,0);
+                pack.position+=new Vector3((((stock>>8)&255)/127.5f-1)*.008f,0,(((stock>>16)&255)/127.5f-1)*.022f);
+            }
             return;
         }
         if(kind==5 || kind==7)
@@ -52,21 +59,30 @@ public static partial class MarketPrototypeBuilderV7
             for(int row=0;row<rows;row++)
             for(int col=0;col<columns;col++)
             {
+                uint stock=StockSeed(center,kind,row*19+col);
+                // Partly shopped bays, not random litter. Keep the boundary stock
+                // within its original crate and preserve the clear picking edge.
+                if(col>0 && col<columns-1 && stock%23==0)continue;
                 Vector3 p=center+new Vector3((col-(columns-1)*.5f)*(kind==7?.21f:.185f),.019f,(row-(rows-1)*.5f)*(kind==7?.42f:.56f));
-                if(kind==5){ProducePiece(kind,title,p,stand);continue;}
+                p+=new Vector3((((stock>>8)&255)/127.5f-1)*(kind==7?.007f:.004f),0,(((stock>>16)&255)/127.5f-1)*(kind==7?.018f:.032f));
+                if(kind==5){HarvestScallions(p,(int)(stock%60013),stand);continue;}
+                var pack=new GameObject("handled cucumber sleeve").transform;pack.SetParent(stand);pack.position=p;
+                int seed=(int)(stock%100003);
                 for(int n=0;n<3;n++)
                 {
-                    var cucumber=HandmadeProp("three cucumber retail bundle",OrganicProduceMesh(7,(col+n)%5),
-                        p+new Vector3((n-1)*.048f,.023f,(ProduceNoise(col+n,row)-.5f)*.015f),new Vector3(.043f,.27f+.013f*n,.043f),HarvestSkin(7),stand);
-                    cucumber.transform.rotation=Quaternion.Euler(90,(ProduceNoise(col,n)-.5f)*4,(n-1)*2);
-                    var tip=cucumber.transform.position+cucumber.transform.up*(.27f+.013f*n)*.5f;
-                    RailSegment("short cut cucumber stem",tip,tip+cucumber.transform.up*.008f,.0032f,green,stand);
+                    float length=.268f+.025f*ProduceNoise(seed,n);
+                    var cucumber=HandmadeProp("three cucumber retail bundle",OrganicProduceMesh(7,(seed+n)%5),
+                        p+new Vector3((n-1)*.048f,.023f,(ProduceNoise(seed+n,row)-.5f)*.019f),new Vector3(.043f,length,.043f),HarvestSkin(7),pack);
+                    cucumber.transform.rotation=Quaternion.Euler(90,(ProduceNoise(seed,n)-.5f)*5,(n-1)*1.8f);
+                    var tip=cucumber.transform.position+cucumber.transform.up*length*.5f;
+                    RailSegment("short cut cucumber stem",tip,tip+cucumber.transform.up*.008f,.0032f,green,pack);
                 }
-                HandmadeProp("clear sealed cucumber sleeve",ProduceShell(true,true),p,new Vector3(.156f,.052f,.335f),ChilledWrap(),stand);
-                Decor("small cucumber sleeve information panel",PrimitiveType.Cube,p+new Vector3(.049f,.054f,-.098f),new Vector3(.045f,.001f,.055f),priceWhite,stand);
-                var previousRoot=root;root=stand;
+                HandmadeProp("clear sealed cucumber sleeve",ProduceShell(true,true),p,new Vector3(.156f,.052f,.335f),ChilledWrap(),pack);
+                Decor("small cucumber sleeve information panel",PrimitiveType.Cube,p+new Vector3(.049f,.054f,-.098f),new Vector3(.045f,.001f,.055f),priceWhite,pack);
+                var previousRoot=root;root=pack;
                 Label("다다기오이\n3입 · 국내산",p+new Vector3(.049f,.055f,-.098f),new Vector3(90,0,0),.008f);
                 root.GetChild(root.childCount-1).GetComponent<TextMesh>().color=new Color(.12f,.15f,.11f);root=previousRoot;
+                pack.rotation=Quaternion.Euler(0,((stock&255)/127.5f-1)*4.5f,0);
             }
             return;
         }
@@ -99,7 +115,19 @@ public static partial class MarketPrototypeBuilderV7
             }
             return;
         }
-        int lanes=kind==8?8:kind==2?16:12;
+        if(kind==2){
+            // Similar stock count to the old staggered grid, with actual support
+            // heights. Flatten the packing vertically along with the fruit body.
+            float slope=rise/1.78f;
+            var pile=SettledFruit(260,.83f,.83f,.049f,slope,5203+quadrant);
+            for(int i=0;i<pile.Length;i++){
+                var f=pile[i];
+                var p=center+new Vector3(f.x,.018f+rise*.5f+f.z*slope+(f.y-f.z*slope)*.81f,f.z);
+                Mandarin(p,f.w,i,stand);
+            }
+            return;
+        }
+        int lanes=kind==8?8:12;
         float pitch=1.55f/lanes;
         for(int row=0;row<11;row++)
         for(int col=0;col<lanes;col++)

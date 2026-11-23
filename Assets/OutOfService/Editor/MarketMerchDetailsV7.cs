@@ -66,9 +66,10 @@ public static partial class MarketPrototypeBuilderV7
         }
         handmadeMeshes[key]=mesh;return mesh;
     }
-    static void DetailRing(string title,Vector3 p,Vector3 size,Material mat,Transform parent=null,Vector3 rotation=default)
+    static GameObject DetailRing(string title,Vector3 p,Vector3 size,Material mat,Transform parent=null,Vector3 rotation=default)
     {
-        HandmadeProp(title,MerchRing(),p,size,mat,parent?parent:root).transform.rotation=Quaternion.Euler(rotation);
+        var ring=HandmadeProp(title,MerchRing(),p,size,mat,parent?parent:root);
+        ring.transform.rotation=Quaternion.Euler(rotation);return ring;
     }
     static void ShelfConstruction(float x,float z,Transform group,bool pallet)
     {
@@ -182,6 +183,14 @@ public static partial class MarketPrototypeBuilderV7
         HandmadeProp("cup with inner wall and rolled lip",CafeHollowCup(),p,Vector3.one,mat,parent?parent:root);
         if(!paper)DetailRing("ceramic cup handle",p+new Vector3(.054f,.055f,0),new Vector3(.064f,.067f,.055f),mat,parent);
     }
+    static void PlacedCafeCup(Vector3 p,float yaw,bool inverted)
+    {
+        var holder=new GameObject(inverted?"inverted warming cup":"service cup").transform;
+        holder.SetParent(root,false);holder.position=p;
+        CeramicCup(p,holder);
+        holder.rotation=Quaternion.Euler(0,yaw,0)*Quaternion.Euler(inverted?180:0,0,0);
+        if(inverted)holder.position+=Vector3.up*.096f;
+    }
     static void CoffeeMachine(Vector3 p)
     {
         var body=RetailSurface("espresso enamel graphite",new Color(.12f,.135f,.14f),.35f,.45f);
@@ -194,13 +203,15 @@ public static partial class MarketPrototypeBuilderV7
             Decor("espresso group head",PrimitiveType.Cylinder,p+new Vector3(side*.21f,.31f,-.115f),new Vector3(.14f,.035f,.14f),wornMetal);
             RailSegment("portafilter black handle",p+new Vector3(side*.21f,.28f,-.14f),p+new Vector3(side*.21f,.28f,-.32f),.028f,dark,root);
             foreach(float dx in new[]{-.027f,.027f})RailSegment("twin espresso spout",p+new Vector3(side*.21f+dx,.275f,-.105f),p+new Vector3(side*.21f+dx,.235f,-.105f),.011f,wornMetal,root);
-            CeramicCup(p+new Vector3(side*.21f,.097f,-.11f));
+            PlacedCafeCup(p+new Vector3(side*.21f,.097f,-.11f),side<0?-24:31,false);
             for(int button=0;button<4;button++)Decor("espresso dose button",PrimitiveType.Cylinder,p+new Vector3(side*.21f+(button-1.5f)*.035f,.45f,-.052f),new Vector3(.019f,.004f,.019f),priceWhite).transform.rotation=Quaternion.Euler(90,0,0);
             RailSegment("steam wand elbow",p+new Vector3(side*.36f,.31f,-.10f),p+new Vector3(side*.39f,.20f,-.23f),.009f,wornMetal,root);
             RailSegment("steam wand tip",p+new Vector3(side*.39f,.20f,-.23f),p+new Vector3(side*.39f,.12f,-.20f),.009f,wornMetal,root);
         }
         MerchBox("cup warming tray",p+new Vector3(0,.595f,.10f),new Vector3(.82f,.017f,.32f),wornMetal);
-        for(int i=0;i<4;i++)CeramicCup(p+new Vector3(-.28f+i*.18f,.605f,.11f));
+        Vector3[] cups={new(-.28f,.605f,.097f),new(-.094f,.605f,.126f),new(.071f,.605f,.109f),new(.274f,.605f,.088f)};
+        float[] cupYaw={-20,17,42,-8};
+        for(int i=0;i<cups.Length;i++)PlacedCafeCup(p+cups[i],cupYaw[i],true);
         var grinder=p+new Vector3(.80f,0,.05f);
         MerchBox("coffee grinder motor",grinder+Vector3.up*.19f,new Vector3(.23f,.37f,.24f),body);
         HandmadeProp("grinder tapered hopper",TurnedPackageMesh("coffee_hopper",new[]{0f,.15f,.85f,1f},new[]{.24f,.43f,.49f,.49f}),grinder+Vector3.up*.38f,new Vector3(.25f,.24f,.25f),glass,root);

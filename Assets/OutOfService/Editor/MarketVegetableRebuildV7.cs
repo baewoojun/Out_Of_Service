@@ -83,14 +83,14 @@ public static partial class MarketPrototypeBuilderV7
     }
     static Material HarvestSkin(int kind)
     {
-        var mat=RetailSurface("harvest skin v3 "+kind,Color.white,0,kind==6?.46f:kind==7?.32f:.15f);
+        var mat=RetailSurface("harvest skin v4 "+kind,Color.white,0,kind==6?.46f:kind==7?.32f:.15f);
         if(mat.mainTexture)return mat;
-        mat.mainTexture=FinishTexture("HarvestSkinV3_"+kind,(u,v)=>{
+        mat.mainTexture=FinishTexture("HarvestSkinV4_"+kind,(u,v)=>{
             float n=VegetableMottle(u,v,4),fine=VegetableMottle(u,v,75);
             Color c;
             if(kind==6)c=Color.Lerp(new Color(.72f,.09f,.025f),new Color(.91f,.20f,.045f),n);
             else if(kind==7){
-                float green=Mathf.SmoothStep(.12f,.84f,v)+.19f*(n-.5f);
+                float green=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.12f,.84f,v))+.19f*(n-.5f);
                 c=Color.Lerp(new Color(.62f,.72f,.20f),new Color(.11f,.28f,.075f),green);
                 c*=.87f+.18f*n-.20f*CucumberPip(u,v);
             }else {
@@ -184,9 +184,9 @@ public static partial class MarketPrototypeBuilderV7
     static void HarvestScallions(Vector3 p,int seed,Transform parent)
     {
         var old=root;root=new GameObject("natural bundled scallions").transform;root.SetParent(parent);
-        var shank=RetailSurface("scallion tubular gradient v2",Color.white,0,.26f);
-        if(!shank.mainTexture)shank.mainTexture=FinishTexture("ScallionTubularColorV2",(u,v)=>{
-            float green=Mathf.SmoothStep(.23f,.57f,v),grain=.96f+.06f*Mathf.PerlinNoise(u*45,v*3);
+        var shank=RetailSurface("scallion tubular gradient v3",Color.white,0,.26f);
+        if(!shank.mainTexture)shank.mainTexture=FinishTexture("ScallionTubularColorV3",(u,v)=>{
+            float green=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.23f,.57f,v)),grain=.96f+.06f*Mathf.PerlinNoise(u*45,v*3);
             return (Color.Lerp(new Color(.83f,.85f,.69f),new Color(.13f,.32f,.13f),green)*grain).linear;
         });
         var greenLeaf=RetailSurface("scallion tubular green",new Color(.13f,.30f,.12f),0,.30f);
@@ -207,20 +207,25 @@ public static partial class MarketPrototypeBuilderV7
         }
         foreach(float y in new[]{.001f,.027f})Decor("thin scallion paper binding",PrimitiveType.Cube,new Vector3(0,y,-.10f),new Vector3(.108f,.0014f,.025f),cream,root);
         foreach(float x in new[]{-.054f,.054f})Decor("folded binding edge",PrimitiveType.Cube,new Vector3(x,.014f,-.10f),new Vector3(.0014f,.027f,.025f),cream,root);
+        var bundleBounds=ModelBounds(root.gameObject);
+        if(bundleBounds.size.x>.28f || bundleBounds.size.y>.12f || bundleBounds.size.z>.65f || float.IsNaN(bundleBounds.size.sqrMagnitude))
+            throw new System.InvalidOperationException("Scallion bundle exceeded its crate allocation: "+seed+" "+bundleBounds.size);
         root.position=p;root.rotation=Quaternion.Euler(0,(ProduceNoise(seed,71)-.5f)*12,0);root=old;
     }
     static Mesh ScallionTube(int variation)
     {
-        return MallMesh("scallion_tubular_v2_"+variation,(v,u,t)=>{
+        return MallMesh("scallion_tubular_v4_"+variation,(v,u,t)=>{
             const int rows=18,sides=10;
             for(int row=0;row<=rows;row++)for(int col=0;col<=sides;col++){
                 float f=(float)row/rows,a=col*Mathf.PI*2/sides;
-                float radius=.0085f*(1-.82f*Mathf.SmoothStep(.32f,1,f));
+                float radius=.0085f*(1-.82f*Mathf.SmoothStep(0,1,Mathf.InverseLerp(.32f,1,f)));
                 float x=(variation-1.5f)*.006f*f*f+.008f*Mathf.Sin(f*4+variation)*f;
                 v.Add(new Vector3(x+Mathf.Cos(a)*radius,.006f*Mathf.Sin(f*Mathf.PI)+Mathf.Sin(a)*radius,f));u.Add(new Vector2((float)col/sides,f));
                 if(row<rows&&col<sides){int k=row*(sides+1)+col;t.AddRange(new[]{k,k+1,k+sides+1,k+1,k+sides+2,k+sides+1});}
             }
-            // Open tube ends are tiny and visible only on the cut green tips.
+            // The white basal plate is closed; only cut green tips are hollow.
+            int basal=v.Count;v.Add(Vector3.zero);u.Add(new Vector2(.5f,0));
+            for(int side=0;side<sides;side++)t.AddRange(new[]{basal,side+1,side});
             MallTwoSides(v,u,t);
         });
     }

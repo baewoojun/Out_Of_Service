@@ -25,6 +25,18 @@ public static partial class MarketPrototypeBuilderV7
         string key=$"FrozenFilm_{family}_{v}";
         var ink=RetailSurface(key,Color.white,0,.39f);
         if(!ink.mainTexture)ink.mainTexture=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/OutOfService/Art/Packs/"+key+".png");
+        // Six shared laminate patterns, with small jaw ridges near the seal.
+        // Broad content bulges remain geometry; readable print is not embossed.
+        string relief="FrozenLaminateV1_"+(v%6);
+        FineRelief(ink,relief,(u,y)=>{
+            float front=u<.5f?u*2:u<.875f?(u-.5f)/.375f:(u-.875f)/.125f;
+            float edge=Mathf.Pow(Mathf.Abs(front*2-1),7);
+            float jaw=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.956f,.979f,y));
+            float lower=1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(.014f,.046f,y));
+            float seam=(jaw+lower)*.095f*Mathf.Sin(front*128*Mathf.PI);
+            float wrinkles=.022f*edge*Mathf.Sin(y*(39+v*5)+front*17+v);
+            return seam+wrinkles;
+        },.75f);
         string path="Assets/OutOfService/Generated/"+key+".asset";
         if(!handmadeMeshes.TryGetValue(path,out var mesh)){
             mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
@@ -97,6 +109,6 @@ public static partial class MarketPrototypeBuilderV7
         }
         result.Clear();
         result.SetVertices(verts);result.SetUVs(0,uvs);result.SetTriangles(tris,0);
-        result.RecalculateNormals();result.RecalculateBounds();
+        result.RecalculateNormals();result.RecalculateTangents();result.RecalculateBounds();
     }
 }

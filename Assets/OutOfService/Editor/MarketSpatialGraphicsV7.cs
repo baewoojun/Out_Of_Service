@@ -94,11 +94,11 @@ public static partial class MarketPrototypeBuilderV7
 
     static void FinishCounterSurface(MeshRenderer renderer)
     {
-        var mat=RetailSurface("honed quartz service surface v1",new Color(.58f,.56f,.50f),0,.43f);
+        var mat=RetailSurface("honed quartz service surface v2",new Color(.58f,.56f,.50f),0,.43f);
         if(!mat.mainTexture){
-            mat.mainTexture=FinishTexture("SpatialQuartzColorV1",(u,v)=>{
+            mat.mainTexture=FinishTexture("SpatialQuartzColorV2",(u,v)=>{
                 float grain=Mathf.PerlinNoise(u*170+9,v*170+21),cloud=Mathf.PerlinNoise(u*7,v*7);
-                float fleck=Mathf.SmoothStep(.42f,.62f,grain);
+                float fleck=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.42f,.62f,grain));
                 return Color.Lerp(new Color(.57f,.55f,.50f),new Color(.88f,.87f,.82f),.55f+fleck*.35f+cloud*.10f).linear;
             });
             mat.SetTexture("_MetallicGlossMap",FinishTexture("SpatialQuartzGlossV1",(u,v)=>

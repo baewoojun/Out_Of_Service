@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-23 05:03 KST",
+  "scope": "1920x1080 beverage aisle 97m",
+  "baseline": "Existing Thin PET with global SRP Batcher",
+  "candidate": "Opt-in Thin PET instancing shader; global SRP Batcher unchanged",
+  "conclusion": "Not adopted: frame-time improvement unproven",
+  "measured": {
+    "baseline_draw_mean": 6921.429,
+    "candidate_draw_mean": 4861.128,
+    "baseline_p95_ms": 22.702,
+    "candidate_p95_ms": 20.175,
+    "baseline_reverse_order_p95_ms": 18.402,
+    "candidate_reverse_order_p95_ms": 21.228,
+    "baseline_no_counters_p95_ms": 17.51,
+    "candidate_no_counters_p95_ms": 18.253
+  },
+  "limitation": "Another 3D game was running on the same GPU during the comparison. These are contended-system observations, not isolated performance regression or improvement proof. Existing 04:3x single-player measurements are retained separately; process left untouched.",
+  "art": {
+    "staffroomV2": "273 route checks passed; lowered ceiling, two remaining task lights, additional dining cluster and changing bench. Actual player images inspected.",
+    "garmentV7": "Shoulder shading has an erroneous dark seam; rejected. V8 corrects inconsistent bridge triangle winding and reduces cloth thickness; pending rebuild."
+  }
+}

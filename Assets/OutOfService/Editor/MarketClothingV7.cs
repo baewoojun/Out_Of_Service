@@ -47,19 +47,27 @@ public static partial class MarketPrototypeBuilderV7
             foreach(float dx in new[]{-.55f,.55f})Decor("rubber caster",PrimitiveType.Sphere,new Vector3(x+dx,5.08f,z+end),new Vector3(.10f,.10f,.07f),dark,group);
         }
         RailSegment("hanging rail",new Vector3(x,top,z-2.1f),new Vector3(x,top,z+2.1f),.04f,shelfTop,group);
-        var mats=new Material[4];for(int i=0;i<4;i++)mats[i]=LaundryCotton(i);
+        float[] spacing={0,.18f,.37f,.56f,.76f,.97f,1.15f,1.34f,1.58f,1.84f,2.02f,2.22f,2.43f,2.61f,2.80f,3.11f,3.39f,3.68f};
         for(int i=0;i<18;i++)
         {
-            float zz=z-1.85f+i*.215f;int style=category=="여성의류"?i/6%3:i/9*2;
+            float zz=z-1.85f+spacing[i];int style=category=="여성의류"?i/6%3:i/9*2;
             float scale=category=="아동의류"?.68f:1;
-            // Shared closed-volume torso and separate hanging sleeves. The previous
-            // two-panel silhouette read as a folded board at game camera height.
-            var garment=HandmadeProp("sewn "+(style==1?"coat":style==2?"short sleeve shirt":"long sleeve shirt"),LaundryGarment(style),new Vector3(x,top-.14f,zz),Vector3.one*scale,mats[i/5%4],group);
-            garment.transform.rotation=Quaternion.Euler(0,(i%3-1)*5,0);
+            // Shared sewn torso with attached sleeves and a thin cloth section.
+            var neck=new Vector3(x,top-.14f,zz);
+            var rotation=Quaternion.Euler(0,(i%5-2)*2+(i%7==0?2:0),0);
+            var garment=HandmadeProp("sewn "+(style==1?"coat":style==2?"crew neck tee":"long sleeve shirt"),LaundryGarment(style),neck,Vector3.one*scale,GarmentCloth(style,i/5%4),group);
+            garment.transform.rotation=rotation;
+            GarmentDetails(neck,rotation,scale,style,group);
             Vector3 hook=new Vector3(x,top-.10f,zz),left=hook+new Vector3(-.20f*scale,-.09f,0),right=hook+new Vector3(.20f*scale,-.09f,0);
-            RailSegment("hanger shoulder",hook,left,.012f,dark,group);RailSegment("hanger shoulder",hook,right,.012f,dark,group);RailSegment("hanger crossbar",left,right,.01f,dark,group);
-            RailSegment("hanger neck",hook,hook+Vector3.up*.1f,.009f,shelfTop,group);
-            Decor("paper size tag",PrimitiveType.Cube,new Vector3(x+.12f*scale,top-.27f,zz-.06f),new Vector3(.045f,.065f,.003f),cream,group);
+            left=hook+rotation*(left-hook);right=hook+rotation*(right-hook);
+            RailSegment("hanger shoulder",hook,left,.009f,dark,group);RailSegment("hanger shoulder",hook,right,.009f,dark,group);RailSegment("hanger crossbar",left,right,.007f,dark,group);
+            var hookPoints=new[]{new Vector3(0,0,0),new Vector3(0,.065f,0),new Vector3(-.022f,.074f,0),new Vector3(-.033f,.095f,0),new Vector3(-.018f,.119f,0),new Vector3(.012f,.124f,0),new Vector3(.029f,.107f,0),new Vector3(.025f,.083f,0)};
+            for(int n=0;n<hookPoints.Length;n++)hookPoints[n]=hook+rotation*hookPoints[n];
+            PrepPipe("curved hanger hook over rail",hookPoints,.004f,shelfTop,group);
+            var tagPoint=neck+rotation*(new Vector3(.13f,-.18f,-.054f)*scale);
+            var tag=Decor("SOOIM size and price hangtag",PrimitiveType.Cube,tagPoint,new Vector3(.045f,.065f,.001f)*scale,cream,group);tag.transform.rotation=rotation;
+            var print=Decor("readable original garment tag",PrimitiveType.Quad,tagPoint+rotation*Vector3.back*.0007f,new Vector3(.044f,.064f,1)*scale,GarmentTagInk(),group);print.transform.rotation=rotation;
+            RailSegment("hangtag cotton loop",neck+rotation*new Vector3(.10f,-.12f,LaundryFrontDepth(style,.10f,-.12f)-.003f)*scale,tagPoint+Vector3.up*.029f*scale,.0007f,dark,group);
         }
         // One narrow collision envelope preserves the aisle without a solid plinth.
         var hit=group.gameObject.AddComponent<BoxCollider>();hit.center=new Vector3(x,5.9f,z);hit.size=new Vector3(.85f,1.8f,4.2f);

@@ -28,13 +28,13 @@ public static partial class MarketPrototypeBuilderV7
 
     static Mesh PepperCalyx()
     {
-        const string path="Assets/OutOfService/Generated/PepperCalyx.asset";
+        const string path="Assets/OutOfService/Generated/PepperCalyxV2.asset";
         if(handmadeMeshes.TryGetValue(path,out var mesh))return mesh;
         mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
         if(!mesh)
         {
             const int sides=10,rings=5;
-            var v=new Vector3[rings*sides+1];var indices=new int[(rings-1)*sides*6+sides*3];
+            var v=new Vector3[rings*sides+1];var uv=new Vector2[v.Length];var indices=new int[(rings-1)*sides*6+sides*3];
             float[] radii={.14f,.073f,.037f,.029f,.026f};
             Vector3[] centers={Vector3.zero,Vector3.up*.033f,Vector3.up*.054f,
                 new Vector3(.017f,.132f,0),new Vector3(.097f,.176f,.021f)};
@@ -43,19 +43,20 @@ public static partial class MarketPrototypeBuilderV7
                 int i=r*sides+j,next=r*sides+(j+1)%sides;
                 float a=j*2*Mathf.PI/sides,rad=radii[r]*(r==0 && j%2==0?1.40f:1);
                 v[i]=centers[r]+new Vector3(Mathf.Cos(a)*rad,r==0?-.006f+.018f*(j%2):0,Mathf.Sin(a)*rad);
+                uv[i]=new Vector2(j/(float)sides,r/(float)(rings-1)*.92f);
                 if(r==rings-1)continue;
                 int k=i*6;
                 indices[k]=i;indices[k+1]=i+sides;indices[k+2]=next;
                 indices[k+3]=next;indices[k+4]=i+sides;indices[k+5]=next+sides;
             }
             int top=v.Length-1;
-            v[top]=centers[rings-1];
+            v[top]=centers[rings-1];uv[top]=new Vector2(.5f,1);
             for(int j=0;j<sides;j++)
             {
                 int k=(rings-1)*sides*6+j*3;
                 indices[k]=top;indices[k+1]=(rings-1)*sides+(j+1)%sides;indices[k+2]=(rings-1)*sides+j;
             }
-            mesh=new Mesh{name="paprika calyx",vertices=v,uv=new Vector2[v.Length],triangles=indices};
+            mesh=new Mesh{name="paprika calyx",vertices=v,uv=uv,triangles=indices};
             mesh.RecalculateNormals();mesh.RecalculateBounds();AssetDatabase.CreateAsset(mesh,path);
         }
         handmadeMeshes[path]=mesh;return mesh;
@@ -66,8 +67,16 @@ public static partial class MarketPrototypeBuilderV7
         Transform stand=new GameObject("파프리카 산지 행사 매대").transform;
         stand.SetParent(root);
         Box("promotion red plinth",origin+Vector3.up*.41f,new Vector3(2.85f,.82f,1.48f),red,stand);
-        Material[] wax={RetailSurface("paprika scarlet",new Color(.77f,.053f,.018f),0,.38f),
-            RetailSurface("paprika golden",new Color(.98f,.58f,.019f),0,.39f)};
+        var promotion=RetailSurface("paprika original promotion print v1",Color.white,0,.13f);
+        promotion.mainTexture=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/OutOfService/Art/Packs/PaprikaPromotionV1.png");
+        foreach(float x in new[]{-.70f,.70f}){
+            var card=Decor("paprika price paper on red fascia",PrimitiveType.Quad,origin+new Vector3(x,.44f,-.742f),new Vector3(.38f,.532f,1),promotion,stand);
+            card.transform.rotation=Quaternion.Euler(0,0,x<0?-1.3f:.6f);
+        }
+        foreach(int end in new[]{-1,1}){
+            var card=Decor("paprika end fascia price paper",PrimitiveType.Quad,origin+new Vector3(end*1.427f,.44f,0),new Vector3(.38f,.532f,1),promotion,stand);
+            card.transform.rotation=Quaternion.Euler(0,-end*90,end<0?-.8f:1.1f);
+        }
         for(int bin=0;bin<2;bin++)
         {
             Vector3 binCenter=origin+new Vector3((bin-.5f)*1.4f,.88f,0);
@@ -94,10 +103,10 @@ public static partial class MarketPrototypeBuilderV7
                 var f=pile[i];
                 float size=2*f.w;
                 Vector3 p=binCenter+new Vector3(f.x,.18f+f.y,f.z);
-                var pepper=HandmadeProp("four-lobed sweet pepper",OrganicProduceMesh(12,seed%5),p,new Vector3(size,size*1.10f,size),wax[bin],stand);
+                var pepper=HandmadeProp("four-lobed sweet pepper",RetailPepperBody(seed%5),p,new Vector3(size,size*1.10f,size),RetailPepperSkin(bin,seed%3),stand);
                 pepper.transform.rotation=Quaternion.Euler(seed%105-52,seed*37,seed%83-41);
-                Vector3 crown=p+pepper.transform.up*(size*1.10f*.37f);
-                var calyx=HandmadeProp("pepper calyx and bent stalk",PepperCalyx(),crown,Vector3.one*size,green,stand);
+                Vector3 crown=p+pepper.transform.up*(size*1.10f*.34f);
+                var calyx=HandmadeProp("pepper calyx and bent stalk",PepperCalyx(),crown,Vector3.one*size,RetailPepperStem(),stand);
                 calyx.transform.rotation=pepper.transform.rotation;
             }
         }

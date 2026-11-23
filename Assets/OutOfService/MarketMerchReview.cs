@@ -75,6 +75,9 @@ namespace OutOfService
                 var beauty=GameObject.Find("B1 tenant - 모아 뷰티").transform;
                 names[19]="cosmetic-close";eyes[19]=beauty.TransformPoint(new Vector3(-2.9f,1.3f,4.8f));aims[19]=beauty.TransformPoint(new Vector3(-3.4f,1.1f,4.8f));
                 names[20]="b1-south-fronts";eyes[20]=new Vector3(-4,-3.35f,-24.5f);aims[20]=new Vector3(-10,-2.9f,-28);
+                Array.Resize(ref names,23);Array.Resize(ref eyes,23);Array.Resize(ref aims,23);
+                names[21]="mandarin-settled";eyes[21]=new Vector3(-39.1f,1.65f,12.5f);aims[21]=new Vector3(-39.1f,1.17f,14.1f);
+                names[22]="mandarin-peel";eyes[22]=new Vector3(-39.3f,1.32f,12.9f);aims[22]=new Vector3(-39.3f,1.15f,13.5f);
             }
             using(var report=new StreamWriter(Path.Combine(folder,"frames.tsv"))){
                 report.WriteLine("view\trender_sync_p95_ms\tsamples");

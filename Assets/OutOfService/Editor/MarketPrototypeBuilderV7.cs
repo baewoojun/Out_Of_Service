@@ -196,6 +196,7 @@ public static partial class MarketPrototypeBuilderV7
         BuildThreat();
         ShopSurfaceFinish();
         SpatialGraphicsFinish();
+        PhysicalSurfaceScale();
         ApplyAfterHoursLightBalance();
         BuildIndirectBounce();
         BakeShopReflections();
@@ -273,6 +274,7 @@ public static partial class MarketPrototypeBuilderV7
 
     static void MakeMaterials()
     {
+        PreparePhysicalFinishImports();
         freshMaterials.Clear();
         floorMaterials.Clear();
         packageMaterials.Clear();
@@ -345,6 +347,14 @@ public static partial class MarketPrototypeBuilderV7
         if (packageMaterials.TryGetValue(key, out Material cached)) return cached;
         Material wrapper = Mat("Korean supermarket pack " + productIndex + " variant " + variant, Color.white, 0f, productIndex == 4 ? .55f : productIndex == 0 || productIndex == 5 || productIndex == 20 ? .38f : productIndex == 28 ? .10f : .20f);
         string path = "Assets/OutOfService/Art/Packs/pack_" + productIndex.ToString("D2") + "_" + variant + ".png";
+        if(productIndex==10 || productIndex==11 || productIndex==12 || productIndex==14){
+            var importer=AssetImporter.GetAtPath(path) as TextureImporter;
+            if(importer && (importer.npotScale!=TextureImporterNPOTScale.None || importer.filterMode!=FilterMode.Trilinear || importer.anisoLevel!=8)){
+                importer.npotScale=TextureImporterNPOTScale.None;importer.filterMode=FilterMode.Trilinear;importer.anisoLevel=8;
+                importer.mipmapEnabled=true;importer.textureCompression=TextureImporterCompression.CompressedHQ;
+                importer.SaveAndReimport();
+            }
+        }
         Texture2D artwork = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         if (artwork == null) Debug.LogError("Missing package artwork: " + path);
         else wrapper.SetTexture("_BaseMap", artwork);
@@ -564,7 +574,7 @@ public static partial class MarketPrototypeBuilderV7
 
     static Mesh HandmadeMilkCartonMesh()
     {
-        const string id = "folded_milk_carton_readable";
+        const string id = "folded_milk_carton_sealed_v2";
         if (handmadeMeshes.TryGetValue(id, out Mesh cached)) return cached;
         string path = "Assets/OutOfService/Generated/Handmade_" + id + ".asset";
         Mesh mesh = AssetDatabase.LoadAssetAtPath<Mesh>(path);
@@ -576,15 +586,15 @@ public static partial class MarketPrototypeBuilderV7
         Vector3 b2 = new Vector3(.5f, 0, .5f), b3 = new Vector3(-.5f, 0, .5f);
         Vector3 s0 = new Vector3(-.5f, .77f, -.5f), s1 = new Vector3(.5f, .77f, -.5f);
         Vector3 s2 = new Vector3(.5f, .77f, .5f), s3 = new Vector3(-.5f, .77f, .5f);
-        Vector3 r0 = new Vector3(0, 1f, -.5f), r1 = new Vector3(0, 1f, .5f);
+        Vector3 r0 = new Vector3(-.5f, 1f, 0), r1 = new Vector3(.5f, 1f, 0);
         CartonFace(vertices, uv, triangles, b0, s0, s1, b1);
         CartonFace(vertices, uv, triangles, b3, b2, s2, s3);
         CartonFace(vertices, uv, triangles, b0, b3, s3, s0);
         CartonFace(vertices, uv, triangles, b1, s1, s2, b2);
-        CartonFace(vertices, uv, triangles, s0, r0, s1);
-        CartonFace(vertices, uv, triangles, s3, s2, r1);
-        CartonFace(vertices, uv, triangles, s0, s3, r1, r0);
-        CartonFace(vertices, uv, triangles, s1, r0, r1, s2);
+        CartonFace(vertices, uv, triangles, s0, r0, r1, s1);
+        CartonFace(vertices, uv, triangles, s3, s2, r1, r0);
+        CartonFace(vertices, uv, triangles, s0, s3, r0);
+        CartonFace(vertices, uv, triangles, s1, r1, s2);
         CartonFace(vertices, uv, triangles, b0, b1, b2, b3);
         mesh = new Mesh { name = "handmade folded milk carton" };
         mesh.SetVertices(vertices);
@@ -600,7 +610,10 @@ public static partial class MarketPrototypeBuilderV7
 
     static float ProduceNoise(int seed, int channel)
     {
-        return Mathf.PerlinNoise(seed * 0.37f + channel * 3.11f, seed * 0.19f + channel * 1.73f);
+        // Full-width stock hashes are not valid noise coordinates: float
+        // precision at hundreds of millions can produce extreme deformation.
+        seed%=65521;channel%=4093;
+        return Mathf.Clamp01(Mathf.PerlinNoise(seed * 0.37f + channel * 3.11f, seed * 0.19f + channel * 1.73f));
     }
 
     static Mesh OrganicProduceMesh(int kind, int variant)
@@ -979,9 +992,9 @@ public static partial class MarketPrototypeBuilderV7
         bool pegboard = category == 9;
         bool wireBasket = category == 7;
         bool bottles = IsLiquid(category);
-        int tiers = category==2 ? 8 : category<=1 ? 7 : pallet ? 3 : category == 8 || category == 22 ? 4 :
+        int tiers = category==2 ? 8 : category<=1 ? 7 : category==21?5:pallet ? 3 : category == 8 || category == 22 ? 4 :
             wireBasket ? 6 : 5;
-        float spacing = category==2 ? .30f : category<=1 ? .35f : pallet ? 0.67f : category == 8 || category == 22 ? 0.64f :
+        float spacing = category==2 ? .30f : category<=1 ? .35f : category==21?.43f:pallet ? 0.67f : category == 8 || category == 22 ? 0.64f :
             wireBasket ? 0.43f : 0.51f;
         Box(pallet ? "red pallet base" : "recessed metal plinth", new Vector3(x, 0.17f, z),
             new Vector3(pallet ? 1.82f : 1.55f, 0.34f, 7.1f), pallet ? red : shelf, group);
@@ -1015,8 +1028,8 @@ public static partial class MarketPrototypeBuilderV7
                 if (wireBasket || bottles && !pallet)
                 {
                     Box(wireBasket ? "basket front wire" : "bottle guard wire",
-                        new Vector3(frontX, y + (wireBasket ? .11f : .072f), z),
-                        new Vector3(.012f,.012f,7.0f), wornMetal, group);
+                        new Vector3(frontX, y + (wireBasket ? .031f : .072f), z),
+                        new Vector3(wireBasket?.005f:.012f,wireBasket?.005f:.012f,7.0f), wornMetal, group);
                     for (int divider = -2; divider <= 2; divider++)
                         Decor("stock bay divider", PrimitiveType.Cube,
                             new Vector3(x + side * 0.42f, y + 0.060f, z + divider * 1.35f),
@@ -1024,9 +1037,9 @@ public static partial class MarketPrototypeBuilderV7
                 }
                 bool shipping=category==0 && tier==tiers-1;
                 int count = shipping?8:category==0?25:category==1?32:category==2?36:
-                    category==21?10:category==22?17:category==24?21:category==11 && tier==0?36:bottles?54:category==4?52:category==7?44:category==9?38:30;
-                bool compactStock=(bottles || category==4 || category==5 || category==7) && !pallet && category!=22;
-                int depthRows = category==21 || category==24 ? 1 : compactStock?3:2;
+                    category==21?16:category==22?26:category==24?21:category==11 && tier==0?36:bottles?54:category==4?52:category==7?44:category==9?38:30;
+                bool compactStock=(bottles || category==4 || category==5 || category==7 || category==22) && !pallet;
+                int depthRows = category==24 ? 1 : compactStock?3:2;
                 float stride = 6.40f / count;
                 for (int item = 0; item < count; item++)
                 {
@@ -1042,7 +1055,8 @@ public static partial class MarketPrototypeBuilderV7
                     for (int depth = 0; depth < depthRows; depth++)
                     {
                         if (tier == 1 && item == 0 && depth == 0) continue; // Interactive front facing below.
-                        float inset = shipping?.38f:category<=2?(depth==0?.64f:.425f):
+                        if (!shipping && ShoppedFrontGap(category,tier,item,side,depth)) continue;
+                        float inset = category==21?.64f-depth*.29f:shipping?.38f:category<=2?(depth==0?.64f:.425f):
                             depthRows == 1 ? (pallet ? 0.52f : 0.48f) : compactStock?.58f-depth*.175f:depth == 0 ? 0.58f : 0.22f;
                         Vector3 p = new Vector3(x + side * inset, y + .025f, along);
                         if(shipping)
@@ -1251,22 +1265,24 @@ public static partial class MarketPrototypeBuilderV7
             int kind = tier == 0 ? 0 : tier == 1 ? (bay < 3 ? 0 : 1) :
                 tier == 2 ? (bay < 2 ? 1 : 2) : (bay == 0 ? 2 : 3);
             bool carton = kind < 2;
-            float width = kind == 0 ? .14f : kind == 1 ? .10f : kind == 2 ? .078f : .11f;
-            float height = kind == 0 ? .32f : kind == 1 ? .17f : kind == 2 ? .15f : .10f;
+            float width = kind == 0 ? .075f : kind == 1 ? .052f : kind == 2 ? .058f : .075f;
+            float height = kind == 0 ? .238f : kind == 1 ? .125f : kind == 2 ? .110f : .065f;
             Mesh shape = carton ? HandmadeMilkCartonMesh() : kind == 3 ? HandmadeCupMesh() :
                 TurnedPackageMesh("cultured_milk_waist", new[]{0f,.04f,.34f,.62f,.76f,.84f,1f},
                     new[]{.39f,.49f,.47f,.36f,.47f,.30f,.30f});
             int recipe=kind==0?(bay<3?0:1):kind==1?3:kind==2?(bay%2==0?4:2):5;
             Material label=PackMaterial(26,recipe);
-            if(recipe==4)
+            if(recipe==4){
+                width=.069f;height=.105f;
                 shape=TurnedPackageMesh("banana_milk_small_belly",new[]{0f,.06f,.28f,.53f,.66f,.84f,.96f,1f},
                     new[]{.30f,.35f,.48f,.50f,.43f,.29f,.29f,.31f});
-            string stockKey = "Dairy stock material " + kind;
+            }
+            if(!carton)shape=DairyMold(recipe);
+            string stockKey = "Dairy stock material v2 " + recipe;
             if (!modelMaterials.TryGetValue(stockKey, out Material stock))
             {
-                Color[] tones = {new Color(.88f,.93f,.84f),new Color(1f,.79f,.77f),
-                    new Color(.93f,.79f,.59f),new Color(.14f,.25f,.40f)};
-                stock = Mat(stockKey, tones[kind], 0, carton ? .26f : .42f);
+                Color tone=recipe==4?new Color(.91f,.83f,.61f):new Color(.93f,.92f,.85f);
+                stock = Mat(stockKey, tone, 0, carton ? .26f : .42f);
                 modelMaterials[stockKey] = stock;
             }
             int lanes = Mathf.FloorToInt(.91f / (width + .012f));
@@ -1291,23 +1307,31 @@ public static partial class MarketPrototypeBuilderV7
                     var facing=Decor("Printed dairy facing",PrimitiveType.Quad,foot+new Vector3(0,height*.40f,-width*.505f),
                         new Vector3(width*.98f,height*.73f,1),label,bank);
                     facing.transform.SetParent(pack.transform,true);
+                    // Information panels use metre-sized geometry. Author beneath
+                    // the unscaled fixture, then retain world size on the carton.
+                    int firstPanel=bank.childCount;
+                    CartonInformation(foot,new Vector3(width,height*.77f,width),26,recipe,bank);
+                    for(int child=bank.childCount-1;child>=firstPanel;child--)bank.GetChild(child).SetParent(pack.transform,true);
                 }else{
-                    pack.GetComponent<MeshFilter>().sharedMesh=PrintedMold(shape);
-                    pack.GetComponent<MeshRenderer>().sharedMaterial=label;
+                    DairyPrintedBand(pack.transform,recipe);
                 }
                 if (carton)
                 {
-                    var fin = Decor("Heat-sealed gable fin", PrimitiveType.Cube, foot + Vector3.up*(height+.005f),
-                        new Vector3(.005f,.012f,width),stock,bank);
+                    var fin = Decor("Heat-sealed gable fin", PrimitiveType.Cube, foot + Vector3.up*(height+.002f),
+                        new Vector3(width,.006f,.0015f),stock,bank);
                     fin.transform.SetParent(pack.transform,true);
                 }
                 else
                 {
-                    var foil = Decor("crimped foil seal", PrimitiveType.Cylinder, foot + Vector3.up*(height+.002f),
-                        new Vector3(width*(kind==2 ? .64f : 1.03f),.002f,width*(kind==2 ? .64f : 1.03f)),wornMetal,bank);
+                    var foilStock=RetailSurface("printed dairy foil v2 "+recipe,Color.white,.06f,.24f);
+                    foilStock.mainTexture=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/OutOfService/Art/Packs/DairySeal26_"+recipe+".png");
+                    float sealWidth=width*(kind==2 ? .64f : 1.03f);
+                    var foil=HandmadeProp("thin printed sealed dairy lid",DairyFoilSeal(),foot+Vector3.up*(height+.0003f),
+                        new Vector3(sealWidth,.0005f,sealWidth),foilStock,bank);
                     foil.transform.SetParent(pack.transform,true);
                 }
                 if(pickup)PrintHeldUnit(pack.transform,26,recipe);
+                SetShoppedFacing(pack.transform,foot,0,26,recipe);
             }
         }
     }
@@ -1788,41 +1812,11 @@ public static partial class MarketPrototypeBuilderV7
         Box("break room west wall", new Vector3(9, 7.25f, 38), new Vector3(0.25f, 4.5f, 14), wall);
         Box("break room east wall", new Vector3(27, 7.25f, 38), new Vector3(0.25f, 4.5f, 14), wall);
         Label("직원 휴게실", new Vector3(17, 8.55f, 30.83f), Vector3.zero, 0.65f);
-        Box("break room worn concrete floor", new Vector3(18, 5.03f, 38), new Vector3(16, 0.04f, 11), wornFloor);
         Box("stained wall lower rail", new Vector3(18, 5.52f, 44.69f), new Vector3(17.6f, 0.95f, 0.04f), cream);
-        Box("emergency wall light case", new Vector3(11, 8.5f, 44.55f), new Vector3(0.5f, 0.32f, 0.12f), red);
-        WallWriting("영업 종료", new Vector3(18, 7.15f, 44.59f), 1.3f);
-        for (int mark = 0; mark < 8; mark++)
-        {
-            float x = 11.5f + mark * 1.9f;
-            Decor("wall damp stain", PrimitiveType.Cube, new Vector3(x, 7.7f + (mark % 3) * 0.3f, 44.62f),
-                new Vector3(0.17f + (mark % 2) * 0.2f, 0.75f, 0.015f), dark);
-            Decor("scattered employee papers", PrimitiveType.Cube, new Vector3(14.7f + mark * 0.4f, 5.06f, 37.3f + mark * 0.12f),
-                new Vector3(0.24f, 0.008f, 0.34f), priceWhite);
-        }
-        Box("staff table top", new Vector3(16, 5.75f, 38), new Vector3(4, 0.12f, 2), cream);
-        for (int x = 14; x <= 18; x += 4)
-            for (int z = 36; z <= 40; z += 4)
-                Box("staff chair", new Vector3(x, 5.35f, z), new Vector3(0.7f, 0.7f, 0.7f), blue);
-        for (int x = 11; x <= 25; x += 2)
-        {
-            Box("employee locker", new Vector3(x, 6.0f, 43), new Vector3(1.6f, 2.0f, 0.75f), wornMetal);
-            Box("employee locker vent", new Vector3(x, 6.45f, 42.58f), new Vector3(0.9f, 0.04f, 0.025f), dark);
-        }
-        Box("microwave body", new Vector3(23, 6.1f, 35), new Vector3(0.9f, 0.55f, 0.6f), shelfTop);
-        Box("microwave dark window", new Vector3(23, 6.12f, 34.69f), new Vector3(0.55f, 0.35f, 0.03f), glass);
-        Box("vending machine", new Vector3(24.8f, 6.2f, 35), new Vector3(1.3f, 2.45f, 0.8f), red);
-        Box("vending machine glass", new Vector3(24.8f, 6.5f, 34.56f), new Vector3(0.98f, 1.15f, 0.04f), glass);
-        Box("break room fluorescent housing", new Vector3(18, 9.1f, 38), new Vector3(3.2f, 0.12f, 0.45f), shelfTop);
-        Box("break room fluorescent diffuser", new Vector3(18, 9.02f, 38), new Vector3(3.0f, 0.02f, 0.32f), priceWhite);
-        GameObject roomLight = new GameObject("break room emergency light");
-        roomLight.transform.SetParent(root);
-        roomLight.transform.position = new Vector3(18, 8.9f, 38);
-        Light lamp = roomLight.AddComponent<Light>();
-        lamp.type = LightType.Point;
-        lamp.range = 14f;
-        lamp.intensity = 0.9f;
-        lamp.color = new Color(0.86f, 0.92f, 1f);
+        FinishStaffRoomEnvelope();
+        FurnishStaffRoom();
+        EntryWear(new Vector3(17,5.057f,33),8,1.1f);
+        EntryWear(new Vector3(16,5.057f,40.2f),-17,.8f);
     }
 
     static void BuildHardwareDepartment()
@@ -2051,7 +2045,11 @@ public static partial class MarketPrototypeBuilderV7
         camera.fieldOfView = 75;
         UnityEngine.Rendering.Universal.UniversalAdditionalCameraData cameraData = cameraObj.AddComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
         cameraData.renderPostProcessing = true;
-        cameraData.requiresColorOption = UnityEngine.Rendering.Universal.CameraOverrideOption.Off;
+        cameraData.antialiasing = UnityEngine.Rendering.Universal.AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+        cameraData.antialiasingQuality = UnityEngine.Rendering.Universal.AntialiasingQuality.High;
+        camera.nearClipPlane = .06f;
+        camera.farClipPlane = 120f;
+        cameraData.requiresColorOption = UnityEngine.Rendering.Universal.CameraOverrideOption.On;
         cameraData.requiresDepthOption = UnityEngine.Rendering.Universal.CameraOverrideOption.Off;
         movement.viewCamera = camera;
         cameraObj.AddComponent<AudioListener>();
@@ -2068,8 +2066,11 @@ public static partial class MarketPrototypeBuilderV7
         flashlight.color = new Color(1f,.956f,.858f);
         flashlight.intensity = 4.6f;
         flashlight.shadows = LightShadows.Soft;
-        flashlight.shadowBias = .02f;
-        flashlight.shadowNormalBias = .04f;
+        // Explicit per-light values: otherwise URP's global .1/.5 values override
+        // these fields, leaving small products visibly separated from shadows.
+        flashlight.GetUniversalAdditionalLightData().usePipelineSettings = false;
+        flashlight.shadowBias = .04f;
+        flashlight.shadowNormalBias = .12f;
         flashlight.enabled = false;
         movement.flashlight = flashlight;
         BuildHeldModels(cameraObj.transform, movement);

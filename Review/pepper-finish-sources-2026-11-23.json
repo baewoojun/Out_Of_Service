@@ -1,0 +1,26 @@
+{
+  "checked": "2026-11-23",
+  "references": [
+    {
+      "observed": "Loose red and yellow peppers in separate crate bays; varied tilt, natural crowns, strong localized skin highlights; printed promotion fascia",
+      "use": "Visual reference only. Original game mesh and procedural material.",
+      "notConfirmed": "Individual dimensions, exact count, shader properties",
+      "source": "User attachment codex-clipboard-97c169dc-181e-4af1-a887-76ab6f016272.png"
+    },
+    {
+      "terms": "https://rawcatalog.com/terms/",
+      "source": "https://rawcatalog.com/asset/1454/",
+      "decision": "Not adopted: account requirement and individual/nontransferable asset conditions do not fit shared source repository."
+    },
+    {
+      "decision": "Not adopted: listing describes stylized asset, not the desired realism.",
+      "source": "https://grab3d.com/models/food/bell-pepper/"
+    }
+  ],
+  "gameChoices": [
+    "Preserve 210 fruit instances and original aisle envelope.",
+    "Five shared asymmetric 3/4-lobed molds and six colour variations.",
+    "Shared small surface maps; no runtime randomization."
+  ],
+  "status": "draft; pending scene rebuild and visual validation"
+}

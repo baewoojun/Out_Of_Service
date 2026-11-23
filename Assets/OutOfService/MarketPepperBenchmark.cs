@@ -198,6 +198,7 @@ namespace OutOfService
             var target=new RenderTexture(1920,1080,24);camera.enabled=false;camera.targetTexture=target;
             var tile=RenderTexture.GetTemporary(480,480,0);
             var sheet=new Texture2D(1440,480,TextureFormat.RGB24,false);
+            var underside=new Texture2D(480,480,TextureFormat.RGB24,false);
             using(var report=new StreamWriter(Path.Combine(folder,"items.tsv"))){
                 for(int i=0;i<products.Length;i++){
                     var item=products[i];item.PickUp(camera);
@@ -207,8 +208,8 @@ namespace OutOfService
                     item.SetInspecting(camera,true);
                     item.RotateHeld(-20,0);
                     var renderers=item.GetComponentsInChildren<MeshRenderer>();
-                    for(int face=0;face<3;face++){
-                        item.RotateHeld(90,0);
+                    for(int face=0;face<4;face++){
+                        item.RotateHeld(90,face==3?90:0);
                         yield return null;
                         var low=Vector2.one;var high=Vector2.zero;
                         foreach(var renderer in renderers){
@@ -224,7 +225,11 @@ namespace OutOfService
                         if(low.x<0 || low.y<0 || high.x>1 || high.y>1)throw new InvalidOperationException("Inspection clipped "+item.name);
                         var crop=new Vector2(h*target.height/target.width,h);
                         camera.Render();Graphics.Blit(target,tile,crop,mid-crop*.5f);RenderTexture.active=tile;
-                        sheet.ReadPixels(new Rect(0,0,480,480),480*face,0,false);
+                        if(face<3)sheet.ReadPixels(new Rect(0,0,480,480),480*face,0,false);
+                        else {
+                            underside.ReadPixels(new Rect(0,0,480,480),0,0,false);
+                            File.WriteAllBytes(Path.Combine(folder,$"bottom-{i:D3}.jpg"),underside.EncodeToJPG(95));
+                        }
                     }
                     File.WriteAllBytes(Path.Combine(folder,$"{i:D3}.jpg"),sheet.EncodeToJPG(95));
                     report.WriteLine($"{i:D3}\t{item.name}");
@@ -234,9 +239,9 @@ namespace OutOfService
                     item.gameObject.SetActive(false);
                 }
             }
-            Debug.Log($"Held rotation audit: {products.Length} items, {products.Length*3} reverse/side views, 1920x1080");
+            Debug.Log($"Held rotation audit: {products.Length} items, {products.Length*3} reverse/side views + {products.Length} underside views, 1920x1080");
             camera.ResetProjectionMatrix();camera.targetTexture=null;RenderTexture.active=null;
-            RenderTexture.ReleaseTemporary(tile);target.Release();Destroy(target);Destroy(sheet);
+            RenderTexture.ReleaseTemporary(tile);target.Release();Destroy(target);Destroy(sheet);Destroy(underside);
         }
 
         static IEnumerator ReviewCatalog(MarketPlayer player)
@@ -266,7 +271,7 @@ namespace OutOfService
                 else if(family==25)h=v==2 || v==5?.085f:.208f;
                 if(family==25 && v==4)h=.13f;
                 if(family==28 && v==3){h=.08f;w=.20f;}
-                if(family==26)h=v<2?.32f:v==5?.10f:.16f;
+                if(family==26){h=v<2?.244f:v==3?.131f:v==5?.070f:.115f;w=v<2?.078f:v==3?.055f:.078f;}
                 if(family==19 && (v==1 || v==3))h=.10f;
                 if(family==18 && v==3){h=.26f;w=.21f;}
                 if(family==21 && v==1){w=.10f;h=.165f;}
@@ -274,6 +279,9 @@ namespace OutOfService
                 if(family==29 && v==2 || family==29 && v==5){w=.155f;h=.20f;}
                 if(family==4 && v==3)h=.116f;
                 if(family==10 && v%2==0)h=.32f;
+                if(family==27){h=v==0?.322f:v==3?.335f:v==1?.301f:v==4?.288f:v==2?.225f:.218f;w=v==0||v==3?.20f:v==1||v==4?.12f:.083f;}
+                if(family==28){h=v==2?.235f:v==1?.17f:v==3?.058f:.115f;w=v==2?.22f:v==1?.24f:v==3?.11f:.35f;}
+                if(family==7){h=v==0||v==4?.171f:v==2?.103f:.046f;w=v==0||v==4?.088f:v==2?.083f:.134f;}
                 float elevation=family==1||family==2||h<.07f?35f:10f;
                 if(family==7 || family==19 && (v==1 || v==3))elevation=27;
                 var aim=foot+Vector3.up*(h*.51f);
@@ -286,7 +294,7 @@ namespace OutOfService
                 camera.Render();RenderTexture.active=target;
                 tile.ReadPixels(new Rect(520,100,880,880),0,0,false);tile.Apply(false);
                 File.WriteAllBytes(Path.Combine(output,$"{family:D2}_{v}.jpg"),tile.EncodeToJPG(94));
-                if(family==20 || family==23 || family==22 && v!=1){
+                if(family==20 || family==23 || family==27 || family==7 || family==22 && v!=1){
                     var right=Vector3.Cross(Vector3.up,outward);
                     camera.transform.position=aim+outward*.58f+right*.34f+Vector3.up*.182f;
                     camera.transform.LookAt(aim);

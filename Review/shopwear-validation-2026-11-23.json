@@ -1,0 +1,45 @@
+{
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "phase": "Shopwear V1, before garment and staff-room changes",
+  "resolution": "1920x1080 native; SMAA High; Windows standalone on RTX 4070 SUPER",
+  "changes": [
+    "Deterministic small yaw and shelf setback variation, preserved product bays",
+    "Partly depleted front rows with retained rear stock",
+    "Small chair pull-out and rotation variations",
+    "Shared Thin PET optical shell, original bottle profiles and 24 parody label designs"
+  ],
+  "manual_views": [
+    "BeverageMaterialStudy/mode0-10_1.jpg",
+    "BeverageMaterialStudy/mode0-11_0.jpg"
+  ],
+  "visual_findings": "Variation appears in labels and front positions; bottle silhouettes remain visible through darkened grazing edges. Clear water is still less convincing than the reference photograph, and labels require further art review. No final quality-parity claim.",
+  "normal_camera_walk": {
+    "distance_m": 96.98,
+    "legs": "3/3",
+    "frames": 4939,
+    "p95_ms": 8.493,
+    "p99_ms": 11.297,
+    "max_ms": 20.189,
+    "over_16_67_ms": 5,
+    "gen0": 11,
+    "loading_ms": 781.64,
+    "ai": false,
+    "evidence": "Review/ShopwearV1-2026-11-23/BeverageWalk"
+  },
+  "previous_candidate": {
+    "phase": "Thin PET V2 before shelf variation",
+    "p95_ms": 10.49,
+    "p99_ms": 11.759,
+    "max_ms": 760.436,
+    "over_16_67_ms": 9,
+    "frames": 5017,
+    "status": "One large outlier was not reproduced in the next run; cause unproven. It is retained in Review/BeverageV2-2026-11-23 and not discarded or called fixed."
+  },
+  "limits": "Full traversal samples retained, original backbuffer, no manual Camera.Render/readback during the walk. This is a scripted aisle traverse, not combat, multiplayer or low-end hardware testing. The later garment/staff-room builds require their own results.",
+  "continuation": {
+    "visual_status": "Updated V7/V10 closeups inspected. Deliberate SKU blocks remain readable; no loose decoration physics/network objects added.",
+    "performance": "See retail-refresh-performance-validation-2026-11-23.json for later V8/V10 results. Earlier outliers retained above; not a worst-case guarantee.",
+    "date": "2026-11-23",
+    "changes": "Pantry and dairy paths now share small deterministic shelf variation; packed fruit and greens use separate bounded seed variation. Minor front-row stock gaps retain rear reserves."
+  }
+}

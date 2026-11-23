@@ -66,14 +66,25 @@ public static partial class MarketPrototypeBuilderV7
 
     static void PrintHeldUnit(Transform unit,int family,int variant)
     {
+        if(family==2){
+            var bottomPanel=MallMesh("rice_bottom_information_v1",(v,u,t)=>{
+                v.AddRange(new[]{new Vector3(-.0245f,0,-.032f),new Vector3(.0245f,0,-.032f),new Vector3(.0245f,0,.032f),new Vector3(-.0245f,0,.032f)});
+                u.AddRange(new[]{new Vector2(.004f,.995f),new Vector2(.730f,.995f),new Vector2(.730f,.005f),new Vector2(.004f,.005f)});
+                t.AddRange(new[]{0,1,2,0,2,3});
+            });
+            HandmadeProp("rice underside product information",bottomPanel,unit.position+Vector3.down*.00025f,Vector3.one,InformationInk(family,variant),unit);
+            return;
+        }
         if(HasFrozenFilm(family,variant))return;
+        if(unit.Find("fitted full wrap consumer information"))return;
         if(unit.Find("carton printed reverse"))return; // All three faces already have fitted print.
         var ink=InformationInk(family,variant);
         var generic=unit.Find("ingredients and scan panel");
         if(generic)Object.DestroyImmediate(generic.gameObject);
         var filters=unit.GetComponentsInChildren<MeshFilter>();
         foreach(var f in filters)
-            if(f.sharedMesh && AssetDatabase.GetAssetPath(f.sharedMesh).StartsWith("Assets/OutOfService/Generated/NoodleWrapper_",System.StringComparison.Ordinal)){
+            if(f.sharedMesh && (AssetDatabase.GetAssetPath(f.sharedMesh).StartsWith("Assets/OutOfService/Generated/NoodleWrapper_",System.StringComparison.Ordinal)||
+                AssetDatabase.GetAssetPath(f.sharedMesh).StartsWith("Assets/OutOfService/Generated/RetailFilmV",System.StringComparison.Ordinal))){
                 PrintHeldPacket(f,ink,family,variant);return;
             }
         // Sample the actual outside of the assembled bottle, tray, carton or

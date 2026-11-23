@@ -1,5 +1,15 @@
 ﻿Add-Type -AssemblyName System.Drawing
 . (Join-Path $PSScriptRoot 'DrawRetailLabels.ps1')
+. (Join-Path $PSScriptRoot 'DrawBeverageLabels.ps1')
+. (Join-Path $PSScriptRoot 'DrawRetailRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawPetRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawSemanticPackRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawChocolateRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawPaperRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawCannedRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawDairyRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawFrozenProduceRefresh.ps1')
+. (Join-Path $PSScriptRoot 'DrawRetailDetailPrints.ps1')
 
 . (Join-Path $PSScriptRoot 'DrawStorePackPanels.ps1')
 . (Join-Path $PSScriptRoot 'DrawShelfPrints.ps1')
@@ -58,7 +68,7 @@ $assortment=@(
 '목장우유|저지방우유|딸기요거트|흰우유|바나나우유|플레인요거트',
 '맑은빨래|포근유연제|레몬주방|효소세탁|코튼향|허브주방',
 '순면감촉|보들티슈|흡수타월|포켓티슈|순한롤|도톰한롤',
-'연어한끼|닭고기한끼|말랑간식|소고기한끼|참치한끼|오리큐브'
+'연어한끼|닭고기한끼|바삭간식|소고기한끼|참치한끼|오리큐브'
 )
 $weights = @('120 g','86 g','210 g','500 g','150 g','90 g','104 g','70 g','500 g','200 g',
     '500 mL','500 mL','500 mL','1 L','500 mL','200 g','100 sticks','250 mL','1 kg','500 mL',
@@ -75,7 +85,14 @@ $format.Trimming = [System.Drawing.StringTrimming]::EllipsisCharacter
 for ($i = 0; $i -lt $names.Count; $i++) {
   $information=[Drawing.Bitmap]::new(2048,1024)
   for ($variant = 0; $variant -lt 6; $variant++) {
-    $bitmap = [System.Drawing.Bitmap]::new(512, 512)
+    $printWidth=if($i -in @(0,2,5,9,15,27,28,29,10,11,12,14)){768}else{512}
+    $printHeight=if($i -in @(0,2,5,9,15,27,28,29)){768}else{512}
+    if($i -eq 7){$printWidth=if($variant -in @(0,4)){384}elseif($variant -eq 2){512}else{768};$printHeight=if($variant -in @(0,4)){768}elseif($variant -eq 2){320}else{256}}
+    if($i -eq 28){$paperSize=PaperPrintSize $variant;$printWidth=$paperSize[0];$printHeight=$paperSize[1]}
+    if($i -eq 4){$canSize=CannedPrintSize $variant;$printWidth=$canSize[0];$printHeight=$canSize[1]}
+    if($i -eq 26){$dairySize=DairyPrintSize $variant;$printWidth=$dairySize[0];$printHeight=$dairySize[1]}
+    if($i -eq 23){$printWidth=512;$printHeight=640}
+    $bitmap = [System.Drawing.Bitmap]::new($printWidth, $printHeight)
     $g = [System.Drawing.Graphics]::FromImage($bitmap)
     $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
     $g.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
@@ -125,6 +142,15 @@ for ($i = 0; $i -lt $names.Count; $i++) {
     Draw-RetailLabel $g $i $variant $displayName $brandName $family $format
     Draw-ConsumerPanel $g $i $variant $displayName $brandName $family $format
     Draw-ShelfPrint $g $i $variant $displayName $brandName
+    Draw-BeverageLabel $g $i $variant $displayName
+    Draw-RetailRefresh $g $i $variant $displayName
+    Draw-PetRefresh $g $i $variant $displayName
+    Draw-SemanticPackRefresh $g $i $variant $displayName
+    Draw-ChocolateRefresh $g $i $variant $displayName
+    Draw-PaperRefresh $g $i $variant $displayName
+    Draw-CannedRefresh $g $i $variant $displayName
+    Draw-DairyRefresh $g $i $variant $displayName
+    Draw-FrozenProduceRefresh $g $i $variant $displayName
     Write-PackInformation $information $bitmap $target $i $variant $displayName $brandName $names[$i]
     $bitmap.Save((Join-Path $target ('pack_{0:D2}_{1}.png' -f $i,$variant)), [System.Drawing.Imaging.ImageFormat]::Png)
     $g.Dispose(); $bitmap.Dispose(); $primaryBrush.Dispose(); $lightBrush.Dispose(); $darkBrush.Dispose(); $whiteBrush.Dispose()
@@ -134,6 +160,10 @@ for ($i = 0; $i -lt $names.Count; $i++) {
 }
 Write-SidePanel $target $family
 Write-HardwareCards $target
+Write-RetailDetailPrints $target
+Write-StringCheesePrints $target
+Write-PetCanPrint $target
+Write-DairySealPrints $target
 foreach($image in $stockPhotos.Values){$image.Dispose()}
 $small.Dispose(); $large.Dispose(); $medium.Dispose(); $format.Dispose(); $family.Dispose()
 $atlas1.Dispose(); $atlas2.Dispose()

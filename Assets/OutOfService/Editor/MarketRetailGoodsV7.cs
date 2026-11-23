@@ -22,7 +22,7 @@ public static partial class MarketPrototypeBuilderV7
             unit.gameObject.AddComponent<Rigidbody>().isKinematic = true;
             unit.gameObject.AddComponent<MarketProduct>();
         }
-        unit.rotation = Quaternion.Euler(0, yaw, 0);
+        SetShoppedFacing(unit,foot,yaw,family,variant);
         if (pickup) return;
         for (int i = unit.childCount - 1; i >= 0; i--) unit.GetChild(i).SetParent(parent, true);
         Object.DestroyImmediate(unit.gameObject);
@@ -85,15 +85,15 @@ public static partial class MarketPrototypeBuilderV7
         bool canned=index==11 && variant==5 || index==12 && variant==5 || index==17 && variant!=0;
         if(canned || index==4 && variant!=1)
         {
-            float w=index==4?(variant==0?.105f:.084f):.070f;
-            float h=index==4?(variant==0?.047f:variant==3?.114f:.132f):index==17?(variant%2==0?.130f:.104f):.149f;
+            float w=index==4?(variant==0?.086f:.084f):.070f;
+            float h=index==4?(variant==0?.041f:variant==3?.114f:.132f):index==17?(variant%2==0?.130f:.104f):.149f;
             var aluminium=RetailSurface("rolled aluminium packaging",new Color(.72f,.74f,.75f),.72f,.37f);
             HandmadeProp("drawn aluminium container",HandmadeCanMesh(),p,new Vector3(w,h,w),aluminium,group);
             Decor("sealed satin can lid",PrimitiveType.Cylinder,p+Vector3.up*(h*.986f),new Vector3(w*.86f,.00025f,w*.86f),
                 RetailSurface("satin aluminium lid",new Color(.70f,.72f,.73f),.24f,.25f),group);
             CurvedPrint(p+Vector3.up*h*.055f,w*1.016f,h*.89f,ink,group);
-            DetailRing("sealed can pull tab",p+new Vector3(0,h*.988f,-.004f),new Vector3(w*.21f,w*.32f,.008f),aluminium,group,new Vector3(90,0,0));
-            Decor("can tab rivet",PrimitiveType.Cylinder,p+new Vector3(0,h*.99f,.003f),new Vector3(.004f,.001f,.004f),aluminium,group);
+            DetailRing("sealed can pull tab",p+new Vector3(0,h+.0005f,-.004f),new Vector3(w*.21f,w*.32f,.0025f),aluminium,group,new Vector3(90,0,0)).GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
+            Decor("can tab rivet",PrimitiveType.Cylinder,p+new Vector3(0,h+.0006f,.003f),new Vector3(.004f,.0006f,.004f),aluminium,group).GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
             return;
         }
         if(index==17 && variant==0)
@@ -114,9 +114,14 @@ public static partial class MarketPrototypeBuilderV7
         {
             float h=variant%2==0?.218f:.157f;
             HandmadeProp("gable top juice paperboard",HandmadeMilkCartonMesh(),p,new Vector3(.089f,h,.082f),cream,group);
+            Decor("juice heat sealed ridge",PrimitiveType.Cube,p+Vector3.up*(h+.004f),new Vector3(.089f,.009f,.0035f),cream,group);
             Decor("juice carton print",PrimitiveType.Quad,p+new Vector3(0,h*.398f,-.042f),
                 new Vector3(.088f,h*.79f,1),ink,group);
             return;
+        }
+        if(index>=10 && index<=14)
+        {
+            FinishedBeverage(index,variant,p,ink,group);return;
         }
         bool preserve=index==18;
         float width=preserve?(variant==5?.069f:.097f):index==10 && variant%2==0?.103f:index==19?.075f:index==13 && variant==3?.098f:.076f;
@@ -167,8 +172,10 @@ public static partial class MarketPrototypeBuilderV7
     {
         SellUnit(name,p,group,-side*90,pickup,ShelfArtIndex(category),variant,unit=>{
             var art=PackMaterial(ShelfArtIndex(category),variant);
+            if(category==21){PaperGoodsFacing(p,variant,unit);return;}
+            if(category==22){LaundryFacing(p,variant,unit);return;}
             // Legacy household molds have their printed face on +X.
-            if(category==21 || category==22 || category==19 && (variant==1||variant==3))
+            if(category==19 && (variant==1||variant==3))
             {
                 Transform holder=new GameObject("mold orientation").transform;
                 holder.SetParent(unit);holder.position=p;
@@ -182,9 +189,12 @@ public static partial class MarketPrototypeBuilderV7
             if(category==24 && variant==4)
             {
                 const float w=.078f,h=.041f;
-                HandmadeProp("wet cat food can",HandmadeCanMesh(),p,new Vector3(w,h,w),shelfTop,unit);
-                CurvedPrint(p+Vector3.up*.003f,w*1.015f,h-.006f,art,unit);
-                HandmadeProp("cat food peel lid",PeelLid(),p+Vector3.up*(h+.0006f),new Vector3(w,1,w),art,unit);
+                var metal=RetailSurface("satin aluminium lid",new Color(.70f,.72f,.73f),.24f,.25f);
+                HandmadeProp("wet cat food sealed can",HandmadeCanMesh(),p,new Vector3(w,h,w),metal,unit);
+                Decor("flat recessed cat food lid",PrimitiveType.Cylinder,p+Vector3.up*(h*.984f),new Vector3(w*.83f,.00025f,w*.83f),metal,unit);
+                CurvedPrint(p+Vector3.up*.003f,w*1.015f,h-.006f,PantryInk("PetCanSide",0,.27f),unit);
+                DetailRing("cat food recessed pull ring",p+new Vector3(0,h+.0005f,-.006f),new Vector3(.017f,.023f,.0025f),metal,unit,new Vector3(90,0,0)).GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
+                Decor("cat food lid tab rivet",PrimitiveType.Cylinder,p+new Vector3(0,h+.0006f,.002f),new Vector3(.004f,.0006f,.004f),metal,unit).GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
                 return;
             }
             if(category==3 || category==5 || category==9 || category==15 || category==24 || category==8 && variant>=2 ||
@@ -199,7 +209,10 @@ public static partial class MarketPrototypeBuilderV7
                     w*=1f+.08f*(variant%3-1);
                     h*=1f+.10f*((variant+1)%3-1);
                 }
-                HandmadeProp("crimped gusset bag",NoodlePacket(false,!pickup),p,new Vector3(w,h,category==24&&!smallPet?.126f:.077f),art,unit);
+                int family=ShelfArtIndex(category);
+                float depth=category==24&&!smallPet?.126f:category==5?.105f:category==3?.061f:.077f;
+                FilmSurface(art,family,variant);
+                HandmadeProp("content shaped retail film",RetailFilmMold(family,variant,!pickup),p,new Vector3(w,h,depth),art,unit);
                 if(category==15)
                     Decor("coffee valve",PrimitiveType.Cylinder,p+new Vector3(w*.29f,h*.68f,-.036f),new Vector3(.014f,.0015f,.014f),wornMetal,unit).transform.rotation=Quaternion.Euler(90,0,0);
                 return;
@@ -218,10 +231,10 @@ public static partial class MarketPrototypeBuilderV7
                 Decor("screw top",PrimitiveType.Cylinder,p+Vector3.up*.094f,new Vector3(.079f,.006f,.079f),shelfTop,unit);
                 return;
             }
-            if(category==7 && variant!=5)
+            if(category==7)
             {
-                bool bar=variant==1 || variant==3;
-                HandmadeProp("folded chocolate foil",NoodlePacket(false,!pickup),p,bar?new Vector3(.134f,.046f,.025f):new Vector3(.088f,.171f,.019f),art,unit);return;
+                bool bar=variant==1 || variant==3 || variant==5;
+                HandmadeProp(bar?"end crimped chocolate bar film":"folded chocolate tablet foil",bar?ChocolateBarFilm(variant):NoodlePacket(false,!pickup),p,bar?new Vector3(.134f,.046f,variant==5?.027f:.025f):new Vector3(.088f,.171f,.015f),art,unit);return;
             }
             float width=category==8?.19f:category==16?.174f:category==7?.103f:.153f;
             float high=category==8?.286f:category==16?.211f:category==7?.115f:.176f;
@@ -238,6 +251,7 @@ public static partial class MarketPrototypeBuilderV7
         SellUnit(title,p,group,0,pickup,index,variant,unit=>{
             if(HasFrozenFilm(index,variant)){FrozenFacing(index,variant,p,unit);return;}
             Material ink=PackMaterial(index,variant);
+            if(index==25 && variant==3){StringCheesePack(p,unit);return;}
             bool tub=index==21 && (variant==2 || variant==3) || index==25 && variant==5;
             if(tub || index==21 && variant==1)
             {

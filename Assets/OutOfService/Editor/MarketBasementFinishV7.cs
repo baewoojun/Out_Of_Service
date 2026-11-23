@@ -8,6 +8,7 @@ public static partial class MarketPrototypeBuilderV7
     // Original finishes. Reference photos inform structure; their pixels are not used.
     static Material MallFinish(string kind,Color tint,float metallic,float gloss)
     {
+        if(kind=="wood")return OakVeneer(tint);
         var mat=RetailSurface("B1 finish v4 "+kind+" "+ColorUtility.ToHtmlStringRGB(tint),tint,metallic,gloss);
         mat.mainTexture=FinishTexture("B1SurfaceV4_"+kind.Replace(" ","_"),(u,v)=>{
             float fine=Mathf.PerlinNoise(u*180+7,v*180+19),broad=Mathf.PerlinNoise(u*6+11,v*9+7);

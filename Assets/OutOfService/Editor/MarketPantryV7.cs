@@ -66,7 +66,7 @@ public static partial class MarketPrototypeBuilderV7
     // points away from the shopper, so print on a lid reads from the aisle.
     static Mesh PeelLid()
     {
-        const string path="Assets/OutOfService/Generated/PantryPeelFoil.asset";
+        const string path="Assets/OutOfService/Generated/PantryPeelFoilV2.asset";
         if(handmadeMeshes.TryGetValue(path,out var mesh))return mesh;
         mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
         if(!mesh)
@@ -78,7 +78,7 @@ public static partial class MarketPrototypeBuilderV7
                 float a=i*2*Mathf.PI/n;
                 float tab=Mathf.Clamp01(1-Mathf.Abs(Mathf.DeltaAngle(310,i*360f/n))/18f);
                 float x=Mathf.Cos(a)*(.5f+.065f*tab),z=Mathf.Sin(a)*(.5f+.065f*tab);
-                v[i+1]=new Vector3(x,.014f*tab,z);uv[i+1]=new Vector2(.5f+x*.94f,.5f+z*.94f);
+                v[i+1]=new Vector3(x,.0014f*tab,z);uv[i+1]=new Vector2(.5f+x*.94f,.5f+z*.94f);
                 tri[3*i]=0;tri[3*i+1]=1+(i+1)%n;tri[3*i+2]=i+1;
             }
             mesh=new Mesh{name="die cut peel film",vertices=v,uv=uv,triangles=tri};mesh.RecalculateNormals();
@@ -115,12 +115,12 @@ public static partial class MarketPrototypeBuilderV7
 
     static Mesh FoldedRiceBand()
     {
-        const string path="Assets/OutOfService/Generated/FoldedRiceBandContinuousPrint.asset";
+        const string path="Assets/OutOfService/Generated/FoldedRiceBandRetailPanelsV2.asset";
         if(handmadeMeshes.TryGetValue(path,out var mesh))return mesh;
         mesh=AssetDatabase.LoadAssetAtPath<Mesh>(path);
         if(!mesh)
         {
-            const int columns=7;
+            const int columns=15;
             var v=new List<Vector3>();var uv=new List<Vector2>();var tri=new List<int>();
             // Follow the elliptical rim across the width of the paper. Each
             // fold has separate normals, like a scored paperboard sleeve.
@@ -133,7 +133,7 @@ public static partial class MarketPrototypeBuilderV7
                 int corner=(face+row)%4;
                 v.Add(new Vector3(x,corner==1||corner==2?1:0,corner<2?-reach:reach));
                 float printY=face==0 || face==1?row:1-row;
-                uv.Add(new Vector2(face==2?1-u:u,printY));
+                uv.Add(new Vector2(face==2?1-u:u,(face+printY)*.25f));
                 if(row==0||j==0)continue;
                 int d=v.Count-1,b=d-columns-1;
                 tri.AddRange(new[]{b-1,d-1,b,b,d-1,d});
@@ -163,21 +163,21 @@ public static partial class MarketPrototypeBuilderV7
             float depth=rice?.143f:width,height=rice?.051f:wide?.084f:.118f;
             bool bundled=rice && variant%2==0;
             int count=bundled?3:rice && !pickup?2:1;
-            var body=rice?TurnedPackageMesh("rice_rolled_rim",
-                new[]{0f,.025f,.12f,.18f,.24f,.31f,.38f,.72f,.85f,.89f,.94f,1f},
-                new[]{.28f,.34f,.391f,.395f,.384f,.413f,.414f,.455f,.465f,.50f,.50f,.484f}):
+            var body=rice?TurnedPackageMesh("rice_closed_rim_v2",
+                new[]{0f,0f,.025f,.12f,.18f,.24f,.31f,.38f,.72f,.85f,.89f,.94f,1f},
+                new[]{0f,.28f,.34f,.391f,.395f,.384f,.413f,.414f,.455f,.465f,.50f,.50f,.484f}):
                 TurnedPackageMesh("noodle_paper_bowl",new[]{0f,.025f,.09f,.13f,.85f,.93f,.955f,1f},
                     new[]{.29f,.335f,.345f,.362f,.468f,.48f,.50f,.49f});
-            var resin=RetailSurface(rice?"rice ivory polypropylene":"noodle paper stock",
-                rice?new Color(.93f,.91f,.85f):new Color(.95f,.91f,.82f),0,rice?.37f:.17f);
+            var resin=RetailSurface(rice?"rice ivory polypropylene v2":"noodle paper stock",
+                rice?new Color(.79f,.78f,.74f):new Color(.95f,.91f,.82f),0,rice?.31f:.17f);
             for(int j=0;j<count;j++)
             {
                 var basePos=p+Vector3.up*j*(height+.001f);
                 HandmadeProp(rice?"microwave rice dish":"rolled noodle cup",body,basePos,new Vector3(width,height,depth),resin,unit);
-                if(j==count-1 || !bundled)
-                    HandmadeProp("printed peel lid",PeelLid(),basePos+Vector3.up*(height+.0005f),
-                        new Vector3(width,width,depth),PackMaterial(category,variant),unit);
-                if(!bundled)
+                // Every bowl is sealed, including those inside the three-pack.
+                HandmadeProp("printed peel lid",PeelLid(),basePos+Vector3.up*(height+.0005f),
+                    new Vector3(width,width,depth),PackMaterial(category,variant),unit);
+                if(!rice && !bundled)
                     HandmadeProp("printed retail sleeve",PrintedCollar(rice),basePos+Vector3.up*(height*.13f),
                         new Vector3(width,height*.80f,depth),PantryInk(rice?"RiceSingle":"NoodleBand",variant,.21f),unit);
             }
@@ -194,7 +194,7 @@ public static partial class MarketPrototypeBuilderV7
             unit.gameObject.AddComponent<Rigidbody>().isKinematic=true;
             unit.gameObject.AddComponent<MarketProduct>();
         }
-        unit.rotation=Quaternion.Euler(0,-side*90,0);
+        SetShoppedFacing(unit,p,-side*90,category,variant);
         if(!pickup)
         {
             for(int i=unit.childCount-1;i>=0;i--)unit.GetChild(i).SetParent(parent,true);

@@ -13,7 +13,7 @@ foreach($base in @('Assets/OutOfService','Assets/StreamingAssets','Tools')){
     }
 }
 foreach($file in Get-ChildItem -LiteralPath (Join-Path $sourceRoot 'Review') -Filter '*.json' -File){
-    if($file.Name -match 'handoff|validation|assets|sources|references|register|placement|layout|publish-dependencies'){$null=$selected.Add('Review/'+$file.Name)}
+    if($file.Name -match 'handoff|validation|audit|assets|sources|references|register|placement|layout|publish-dependencies'){$null=$selected.Add('Review/'+$file.Name)}
 }
 foreach($relative in @($selected)){
     if(!(Test-Path -LiteralPath (Join-Path $sourceRoot $relative) -PathType Leaf)){throw ('Missing source '+$relative)}

@@ -62,19 +62,19 @@ public static partial class MarketPrototypeBuilderV7
         float width=Mathf.Lerp(widths[row],widths[row+1],f);
         float a=Mathf.PI-Mathf.Asin(Mathf.Clamp(x/width,-.98f,.98f));
         float fold=LaundryFold(a,y,r/(ys.Length-1));
-        float d0=.052f+.008f*Mathf.Sin(-ys[row]*5);
-        float d1=row+1==ys.Length-1?.030f:.052f+.008f*Mathf.Sin(-ys[row+1]*5);
+        float d0=.032f+.006f*Mathf.Sin(-ys[row]*5);
+        float d1=row+1==ys.Length-1?.021f:.032f+.006f*Mathf.Sin(-ys[row+1]*5);
         return Mathf.Cos(a)*(Mathf.Lerp(d0,d1,f)+fold);
     }
 
     static Mesh LaundrySeams(int style)
     {
-        return MallMesh("tailoring_front_seams_v2_"+style,(v,u,t)=>{
+        return MallMesh("tailoring_front_seams_v4_"+style,(v,u,t)=>{
             void Stitch(Vector2 a,Vector2 b,float lift=.0022f){
-                int count=Mathf.Max(1,Mathf.CeilToInt(Vector2.Distance(a,b)/.027f));
+                int count=Mathf.Max(1,Mathf.CeilToInt(Vector2.Distance(a,b)/.008f));
                 for(int i=0;i<count;i++){
                     Vector2 p=Vector2.Lerp(a,b,i/(float)count),q=Vector2.Lerp(a,b,(i+.65f)/count);
-                    var d=(q-p).normalized;var side=new Vector2(-d.y,d.x)*.00065f;
+                    var d=(q-p).normalized;var side=new Vector2(-d.y,d.x)*.00035f;
                     int k=v.Count;
                     foreach(var xy in new[]{p-side,p+side,q+side,q-side}){
                         v.Add(new Vector3(xy.x,xy.y,LaundryFrontDepth(style,xy.x,xy.y)-lift));
@@ -84,10 +84,12 @@ public static partial class MarketPrototypeBuilderV7
                 }
             }
             float length=style==1?1.02f:.74f;
-            foreach(float x in new[]{-.012f,.012f})Stitch(new(x,-.10f),new(x,-length+.075f),.004f);
-            Stitch(new(.088f,-.174f),new(.104f,-.281f),.006f);
-            Stitch(new(.104f,-.281f),new(.18f,-.281f),.006f);
-            Stitch(new(.18f,-.281f),new(.193f,-.174f),.006f);
+            if(style!=2)foreach(float x in new[]{-.011f,.011f})Stitch(new(x,style==1?-.36f:-.14f),new(x,-length+.075f),.004f);
+            if(style!=1){
+                Stitch(new(.088f,-.188f),new(.099f,-.286f),.006f);
+                Stitch(new(.099f,-.286f),new(.172f,-.286f),.006f);
+                Stitch(new(.172f,-.286f),new(.183f,-.188f),.006f);
+            }
             for(int i=0;i<12;i++){
                 float x0=-.235f+i*.47f/12,x1=-.235f+(i+1)*.47f/12;
                 Stitch(new(x0,-length+.015f+.016f*Mathf.Abs(x0)/.25f),new(x1,-length+.015f+.016f*Mathf.Abs(x1)/.25f));

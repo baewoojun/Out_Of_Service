@@ -20,7 +20,8 @@ public static partial class MarketPrototypeBuilderV7
         foreach(var renderer in root.GetComponentsInChildren<MeshRenderer>())
         {
             var filter=renderer.GetComponent<MeshFilter>();
-            if(layer>=0 && renderer.sharedMaterial==chillerFilm)
+            if(layer>=0 && (renderer.sharedMaterial==chillerFilm ||
+                renderer.sharedMaterial && renderer.sharedMaterial.name=="clear beverage PET v1" && !renderer.GetComponentInParent<Rigidbody>()))
             {
                 renderer.gameObject.layer=layer;
                 continue; // Preserve per-package transparent sorting at close range.
@@ -43,10 +44,15 @@ public static partial class MarketPrototypeBuilderV7
             if(!fixture && layer>=0 && renderer.GetComponent<Collider>()==null)renderer.gameObject.layer=layer;
             // Keep photogrammetry meshes shared and instanced instead of expanding them into huge mesh assets.
             bool closeRose=filter.sharedMesh.name.StartsWith("MallDetailV3_rose_cupped_v9_");
-            if(filter.sharedMesh.vertexCount>(closeRose?2000:1200) || filter.sharedMesh.subMeshCount!=1)continue;
+            bool tailored=filter.sharedMesh.name.StartsWith("MallDetailV3_laundry_sewn_v9_")||filter.sharedMesh.name.StartsWith("MallDetailV3_tailoring_front_seams_v4_");
+            if(filter.sharedMesh.vertexCount>(tailored?3200:closeRose?2000:1200) || filter.sharedMesh.subMeshCount!=1)continue;
             Vector3 center=renderer.bounds.center;
             string key=(fixture?"fixture_":"")+Mathf.FloorToInt(center.x/6)+"_"+Mathf.FloorToInt(center.y/5)+"_"+
                 Mathf.FloorToInt(center.z/6)+"_"+renderer.sharedMaterial.name;
+            // A print/trim deliberately excluded from shadow maps must retain
+            // that state when merged with the same material in this sector.
+            if(renderer.shadowCastingMode!=ShadowCastingMode.On || !renderer.receiveShadows)
+                key+="_shadow_"+(int)renderer.shadowCastingMode+"_receive_"+renderer.receiveShadows;
             if(!groups.TryGetValue(key,out var list)){list=new List<MeshRenderer>();groups.Add(key,list);}
             list.Add(renderer);
         }
@@ -78,7 +84,10 @@ public static partial class MarketPrototypeBuilderV7
             GameObject batch=new GameObject((fixtureBatch?"Fixture structure sector ":"Small props sector ")+index++);batch.transform.SetParent(root);
             if(!fixtureBatch && layer>=0)batch.layer=layer;
             batch.AddComponent<MeshFilter>().sharedMesh=mesh;
-            batch.AddComponent<MeshRenderer>().sharedMaterial=entry.Value[0].sharedMaterial;
+            var combinedRenderer=batch.AddComponent<MeshRenderer>();
+            combinedRenderer.sharedMaterial=entry.Value[0].sharedMaterial;
+            combinedRenderer.shadowCastingMode=entry.Value[0].shadowCastingMode;
+            combinedRenderer.receiveShadows=entry.Value[0].receiveShadows;
             foreach(var renderer in entry.Value)
             {
                 GameObject source=renderer.gameObject;

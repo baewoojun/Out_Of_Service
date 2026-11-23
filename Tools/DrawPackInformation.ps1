@@ -70,7 +70,7 @@ function Write-PackInformation($canvas,$front,$folder,$familyId,$variant,$produc
         if($familyId -in @(20,23) -or ($familyId -eq 22 -and $variant -ne 1)){
             $wrap=[Drawing.Bitmap]::new(1024,512);$wg=[Drawing.Graphics]::FromImage($wrap)
             try{
-                $wg.DrawImageUnscaled($front,0,0);$wg.DrawImageUnscaled($paper,512,0)
+                $wg.DrawImage($front,[Drawing.Rectangle]::new(0,0,512,512));$wg.DrawImageUnscaled($paper,512,0)
                 $zip=($familyId -eq 23 -and $variant -in @(0,3,4)) -or ($familyId -eq 20 -and $variant -in @(0,2))
                 $pillow=($familyId -eq 22 -and $variant -in @(0,3,5)) -or ($familyId -eq 20 -and $variant -eq 1) -or ($familyId -eq 23 -and !$zip)
                 $light=[Drawing.Pen]::new([Drawing.Color]::FromArgb(98,252,248,238),2)

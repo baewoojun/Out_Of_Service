@@ -11,7 +11,7 @@ namespace OutOfService
     public sealed class MarketStartupGameplayReview:MonoBehaviour
     {
         const int Count=240;
-        static bool VisibilityMode=>Array.IndexOf(Environment.GetCommandLineArgs(),"-visibilityGameplayReview")>=0;
+        static readonly bool VisibilityMode=Array.IndexOf(Environment.GetCommandLineArgs(),"-visibilityGameplayReview")>=0;
         MarketDetailVisibility[] visibility;int transitions;
         readonly double[] times=new double[Count];
         string folder;Camera view;double readyAt,previous;int samples,threats;bool recording,finished;

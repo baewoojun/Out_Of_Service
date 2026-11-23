@@ -1,0 +1,109 @@
+{
+  "checked": "2026-11-23",
+  "authored_assets": [
+    {
+      "changes": "Category-specific silhouettes, edge crimps, rear folds and shared mipmapped normal textures.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F snacks, retort, nuts, coffee, pet-food bays",
+      "name": "Shared retail film molds",
+      "original_file": "Assets/OutOfService/Editor/MarketSoftRetailFilmV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketSoftRetailFilmV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Contents-dependent fullness; six shared seal-relief maps; original Tools/DrawFrozenProduceRefresh.ps1 fronts and back/side information.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F freezer cabinets",
+      "name": "Frozen pouch laminate and portrait graphics",
+      "original_file": "Assets/OutOfService/Editor/MarketFrozenFilmV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketFrozenFilmV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "1000/200 mL cartons and 150/240 mL bottles, 100 g cup, fitted labels, thin printed seal. Tools/DrawDairyRefresh.ps1 supplies own graphics.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F dairy chiller",
+      "name": "Dairy molds, fitting bands and seals",
+      "original_file": "Assets/OutOfService/Editor/MarketDairyFinishV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketDairyFinishV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Three oblate profiles, dimpled poles, shared peel pores, tiny calyx. Bounded seeded contact-aware placement in MarketProduceSalesV7.cs.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F loose mandarin bays",
+      "name": "Mandarin mesh, peel and settled stock",
+      "original_file": "Assets/OutOfService/Editor/MarketMandarinV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketMandarinV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Realistic roll dimensions/counts and sealed tissue cartons; original Tools/DrawPaperRefresh.ps1 labels.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F household aisle",
+      "name": "Paper retail packs",
+      "original_file": "Assets/OutOfService/Editor/MarketPaperFinishV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketPaperFinishV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Six molded silhouettes with integrated handles, shoulders, caps/pumps and conforming original labels.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F household aisle",
+      "name": "Laundry retail containers",
+      "original_file": "Assets/OutOfService/Editor/MarketLaundryFinishV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketLaundryFinishV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Tools/DrawChocolateRefresh.ps1, DrawPetRefresh.ps1 and DrawRetailRefresh.ps1 provide original parody composition. All included photo pixels retain individual attribution in PhotoCredits.json.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "1F canned food, chocolate, rice and pet-food shelves",
+      "name": "Original product graphic refresh",
+      "original_file": "Tools/DrawCannedRefresh.ps1",
+      "source": "Tools/DrawCannedRefresh.ps1",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Closed underside, inverted warming cups, grouped cup/handle rotation in MarketMerchDetailsV7.cs.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "B1 cafe warming tray and service area",
+      "name": "Ceramic cafe cup underside and arrangement",
+      "original_file": "Assets/OutOfService/Editor/MarketCafeNaturalV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketCafeNaturalV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Bounded smoothing on shoulder and armhole vertices, preserves collar/cuff details.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "B1 laundry and 2F clothing",
+      "name": "Garment shoulder transition",
+      "original_file": "Assets/OutOfService/Editor/MarketLaundryNaturalV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketLaundryNaturalV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    },
+    {
+      "changes": "Small yaw/setback variations and deliberate front-row gaps. Static baked decoration, no new rigidbody simulation or network state.",
+      "license": "Original project content; separately sourced photo and material terms remain unchanged",
+      "used_at": "Pantry, dairy, beauty, mall display and produce packs",
+      "name": "Stable shopping offsets",
+      "original_file": "Assets/OutOfService/Editor/MarketShopWearV7.cs",
+      "source": "Assets/OutOfService/Editor/MarketShopWearV7.cs",
+      "checked": "2026-11-23",
+      "creator": "Original project procedural authoring"
+    }
+  ],
+  "external_ingredient_credits": "Tools/RetailPhotoSources/PhotoCredits.json",
+  "runtime_credits": "Assets/StreamingAssets/ArtCredits/RetailPhotography.json",
+  "retail_reference_register": "Review/packaging-reference-sources-2026-11-23.json",
+  "policy": "No purchased assets, generated AI pictures or copied retail pack photographs added. New photographic ingredients are individually attributed; failed downloads were not adopted."
+}

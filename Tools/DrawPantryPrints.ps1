@@ -74,7 +74,7 @@ for($i=0;$i -lt 6;$i++){
     $tone=$riceHues[$i]
     Sheet 384 384 '#F6EFDE'
     $g.FillEllipse((Brush $tone),-96,-133,500,269)
-    TypeLine '한솥들녘' 127 43 29 $cream
+    TypeLine '골목찬방' 127 43 29 $cream
     TypeLine '갓 지은 한 공기' 106 84 22 $cream
     $sz=if($rice[$i].Length -gt 3){57}else{69}
     $left=[int](192-$rice[$i].Length*$sz*.5)
@@ -98,7 +98,7 @@ for($i=0;$i -lt 6;$i++){
     TypeLine '210 g  |  전자레인지' 92 306 21 $ink
     SavePrint "RiceFoil$i"
     Sheet 192 300 $tone
-    TypeLine '한솥들녘' 19 21 29 $cream
+    TypeLine '골목찬방' 19 21 29 $cream
     $g.FillRectangle((Brush $cream),0,79,192,106)
     TypeLine $rice[$i] 10 98 $(if($rice[$i].Length -gt 3){41}else{53}) $tone 'Batang'
     TypeLine '세 공기 묶음' 12 207 27 $cream
@@ -106,7 +106,7 @@ for($i=0;$i -lt 6;$i++){
     SavePrint "RiceBundle$i"
     Sheet 512 168 '#F7F2E8'
     TypeLine $rice[$i] 28 16 71 $tone 'Batang'
-    TypeLine '한솥들녘   |   210 g' 34 106 30 $ink
+    TypeLine '골목찬방   |   210 g' 34 106 30 $ink
     SavePrint "RiceSingle$i"
     Sheet 512 224 '#C5A16E'
     TypeLine '골목제면소   ─   상온' 21 13 26 $ink

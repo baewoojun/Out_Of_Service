@@ -281,18 +281,12 @@ public static partial class MarketPrototypeBuilderV7
         }
         RailSegment("laundry hanger rail",p+new Vector3(0,top,-length*.5f),p+new Vector3(0,top,length*.5f),.032f,shelfTop,root);
         for(int i=0;i<11;i++){
-            float z=-1.45f+i*.29f;int style=i%3;
-            var cloth=LaundryCotton(i%4);
-            var rotation=Quaternion.Euler(0,32+(i%3-1)*3,0);
+            float z=-1.45f+i*.29f+.020f*Mathf.Sin(i*2.17f);int style=i%3;
+            var cloth=GarmentCloth(style,i%4);
+            var rotation=Quaternion.Euler(0,32+(i%5-2)*4,0);
             var neck=p+new Vector3(0,top-.16f,z);
             HandmadeProp("pressed customer garment",LaundryGarment(style),neck,Vector3.one,cloth,root).transform.rotation=rotation;
-            var stitch=RetailSurface("tailoring cotton thread",new Color(.48f,.46f,.40f),0,.08f);
-            HandmadeProp("visible placket pocket and hem stitching",LaundrySeams(style),neck,Vector3.one,stitch,root).transform.rotation=rotation;
-            for(int n=0;n<6;n++){
-                float buttonY=-.115f-n*.087f;
-                var button=Decor("sewn shirt button",PrimitiveType.Sphere,neck+rotation*new Vector3(0,buttonY,Mathf.Min(-.067f,LaundryFrontDepth(style,0,buttonY)-.005f)),new Vector3(.009f,.009f,.003f),style==1?dark:priceWhite);
-                button.transform.rotation=rotation;
-            }
+            GarmentDetails(neck,rotation,1,style,root);
             var h=p+new Vector3(0,top-.10f,z);var l=h+new Vector3(-.25f,-.10f,0);var r=h+new Vector3(.25f,-.10f,0);
             l=h+rotation*(l-h);r=h+rotation*(r-h);
             RailSegment("laundry wire hanger",h,l,.007f,shelfTop,root);RailSegment("laundry wire hanger",h,r,.007f,shelfTop,root);RailSegment("hanger bar",l,r,.007f,shelfTop,root);

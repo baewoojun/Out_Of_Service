@@ -1,0 +1,50 @@
+{
+  "checked": "2026-11-23",
+  "outcome": "In progress. Not accepted as L4D2-equivalent; all 186 faces are not fully approved.",
+  "evidence": [
+    "V7: personally inspected 31 six-item contact sheets covering all 186 fronts",
+    "V8: chocolate and laundry full-size front/oblique renders inspected; held review completed for 56 interactable products",
+    "V9: paper, milk and pet-can full-size front renders inspected; 27 door/culling checks and 83 resting-door checks passed",
+    "V10: all 186 front crops and held captures generated; personally viewed milk, canned-food and sealed-tissue examples. Floor review 273 checks passed.",
+    "V11: personally inspected fitted yogurt/banana bands and repaired held milk back/side scale.",
+    "V12: personally inspected inverted cafe cups, closed cup bottoms and softened garment shoulder junctions.",
+    "V12 with QA-only script update: 69 m original-backbuffer dairy walk passed; two earlier QA routes started behind the prep-room wall and failed. These failures are retained.",
+    "V13: manually viewed frozen blueberry/strawberry front/oblique printing, held milk side/back, wall grazing, staff room and cafe metal after shadow-bias change.",
+    "V14: manually viewed settled mandarin pile/peel and dairy 240 mL/100 g printed thin foil lids; no mirrored lid text in these views. 23 merchandising captures, 273 floor checks, 27 door/culling checks, 83 resting doors and 58 graphics captures passed.",
+    "V14 print correction: latest standalone blueberry, strawberry and mango headers inspected below zipper folds; no flipped front/side text in these views."
+  ],
+  "method": "Catalog views render a 1920x1080 standalone camera and save its central 880x880 crop. FOV varies to inspect products. These are not normal FOV75 gameplay screenshots and are not performance measurements.",
+  "completed": [
+    "Deterministic small yaw, setback and front-row gaps; rear reserves retained",
+    "Separate filled-film molds for snacks, retort, nuts, coffee and pet food",
+    "Rice: original aspect-correct six-pack sleeve, cooked-rice subjects, closed bowl rim and thin peel tab",
+    "Chocolate: six original aspect-correct fronts; horizontal bars, folded wrapper and asymmetric fill",
+    "Laundry: six HDPE body profiles, integrated handles, caps/pumps, fitted labels; 97m real backbuffer test passed in V8",
+    "String cheese: five individually wrapped modeled sticks, original outer header and footer",
+    "Pet food: category-appropriate licensed kibble/wet-food imagery, original parody branding",
+    "Paper: realistic roll dimensions/counts and correctly proportioned front prints",
+    "Milk: gable seal orientation corrected",
+    "Surface interpolation corrected: produce skins, scallions, fish, quartz and acoustic panels",
+    "Small-part batching preserves shadow casting and receiving flags",
+    "Milk cartons resized, narrower physical proportions, fitted bottle/cup bands and reverse printing scale fixed.",
+    "Canned-food original six layouts and prepared-saury/canned-peach ingredient subjects.",
+    "Tissues sold in unopened retail cartons; cafe photo branding removed from fictional coffee pack art.",
+    "Cafe warming cups inverted with closed bases and varied handle direction.",
+    "Frozen produce: six portrait-aspect original fronts, seal relief and mesh tangents.",
+    "Mandarins: three shared oblate profiles, seeded settled pile, peel variation and tiny calyx; 260 pieces per loose bay.",
+    "Dairy foil: original printed circular lids, 0.5 mm thick closed mesh."
+  ],
+  "remaining_findings": [
+    "Water PET is too faint in some closeups; body/reflection response still needs scrutiny",
+    "Frozen and snack folds remain somewhat repetitive despite content-specific silhouettes",
+    "Some ingredient subjects still mismatch: strawberry wafer, chocolate cereal, jujube tea, plum and banana graphics",
+    "Hardware screw threads and molded blister depth remain simplistic",
+    "Some garment shoulders remain too pointed; fabric response needs close comparison",
+    "Produce piles and room fixtures need broader organic variety without obstructing routes",
+    "No full-resolution all-side visual acceptance for every one of the 186 SKUs",
+    "Singleplayer progression, combat, multiplayer replication, long-session performance are not validated by these visual QA paths"
+  ],
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "references": "Review/packaging-reference-sources-2026-11-23.json",
+  "credits": "Tools/RetailPhotoSources/PhotoCredits.json"
+}

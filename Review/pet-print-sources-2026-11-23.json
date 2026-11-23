@@ -1,0 +1,38 @@
+[
+  {
+    "file": "refresh_kibble.jpg",
+    "title": "File:Dry cat food 01.jpg",
+    "author": "Anne Jea.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dry_cat_food_01.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/2/26/Dry_cat_food_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Dry_cat_food_01.jpg/960px-Dry_cat_food_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "outputs": [
+      "pack_29_0.png",
+      "pack_29_1.png",
+      "pack_29_3.png"
+    ],
+    "checked": "2026-11-23",
+    "status": "Adopted after visual and license inspection",
+    "modifications": "Food-only crop, resize, ellipse mask and original parody typography/paw graphics. Adapted print offered under CC BY-SA 4.0; no endorsement implied.",
+    "downloadedSha256": "E72BA444B091625FB1D42162C6CBA0554B4D4BB5B7369F69BF82F1C5872F9DBB"
+  },
+  {
+    "file": "refresh_wet_petfood.jpg",
+    "title": "File:Wet cat food 01.jpg",
+    "author": "Anne Jea.",
+    "source": "https://commons.wikimedia.org/wiki/File:Wet_cat_food_01.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/03/Wet_cat_food_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Wet_cat_food_01.jpg/960px-Wet_cat_food_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "outputs": [
+      "pack_29_4.png"
+    ],
+    "checked": "2026-11-23",
+    "status": "Adopted after visual and license inspection",
+    "modifications": "Food-only crop, resize, ellipse mask and original parody typography/paw graphics. Adapted print offered under CC BY-SA 4.0; no endorsement implied.",
+    "downloadedSha256": "D4F2AEA043D446E165CE9EDC1157767AFF1AAEC63FC0D65ADA0BAC5C42771AE3"
+  }
+]

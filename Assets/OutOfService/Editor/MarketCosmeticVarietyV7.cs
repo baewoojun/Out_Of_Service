@@ -74,6 +74,6 @@ public static partial class MarketPrototypeBuilderV7
             });
             HandmadeProp("serum or essence original curved label",label,new Vector3(0,height*.18f,0),new Vector3(radius+.0007f,height*.55f,(radius+.0007f)*(type==5?.77f:1)),CosmeticInk(type),root);
         }
-        root.position=position;root.rotation=Quaternion.Euler(0,yaw,0);root=parent;
+        SetShoppedFacing(root,position,yaw,31+type,variant);root=parent;
     }
 }

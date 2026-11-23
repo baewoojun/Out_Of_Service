@@ -3,10 +3,10 @@ ramen chicken_soup jjamppong shiitake review_jjajang bibim_guksu|a32b22 c38739 1
 yukgaejang jjamppong ramen baechu_kimchi udon bibim_guksu|b93c26 195677 b1252a 9c3528 674421 432f26|round round round round round round|86g 110g 65g 86g 111g 70g
 cooked_rice barley cooked_rice cooked_rice spinach black_rice|ad2733 99612c 786142 b27438 567640 514059|round round round round round round|210g 210g 210g 210g 210g 210g
 seolleongtang yukgaejang sundubu_jjigae baechu_kimchi review_miyeok doenjang_guk|594933 cc8a20 43342a 8e3731 27574b 934b34|paper pan dark pan paper dark|500g 500g 450g 460g 500g 460g
-tuna detail_ham whelk pacific_saury peach sweet_corn|d59b19 285885 2685ad 266c9a 558344 a7a629|oval stripe label oval label pan|85g 200g 230g 300g 400g 340g
+tuna detail_ham whelk pacific_saury peach sweet_corn|d59b19 285885 2685ad 266c9a 558344 a7a629|oval stripe label oval label pan|150g 200g 230g 300g 400g 340g
 detail_ridged3 potato_chip bugles_snack detail_peanutball onion_ring cheese_puffs|d75224 245595 b4242b 245886 4f9035 e67a24|burst slash burst oval window slash|90g 66g 67g 98g 84g 65g
 chocolate_chip_cookie detail_sandwichbiscuit graham_cracker saltine_cracker detail_milkbiscuit wafer|782e22 bd6a31 8a6838 28643d b33b39 b65c6b|dark oval paper window pan slash|104g 135g 120g 135g 100g 72g
-milk_chocolate photo_chocolatepeanut_1 dark_chocolate puffed_rice chocolate_bar almond|8d302e 9a3226 392e30 644a38 393034 8c4029|seal slash seal burst dark oval|70g 36g 86g 34g 70g 46g
+refresh_plain_milk_chocolate photo_chocolatepeanut_1 refresh_plain_dark_chocolate puffed_rice refresh_plain_dark_chocolate almond|8d302e 9a3226 392e30 644a38 393034 8c4029|seal slash seal burst dark oval|70g 36g 86g 34g 70g 46g
 corn_flakes photo_cocoa_1 detail_grainring granola detail_fruitloops detail_cocoabowl|b33529 502b21 a96333 72603a c83c3f 483126|pan burst paper window burst dark|500g 420g 420g 450g 530g 570g
 trail_mix =Almonds walnut detail_roastnut photo_cashews_0 pistachio|534538 79482f 9e7c47 b78046 8d9c58 5e6742|window paper window window paper window|20g×10 200g 180g 200g 180g 200g
 - - - - - -|1674a1 38566f c76882 328ba5 315f97 3d846b|water water water water water water|2L 500mL 2L 500mL 2L 500mL
@@ -15,9 +15,9 @@ cola lime_fruit - orange_fruit milk photo_ginger_0|b42228 26833d 242933 e27718 4
 orange_fruit concord_grape pyrus_pyrifolia mandarin_orange grape detail_apple|e88728 714974 9eab51 e56d17 653858 c63d32|pan window paper slash window pan|1L 190mL 1L 190mL 1L 190mL
 corn_silk barley green_tea hovenia_dulcis photo_barleytea_0 oat|aa861e 95693e 3e7244 735538 b79e69 71965a|paper stripe label paper oval stripe|500mL 500mL 500mL 500mL 500mL 500mL
 coffee_bean coffee_bean coffea_arabica photo_cherries_1 espresso coffee_bean|78452e 44332d 786352 b17e4f 383837 536b5c|stamp dark paper stamp dark stripe|200g 200g 200g 200g 200g 200g
-caff_mocha espresso latte hazelnut americano_coffee caff_mocha|dfae30 463530 a6806a a4754c 292c2c d8ad69|pan dark paper oval stamp pan|100T 30T 30T 40T 30T 100T
-latte americano_coffee caff_mocha espresso caramel coffee_bean|9c6744 433632 715543 3b2e24 a46c3c 272c30|seal stripe paper dark oval stripe|250mL 175mL 240mL 175mL 240mL 175mL
-lemon photo_ginger_0 photo_drieddate_1 job_s_tears photo_ginger_0 prunus_mume|ae9937 947644 894930 a78b61 795344 597a43|oval paper paper pan stamp oval|1kg 20T 20T 30T 15T 500mL
+caff_mocha espresso latte hazelnut refresh_plain_black_coffee caff_mocha|dfae30 463530 a6806a a4754c 292c2c d8ad69|pan dark paper oval stamp pan|100T 30T 30T 40T 30T 100T
+latte refresh_plain_black_coffee caff_mocha espresso caramel coffee_bean|9c6744 433632 715543 3b2e24 a46c3c 272c30|seal stripe paper dark oval stripe|250mL 175mL 240mL 175mL 240mL 175mL
+lemon photo_ginger_0 photo_drieddate_1 refresh_yulmu_tea photo_ginger_0 prunus_mume|ae9937 947644 894930 a78b61 795344 597a43|oval paper paper pan stamp oval|1kg 20T 20T 30T 15T 500mL
 soybean - sesame - barley mirin|71352a 962c2c 9d743a 3f6f3e c9a634 b2804b|seal oval paper label stripe seal|500mL 500g 160mL 500g 500mL 500mL
 mandu_food photo_gyoza_0 jiaozi photo_gyoza_1 xiaolongbao photo_gyoza_1|214d39 b39858 873624 5f843c 2d674f b0402b|paper pan slash pan window dark|455g 700g 420g 700g 400g 700g
 honeydew_melon vanilla_ice_cream soft_serve vanilla_ice_cream ice_cream_bar adzuki_bean|749f39 383979 ae8650 a47d3d 8e3530 805047|ice slash seal oval ice ice|75mL 160mL 100mL 474mL 75mL 70mL
@@ -29,3 +29,4 @@ cheddar_cheese mozzarella butter string_cheese gouda_cheese yogurt|dca82a 577b61
 - photo_honeysuckle_1 lemon - cotton rosemary|285c91 9c7fa5 77a043 408c4b 5b93ab 6b934c|clean oval clean sport paper clean|2L 1.5L 500mL 2L 1.5L 500mL
 cotton photo_honeysuckle_1 - cotton - cotton|639e9a 8d7495 4c8496 879b78 387d82 68999f|paper oval clean label clean paper|6롤 250매 2롤 10매×6 6롤 6롤
 salmon_as_food photo_chicken_0 dog_biscuit photo_beef_1 tuna photo_duck_0|676f52 c99157 a87a42 704033 38715c 38715c|paper window oval dark seal window|2kg 2kg 200g 2kg 85g 150g
+

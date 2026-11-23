@@ -32,8 +32,12 @@ public static partial class MarketPrototypeBuilderV7
         }
         foreach(int side in new[]{-1,1}){
             // Same chairs within a set; different construction between cafe and restaurant.
-            float yaw=side*90+(row==2?side*4:0);
-            RetailDiningChair(p+Vector3.right*side*.86f,yaw,restaurant?2:row==1?1:0,wood,frame);
+            uint seed=StockSeed(p,restaurant?52:51,side);
+            bool used=seed%3!=0;
+            float yaw=side*90+(used?((int)(seed%23)-11):side*2);
+            float pull=used?.04f+(seed%7)*.014f:-.025f;
+            var offset=new Vector3(side*(.86f+pull),0,used?((int)(seed%9)-4)*.014f:0);
+            RetailDiningChair(p+offset,yaw,restaurant?2:row==1?1:0,wood,frame);
         }
     }
 
@@ -88,11 +92,11 @@ public static partial class MarketPrototypeBuilderV7
             }
         }else HandmadeProp("curved chair backrest",CurvedChairPanel(style),Vector3.zero,Vector3.one,wood,root);
         foreach(int x in new[]{-1,1})foreach(int z in new[]{-1,1}){
-            RailSegment("splayed chair leg",new Vector3(x*.205f,.025f,z*.20f),new Vector3(x*.155f,.44f,z*.145f),style==1?.025f:.031f,style==1?frame:wood,root);
+            RailSegment("splayed chair leg",new Vector3(x*.205f,.025f,z*.20f),new Vector3(x*.155f,.44f,z*.145f),style==1||style==3?.025f:.031f,style==1||style==3?frame:wood,root);
             Decor("chair floor glide",PrimitiveType.Cylinder,new Vector3(x*.205f,.013f,z*.20f),new Vector3(.032f,.012f,.032f),dark);
-            if(z==1 && style!=2)RailSegment("chair back support",new Vector3(x*.155f,.40f,.145f),new Vector3(x*.165f,.67f,.20f),.022f,style==1?frame:wood,root);
+            if(z==1 && style!=2)RailSegment("chair back support",new Vector3(x*.155f,.40f,.145f),new Vector3(x*.165f,.67f,.20f),.022f,style==1||style==3?frame:wood,root);
         }
-        RailSegment("chair lower stretcher",new Vector3(-.18f,.22f,.17f),new Vector3(.18f,.22f,.17f),.019f,style==1?frame:wood,root);
+        RailSegment("chair lower stretcher",new Vector3(-.18f,.22f,.17f),new Vector3(.18f,.22f,.17f),.019f,style==1||style==3?frame:wood,root);
         var seat=root.gameObject.AddComponent<BoxCollider>();seat.center=new Vector3(0,.25f,0);seat.size=new Vector3(.44f,.48f,.44f);
         var back=root.gameObject.AddComponent<BoxCollider>();back.center=new Vector3(0,.68f,.20f);back.size=new Vector3(.43f,.37f,.075f);
         root.position=p;root.rotation=Quaternion.Euler(0,yaw,0);root=parent;

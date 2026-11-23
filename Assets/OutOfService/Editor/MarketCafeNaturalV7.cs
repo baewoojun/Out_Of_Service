@@ -4,9 +4,9 @@ public static partial class MarketPrototypeBuilderV7
 {
     static Mesh CafeHollowCup(bool pitcher=false)
     {
-        return MallMesh(pitcher?"milk_pitcher_v1":"ceramic_hollow_v1",(v,u,t)=>{
-            float[] ys={0,.004f,.010f,.020f,.065f,.092f,.096f,.096f,.090f,.064f,.020f,.014f,.014f};
-            float[] rs={.027f,.030f,.032f,.034f,.041f,.045f,.045f,.041f,.041f,.037f,.030f,.028f,0};
+        return MallMesh(pitcher?"milk_pitcher_v2":"ceramic_hollow_v2",(v,u,t)=>{
+            float[] ys={.003f,.003f,0,.004f,.010f,.020f,.065f,.092f,.096f,.096f,.090f,.064f,.020f,.014f,.014f};
+            float[] rs={0,.022f,.027f,.030f,.032f,.034f,.041f,.045f,.045f,.041f,.041f,.037f,.030f,.028f,0};
             const int count=28;
             for(int r=0;r<ys.Length;r++)for(int c=0;c<=count;c++){
                 float a=c*Mathf.PI*2/count;

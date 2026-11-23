@@ -1,0 +1,8 @@
+{
+  "checked": "2026-11-23",
+  "source": "https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/mathf/smoothstep",
+  "status": "V7 build visually inspected: scallion stalk lengths and root cuts no longer explode; gradients and staff surfaces rendered. Not photoreal acceptance.",
+  "change": "Use SmoothStep(0,1,InverseLerp(edge0,edge1,value)), with versioned generated texture/mesh keys.",
+  "finding": "Mathf.SmoothStep interpolates from a to b with t, unlike GLSL smoothstep(edge0,edge1,value). Existing threshold-like calls produced incorrect green transitions, wood/quartz flecks, acoustic pores and fish stripes.",
+  "additional_fix": "Bound integer noise inputs before Perlin evaluation; validate scallion mesh bounds and finite coordinates during scene generation."
+}

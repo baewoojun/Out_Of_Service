@@ -188,11 +188,11 @@ public static partial class MarketPrototypeBuilderV7
     }
     static Material FishSkin()
     {
-        var mat=RetailSurface("silver mackerel skin",Color.white,.18f,.44f);
+        var mat=RetailSurface("silver mackerel skin v2",Color.white,.18f,.44f);
         if(mat.mainTexture)return mat;
-        mat.mainTexture=FinishTexture("MackerelSilverSkin",(u,v)=>{
+        mat.mainTexture=FinishTexture("MackerelSilverSkinV2",(u,v)=>{
             float dorsal=Mathf.Clamp01(Mathf.Sin(u*Mathf.PI*2)*1.4f-.08f);
-            float stripe=Mathf.SmoothStep(.78f,.96f,Mathf.Sin(v*105+Mathf.Sin(u*31)*2)*.5f+.5f)*dorsal;
+            float stripe=Mathf.SmoothStep(0,1,Mathf.InverseLerp(.78f,.96f,Mathf.Sin(v*105+Mathf.Sin(u*31)*2)*.5f+.5f))*dorsal;
             var color=Color.Lerp(new Color(.68f,.72f,.68f),new Color(.10f,.25f,.27f),dorsal);
             return color*(1-.48f*stripe)*( .93f+.07f*Mathf.PerlinNoise(u*130,v*100));
         });return mat;

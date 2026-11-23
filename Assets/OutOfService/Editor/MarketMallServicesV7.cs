@@ -28,8 +28,7 @@ public static partial class MarketPrototypeBuilderV7
         var old=root;root=new GameObject("parody skincare product "+type).transform;root.SetParent(old);
         var plastic=RetailSurface("cosmetic package "+variant,variant==0?new Color(.79f,.72f,.56f):variant==1?new Color(.36f,.48f,.36f):new Color(.72f,.60f,.58f),0,.35f);
         float h=type==0?.21f:type==1?.15f:.065f,r=type==2?.047f:.031f;
-        HandmadeProp("rounded skincare container",TurnedPackageMesh("CosmeticContainerV1_"+type,
-            new[]{0f,.007f,h*.80f,h*.89f,h*.91f,h*.91f},new[]{r*.82f,r,r,r*.70f,r*.48f,0f}),Vector3.zero,Vector3.one,plastic,root);
+        HandmadeProp("rounded skincare container",RoundedSkincareContainer(type,h,r),Vector3.zero,Vector3.one,plastic,root);
         Decor("skincare closure",PrimitiveType.Cylinder,new Vector3(0,h*.96f,0),new Vector3(type==2?r*2:.037f,h*.075f,type==2?r*2:.037f),priceWhite);
         if(type==0){
             Decor("pump stem",PrimitiveType.Cylinder,new Vector3(0,h+.016f,0),new Vector3(.014f,.013f,.014f),priceWhite);
@@ -49,7 +48,7 @@ public static partial class MarketPrototypeBuilderV7
             }
         });
         HandmadeProp("curved parody skincare label",label,new Vector3(0,h*.48f,0),new Vector3(r+.0008f,h*.46f,r+.0008f),ink,root);
-        root.position=p;root.rotation=Quaternion.Euler(0,yaw,0);root=old;
+        SetShoppedFacing(root,p,yaw,31+type,variant);root=old;
     }
 
     static void BuildBeautyShop()
@@ -61,12 +60,15 @@ public static partial class MarketPrototypeBuilderV7
                 float z=4.6f+bay*3.15f,y=.48f+tier*.49f;
                 Box("beauty adjustable shelf",new Vector3(side*6,y,z),new Vector3(.70f,.04f,2.75f),priceWhite);
                 int product=bay*2+(tier>=2?1:0);
-                for(int facing=0;facing<18;facing++)for(int depth=0;depth<2;depth++)
+                for(int facing=0;facing<18;facing++)for(int depth=0;depth<2;depth++){
+                    if(depth==0&&((bay*13+tier*7+(side+1)*3)%11==0)&&facing>=13&&facing<=14)continue;
                     CosmeticProduct(new Vector3(side*(5.78f+depth*.18f),y+.021f,z-1.19f+facing*.14f),product,(facing/6+tier)%3,side*90);
+                }
             }
             foreach(float z in new[]{4.8f,9.8f}){
                 ServiceCounter("beauty tester island",new Vector3(side*3.4f,0,z),new Vector3(1.1f,.92f,2.3f),cabinet);
-                for(int n=0;n<6;n++)CosmeticProduct(new Vector3(side*3.4f,.99f,z-.8f+n*.32f),n,n%3,side*90);
+                BeautyTesterAccessories(side*3.4f,z,side);
+                for(int n=0;n<6;n++)CosmeticProduct(new Vector3(side*3.4f+(n%2==0?-.032f:.038f),1.002f,z-.8f+n*.32f+(n==3?.025f:0)),n,n%3,side*90+(n%2==0?-5:7));
                 DetailRing("tester tabletop mirror frame",new Vector3(side*3.4f,1.30f,z+.98f),new Vector3(.31f,.38f,.035f),PrepSteel(),root,new Vector3(0,side*90,0));
                 Decor("tester tinted mirror",PrimitiveType.Sphere,new Vector3(side*3.4f,1.30f,z+.98f),new Vector3(.008f,.34f,.27f),cabinetGlass);
                 RailSegment("table mirror supporting stem",new Vector3(side*3.4f,1.0f,z+.98f),new Vector3(side*3.4f,1.14f,z+.98f),.012f,PrepSteel(),root);

@@ -1,0 +1,47 @@
+{
+  "checked": "2026-11-23",
+  "latest_verified_build": "RetailRefreshV14",
+  "resolution": "1920x1080",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "graphics": "D3D12",
+  "method": "Sequential visible standalone players on original backbuffer, uncapped. No manual Camera.Render or GPU readback in these performance paths. No Unity editor, other Market or Insurgency processes at start.",
+  "laundry": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 96.99 m, 9539 rendered, 9539 samples, p95 6.061 ms, p99 6.527 ms, max 8.127 ms, over 16.67ms 0, Gen0 21. Loading 633.81 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+  "beverage": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 97.00 m, 5608 rendered, 5608 samples, p95 6.860 ms, p99 7.440 ms, max 8.142 ms, over 16.67ms 0, Gen0 12. Loading 630.30 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+  "pepper": "1920x1080 | real startup preparation 630.06 ms / 7 views | normal camera 1395 rendered | distance 6.00 m | p95 3.31 ms | p99 3.77 ms | max 5.54 ms | frames over 16.67ms 0/1395",
+  "basement": "1920x1080 | normal camera | AI disabled | real startup preparation 618.00 ms / 7 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 4799 rendered | 8/8 route legs | distance 38.56 m | p95 3.65 ms | p99 4.09 ms | max 5.60 ms | over 16.67ms 0/4799 | gen0 collections 7",
+  "ai_visibility": "PASS: 1920x1080, original backbuffer, normal camera, player enabled, 1 active AI; 240 camera frames. Loading 625.54 ms. Ready-to-first camera end 3.258 ms (partial frame). Subsequent frame cadence p95 6.552 ms / max 7.979 ms / over 16.67ms 0/239. No manual Camera.Render, GPU readback, target allocation, warmup-frame deletion or simulation disabling after loading. Uncapped static starting viewpoint, not a combat/network benchmark or isolated GPU time. Mass visibility off/on transitions: 2, immediately before samples 80 and 160. All transition samples retained.",
+  "historical_v3": {
+    "checked": "2026-11-23",
+    "build": "RetailRefreshV3",
+    "resolution": "1920x1080",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "graphics": "D3D12",
+    "concurrent_game_check": "Win32_Process found no Unity/Market/Insurgency processes before launch. No games stopped.",
+    "method": "Sequential visible standalone players, uncapped original backbuffer, no review-camera rendering or GPU readback. Scripted traversal except normal-player AI visibility test.",
+    "pepper": "1920x1080 | real startup preparation 653.92 ms / 7 views | normal camera 1429 rendered | distance 6.00 m | p95 3.33 ms | p99 3.76 ms | max 6.91 ms | frames over 16.67ms 0/1429",
+    "beverage": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 96.98 m, 5834 rendered, 5834 samples, p95 6.576 ms, p99 7.111 ms, max 9.144 ms, over 16.67ms 0, Gen0 13. Loading 640.39 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "basement": "1920x1080 | normal camera | AI disabled | real startup preparation 630.39 ms / 7 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 4864 rendered | 8/8 route legs | distance 38.57 m | p95 3.52 ms | p99 4.10 ms | max 6.44 ms | over 16.67ms 0/4864 | gen0 collections 7",
+    "ai_visibility": "PASS: 1920x1080, original backbuffer, normal camera, player enabled, 1 active AI; 240 camera frames. Loading 636.21 ms. Ready-to-first camera end 2.930 ms (partial frame). Subsequent frame cadence p95 6.319 ms / max 7.126 ms / over 16.67ms 0/239. No manual Camera.Render, GPU readback, target allocation, warmup-frame deletion or simulation disabling after loading. Uncapped static starting viewpoint, not a combat/network benchmark or isolated GPU time. Mass visibility off/on transitions: 2, immediately before samples 80 and 160. All transition samples retained.",
+    "limits": "These are one-machine finite routes, not combat, multiplayer or worst-case frame-time guarantees. Content review images are not FPS measurements. V4 art edits pending."
+  },
+  "limits": "Finite routes on this PC, not combat, networking, low-end hardware or a worst-case guarantee. Production render preparation occurs before control and is reported separately; these loading values are NOT total process launch/asset-load times. Later freezer-header-only print correction does not change geometry or shader count and requires its own visual capture.",
+  "subsequent_v10": {
+    "laundry": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 96.97 m, 9495 rendered, 9495 samples, p95 6.013 ms, p99 6.485 ms, max 11.291 ms, over 16.67ms 0, Gen0 35. Loading 632.88 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "beverage": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 97.01 m, 5614 rendered, 5614 samples, p95 6.866 ms, p99 7.402 ms, max 8.102 ms, over 16.67ms 0, Gen0 20. Loading 621.33 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "changes": "Higher paper-roll stock density and correctly sized dairy cartons"
+  },
+  "subsequent_v12": {
+    "dairy": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 68.97 m, 11852 rendered, 11852 samples, p95 2.348 ms, p99 2.746 ms, max 9.811 ms, over 16.67ms 0, Gen0 43. Loading 649.02 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "route_fix": "QA route begins at x=-19 to clear the fresh-prep wall. Prior start locations -26 and -20.5 were inside/behind the wall; their failures remain in V11/V12 folders."
+  },
+  "historical_v8": {
+    "beverage": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 96.99 m, 5567 rendered, 5567 samples, p95 6.876 ms, p99 7.425 ms, max 9.228 ms, over 16.67ms 0, Gen0 20. Loading 621.36 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "basement": "1920x1080 | normal camera | AI disabled | real startup preparation 615.74 ms / 7 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 4913 rendered | 8/8 route legs | distance 38.57 m | p95 3.47 ms | p99 3.82 ms | max 5.96 ms | over 16.67ms 0/4913 | gen0 collections 7",
+    "laundry": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 96.98 m, 9638 rendered, 9638 samples, p95 6.079 ms, p99 6.513 ms, max 10.518 ms, over 16.67ms 0, Gen0 35. Loading 646.16 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "pepper": "1920x1080 | real startup preparation 624.36 ms / 7 views | normal camera 1408 rendered | distance 6.00 m | p95 3.32 ms | p99 3.71 ms | max 5.89 ms | frames over 16.67ms 0/1408",
+    "ai_visibility": "PASS: 1920x1080, original backbuffer, normal camera, player enabled, 1 active AI; 240 camera frames. Loading 627.80 ms. Ready-to-first camera end 2.857 ms (partial frame). Subsequent frame cadence p95 6.663 ms / max 7.707 ms / over 16.67ms 0/239. No manual Camera.Render, GPU readback, target allocation, warmup-frame deletion or simulation disabling after loading. Uncapped static starting viewpoint, not a combat/network benchmark or isolated GPU time. Mass visibility off/on transitions: 2, immediately before samples 80 and 160. All transition samples retained."
+  },
+  "produce": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 83.77 m, 8988 rendered, 8988 samples, p95 4.888 ms, p99 6.371 ms, max 9.174 ms, over 16.67ms 0, Gen0 20. Loading 678.65 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+  "dairy": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 68.97 m, 11908 rendered, 11908 samples, p95 2.359 ms, p99 2.886 ms, max 12.335 ms, over 16.67ms 0, Gen0 26. Loading 630.80 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+  "instrumentation_fix": "Cached command-line review flags once rather than allocating argument arrays each movement frame. This reduces test-tool overhead, not an asserted improvement to ordinary game logic."
+}
