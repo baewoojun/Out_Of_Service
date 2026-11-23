@@ -110,8 +110,9 @@ public static partial class MarketPrototypeBuilderV7
     static void TenantFinish(int kind)
     {
         SuspendedCeiling("tenant",13.8f,15.6f,3.94f,.2f,true);
-        var paint=MallFinish("paint",kind==4?new Color(.47f,.52f,.41f):new Color(.64f,.62f,.54f),0,.12f);
-        var lower=MallFinish("washable",kind==4?new Color(.25f,.32f,.26f):new Color(.37f,.39f,.36f),0,.23f);
+        var paint=MallFinish("paint",TenantWallTint(kind),0,.12f);
+        var lower=kind==0||kind==7||kind==9?OakVeneer(new Color(.43f,.32f,.22f)):
+            MallFinish("washable",kind==4?new Color(.25f,.32f,.26f):kind==6?new Color(.44f,.32f,.36f):new Color(.46f,.49f,.47f),0,.23f);
         var walls=MallMesh("tenant_upper_wall_v4",(v,u,t)=>{
             FinishQuad(v,u,t,new(-6.89f,1.18f,.1f),new(-6.89f,1.18f,15.89f),new(-6.89f,3.92f,15.89f),new(-6.89f,3.92f,.1f));
             FinishQuad(v,u,t,new(6.89f,1.18f,15.89f),new(6.89f,1.18f,.1f),new(6.89f,3.92f,.1f),new(6.89f,3.92f,15.89f));
@@ -128,6 +129,7 @@ public static partial class MarketPrototypeBuilderV7
         }
         Decor("back wall lower lining",PrimitiveType.Cube,new Vector3(0,.60f,15.88f),new Vector3(13.8f,1.18f,.025f),lower);
         Decor("back wall skirting",PrimitiveType.Cube,new Vector3(0,.065f,15.85f),new Vector3(13.8f,.13f,.04f),shelf);
+        TenantIdentityFinish(kind);
         foreach(float z in new[]{5,11})CeilingVent(new Vector3(0,3.90f,z));
         // The existing two lights remain the only local illumination; casings add no lights.
         foreach(float x in new[]{-3,3}){

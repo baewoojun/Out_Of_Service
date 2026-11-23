@@ -17,6 +17,7 @@ namespace OutOfService
         bool ready, captured, restored, playerEnabled, cameraEnabled, torchEnabled;
         float oldTimeScale, cover = 1;
         int prepared, outputFrames;
+        const int ViewCount=9;
         double elapsed;
         MarketPlayer player;
         Camera view;
@@ -76,12 +77,18 @@ namespace OutOfService
                 pixel = new Texture2D(1, 1, TextureFormat.RGB24, false);
                 view.enabled = false;
                 view.targetTexture = target;
-                for (int index = 0; index < 7; index++)
+                for (int index = 0; index < ViewCount; index++)
                 {
                     view.transform.localPosition = cameraPosition;
                     view.transform.localRotation = cameraRotation;
                     if (player.flashlight) player.flashlight.enabled = index != 0;
-                    if (index >= 2)
+                    if(index>=7){
+                        // New 2F cloth and leather combinations are prepared for all players,
+                        // before the loading cover clears, rather than on first aisle entry.
+                        view.transform.position=index==7?new Vector3(-45.8f,6.65f,-26):new Vector3(46.5f,6.65f,21);
+                        view.transform.LookAt(index==7?new Vector3(-49,6.4f,-25):new Vector3(48.7f,6.3f,21));
+                    }
+                    else if (index >= 2)
                     {
                         string shop = index < 5 ? "잎새 화원" : index == 5 ? "모퉁이 커피" : "바늘 세탁·수선";
                         var unit = GameObject.Find("B1 tenant - " + shop);
@@ -146,7 +153,7 @@ namespace OutOfService
                 Restore();
                 elapsed = timer.Elapsed.TotalMilliseconds;
                 ready = true;
-                UnityEngine.Debug.Log($"Market render preparation: {prepared}/7 views + {outputFrames} destination frames, {elapsed:F2} ms, completed={Completed}. Input and simulation restored.");
+                UnityEngine.Debug.Log($"Market render preparation: {prepared}/{ViewCount} views + {outputFrames} destination frames, {elapsed:F2} ms, completed={Completed}. Input and simulation restored.");
             }
         }
 
@@ -188,7 +195,7 @@ namespace OutOfService
             GUI.color = new Color(.16f, .16f, .16f, cover);
             GUI.DrawTexture(new Rect((Screen.width - width) * .5f, Screen.height * .85f, width, 3), Texture2D.whiteTexture);
             GUI.color = new Color(.7f, .7f, .7f, cover);
-            GUI.DrawTexture(new Rect((Screen.width - width) * .5f, Screen.height * .85f, width * prepared / 7f, 3), Texture2D.whiteTexture);
+            GUI.DrawTexture(new Rect((Screen.width - width) * .5f, Screen.height * .85f, width * prepared / ViewCount, 3), Texture2D.whiteTexture);
             GUI.color = previous;
             GUI.depth = previousDepth;
         }

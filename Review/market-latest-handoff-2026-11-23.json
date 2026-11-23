@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-23T12:51:57.6010004+09:00",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_sha256": "C6C395981AECE23CB94E1CB4F2A48CDBFC4B2A93EEB778833783D35623136A31",
+  "changes": [
+    "Widened and furnished B1 mall shops",
+    "Filled 2F folded clothing and luggage displays",
+    "Public women/men/family restroom suites on 1F and 2F; B1 existing toilets preserved",
+    "Dense tomatoes and prepared vegetable stock, warehouse sliding doors, stairs and escalator refinements",
+    "Esc settings menu: graphics, display, mouse sensitivity/FOV, remappable keyboard/mouse input, volume and persistence"
+  ],
+  "validation": {
+    "SettingsReview": "PASS: 40 standalone settings checks; Input System events, real camera/controller/door, isolated profile.",
+    "SettingsReloadReview": "PASS: 10 standalone settings checks; Input System events, real camera/controller/door, isolated profile.",
+    "RefinementReview": "PASS: 27 door and culling regression checks; 92 resting doors verified.",
+    "UpperRetailWalk": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 138.82 m, 16206 rendered, 16206 samples, p95 4.373 ms, p99 5.717 ms, max 7.626 ms, over 16.67ms 0, Gen0 34. Loading 734.02 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer."
+  },
+  "menu": "Menu rendering disabled while closed; preview time uses wall-clock and continues while menu is unfocused; scoped to MarketPlayer scenes",
+  "performance_note": "Final uncapped review starts with its frame limit configured before startup; all traversal samples included. Earlier 24-27 ms events occurred when review changed cap from 120 FPS to uncapped. Final run was concurrent with asset snapshot copying; no claim of whole-game/combat/multiplayer performance.",
+  "manual": "Foreground menu layout and a tab/button click inspected; synthetic Input System events tested actual character, doors and pickups. Windows automation key injection was inconclusive, so native keyboard end-to-end manual QA is not claimed.",
+  "remaining": [
+    "Multiplayer menu pause behavior needs network integration",
+    "Decorative sanitary fixtures and live mirror behavior not implemented",
+    "Whole team checkout with extra packages not built; source Windows player built and tested"
+  ],
+  "handoff": "Review/SettingsPublish-2026-11-23/handoff.json",
+  "repository_branch": "codex/market-map-2026-11-22",
+  "publish_scope": "Latest saved map, scene dependencies, generators, runtime scripts and validation. Packages and ProjectSettings retained."
+}

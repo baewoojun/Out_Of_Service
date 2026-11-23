@@ -25,7 +25,7 @@ namespace OutOfService
             QualitySettings.vSyncCount=0;Application.targetFrameRate=-1;
             yield return null;
             while (!MarketRenderPreparation.IsReady) yield return null;
-            Check("startup preparation completed all seven real-game views",MarketRenderPreparation.Instance && MarketRenderPreparation.Instance.Completed && MarketRenderPreparation.PreparedViews==7);
+            Check("startup preparation completed nine real-game views including 2F stock",MarketRenderPreparation.Instance && MarketRenderPreparation.Instance.Completed && MarketRenderPreparation.PreparedViews==9);
             Check("startup prepares destination before releasing input",MarketRenderPreparation.PreparedOutputFrames==4);
             Check("startup restores time and player input",Time.timeScale==1 && MarketPlayer.Instance.enabled);
             Check("startup restores main camera and render target",MarketPlayer.Instance.viewCamera.enabled && !MarketPlayer.Instance.viewCamera.targetTexture);

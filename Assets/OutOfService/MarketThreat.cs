@@ -13,7 +13,7 @@ namespace OutOfService
         void Update()
         {
             MarketPlayer player = MarketPlayer.Instance;
-            if (player == null || MarketGame.Instance == null || MarketGame.Instance.finished || MarketGame.Instance.failed) return;
+            if (MarketSettings.IsOpen || player == null || MarketGame.Instance == null || MarketGame.Instance.finished || MarketGame.Instance.failed) return;
             Vector3 flatTarget = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             float distance = Vector3.Distance(transform.position, flatTarget);
             bool sameFloor = Mathf.Abs(player.transform.position.y - transform.position.y) < 1.8f;

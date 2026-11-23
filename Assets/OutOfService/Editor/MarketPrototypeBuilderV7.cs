@@ -188,6 +188,7 @@ public static partial class MarketPrototypeBuilderV7
         BuildUpperFloor();
         BuildRamp();
         BuildThreeFloorExtension();
+        RetailDepartmentFitout();
         BuildingArchitecturalFinish();
         BuildRetailCirculation();
         BuildLighting();
@@ -1218,15 +1219,15 @@ public static partial class MarketPrototypeBuilderV7
         Box("room western side wall", new Vector3(20, 2.2f, 38), new Vector3(0.25f, 4.4f, 12), wall);
         Box("stockroom freezer divider", new Vector3(36.5f, 2.2f, 38), new Vector3(0.25f, 4.4f, 12), wall);
         Box("cold room insulated inner wall", new Vector3(48.6f, 2.2f, 38), new Vector3(0.25f, 4.4f, 12), priceWhite);
-        Box("stockroom sliding door parked open", new Vector3(26.5f, 1.45f, 31.78f), new Vector3(1.8f, 2.9f, 0.14f), shelfTop);
-        Box("freezer sliding door parked open", new Vector3(38.2f, 1.45f, 31.78f), new Vector3(1.2f, 2.9f, 0.14f), priceWhite);
+        StorageSlidingDoor("1F stockroom sliding door",new Vector3(28.5f,0,31.75f),3,false);
+        StorageSlidingDoor("1F freezer sliding door",new Vector3(40.5f,0,31.75f),3,true);
         Label("물품창고", new Vector3(28.5f, 3.5f, 31.8f), Vector3.zero, 0.55f);
         Label("냉동창고", new Vector3(40.5f, 3.5f, 31.8f), Vector3.zero, 0.55f);
         for (int row = 0; row < 3; row++)
         {
             float z = 35 + row * 3.1f;
-            RealModel("steel_frame_shelves_02", new Vector3(23, 0, z), 2.7f, root);
-            RealModel("steel_frame_shelves_02", new Vector3(33, 0, z), 2.7f, root);
+            StockroomOpenRack(new Vector3(23,0,z),2.7f,false);
+            StockroomOpenRack(new Vector3(33,0,z),2.7f,false);
             for (int tier = 0; tier < 3; tier++)
                 for (int side = 0; side < 2; side++)
                     for (int box = 0; box < 3; box++)
@@ -1235,16 +1236,14 @@ public static partial class MarketPrototypeBuilderV7
                         if (box == 1 && tier == 0)
                             RealModel("cardboard_box_01", cratePosition, 0.55f, root);
                         else
-                            Decor("물류 상자", PrimitiveType.Cube, cratePosition + Vector3.up * 0.27f,
-                                new Vector3(0.72f, 0.55f, 0.7f), box % 2 == 0 ? cream : yellow);
+                            WarehouseCarton(cratePosition,new Vector3(.72f,.55f,.7f),(box+tier)%2,(box-1)*2.3f);
                     }
-            Box("freezer metal rack", new Vector3(39, 1.3f, z + 0.2f), new Vector3(2.1f, 2.6f, 1.2f), shelfTop);
-            Box("freezer metal rack", new Vector3(46, 1.3f, z + 0.2f), new Vector3(2.1f, 2.6f, 1.2f), shelfTop);
+            StockroomOpenRack(new Vector3(39,0,z+.2f),2.1f,true);
+            StockroomOpenRack(new Vector3(46,0,z+.2f),2.1f,true);
             for (int side = 0; side < 2; side++)
                 for (int tier = 0; tier < 3; tier++)
-                    Decor("냉동 식품 상자", PrimitiveType.Cube,
-                        new Vector3(side == 0 ? 39 : 46, 0.55f + tier * 0.75f, z + 0.2f),
-                        new Vector3(1.5f, 0.55f, 0.72f), tier % 2 == 0 ? blue : priceWhite);
+                    for(int carton=0;carton<3;carton++)
+                        WarehouseCarton(new Vector3((side==0?39:46)+(carton-1)*.53f,.1925f+tier*.78f,z+.2f),new Vector3(.49f,.55f,.72f),2+tier%2,(carton-1)*1.7f);
         }
         Box("cold room blue floor strip", new Vector3(42.5f, 0.025f, 37), new Vector3(11, 0.05f, 0.18f), blue);
         GameObject coldLight = new GameObject("freezer cold maintenance light");
@@ -1468,6 +1467,11 @@ public static partial class MarketPrototypeBuilderV7
                     var rest=Decor("inclined chiller stock support",PrimitiveType.Cube,
                         new Vector3(-45.14f,y+.055f,z),new Vector3(.018f,.246f,span-.95f),lining,wallStand);
                     rest.transform.rotation=Quaternion.Euler(0,0,36);
+                    if(section==2){
+                        var reserve=Decor("prepared vegetable rear stock support",PrimitiveType.Cube,
+                            new Vector3(-45.58f,y+.125f,z),new Vector3(.018f,.246f,span-.95f),lining,wallStand);
+                        reserve.transform.rotation=Quaternion.Euler(0,0,36);
+                    }
                 }
                 if(section==4)
                     Decor("rear salad shelf riser",PrimitiveType.Cube,new Vector3(-45.70f,y+.104f,z),
@@ -1503,6 +1507,11 @@ public static partial class MarketPrototypeBuilderV7
                             float surface=y+.045f-(shelfX+45.8f)*Mathf.Tan(9*Mathf.Deg2Rad);
                             p=new Vector3(shelfX,surface+.13f,z+item*spacing+(cluster-.5f)*.265f);
                             ChilledProducePack(p,kind,seed,wallStand);
+                            if(section==2){
+                                float rearX=-45.56f;
+                                float rearSurface=y+.045f-(rearX+45.8f)*Mathf.Tan(9*Mathf.Deg2Rad);
+                                ChilledProducePack(new Vector3(rearX,rearSurface+.13f,p.z),kind,seed+3109,wallStand);
+                            }
                             continue;
                         }
                         if(section==4)
@@ -1918,36 +1927,7 @@ public static partial class MarketPrototypeBuilderV7
         Box("2F escalator west opening edge",new Vector3(32.25f,4.8f,0),new Vector3(2.5f,.4f,10),floor);
         Box("2F escalator central opening infill",new Vector3(38,4.8f,0),new Vector3(5.1f,.4f,10),floor);
         Box("2F escalator east opening edge",new Vector3(43.75f,4.8f,0),new Vector3(2.5f,.4f,10),floor);
-        foreach(float x in new[]{34.5f,41.5f})
-        {
-            GameObject slope=Box("escalator walkable slope",new Vector3(x,2.45f,0),new Vector3(1.48f,.22f,11.18f),wornMetal);
-            slope.transform.eulerAngles=new Vector3(-26.565f,0,0);
-            for(int i=0;i<34;i++)
-            {
-                float z=-5f+(i+.5f)*10f/34f;
-                float y=(z+5f)*.5f+.13f;
-                Decor("escalator horizontal tread",PrimitiveType.Cube,new Vector3(x,y,z),new Vector3(1.40f,.045f,.29f),wornMetal);
-                Decor("escalator vertical riser",PrimitiveType.Cube,new Vector3(x,y-.065f,z-.145f),new Vector3(1.40f,.15f,.025f),shelfTop);
-                for(int rib=-6;rib<=6;rib++)
-                    Decor("step anti slip groove",PrimitiveType.Cube,new Vector3(x+rib*.10f,y+.025f,z),new Vector3(.012f,.009f,.28f),shelfTop);
-            }
-            foreach(int side in new[]{-1,1})
-            {
-                float edge=x+side*.83f;
-                var skirt=Decor("escalator brushed skirt",PrimitiveType.Cube,new Vector3(edge,2.55f,0),new Vector3(.10f,.32f,11.18f),shelfTop);
-                skirt.transform.eulerAngles=new Vector3(-26.565f,0,0);
-                var balustrade=Box("escalator safety balustrade",new Vector3(edge,3.05f,0),new Vector3(.08f,.85f,11.18f),glass);
-                balustrade.transform.eulerAngles=new Vector3(-26.565f,0,0);
-                var rail=Decor("escalator rubber handrail",PrimitiveType.Cube,new Vector3(edge,3.50f,0),new Vector3(.13f,.10f,11.18f),dark);
-                rail.transform.eulerAngles=new Vector3(-26.565f,0,0);
-                foreach(float z in new[]{-5f,5f})
-                    Decor("rounded handrail return",PrimitiveType.Cylinder,new Vector3(edge,(z+5f)*.5f+.98f,z),new Vector3(.24f,.065f,.24f),dark).transform.eulerAngles=new Vector3(0,0,90);
-            }
-            Decor("lower comb plate",PrimitiveType.Cube,new Vector3(x,.11f,-5.25f),new Vector3(1.45f,.025f,.55f),shelfTop);
-            Decor("upper comb plate",PrimitiveType.Cube,new Vector3(x,5.02f,5.25f),new Vector3(1.45f,.025f,.55f),shelfTop);
-            foreach(int side in new[]{-1,1})
-                Decor("comb safety yellow edge",PrimitiveType.Cube,new Vector3(x+side*.69f,.13f,-5.25f),new Vector3(.035f,.012f,.55f),yellow);
-        }
+        foreach(float x in new[]{34.5f,41.5f}) EscalatorAssembly(x);
         Label("2F  패션 · 고객센터",new Vector3(38,3.4f,-8),Vector3.zero,.45f);
     }
 

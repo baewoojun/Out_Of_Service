@@ -4,24 +4,7 @@ public static partial class MarketPrototypeBuilderV7
 {
     static void MallFacadeDetail(int kind)
     {
-        var trim=MallFinish("enamel",new Color(.23f,.25f,.23f),.18f,.27f);
-        var panels=MallFinish(kind==0||kind==4?"wood":"washable",kind==4?new Color(.35f,.39f,.26f):new Color(.47f,.43f,.35f),0,.20f);
-        foreach(int side in new[]{-1,1}){
-            Box("shopfront lined pilaster",new Vector3(side*6.88f,1.6f,-.14f),new Vector3(.24f,3.2f,.30f),panels);
-            Decor("shopfront corner cap",PrimitiveType.Cube,new Vector3(side*6.73f,1.6f,-.305f),new Vector3(.035f,3.18f,.025f),trim);
-            Decor("shopfront metal kickplate",PrimitiveType.Cube,new Vector3(side*4.5f,.18f,-.073f),new Vector3(4.87f,.30f,.018f),PrepSteel());
-            for(int panel=0;panel<4;panel++)Decor("knee wall panel joint",PrimitiveType.Cube,
-                new Vector3(side*(2.6f+panel*1.12f),.36f,-.078f),new Vector3(.008f,.53f,.008f),trim);
-            Decor("rolled security shutter housing",PrimitiveType.Cube,new Vector3(side*4.5f,3.06f,-.24f),new Vector3(4.8f,.20f,.34f),trim);
-        }
-        Decor("storefront soffit",PrimitiveType.Cube,new Vector3(0,3.99f,-.34f),new Vector3(14,.12f,.82f),panels);
-        Decor("storefront fascia bottom reveal",PrimitiveType.Cube,new Vector3(0,2.99f,-.15f),new Vector3(13.7f,.025f,.06f),PrepSteel());
-        // Limited pools at the entrance reveal the tenant edge, without lighting the entire mall.
-        LocalLamp("B1 tenant doorway practical",new Vector3(0,2.94f,-.24f),new Vector3(0,.7f,.8f),new Color(.92f,.79f,.58f),1.15f,5);
-        foreach(int side in new[]{-1,1}){
-            Decor("shop window caution stripe",PrimitiveType.Cube,new Vector3(side*4.5f,1.22f,-.020f),new Vector3(4.83f,.035f,.005f),cream);
-            Decor("flush entrance sill",PrimitiveType.Cube,new Vector3(side*1.08f,.008f,.02f),new Vector3(1.8f,.016f,.25f),PrepSteel());
-        }
+        FinishOpenMallFrontage(kind);
     }
 
     static void BasementSupportBay(string title,Vector3 location,float yaw,int kind)
@@ -38,7 +21,8 @@ public static partial class MarketPrototypeBuilderV7
         }
         Box("service room back wall",new Vector3(0,2.1f,16),new Vector3(14,4.2f,.18f),wall);
         Box("service room door lintel",new Vector3(0,3.35f,0),new Vector3(2.8f,1.7f,.18f),wall);
-        SafetyDoor("B1 support doorway - "+title,new Vector3(-1.36f,0,0),2.72f,-100);
+        if(kind<3)StorageSlidingDoor("B1 storage sliding door - "+title,new Vector3(0,0,-.23f),2.72f,false);
+        else SafetyDoor("B1 support doorway - "+title,new Vector3(-1.36f,0,0),2.72f,-100);
         Label(title,new Vector3(0,2.88f,-.11f),Vector3.zero,.29f);
         Label("직원 전용",new Vector3(0,3.40f,-.11f),Vector3.zero,.18f);
         SuspendedCeiling(kind==1?"support_open":"support_closed",13.8f,15.6f,4.12f,.2f,kind==1);
@@ -55,18 +39,20 @@ public static partial class MarketPrototypeBuilderV7
                     for(int box=0;box<4;box++){
                         float h=.30f+.045f*((box+tier+row)%3);
                         var p=new Vector3(x,y+.026f+h*.5f,z+(box-1.5f)*.62f);
-                        Decor("labelled restocking carton",PrimitiveType.Cube,p,new Vector3(.82f,h,.51f),cream);
-                        Decor("carton folded packing tape",PrimitiveType.Cube,p+Vector3.up*(h*.5f+.001f),new Vector3(.07f,.002f,.51f),lower);
-                        Decor("carton delivery label",PrimitiveType.Cube,p+new Vector3(-side*.413f,0,0),new Vector3(.003f,.11f,.18f),priceWhite);
+                        WarehouseCarton(p-Vector3.up*h*.5f,new Vector3(.51f,h,.82f),(box+tier)%2,side*90);
                     }
                 }
             }
-            Box("support workbench",new Vector3(0,.84f,13.8f),new Vector3(3.2f,.10f,.86f),PrepSteel());
-            foreach(float x in new[]{-1.4f,1.4f})Box("support bench leg",new Vector3(x,.4f,13.8f),new Vector3(.06f,.8f,.76f),shelf);
+            // Logistics stock belongs on shelving; remove the oversized empty table.
+            StockroomOpenRack(new Vector3(0,0,14.7f),2.4f,false);
+            for(int tier=0;tier<3;tier++)for(int n=0;n<3;n++){
+                Vector3 p=new Vector3((n-1)*.69f,.19f+tier*.78f,14.7f);
+                WarehouseCarton(p,new Vector3(.61f,.46f,.70f),(n+tier)%2,(n-1)*2);
+            }
         }else{
             for(int row=0;row<2;row++){
-                Box("maintenance desk top",new Vector3(-3,.78f,5+row*4),new Vector3(4.5f,.10f,1.1f),cream);
-                foreach(float x in new[]{-4.8f,-1.2f})Box("maintenance desk base",new Vector3(x,.36f,5+row*4),new Vector3(.6f,.72f,.95f),shelf);
+                Box("maintenance desk top",new Vector3(-3,.78f,5+row*4),new Vector3(1.6f,.06f,.78f),cream);
+                foreach(float x in new[]{-3.65f,-2.35f})Box("maintenance desk base",new Vector3(x,.36f,5+row*4),new Vector3(.08f,.72f,.67f),shelf);
                 RetailTerminal(new Vector3(-3,.84f,5+row*4),0,root);
                 Box("office chair upholstered seat",new Vector3(-3,.47f,3.9f+row*4),new Vector3(.48f,.10f,.48f),fabric);
                 Box("office chair upholstered back",new Vector3(-3,.80f,3.68f+row*4),new Vector3(.48f,.58f,.07f),fabric);

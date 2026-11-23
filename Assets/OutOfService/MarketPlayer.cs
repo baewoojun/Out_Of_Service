@@ -34,12 +34,7 @@ namespace OutOfService
 
         void Update()
         {
-            if (Keyboard.current == null || MarketGame.Instance == null || MarketGame.Instance.finished || MarketGame.Instance.failed) return;
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            {
-                Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
-                Cursor.visible = Cursor.lockState != CursorLockMode.Locked;
-            }
+            if (MarketSettings.InputBlocked || Keyboard.current == null || MarketGame.Instance == null || MarketGame.Instance.finished || MarketGame.Instance.failed) return;
             if (Cursor.lockState != CursorLockMode.Locked)
             {
                 if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
@@ -49,23 +44,23 @@ namespace OutOfService
                 }
                 return;
             }
-            if (Keyboard.current.digit1Key.wasPressedThisFrame) SelectSlot(0);
-            if (Keyboard.current.digit2Key.wasPressedThisFrame) SelectSlot(1);
+            if (MarketControls.Pressed(MarketAction.Hands)) SelectSlot(0);
+            if (MarketControls.Pressed(MarketAction.TorchSlot)) SelectSlot(1);
             Vector2 mouse = Mouse.current == null ? Vector2.zero : Mouse.current.delta.ReadValue();
-            bool inspecting=heldProduct && Mouse.current!=null && Mouse.current.rightButton.isPressed;
+            bool inspecting=heldProduct && MarketControls.Held(MarketAction.Inspect);
             if(heldProduct)heldProduct.SetInspecting(viewCamera,inspecting);
             if(inspecting){
-                heldProduct.RotateHeld(mouse.x*.45f,-mouse.y*.45f);
+                heldProduct.RotateHeld(mouse.x*.45f*MarketControls.Sensitivity,-mouse.y*.45f*MarketControls.Sensitivity*MarketControls.VerticalSign);
                 mouse=Vector2.zero;
             }
-            transform.Rotate(Vector3.up, mouse.x * 0.12f);
-            verticalLook = Mathf.Clamp(verticalLook - mouse.y * 0.12f, -78f, 78f);
+            transform.Rotate(Vector3.up, mouse.x * 0.12f * MarketControls.Sensitivity);
+            verticalLook = Mathf.Clamp(verticalLook - mouse.y * 0.12f * MarketControls.Sensitivity * MarketControls.VerticalSign, -78f, 78f);
             viewCamera.transform.localRotation = Quaternion.Euler(verticalLook, 0, 0);
 
-            float x = (Keyboard.current.dKey.isPressed ? 1 : 0) - (Keyboard.current.aKey.isPressed ? 1 : 0);
-            float z = (Keyboard.current.wKey.isPressed ? 1 : 0) - (Keyboard.current.sKey.isPressed ? 1 : 0);
+            float x = (MarketControls.Held(MarketAction.Right) ? 1 : 0) - (MarketControls.Held(MarketAction.Left) ? 1 : 0);
+            float z = (MarketControls.Held(MarketAction.Forward) ? 1 : 0) - (MarketControls.Held(MarketAction.Backward) ? 1 : 0);
             Vector3 move = (transform.right * x + transform.forward * z).normalized;
-            bool running = Keyboard.current.leftShiftKey.isPressed && move.sqrMagnitude > 0 && Stamina > 0.05f;
+            bool running = MarketControls.Held(MarketAction.Sprint) && move.sqrMagnitude > 0 && Stamina > 0.05f;
             if (running)
             {
                 Stamina = Mathf.Max(0f, Stamina - 0.28f * Time.deltaTime);
@@ -76,7 +71,7 @@ namespace OutOfService
             bool wasGrounded = controller.isGrounded;
             float impactSpeed = -gravityVelocity;
             if (controller.isGrounded && gravityVelocity < 0) gravityVelocity = -1f;
-            if (controller.isGrounded && Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (controller.isGrounded && MarketControls.Pressed(MarketAction.Jump))
                 gravityVelocity = Mathf.Sqrt(2f * -Gravity * JumpHeight);
             gravityVelocity += Gravity * Time.deltaTime;
             controller.Move((move * (running ? 7f : 4.2f) + Vector3.up * gravityVelocity) * Time.deltaTime);
@@ -92,12 +87,12 @@ namespace OutOfService
                     MarketGame.Instance.Show("손전등 배터리가 다 됐다. 건전지를 찾아라.", 4f);
                 }
             }
-            if (Keyboard.current.fKey.wasPressedThisFrame && flashlight != null && Battery > 0f && SelectedSlot == 1)
+            if (MarketControls.Pressed(MarketAction.Flashlight) && flashlight != null && Battery > 0f && SelectedSlot == 1)
                 flashlight.enabled = !flashlight.enabled;
 #if UNITY_EDITOR
             if (Keyboard.current.kKey.wasPressedThisFrame) TakeDamage(25f);
 #endif
-            if (Keyboard.current.eKey.wasPressedThisFrame)
+            if (MarketControls.Pressed(MarketAction.Interact))
             {
                 if (heldProduct != null)
                 {
@@ -108,7 +103,9 @@ namespace OutOfService
                 if (Physics.Raycast(viewCamera.transform.position, viewCamera.transform.forward, out RaycastHit hit, 3f))
                 {
                     MarketSwingDoor door = hit.collider.GetComponentInParent<MarketSwingDoor>();
+                    MarketSlidingDoor slidingDoor = hit.collider.GetComponentInParent<MarketSlidingDoor>();
                     if (door != null) door.Toggle();
+                    else if (slidingDoor != null) slidingDoor.Toggle();
                     else
                     {
                         MarketProduct product = hit.collider.GetComponentInParent<MarketProduct>();
@@ -123,6 +120,11 @@ namespace OutOfService
                     }
                 }
             }
+        }
+
+        public void SuspendInspection()
+        {
+            if (heldProduct && viewCamera) heldProduct.SetInspecting(viewCamera, false);
         }
 
         public void Recharge(float amount)
@@ -149,4 +151,3 @@ namespace OutOfService
         }
     }
 }
-

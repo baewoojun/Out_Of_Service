@@ -7,6 +7,11 @@ using UnityEngine;
 // Export the saved scene's real dependencies without rebuilding or changing it.
 public static class MarketPublishManifest
 {
+    public static void ExportAndBuild()
+    {
+        Export();
+        MarketPlayerBuildReview.BuildPlayer();
+    }
     [Serializable] public class Manifest { public string scene; public string unity; public string[] dependencies; }
     public static void Export()
     {

@@ -1,0 +1,10 @@
+PASS	settings booted and render preparation restored player
+PASS	isolated test profile explicitly supplied
+PASS	saved sensitivity and inversion restored in a new process
+PASS	saved keyboard binding restored
+PASS	saved mouse binding restored
+PASS	graphics, FOV and volume effective after restart
+PASS	display dimensions restored after restart
+PASS	Escape opens menu after restarting
+PASS	Escape resumes simulation after restarting
+PASS	existing flashlight slot and battery still operate

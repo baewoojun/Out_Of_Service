@@ -1,0 +1,35 @@
+{
+  "version": "FitoutV15",
+  "date": "2026-11-23",
+  "status": "Final scene saved, standalone build succeeded, all nine validation suites passed",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "layout": "B1 mall/support; 1F food/household/appliances; 2F fashion/customer service",
+  "changes": [
+    "91 tomato retail packs and 204 prepared vegetable packs; front and reserve stock",
+    "9 fitted fashion wall bays, 3 fold tables, 3 luggage/tote bays and 2 shoe displays",
+    "Tenant-specific ceramic/wood/paint/brass wall finishes",
+    "Oversized stockroom table replaced by open racks; large cold cartons divided into practical handling cases",
+    "Five sliding storage doors with leaf-mounted handles, fixed tracks and obstruction reopening",
+    "Four escalator assemblies with continuous handrails, ribbed steps, vertical glazing and flush landings; detailed stair nosings, soffits and frames",
+    "WorldText handles clustered additional lighting so torch-lit door lettering is readable",
+    "Shared tomato package rib mesh and 2F material preparation before player input"
+  ],
+  "other_chat_handoff": [
+    "Sliding storage doors use MarketSlidingDoor.Toggle(), isOpen and openOffset; do not attach swing behavior",
+    "WorldText now uses the URP clustered additional-light loop and shadow attenuation; signage is light-reactive",
+    "Normal-game loading now prepares nine views including 2F cloth and bags, then restores player/AI/time state",
+    "HUD remains disabled; no changes to stamina, flashlight drain or damage rules; no additional network authority implemented"
+  ],
+  "limitations": [
+    "Not claimed equal to Left 4 Dead 2; hero props and wear still vary in finish quality",
+    "Standalone performance routes use AI disabled and no multiplayer; not a combat or low-end GPU guarantee",
+    "No full 186-product close-up audit in this iteration",
+    "Sliding door sound and multiplayer state synchronization remain unimplemented"
+  ],
+  "verificationFolder": "Review/FitoutV15Final-2026-11-23",
+  "assetRegister": "Review/fitout-assets-2026-11-23.json",
+  "placementRegister": "Review/fitout-placement-2026-11-23.json",
+  "upload": "Current fitout changes have not been pushed; previous V14 draft PR remains separate",
+  "sceneSha256": "F254617D0FA5CC45946CE5D13EDDC3E9E7AEBDAD0AD2DA27E920ACC8BE011D30",
+  "performanceSummary": "1920x1080 editor closed: produce p95 5.124/max 9.921 ms; 2F p95 2.224/max 16.314; B1 p95 3.82/max 8.27; pepper p95 3.80/max 6.75. All four route runs had zero samples over 16.67 ms. Normal gameplay with 1 AI: p95 6.901/max 7.680 ms over 239 complete intervals. Loading preparation 643-658 ms, separately reported."
+}

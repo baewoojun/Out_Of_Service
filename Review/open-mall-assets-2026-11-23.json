@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-23",
+  "version": "V18",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scope": "Open B1 storefronts, usable 2F infill, and public restrooms on 1F and 2F",
+  "basis": "Game-authored composite store, following the approved B1 mall / 1F supermarket / 2F fashion allocation. Not a measured real branch.",
+  "assets": [
+    {
+      "creator": "Original project procedural authoring",
+      "used_at": "Ten B1 tenants",
+      "license": "Original geometry; existing material provenance retained",
+      "name": "Open mall frontages",
+      "original": "Procedural source",
+      "change": "Nine retail entrance openings widened; toilet privacy frontage retained. Glass, stripe, kickplate and jamb widths share the opening size.",
+      "source": "Assets/OutOfService/Editor/MarketOpenMallV7.cs",
+      "url": null
+    },
+    {
+      "creator": "Original project procedural authoring",
+      "used_at": "Nine retail tenants and B1 concourse",
+      "license": "Original geometry and existing original bread, flowers, garments, cosmetics, frames and phone meshes",
+      "name": "Tenant entrance fixtures",
+      "original": "Existing procedural mesh generators referenced by new fitout source",
+      "change": "Low bakery pickup, restaurant tray pickup, OTC stock, botanical islands, laundry collection, cosmetics testers, spectacle display, mobile pickup and packing station.",
+      "source": "Assets/OutOfService/Editor/MarketOpenMallV7.cs",
+      "url": null
+    },
+    {
+      "creator": "Original project procedural authoring",
+      "used_at": "2F apparel inter-row spaces and east arrival area",
+      "license": "Original project geometry, existing cloth/oak/material terms retained",
+      "name": "Upper-floor infill",
+      "original": "Procedural source",
+      "change": "Six two-sided folded-clothing gondolas; four pairs of nesting tables; two luggage/tote display sets. Shared meshes/materials and decorative non-physics stock.",
+      "source": "Assets/OutOfService/Editor/MarketOpenMallV7.cs",
+      "url": null
+    },
+    {
+      "creator": "Original project procedural authoring",
+      "change": "Aligned 12.6 x 8.6 m suites, separate women/men/family rooms, hollow porcelain basin and WC models, stall doors, mirrors, taps, dispensers, floor drains, vents and low closing-time lighting. Existing B1 toilets retained.",
+      "license": "Original project geometry; existing ceramic/tile/steel material provenance retained",
+      "source": "Assets/OutOfService/Editor/MarketPublicRestroomsV7.cs",
+      "used_at": "1F and 2F entrance-right service strip",
+      "url": null,
+      "name": "Public restroom suites",
+      "original": "Procedural mesh and fit-out source"
+    }
+  ],
+  "reference_policy": "No new downloaded assets or copied product photographs. Existing V15 reference register retained; new dimensions and stock quantities are authored game choices, not real-store facts."
+}

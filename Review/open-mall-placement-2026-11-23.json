@@ -1,0 +1,154 @@
+[
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": -23.5,
+    "x": -32.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": 9.5,
+    "x": -32.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": -23.5,
+    "x": -22.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": 9.5,
+    "x": -22.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": -23.5,
+    "x": -12.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "footprint": "2.96 x 1.36 m",
+    "fixture": "two-sided folded apparel gondola",
+    "z": 9.5,
+    "x": -12.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "shelves and divider; decorative garments have no individual collider"
+  },
+  {
+    "fixture": "paired nesting knit tables",
+    "z": -1.5,
+    "x": -32.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "table structure only"
+  },
+  {
+    "fixture": "paired nesting knit tables",
+    "z": 20.5,
+    "x": -32.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "table structure only"
+  },
+  {
+    "fixture": "paired nesting knit tables",
+    "z": -1.5,
+    "x": -22.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "table structure only"
+  },
+  {
+    "fixture": "paired nesting knit tables",
+    "z": 20.5,
+    "x": -22.5,
+    "floor": "2F",
+    "interactive": false,
+    "collision": "table structure only"
+  },
+  {
+    "collision": "tables and low platforms only",
+    "stock": "10 carry-on cases and 12 totes",
+    "fixture": "travel arrival islands",
+    "floor": "2F",
+    "interactive": false,
+    "centers": [
+      [
+        38,
+        -22
+      ],
+      [
+        44,
+        -14
+      ]
+    ]
+  },
+  {
+    "central_route": "Preserve shop center and 20 m mall concourse; low frontage stock at local x=-4.8 / z=1.1 with shop-specific variants",
+    "clear_opening_m": {
+      "laundry": 7.2,
+      "pharmacy": 6,
+      "florist": 12,
+      "restaurant": 10.8,
+      "cafe": 10.8,
+      "toilet": 4,
+      "parcel": 7.2,
+      "mobile": 10,
+      "beauty": 11.2,
+      "optical": 8.4
+    },
+    "interactive": false,
+    "floor": "B1",
+    "fixture": "tenant retail frontage"
+  },
+  {
+    "footprint": "12.6 x 8.6 m",
+    "boundary": "world x 11.7..24.3, z -44.4..-35.8",
+    "collision": "fixed partitions, sanitary fixtures, vanity and moving door leaves",
+    "entrance_centers": [
+      [
+        18,
+        0,
+        -35.8
+      ],
+      [
+        18,
+        5,
+        -35.8
+      ]
+    ],
+    "yaw": 180,
+    "fixture": "public restroom suite",
+    "floors": [
+      "1F",
+      "2F"
+    ],
+    "rooms": [
+      "women: two cubicles + washbasin",
+      "men: one cubicle, two urinals + washbasin",
+      "family: WC with support rails, basin, folded changing table"
+    ],
+    "interactive": "three entrance doors and three cubicle doors per floor; existing E interaction",
+    "source": "Assets/OutOfService/Editor/MarketPublicRestroomsV7.cs",
+    "actual_store_fact": false
+  }
+]

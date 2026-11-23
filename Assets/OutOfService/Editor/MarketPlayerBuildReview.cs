@@ -28,6 +28,11 @@ static class MarketPlayerBuildReview
             return;
         }
         SessionState.SetBool(Refreshed,false);
+        if(EditorUtility.scriptCompilationFailed){
+            if(rebuild)File.Delete(SceneRequest);else File.Delete(Request);
+            Debug.LogError("Market build request stopped: fix compilation before regenerating the scene. The last compiled generator must not overwrite current work.");
+            return;
+        }
         if(rebuild)
         {
             File.Delete(SceneRequest);
@@ -63,5 +68,12 @@ static class MarketPlayerBuildReview
         File.WriteAllText(folder+"/build-result.txt",report.summary.result.ToString());
         if(report.summary.result!=BuildResult.Succeeded)
             throw new System.InvalidOperationException("Market build: "+report.summary.result);
+        // Optional clean exit permits standalone performance tests without editor memory/GPU contention.
+        const string closeRequest="Temp/market-close-after-build.request";
+        if(File.Exists(closeRequest)){
+            File.Delete(closeRequest);
+            if(!UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty)
+                EditorApplication.delayCall+=()=>EditorApplication.Exit(0);
+        }
     }
 }

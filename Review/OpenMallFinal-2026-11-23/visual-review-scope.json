@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-23",
+  "version": "V18",
+  "work": "B1 openness, 2F merchandising and public restrooms",
+  "manual_visual_scope": [
+    "B1 cafe exterior and bakery pickup",
+    "B1 florist exterior and center botanical island",
+    "2F folded apparel and luggage arrival display",
+    "1F restroom exterior, washbasin and cubicle",
+    "2F family restroom"
+  ],
+  "fixes_from_actual_build": [
+    "V16 walkthrough hit an existing column at x40/z-10: shifted the test route around the column; preserved structural column",
+    "V17 restroom side tiles recessed behind walls: moved cladding 35 mm inward",
+    "V17 family WC grab bars lacked wall fixings: extended and anchored rails; attached paper holder and ceiling call cord",
+    "Updated obsolete 72-accessory inventory assertion to include 22 new luggage/tote display products"
+  ],
+  "limits": [
+    "Current bathroom mirrors use static reflective surfaces; no live player mirror rendering",
+    "Tap, dispenser, WC flush, assistance cord and changing-table use are decorative; no water/flush/call gameplay",
+    "Door sound and multiplayer state synchronization are not newly implemented",
+    "Full AI chase balance and end-to-end multiplayer are not covered by scripted movement benchmarks",
+    "Remaining prototype oversized battery pickups and placeholder enemy visuals are unchanged"
+  ]
+}

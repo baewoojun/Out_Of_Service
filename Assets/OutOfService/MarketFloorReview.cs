@@ -95,6 +95,15 @@ namespace OutOfService
                 yield return Walk(p,"2F complete fashion loop");
             foreach(Transform unit in GameObject.Find("Market Prototype V7 - textured horror environment").transform){
                 if(!unit.name.StartsWith("B1 tenant - "))continue;
+                if(!unit.name.Contains("화장실")){
+                    float sideEntry=unit.name.Contains("약국")?2.25f:3.05f;
+                    foreach(int side in new[]{-1,1}){
+                        Warp(unit.TransformPoint(new Vector3(side*sideEntry,.92f,-1.3f)));
+                        yield return Walk(unit.TransformPoint(new Vector3(side*sideEntry,.92f,1.8f)),unit.name+" widened side entrance");
+                        yield return Walk(unit.TransformPoint(new Vector3(0,.92f,1.8f)),unit.name+" open storefront lateral circulation");
+                        yield return Walk(unit.TransformPoint(new Vector3(0,.92f,-1.3f)),unit.name+" open storefront exit");
+                    }
+                }
                 Warp(unit.TransformPoint(new Vector3(0,.92f,-2)));
                 if(unit.name.Contains("화장실")){
                     yield return Walk(unit.TransformPoint(new Vector3(0,.92f,1.4f)),"washroom entrance");
@@ -113,6 +122,12 @@ namespace OutOfService
                     }
                 }
             }
+            Warp(new Vector3(-35.2f,5.92f,-32));
+            foreach(var p in new[]{new Vector3(-35.2f,5.92f,29.4f),new Vector3(-19,5.92f,29.4f),new Vector3(-19,5.92f,-32),new Vector3(-35.2f,5.92f,-32)})
+                yield return Walk(p,"2F infill merchandise picking loop");
+            Warp(new Vector3(33,5.92f,-29));
+            foreach(var p in new[]{new Vector3(46.7f,5.92f,-29),new Vector3(46.7f,5.92f,-11.6f),new Vector3(33,5.92f,-11.6f),new Vector3(33,5.92f,-29)})
+                yield return Walk(p,"2F travel department arrival loop");
             var newDoors=new List<MarketSwingDoor>();
             foreach(var door in FindObjectsByType<MarketSwingDoor>())
                 if(door.name.StartsWith("appliance fridge door")||door.name.StartsWith("family room privacy door")||door.name.StartsWith("staff kitchen door")||door.name.StartsWith("washroom stall door")){newDoors.Add(door);door.Toggle();}
@@ -152,15 +167,54 @@ namespace OutOfService
             foreach(Transform unit in GameObject.Find("Market Prototype V7 - textured horror environment").transform){
                 if(!unit.name.StartsWith("B1 support room - "))continue;
                 supportRooms++;
-                var door=unit.GetComponentInChildren<MarketSwingDoor>();door.Toggle();
-                yield return new WaitForSecondsRealtime(.85f);
-                Check(unit.name+" door opens",Mathf.Abs(Quaternion.Angle(door.transform.localRotation,Quaternion.identity)-100)<1);
+                var door=unit.GetComponentInChildren<MarketSwingDoor>();var sliding=unit.GetComponentInChildren<MarketSlidingDoor>();
+                if(door)door.Toggle();else sliding.Toggle();
+                yield return new WaitForSecondsRealtime(1.5f);
+                Check(unit.name+" door opens",door?Mathf.Abs(Quaternion.Angle(door.transform.localRotation,Quaternion.identity)-100)<1:sliding.OpenFraction>.99f);
                 Warp(unit.TransformPoint(new Vector3(0,.92f,-1.8f)));
                 foreach(float z in new[]{1.5f,6f,12f,1.5f,-1.8f})yield return Walk(unit.TransformPoint(new Vector3(0,.92f,z)),unit.name+" entry and return");
-                door.Toggle();yield return new WaitForSecondsRealtime(.85f);
-                Check(unit.name+" door closes",Quaternion.Angle(door.transform.localRotation,Quaternion.identity)<1);
+                if(door)door.Toggle();else sliding.Toggle();yield return new WaitForSecondsRealtime(1.5f);
+                Check(unit.name+" door closes",door?Quaternion.Angle(door.transform.localRotation,Quaternion.identity)<1:sliding.OpenFraction<.01f);
             }
             Check("five occupied B1 support rooms",supportRooms==5);
+            foreach(string level in new[]{"1F","2F"}){
+                var unit=GameObject.Find(level+" public restroom suite").transform;
+                Check(level+" complete public restroom suite exists",unit.GetComponentsInChildren<MarketSwingDoor>().Length==6);
+                Warp(unit.TransformPoint(new Vector3(0,.94f,-1.6f)));
+                yield return Walk(unit.TransformPoint(new Vector3(0,.94f,1.0f)),level+" restroom main entrance");
+                for(int room=0;room<3;room++){
+                    float x=-4.2f+room*4.2f;
+                    var door=Array.Find(unit.GetComponentsInChildren<MarketSwingDoor>(),d=>d.name==level+" public washroom entrance "+room);
+                    yield return Walk(unit.TransformPoint(new Vector3(x,.94f,1.0f)),level+" restroom lobby approach "+room);
+                    Check(door.name+" initially closed",!door.isOpen);
+                    door.Toggle();yield return new WaitForSecondsRealtime(.7f);
+                    Check(door.name+" open",Quaternion.Angle(door.transform.localRotation,Quaternion.identity)>95);
+                    yield return Walk(unit.TransformPoint(new Vector3(x,.94f,4.9f)),level+" restroom washbasin access "+room);
+                    if(room<2){
+                        int stalls=room==0?2:1;
+                        for(int stall=0;stall<stalls;stall++){
+                            float cx=x-1+stall*2;
+                            var cubicle=Array.Find(unit.GetComponentsInChildren<MarketSwingDoor>(),d=>d.name==level+" public washroom cubicle "+room+"-"+stall);
+                            cubicle.Toggle();yield return new WaitForSecondsRealtime(.7f);
+                            Check(cubicle.name+" opens",Quaternion.Angle(cubicle.transform.localRotation,Quaternion.identity)>95);
+                            yield return Walk(unit.TransformPoint(new Vector3(cx,.94f,4.9f)),cubicle.name+" approach");
+                            yield return Walk(unit.TransformPoint(new Vector3(cx,.94f,6.85f)),cubicle.name+" enter");
+                            yield return Walk(unit.TransformPoint(new Vector3(cx,.94f,4.9f)),cubicle.name+" leave");
+                            cubicle.Toggle();yield return new WaitForSecondsRealtime(.7f);
+                            Check(cubicle.name+" closes",Quaternion.Angle(cubicle.transform.localRotation,Quaternion.identity)<1);
+                        }
+                        yield return Walk(unit.TransformPoint(new Vector3(x,.94f,4.9f)),level+" return from cubicles "+room);
+                    }else{
+                        yield return Walk(unit.TransformPoint(new Vector3(x,.94f,6.6f)),level+" family restroom toilet approach");
+                        yield return Walk(unit.TransformPoint(new Vector3(x,.94f,4.9f)),level+" family restroom return");
+                    }
+                    yield return Walk(unit.TransformPoint(new Vector3(x,.94f,1.0f)),level+" restroom return to lobby "+room);
+                    door.Toggle();yield return new WaitForSecondsRealtime(.7f);
+                    Check(door.name+" closes",Quaternion.Angle(door.transform.localRotation,Quaternion.identity)<1);
+                }
+                yield return Walk(unit.TransformPoint(new Vector3(0,.94f,1.0f)),level+" restroom lobby return");
+                yield return Walk(unit.TransformPoint(new Vector3(0,.94f,-1.6f)),level+" restroom return to shop concourse");
+            }
             string[] views={"b1-concourse","b1-cafe","b1-pharmacy","b1-florist","b1-laundry","b1-washroom","west-stairs","b1-escalator","1f-appliances","2f-service","1f-family-room","1f-cross-aisle","1f-hardware","2f-fashion"};
             Vector3[] eyes={new(3,-3.35f,-25),new(-12,-3.35f,-16),new(12,-3.35f,-16),new(12,-3.35f,4),new(12,-3.35f,24),new(-14,-3.35f,26.7f),new(-47.5f,-3.35f,-34),new(38,-3.35f,-9),new(39,1.65f,22),new(18,6.65f,-27),new(-32,1.65f,-26),new(-15,1.65f,.5f),new(36,1.65f,-25),new(-44.5f,6.65f,11)};
             Vector3[] aims={new(2,-3.2f,15),new(-20,-3.8f,-16),new(21,-3.8f,-16),new(21,-3.8f,4),new(23,-3.8f,24),new(-22,-3.8f,26.7f),new(-47.5f,-1.2f,-40),new(38,-1.5f,2),new(39,1.1f,25),new(18,6.1f,-23),new(-35,1.4f,-31),new(16,1.5f,.5f),new(39,1.7f,-12),new(-29,6.2f,11)};
@@ -191,7 +245,7 @@ namespace OutOfService
             foreach(var door in FindObjectsByType<MarketSwingDoor>())if(door.name.Contains("fire door"))Check(door.name+" closed",Quaternion.Angle(door.transform.localRotation,Quaternion.identity)<1);
             foreach(var door in newDoors)Check(door.name+" closes",Quaternion.Angle(door.transform.localRotation,Quaternion.identity)<1);
             report.Dispose();report=null;finished=true;
-            File.WriteAllText(Path.Combine(folder,"result.txt"),$"PASS: {checks} checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances, four new mall customer route returns, five support rooms with doors, 1F retail loop/cross aisle, 2F fashion loop, appliance/kitchen/family doors, both fresh prep rooms and walk-ins return with staff doors. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.");
+            File.WriteAllText(Path.Combine(folder,"result.txt"),$"PASS: {checks} checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances including widened side entries, mall customer returns, five support rooms, 1F retail loop, 2F fashion and travel picking loops, 1F/2F women-men-family restroom returns and twelve privacy doors, appliance/kitchen/family doors, both fresh prep rooms and walk-ins. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.");
             camera.targetTexture=null;RenderTexture.active=null;target.Release();
             Application.Quit();
         }

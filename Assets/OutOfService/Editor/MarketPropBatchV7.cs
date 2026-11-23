@@ -105,7 +105,7 @@ public static partial class MarketPrototypeBuilderV7
         var stock=new List<Renderer>();
         foreach(var r in root.GetComponentsInChildren<MeshRenderer>())
         {
-            if(r.GetComponentInParent<Rigidbody>() || r.GetComponentInParent<OutOfService.MarketSwingDoor>() ||
+            if(r.GetComponentInParent<Rigidbody>() || r.GetComponentInParent<OutOfService.MarketSwingDoor>() || r.GetComponentInParent<OutOfService.MarketSlidingDoor>() ||
                r.GetComponentInParent<OutOfService.MarketPlayer>() || r.GetComponentInParent<OutOfService.MarketThreat>())continue;
             stock.Add(r);
         }

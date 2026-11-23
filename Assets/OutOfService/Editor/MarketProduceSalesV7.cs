@@ -40,16 +40,16 @@ public static partial class MarketPrototypeBuilderV7
         bool boxed=kind==1 || kind==6 || ((kind==0 || kind==2) && quadrant>=2);
         if(boxed)
         {
-            int count=kind==6?4:3;
-            for(int row=0;row<count;row++)
+            int count=kind==6?4:3,rows=kind==6?6:3;
+            for(int row=0;row<rows;row++)
             for(int col=0;col<count;col++){
                 uint stock=StockSeed(center,kind,row*17+col);
                 if(col>0 && col<count-1 && stock%17==0)continue;
-                Vector3 foot=center+new Vector3((col-(count-1)*.5f)*(kind==6?.43f:.50f),0,(row-(count-1)*.5f)*(kind==6?.41f:.48f));
+                Vector3 foot=center+new Vector3((col-(count-1)*.5f)*(kind==6?.43f:.50f),0,(row-(rows-1)*.5f)*(kind==6?.296f:.48f));
                 var pack=new GameObject("slightly handled produce carton").transform;pack.SetParent(stand);pack.position=foot;
                 ProduceSalePack(kind,title,foot,pack);
-                pack.rotation=Quaternion.Euler(0,((stock&255)/127.5f-1)*3.2f,0);
-                pack.position+=new Vector3((((stock>>8)&255)/127.5f-1)*.008f,0,(((stock>>16)&255)/127.5f-1)*.022f);
+                pack.rotation=Quaternion.Euler(0,((stock&255)/127.5f-1)*(kind==6?1.3f:3.2f),0);
+                pack.position+=new Vector3((((stock>>8)&255)/127.5f-1)*.008f,0,(((stock>>16)&255)/127.5f-1)*(kind==6?.005f:.022f));
             }
             return;
         }

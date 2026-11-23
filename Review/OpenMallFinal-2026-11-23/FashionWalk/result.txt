@@ -1,0 +1,1 @@
+PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 115.77 m, 23596 rendered, 23596 samples, p95 2.239 ms, p99 2.498 ms, max 12.561 ms, over 16.67ms 0, Gen0 51. Loading 648.10 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.

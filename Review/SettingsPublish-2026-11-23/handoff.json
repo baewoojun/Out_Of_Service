@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-23",
+  "area": "map / runtime settings",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "entry": "Esc opens settings and pauses the current single-player game",
+  "graphics": [
+    "1920x1080 default",
+    "Windowed / borderless / exclusive fullscreen",
+    "70-120% render scale",
+    "3 shadow quality levels",
+    "3 texture mip levels",
+    "Off / FXAA / SMAA",
+    "VSync",
+    "60/90/120/144/165/240 FPS or uncapped"
+  ],
+  "controls": [
+    "0.10-3.00 mouse sensitivity multiplier",
+    "60-100 degree FOV",
+    "Invert Y",
+    "12 keyboard/mouse action bindings",
+    "Duplicate binding rejection; Escape reserved"
+  ],
+  "audio": [
+    "Master volume",
+    "Ambient volume",
+    "Optional pause on focus loss"
+  ],
+  "persistence": "Application.persistentDataPath/market-settings-v1.json with atomic replacement and backup",
+  "displaySafety": "15-second unscaled confirmation; timeout or Escape rolls back; only confirmation persists",
+  "integration": [
+    "Use MarketControls.Held/Pressed/Label for new gameplay actions and HUD hints. Do not hard-code E/F/R/WASD.",
+    "MarketSettings.IsOpen/InputBlocked gates gameplay. Current pause uses Time.timeScale and AudioListener.pause for single-player. Future multiplayer menu must pause local input only, not server simulation.",
+    "Settings instantiate a runtime URP clone. Source PC_RPAsset is not rewritten.",
+    "MarketPlayer.SuspendInspection exits item zoom before applying a new FOV.",
+    "RuntimeInitializeOnLoadMethod installs menu; scene regeneration retains it without adding serialized components.",
+    "HUD remains disabled; calculator remains inactive.",
+    "B1 existing restrooms retained; 1F/2F new restroom suites and open mall work remain in scene.",
+    "MarketSettingsView is enabled only while menu is open, eliminating IMGUI setup dispatch during normal play.",
+    "Settings activate only in scenes with MarketPlayer; no global menu in unrelated team scenes."
+  ],
+  "notImplemented": [
+    "Multiplayer pause/network integration",
+    "Gamepad rebinding and controller navigation"
+  ],
+  "originalAssets": "Original code and existing Unity GUI skin; no downloaded artwork or external assets introduced"
+}

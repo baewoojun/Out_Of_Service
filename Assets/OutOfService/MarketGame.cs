@@ -30,7 +30,7 @@ namespace OutOfService
         void Update()
         {
             damageFlash = Mathf.MoveTowards(damageFlash, 0f, Time.deltaTime * 0.38f);
-            if (failed && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
+            if (failed && MarketControls.Pressed(MarketAction.Restart))
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
@@ -179,4 +179,3 @@ namespace OutOfService
         }
     }
 }
-

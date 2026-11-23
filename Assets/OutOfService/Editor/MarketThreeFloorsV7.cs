@@ -36,6 +36,7 @@ public static partial class MarketPrototypeBuilderV7
         BuildStairTower(-46,"WEST");BuildStairTower(46,"EAST");
         BuildBasementMall();BuildBasementEscalators();
         BuildAppliances();BuildCustomerService();BuildFamilyRoom();HomewareRetailCorner();
+        BuildPublicRestrooms();
         foreach(float y in new[]{-5f,0f,5f}){
             string level=y<0?"B1":y<1?"1F":"2F";
             for(int side=-1;side<=1;side+=2){
@@ -78,15 +79,14 @@ public static partial class MarketPrototypeBuilderV7
         }
         foreach(float y in new[]{.3f,1.15f,2.1f})Decor(name+" hinge barrel",PrimitiveType.Cylinder,hingePoint+new Vector3(.025f,y,0),new Vector3(.045f,.06f,.045f),shelfTop,hinge);
         Box(name+" closer",hingePoint+new Vector3(width*.55f,2.36f,.075f),new Vector3(.28f,.06f,.10f),shelfTop,hinge);
+        DoorCasingDetail(name,hingePoint,width,hinge);
     }
 
     static void BuildStairTower(float x,string side)
     {
         Transform previous=root;root=new GameObject(side+" emergency stairs B1-1F-2F").transform;root.SetParent(previous);
-        var treadFinish=new Material(wornFloor){name="cast stair concrete"};
-        treadFinish.SetTextureScale("_BaseMap",new Vector2(1.1f,.167f));
-        treadFinish.SetTextureScale("_BumpMap",new Vector2(1.1f,.167f));
-        treadFinish.SetFloat("_BumpScale",.18f);
+        var treadFinish=RetailSurface("cast stair concrete",new Color(.32f,.33f,.32f),0,.24f);
+        FineRelief(treadFinish,"stair_cast_aggregate_v1",(u,v)=>Mathf.PerlinNoise(u*107,v*107)*.085f+Mathf.PerlinNoise(u*19,v*19)*.025f,.26f);
         Box(side+" stair west enclosure",new Vector3(x-3,-.0f,-37.5f)+Vector3.up*2.25f,new Vector3(.18f,14.5f,9),wall);
         Box(side+" stair east enclosure",new Vector3(x+3,2.25f,-37.5f),new Vector3(.18f,14.5f,9),wall);
         Box(side+" stair back enclosure",new Vector3(x,2.25f,-42),new Vector3(6,14.5f,.18f),wall);
@@ -111,6 +111,7 @@ public static partial class MarketPrototypeBuilderV7
             LocalLamp(side+" mid landing practical",new Vector3(x,baseY+4.65f,-41.2f),new Vector3(x,baseY+2.5f,-41.2f),new Color(.72f,.87f,.78f),1.8f,6);
             for(int flight=0;flight<2;flight++){
                 float cx=x+(flight==0?-1.5f:1.5f),startZ=flight==0?-35:-40,dir=flight==0?-1:1,low=baseY+flight*2.5f;
+                StairFlightDetail(side,cx,low,startZ,dir);
                 for(int step=0;step<15;step++){
                     float z=startZ+dir*(step+.5f)/3f,y=low+(step+1)/6f;
                     Box(side+" concrete stair tread",new Vector3(cx,y-.08334f,z),new Vector3(2.2f,.16668f,1f/3f+.002f),treadFinish);
@@ -122,6 +123,8 @@ public static partial class MarketPrototypeBuilderV7
                     // Side barriers follow each flight and stop above walking clearance.
                     var barrier=Box(side+" stair guard infill",(a+b)*.5f-Vector3.up*.40f,new Vector3(.055f,.80f,5.59f),shelf);
                     barrier.transform.rotation=Quaternion.Euler(dir<0?26.565f:-26.565f,0,0);
+                    Object.DestroyImmediate(barrier.GetComponent<MeshRenderer>());
+                    Object.DestroyImmediate(barrier.GetComponent<MeshFilter>());
                     for(int post=0;post<=5;post++){
                         var p=Vector3.Lerp(a,b,post/5f);
                         Box(side+" guard post",p-Vector3.up*.48f,new Vector3(.05f,.96f,.05f),shelfTop);
@@ -200,14 +203,7 @@ public static partial class MarketPrototypeBuilderV7
         Box("tenant back partition",new Vector3(0,2,16),new Vector3(14,4,.20f),wall);
         Box("tenant sign fascia",new Vector3(0,3.45f,0),new Vector3(14,.9f,.18f),kind==3?green:kind==4?cream:shelf);
         Label(title,new Vector3(0,3.44f,-.12f),Vector3.zero,.64f);
-        foreach(int side in new[]{-1,1}){
-            Box("storefront opaque knee wall",new Vector3(side*4.5f,.33f,0),new Vector3(5,.66f,.12f),cream);
-            foreach(float y in new[]{.65f,3.06f})Box("storefront horizontal glazing frame",new Vector3(side*4.5f,y,0),new Vector3(5,.055f,.08f),shelfTop);
-            foreach(float x in new[]{side*2.03f,side*6.97f})Box("storefront vertical glazing frame",new Vector3(x,1.85f,0),new Vector3(.055f,2.45f,.08f),shelfTop);
-            Box("storefront glass",new Vector3(side*4.5f,1.85f,0),new Vector3(4.86f,2.36f,.02f),kind==2?glass:cabinetGlass);
-        }
-        // A four-metre public entrance; no mandatory cooperative switches.
-        foreach(int side in new[]{-1,1})Box("store entrance jamb",new Vector3(side*1.98f,1.5f,0),new Vector3(.07f,3,.15f),shelfTop);
+        BuildOpenMallFrontage(kind);
         for(int i=0;i<2;i++)LocalLamp(title+" practical",new Vector3(i==0?-3:3,3.75f,8),new Vector3(0,.8f,7),kind==3?new Color(.80f,.90f,1):new Color(1,.78f,.49f),3.9f,11,i==0);
         if(kind==0 || kind==1){
             for(int row=0;row<3;row++)foreach(float x in new[]{-5.4f,-2.7f,2.7f,5.4f})DiningSet(new Vector3(x,0,3+row*3));
@@ -246,6 +242,7 @@ public static partial class MarketPrototypeBuilderV7
         }else if(kind==4)BuildFloristDetails();
         else if(kind>=6)BuildMallServiceShop(kind);
         else BuildLaundryDetails();
+        TenantFrontMerchandising(kind);
         TenantFinish(kind);
         MallFacadeDetail(kind);
         root.position=location;root.rotation=Quaternion.Euler(0,yaw,0);root=old;

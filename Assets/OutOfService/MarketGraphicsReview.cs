@@ -53,6 +53,42 @@ namespace OutOfService
             Add("staff-lockers",new(13.4f,6.65f,41.9f),new(13.4f,6.1f,43.45f));
             Add("staff-kitchen",new(22.4f,6.65f,41.8f),new(22.4f,6,43.1f));
             Add("staff-vending",new(24.6f,6.65f,33.5f),new(24.8f,6,34.7f));
+            Add("tomato-stock",new(-24.8f,1.65f,-16.8f),new(-22,1.03f,-15));
+            Add("prepared-vegetable-depth",new(-43.7f,1.65f,.7f),new(-45.35f,1.55f,0));
+            Add("produce-cladding",new(-42,1.65f,-4.6f),new(-46,3.1f,-1));
+            Add("2f-wall-merchandise",new(-44.8f,6.65f,-23),new(-49,6.65f,-25));
+            Add("2f-fold-table",new(-40.7f,6.65f,-20.5f),new(-43,5.9f,-19));
+            Add("2f-full-west-floor",new(-43.4f,6.65f,-29.5f),new(-45.5f,6.3f,-15));
+            Add("2f-travel-bags",new(46.3f,6.65f,22),new(48.7f,6.25f,21));
+            Add("2f-tote-close",new(47.8f,6.65f,29),new(48.8f,6.45f,29));
+            Add("2f-shoe-bay",new(38.5f,6.65f,21),new(40,5.8f,24));
+            Add("escalator-lower",new(37,1.65f,-8.5f),new(34.5f,2.2f,-.5f));
+            Add("escalator-upper",new(36.7f,6.65f,7.7f),new(34.5f,5.45f,3.8f));
+            Add("stair-construction",new(-46,1.65f,-34.2f),new(-47.6f,2.1f,-37));
+            Add("warehouse-slider",new(28.5f,1.65f,29.3f),new(28.5f,1.35f,31.75f));
+            Add("warehouse-stock",new(28,1.65f,36.2f),new(32.8f,1.4f,38.1f));
+            void TenantView(string name,string title){var tenant=GameObject.Find("B1 tenant - "+title).transform;Add(name,tenant.TransformPoint(new Vector3(4.5f,1.65f,6)),tenant.TransformPoint(new Vector3(6.82f,2.0f,8)));}
+            TenantView("cafe-wall-fitout","모퉁이 커피");TenantView("restaurant-wall-fitout","한끼 식당");
+            TenantView("florist-wall-fitout","잎새 화원");TenantView("laundry-wall-fitout","바늘 세탁·수선");
+            void FrontView(string name,string title,Vector3 eye,Vector3 aim){var tenant=GameObject.Find("B1 tenant - "+title).transform;Add(name,tenant.TransformPoint(eye),tenant.TransformPoint(aim));}
+            FrontView("b1-open-cafe","모퉁이 커피",new(3.5f,1.65f,-4),new(-1,1.2f,6));
+            FrontView("b1-cafe-pastry","모퉁이 커피",new(-3.0f,1.65f,-.7f),new(-4.8f,1.05f,1.1f));
+            FrontView("b1-open-florist","잎새 화원",new(-2,1.65f,-4),new(0,1.0f,6));
+            FrontView("b1-florist-center","잎새 화원",new(0,1.65f,5.7f),new(-2.7f,.9f,8.3f));
+            FrontView("b1-open-beauty","모아 뷰티",new(2,1.65f,-3),new(-2,1.1f,5));
+            FrontView("b1-open-laundry","바늘 세탁·수선",new(2,1.65f,-3),new(-2.4f,1.3f,6));
+            Add("b1-pop-up",new(1,-3.35f,10.5f),new(-4.8f,-4.2f,14));
+            Add("2f-central-stock",new(-35.2f,6.65f,-26.5f),new(-31.8f,6.0f,-23.5f));
+            Add("2f-nesting-knit",new(-35.2f,6.65f,-4.1f),new(-32.3f,5.8f,-1.5f));
+            Add("2f-childrens-stock",new(-19,6.65f,6.8f),new(-22.5f,6.1f,9.5f));
+            Add("2f-arrival-travel",new(33,6.65f,-26.5f),new(39,5.8f,-21));
+            foreach(string level in new[]{"1F","2F"}){
+                var wc=GameObject.Find(level+" public restroom suite").transform;
+                Add(level+"-restroom-front",wc.TransformPoint(new Vector3(2.2f,1.65f,-3.5f)),wc.TransformPoint(new Vector3(0,1.8f,1.5f)));
+                Add(level+"-restroom-washbasin",wc.TransformPoint(new Vector3(-3.6f,1.65f,3.9f)),wc.TransformPoint(new Vector3(-5.9f,1.15f,4.15f)));
+                Add(level+"-restroom-cubicle",wc.TransformPoint(new Vector3(-5.2f,1.65f,6.8f)),wc.TransformPoint(new Vector3(-5.2f,.70f,7.8f)));
+                Add(level+"-restroom-family",wc.TransformPoint(new Vector3(3.8f,1.65f,3.6f)),wc.TransformPoint(new Vector3(4.2f,.9f,7.6f)));
+            }
             names=viewNames.ToArray();eyes=viewEyes.ToArray();aims=viewAims.ToArray();
             var probes=FindObjectsByType<ReflectionProbe>();
             using(var report=new StreamWriter(Path.Combine(folder,"frames.tsv"))){
@@ -77,6 +113,16 @@ namespace OutOfService
             int applianceView=Array.IndexOf(names,"appliance-lid");player.transform.position=eyes[applianceView]-Vector3.up*.65f;camera.transform.position=eyes[applianceView];camera.transform.LookAt(aims[applianceView]);player.flashlight.enabled=true;
             foreach(var group in FindObjectsByType<MarketDetailVisibility>())group.Refresh();yield return null;
             if(lid){lid.Toggle();yield return new WaitForSecondsRealtime(.8f);camera.Render();RenderTexture.active=target;picture.ReadPixels(new Rect(0,0,1920,1080),0,0,false);File.WriteAllBytes(Path.Combine(folder,"appliance-lid-open.jpg"),picture.EncodeToJPG(94));lid.Toggle();}
+            var slider=Array.Find(FindObjectsByType<MarketSlidingDoor>(),d=>d.name=="1F stockroom sliding door");
+            int storageView=Array.IndexOf(names,"warehouse-slider");
+            if(slider){
+                player.transform.position=eyes[storageView]-Vector3.up*.65f;camera.transform.position=eyes[storageView];camera.transform.LookAt(aims[storageView]);
+                foreach(var group in FindObjectsByType<MarketDetailVisibility>())group.Refresh();
+                slider.Toggle();yield return new WaitForSecondsRealtime(1.6f);
+                if(slider.OpenFraction<.99f)throw new InvalidOperationException("Stockroom slider did not reach its open pose for visual review.");
+                camera.Render();RenderTexture.active=target;
+                picture.ReadPixels(new Rect(0,0,1920,1080),0,0,false);File.WriteAllBytes(Path.Combine(folder,"warehouse-slider-open.jpg"),picture.EncodeToJPG(94));slider.Toggle();
+            }
             int valid=0;long bytes=0;foreach(var p in probes)if(p.customBakedTexture){valid++;bytes+=UnityEngine.Profiling.Profiler.GetRuntimeMemorySizeLong(p.customBakedTexture);}
             string memory=bytes>0?bytes+" bytes":"unavailable in this non-development player";
             File.WriteAllText(Path.Combine(folder,"result.txt"),$"{(valid==probes.Length?"PASS":"FAIL")}: {names.Length*2} views at 1920x1080 / FOV75, torch ON/OFF, {valid}/{probes.Length} custom reflection textures; profiler texture memory: {memory}. AI disabled, controlled render + GPU readback, not full-game FPS.");

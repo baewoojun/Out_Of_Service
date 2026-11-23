@@ -144,8 +144,12 @@ public static partial class MarketPrototypeBuilderV7
             HarvestTomato(p+new Vector3((col-1)*.113f,.058f,(row-.5f)*.115f),seed+row*7+col,parent);
         var cover=HandmadeProp("clear tomato clamshell",ProduceShell(true,false),p,new Vector3(.367f,.119f,.257f),plastic,parent);
         cover.GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
-        foreach(int side in new[]{-1,1})for(int n=0;n<7;n++)
-            Decor("clamshell pressed side rib",PrimitiveType.Cube,p+new Vector3((n-3)*.048f,.042f,side*.123f),new Vector3(.003f,.062f,.004f),plastic,parent);
+        var ribs=MallMesh("tomato_punnet_shared_ribs_v1",(v,u,t)=>{
+            foreach(int side in new[]{-1,1})for(int n=0;n<7;n++)
+                FinishCuboid(v,u,t,new Vector3((n-3)*.048f,.042f,side*.123f),new Vector3(.003f,.062f,.004f));
+        });
+        var ribsObject=HandmadeProp("single molded transparent punnet ribs",ribs,p,Vector3.one,plastic,parent);
+        ribsObject.GetComponent<Renderer>().shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;
         var ticket=Decor("tomato retail paper label",PrimitiveType.Cube,p+new Vector3(.087f,.121f,-.043f),new Vector3(.092f,.001f,.055f),priceWhite,parent);
         var old=root;root=parent;
         Label("완숙 토마토\n국내산 · 6입",p+new Vector3(.087f,.122f,-.043f),new Vector3(90,0,0),.011f);
