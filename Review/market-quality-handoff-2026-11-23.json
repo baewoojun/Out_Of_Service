@@ -38,7 +38,9 @@
   "repository": {
     "draft_pr": "https://github.com/baewoojun/Out_Of_Service/pull/1",
     "branch": "codex/market-map-2026-11-22",
-    "status": "Final snapshot: 3158 saved-scene dependencies present, no GUID collisions against 8571 baseline meta records, no Packages/ProjectSettings changes. Commit and remote verification follow.",
-    "url": "https://github.com/baewoojun/Out_Of_Service"
+    "status": "Uploaded and verified against GitHub remote branch; draft PR description updated. No merge into main.",
+    "url": "https://github.com/baewoojun/Out_Of_Service",
+    "content_commit": "8903379d2f1af9d0f8f02fe6a3801cba1a568970",
+    "verified_at_kst": "2026-11-23 09:51"
   }
 }
