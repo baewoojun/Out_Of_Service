@@ -10,8 +10,8 @@ public static partial class MarketPrototypeBuilderV7
     // Finishing pass is part of generation, not a manual edit to the saved scene.
     static void SpatialGraphicsFinish()
     {
-        var rendererData=AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/Settings/PC_Renderer.asset");
-        if(!rendererData)throw new InvalidOperationException("Missing verified PC URP renderer");
+        var rendererData=AssetDatabase.LoadAssetAtPath<UniversalRendererData>("Assets/OutOfService/Rendering/Market_Renderer.asset");
+        if(!rendererData)throw new InvalidOperationException("Missing dedicated market URP renderer");
         bool aoFound=false;
         foreach(var feature in rendererData.rendererFeatures){
             if(!feature || feature.GetType().Name!="ScreenSpaceAmbientOcclusion")continue;

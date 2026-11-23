@@ -1,0 +1,1 @@
+PASS: 132 views at 1920x1080 / FOV75, torch ON/OFF, 29/29 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.

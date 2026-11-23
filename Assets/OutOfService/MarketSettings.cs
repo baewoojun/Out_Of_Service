@@ -19,6 +19,7 @@ namespace OutOfService
         public MarketSettingsData Draft {get;private set;}
         public string StoragePath {get;private set;}
         public bool DisplayPending=>pending!=null;
+        public string ActiveDisplayLabel=>Screen.width+" × "+Screen.height+" · "+(Screen.fullScreenMode==FullScreenMode.Windowed?"창 모드":Screen.fullScreenMode==FullScreenMode.ExclusiveFullScreen?"전체 화면":"테두리 없는 전체 화면");
         public int ListeningAction=>listening;
         public string Status {get;private set;}="";
         public IReadOnlyList<Vector2Int> Resolutions=>resolutions;
@@ -139,7 +140,17 @@ namespace OutOfService
             if(!MarketSettingsStore.Save(StoragePath,candidate,out string error)){ApplyRuntime(Current,true);Status=error;return false;}
             Current=candidate.Copy();Draft=Current.Copy();loadWarning="";Status="설정을 저장했습니다.";return true;
         }
-        public void ConfirmDisplay(){if(pending==null)return;var candidate=pending;pending=null;Commit(candidate);}
+        public void ConfirmDisplay()
+        {
+            if(pending==null)return;
+            var candidate=pending;pending=null;
+            // Windows can reject an exclusive mode and Unity falls back to
+            // borderless. Persist the accepted display, never the failed request.
+            int mode=Screen.fullScreenMode==FullScreenMode.Windowed?0:Screen.fullScreenMode==FullScreenMode.ExclusiveFullScreen?2:1;
+            bool fallback=candidate.displayMode!=mode||candidate.width!=Screen.width||candidate.height!=Screen.height;
+            candidate.displayMode=mode;candidate.width=Screen.width;candidate.height=Screen.height;
+            if(Commit(candidate)&&fallback)Status="요청한 화면 대신 실제 적용된 "+ActiveDisplayLabel+" 설정을 저장했습니다.";
+        }
         public void RevertDisplay(){if(pending==null)return;pending=null;ApplyRuntime(Current,true);Draft=Current.Copy();Status="화면 설정을 이전 상태로 되돌렸습니다.";}
         void ApplyRuntime(MarketSettingsData data,bool screen)
         {
@@ -159,6 +170,7 @@ namespace OutOfService
             var player=MarketPlayer.Instance;
             if(player&&player.viewCamera){
                 player.viewCamera.fieldOfView=data.fieldOfView;
+                MarketRenderProfile.Select(player.viewCamera,runtimePipeline);
                 var camera=player.viewCamera.GetUniversalAdditionalCameraData();
                 camera.antialiasing=data.antialiasing==0?AntialiasingMode.None:data.antialiasing==1?AntialiasingMode.FastApproximateAntialiasing:AntialiasingMode.SubpixelMorphologicalAntiAliasing;
                 camera.antialiasingQuality=AntialiasingQuality.High;

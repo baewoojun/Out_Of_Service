@@ -2027,6 +2027,7 @@ public static partial class MarketPrototypeBuilderV7
         cameraData.renderPostProcessing = true;
         cameraData.antialiasing = UnityEngine.Rendering.Universal.AntialiasingMode.SubpixelMorphologicalAntiAliasing;
         cameraData.antialiasingQuality = UnityEngine.Rendering.Universal.AntialiasingQuality.High;
+        if(!MarketRenderProfile.Select(camera))throw new System.InvalidOperationException("Configure the Market_Renderer pipeline entry before generating V7.");
         camera.nearClipPlane = .06f;
         camera.farClipPlane = 120f;
         cameraData.requiresColorOption = UnityEngine.Rendering.Universal.CameraOverrideOption.On;

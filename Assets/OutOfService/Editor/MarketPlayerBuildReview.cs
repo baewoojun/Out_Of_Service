@@ -9,6 +9,7 @@ static class MarketPlayerBuildReview
 {
     const string Request="Temp/pepper-build.request";
     const string SceneRequest="Temp/market-scene-build.request";
+    const string RendererRequest="Temp/market-renderer-build.request";
     const string Refreshed="Market.SceneBuildRefreshed";
     static MarketPlayerBuildReview(){EditorApplication.update+=Poll;}
     static void Poll()
@@ -19,7 +20,8 @@ static class MarketPlayerBuildReview
             if(string.IsNullOrEmpty(partial.path))EditorSceneManager.OpenScene("Assets/Scenes/MarketPrototype_v7.unity");
         }
         bool rebuild=File.Exists(SceneRequest);
-        if(EditorApplication.isCompiling || EditorApplication.isUpdating || (!rebuild && !File.Exists(Request)))return;
+        bool rendering=File.Exists(RendererRequest);
+        if(EditorApplication.isCompiling || EditorApplication.isUpdating || (!rebuild && !rendering && !File.Exists(Request)))return;
         if(EditorApplication.isPlayingOrWillChangePlaymode){EditorApplication.isPlaying=false;return;}
         if(!SessionState.GetBool(Refreshed,false))
         {
@@ -29,7 +31,7 @@ static class MarketPlayerBuildReview
         }
         SessionState.SetBool(Refreshed,false);
         if(EditorUtility.scriptCompilationFailed){
-            if(rebuild)File.Delete(SceneRequest);else File.Delete(Request);
+            if(rebuild)File.Delete(SceneRequest);else if(rendering)File.Delete(RendererRequest);else File.Delete(Request);
             Debug.LogError("Market build request stopped: fix compilation before regenerating the scene. The last compiled generator must not overwrite current work.");
             return;
         }
@@ -43,6 +45,7 @@ static class MarketPlayerBuildReview
             }
             RebuildSceneAndPlayer();
         }
+        else if(rendering){File.Delete(RendererRequest);MarketRenderProfileSetup.PrepareAndBuild();}
         else {File.Delete(Request);BuildPlayer();}
     }
     public static void RebuildSceneAndPlayer()

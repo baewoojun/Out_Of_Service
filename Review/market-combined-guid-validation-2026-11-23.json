@@ -1,5 +1,12 @@
 {
-  "sparse_excluded_meta_checked": 4819,
-  "combined_unique_guids": 10515,
-  "collisions": []
+  "verified_at": "2026-11-23T13:38:08.3099666+09:00",
+  "base_main": "af9afed96a01c3c7899b6a14368c055534bbbc43",
+  "default_renderer_byte_content_preserved": true,
+  "pipeline_render_settings_preserved": true,
+  "global_settings_preserved_except_generated_runtime_list": true,
+  "unexpected_team_changes": [],
+  "combined_unique_guids": 10848,
+  "meta_files": 10848,
+  "collisions": [],
+  "scope": "Complete staged index, including sparse-excluded existing team assets. This is not a full integrated project build."
 }

@@ -1,0 +1,44 @@
+PASS	settings booted and render preparation restored player
+PASS	market camera uses dedicated renderer
+PASS	shared team renderer remains separate default entry
+PASS	isolated test profile explicitly supplied
+PASS	normal 1920 by 1080 backbuffer
+PASS	HUD remains disabled and no calculator added
+PASS	Escape pauses gameplay, audio and cursor
+PASS	pause blocks movement, stamina, torch drain and nearby AI attacks
+PASS	duplicate input rejected without replacing action
+PASS	Escape cancels capture without closing menu
+PASS	real G input captured
+PASS	mouse side button captured
+PASS	apply saves isolated profile
+PASS	runtime graphics and camera updated
+PASS	volume and frame cap applied
+PASS	closing discards unapplied draft and restores game
+PASS	sensitivity drives real yaw and inverted pitch
+PASS	old forward key no longer moves player
+PASS	rebound forward key moves actual character controller: 1.075 m
+PASS	rebound interaction picks up a real scene product
+PASS	rebound side button starts product inspection
+PASS	menu exits inspection zoom before changing FOV
+PASS	inspection release restores newly saved FOV
+PASS	rebound interaction drops held product
+PASS	old interaction key leaves actual warehouse door unchanged
+PASS	actual warehouse door is in interaction ray
+PASS	rebound key opens actual warehouse door
+PASS	display preview changes actual backbuffer and keeps saved profile untouched
+PASS	unconfirmed display automatically rolls back while time is paused
+PASS	Escape reverts display without leaving menu
+PASS	confirmed display persists
+PASS	1920 by 1080 confirmed and restored
+PASS	display mode preview FullScreenWindow -> FullScreenWindow
+PASS	fullscreen preview restores windowed 1080p
+PASS	display mode preview ExclusiveFullScreen -> FullScreenWindow
+PASS	display preview shows actual mode
+PASS	confirmed display stores accepted mode and backbuffer including OS fallback
+PASS	fullscreen preview restores windowed 1080p
+PASS	lower quality options and vSync are connected to actual renderer
+PASS	high shadow and SMAA options apply
+PASS	damaged settings safely load defaults with warning
+PASS	invalid numeric values and duplicate file bindings repaired
+PASS	reset remains a draft until applied
+PASS	resumed simulation and disabled GUI dispatch after all menu operations

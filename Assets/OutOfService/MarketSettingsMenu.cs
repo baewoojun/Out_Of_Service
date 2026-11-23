@@ -95,7 +95,8 @@ namespace OutOfService
             if(DisplayPending){
                 Fill(new Rect(330,137,1260,806),new Color(0,0,0,.76f));Fill(new Rect(610,376,700,286),new Color(.08f,.12f,.12f));
                 GUI.Label(new Rect(648,410,620,45),"이 화면 설정을 유지할까요?",heading);
-                GUI.Label(new Rect(648,469,620,65),Mathf.CeilToInt(Mathf.Max(0,confirmUntil-Time.realtimeSinceStartup))+"초 후 자동으로 이전 화면으로 돌아갑니다.",label);
+                GUI.Label(new Rect(648,467,620,34),ActiveDisplayLabel,small);
+                GUI.Label(new Rect(648,510,620,40),Mathf.CeilToInt(Mathf.Max(0,confirmUntil-Time.realtimeSinceStartup))+"초 후 자동으로 이전 화면으로 돌아갑니다.",label);
                 if(Button(new Rect(648,573,290,46),"유지 · 저장"))ConfirmDisplay();
                 if(Button(new Rect(960,573,310,46),"이전 화면으로 되돌리기"))RevertDisplay();
             }

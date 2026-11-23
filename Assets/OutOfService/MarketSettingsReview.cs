@@ -46,6 +46,9 @@ namespace OutOfService
             for(int i=0;i<5;i++)yield return null;
             var settings=MarketSettings.Instance;var player=MarketPlayer.Instance;var controller=player.GetComponent<CharacterController>();
             Check("settings booted and render preparation restored player",settings&&player.enabled&&Time.timeScale==1);
+            int marketRenderer=MarketRenderProfile.FindIndex(settings.RuntimePipeline);
+            Check("market camera uses dedicated renderer",marketRenderer>0&&player.viewCamera.GetUniversalAdditionalCameraData().scriptableRenderer==settings.RuntimePipeline.GetRenderer(marketRenderer));
+            Check("shared team renderer remains separate default entry",settings.RuntimePipeline.rendererDataList[0].name=="PC_Renderer");
             Check("isolated test profile explicitly supplied",Array.IndexOf(Environment.GetCommandLineArgs(),"-settingsProfile")>=0);
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-settingsProfile")<0){Finish();yield break;}
             keyboard=InputSystem.AddDevice<Keyboard>();mouse=InputSystem.AddDevice<Mouse>();keyboard.MakeCurrent();mouse.MakeCurrent();
@@ -149,10 +152,19 @@ namespace OutOfService
             settings.Draft.width=1920;settings.Draft.height=1080;settings.ApplyDraft();yield return new WaitForSecondsRealtime(.4f);settings.ConfirmDisplay();
             Check("1920 by 1080 confirmed and restored",Screen.width==1920&&Screen.height==1080&&settings.Current.width==1920);
             foreach(int mode in new[]{1,2}){
-                settings.Draft.displayMode=mode;settings.ApplyDraft();yield return new WaitForSecondsRealtime(1);
+                settings.Draft.displayMode=mode;settings.ApplyDraft();yield return new WaitForSecondsRealtime(2);
                 var expected=mode==1?FullScreenMode.FullScreenWindow:FullScreenMode.ExclusiveFullScreen;
-                Check("display mode preview "+expected+" -> "+Screen.fullScreenMode,settings.DisplayPending&&Screen.fullScreenMode==expected);
-                settings.RevertDisplay();yield return new WaitForSecondsRealtime(.5f);
+                bool supported=Screen.fullScreenMode==expected;
+                bool displayFallback=mode==2&&Screen.fullScreenMode==FullScreenMode.FullScreenWindow;
+                Check("display mode preview "+expected+" -> "+Screen.fullScreenMode,settings.DisplayPending&&(supported||displayFallback));
+                if(mode==2){
+                    int effective=displayFallback?1:2;
+                    Check("display preview shows actual mode",settings.ActiveDisplayLabel.Contains(displayFallback?"테두리 없는 전체 화면":"전체 화면"));
+                    settings.ConfirmDisplay();var stored=MarketSettingsStore.Load(settings.StoragePath,out _);
+                    Check("confirmed display stores accepted mode and backbuffer including OS fallback",settings.Current.displayMode==effective&&stored.displayMode==effective&&stored.width==Screen.width&&stored.height==Screen.height);
+                    settings.Draft.displayMode=0;settings.Draft.width=1920;settings.Draft.height=1080;settings.ApplyDraft();yield return new WaitForSecondsRealtime(.5f);settings.ConfirmDisplay();
+                }else settings.RevertDisplay();
+                yield return new WaitForSecondsRealtime(.5f);
                 Check("fullscreen preview restores windowed 1080p",Screen.fullScreenMode==FullScreenMode.Windowed&&Screen.width==1920&&Screen.height==1080);
             }
             var preferred=settings.Current.Copy();

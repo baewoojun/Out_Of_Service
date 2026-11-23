@@ -1,0 +1,8 @@
+{
+  "checked": "2026-11-23",
+  "observation": "Windows rejected ExclusiveFullScreen 1920x1080 twice and Unity reverted to FullScreenWindow. The first renderer-merge settings run failed on an exact-exclusive-mode expectation.",
+  "fix": "Display preview shows the effective mode and backbuffer. Confirmation saves that accepted configuration, including OS fallback. Final standalone initial/reload checks passed.",
+  "reference": "https://docs.unity.com/en-us/engine/7000.0/script-reference/unityengine/fullscreenmode/exclusivefullscreen",
+  "reference_scope": "Official API background on display modes, not proof of the exact Unity 6000.6 driver failure; the failure was observed in the local standalone log.",
+  "validation": "Review/RendererMergeFinal-2026-11-23/SettingsReview/checks.tsv"
+}

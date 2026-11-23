@@ -3849,6 +3849,7 @@
         "Assets/OutOfService/MarketThreat.cs",
         "Assets/OutOfService/MarketWestSlabVisibility.cs",
         "Assets/OutOfService/MarketWorldText.shader",
+        "Assets/OutOfService/Rendering/Market_Renderer.asset",
         "Assets/Scenes/MarketPrototype_v7.unity",
         "Assets/Settings/DefaultVolumeProfile.asset",
         "Assets/Settings/PC_RPAsset.asset",
