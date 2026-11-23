@@ -1,4 +1,4 @@
-// LotteWorldMagicIslandLayout.cs  (v1 - Magic Island: terrain, water, paths, bridge and where every prefab goes)
+// LotteWorldMagicIslandLayout.cs  (v2 11/20 - walkways/lawns/props from Plan, buildings moved off paths; v1 - Magic Island: terrain, water, paths, bridge and where every prefab goes)
 // All numbers are module metres (origin = outside face of the indoor main gate, +Z north). Edit a number here and run
 // Tools > LotteWorld > Magic Island > Rebuild Scene (keep prefabs), or just move the objects in the scene.
 
@@ -28,7 +28,7 @@ namespace LotteWorld.MagicIsland
             -135.0f,16.5f, -147.4f,32.2f, -148.5f,52.5f, -164.2f,70.5f, -166.5f,84.0f, -184.5f,88.5f, -204.8f,95.2f,
         };
         /// <summary>Inner lagoon west of the castle (Petit cars drive round it).</summary>
-        public static readonly float[] LagoonRaw = { -114.8f,135.8f, -96.8f,139.1f, -92.2f,124.5f, -95.6f,105.4f, -111.4f,104.2f, -117.0f,120.0f };
+        public static readonly float[] LagoonRaw = { -114.8f,135.8f, -100.8f,139.1f, -96.2f,124.5f, -99.6f,105.4f, -111.4f,104.2f, -117.0f,120.0f };   // 11/20: east side 4 m west (road cleared the castle tower)
         /// <summary>Lake shore (Seokchon lake, smoothed). Keeps clear of the indoor building's outer walls.</summary>
         public static readonly float[] LakeRaw =
         {
@@ -63,8 +63,8 @@ namespace LotteWorld.MagicIsland
             new Place("Ride_GyroDrop",          "GyroDrop_36",            "05_Rides",                -144f, 140f,    0f, 13f),
             new Place("Ride_GyroSwing",         "GyroSwing_34",           "05_Rides",                 -50f, 188f,    0f, 16f),
             new Place("Ride_AtlantisTemple",    "Atlantis_33_Temple",     "05_Rides/Atlantis_33",     13.5f, 133.5f, 90f, 18f),
-            new Place("Ride_GyroSpin",          "GyroSpin_39",            "05_Rides",                -145f,  71f,   90f, 13f),
-            new Place("Ride_FantasyDream",      "FantasyDream_37",        "05_Rides",                -160f, 116f,    0f, 11f),
+            new Place("Ride_GyroSpin",          "GyroSpin_39",            "05_Rides",                -138f,  50f,  -90f, 13f),
+            new Place("Ride_FantasyDream",      "FantasyDream_37",        "05_Rides",                -163f, 117f,   90f, 11f),
             new Place("Ride_EosTower",          "EosTower_42",            "05_Rides/KidsZone",        -92f,  70f,    0f,  6f),
             new Place("Ride_ArcanaRide",        "ArcanaRide_41",          "05_Rides/KidsZone",       -106f,  47f,    0f,  9f),
             new Place("Bld_CometExpress",       "CometExpress_38",        "05_Rides",                -148f,  95f,    0f, 14f),
@@ -72,11 +72,11 @@ namespace LotteWorld.MagicIsland
             // gate on the shore
             new Place("Bld_IslandGate",         "IslandGate",             "03_Paths/Bridge",           0f, 21.5f,  -35.6f, 9f),
             // village on the north shore (food 46/47) and the lakeview restaurant
-            new Place("Bld_TownHouse_A",        "TownHouse_01",           "04_Buildings/Village",    -120f, 186f,    0f,  7f),
-            new Place("Bld_TownHouse_B",        "TownHouse_02",           "04_Buildings/Village",    -108f, 188f,    0f,  7f),
-            new Place("Bld_TownHouse_C",        "TownHouse_03_Food46",    "04_Buildings/Village",     -96f, 189f,    0f,  7f),
-            new Place("Bld_TownHouse_B",        "TownHouse_04",           "04_Buildings/Village",     -84f, 191f,    0f,  7f),
-            new Place("Bld_Restaurant_Lakeview","Restaurant_Lakeview_47", "04_Buildings/Village",    -140f, 170f,  -45f, 14f),
+            new Place("Bld_TownHouse_A",        "TownHouse_01",           "04_Buildings/Village",    -116f, 186f,    0f,  7f),
+            new Place("Bld_TownHouse_B",        "TownHouse_02",           "04_Buildings/Village",    -104f, 188f,    0f,  7f),
+            new Place("Bld_TownHouse_C",        "TownHouse_03_Food46",    "04_Buildings/Village",     -92f, 189f,    0f,  7f),
+            new Place("Bld_TownHouse_B",        "TownHouse_04",           "04_Buildings/Village",     -80f, 191f,    0f,  7f),
+            new Place("Bld_Restaurant_Lakeview","Restaurant_Lakeview_47", "04_Buildings/Village",    -136f, 174f,  -45f, 14f),
             // west cottages (food 49/50)
             new Place("Bld_Cottage_Red",        "Cottage_50",             "04_Buildings/Cottages",   -192f, 108f,  -90f,  8f),
             new Place("Bld_Cottage_RedTall",    "Cottage_49",             "04_Buildings/Cottages",   -193f, 127f,  -90f,  7f),
@@ -87,9 +87,9 @@ namespace LotteWorld.MagicIsland
             new Place("Kiosk_Red",              "Kiosk_44",               "06_Facilities/Kiosks",     -50f, 162f,    0f,  4f),
             new Place("Kiosk_Blue",             "Kiosk_45",               "06_Facilities/Kiosks",     -82f, 162f,    0f,  4f),
             new Place("Kiosk_Red",              "Kiosk_48_Candy",         "06_Facilities/Kiosks",    -130f, 104f,   90f,  4f),
-            new Place("Kiosk_Yellow",           "Kiosk_51",               "06_Facilities/Kiosks",     -88f,  38f,  -90f,  4f),
+            new Place("Kiosk_Yellow",           "Kiosk_51",               "06_Facilities/Kiosks",     -79f,  40f,    0f,  4f),
             new Place("Restroom",               "Restroom_North",         "06_Facilities/Restrooms",  -36f, 170f,    0f,  6f),
-            new Place("Restroom",               "Restroom_West",          "06_Facilities/Restrooms", -178f, 150f,  -90f,  6f),
+            new Place("Restroom",               "Restroom_West",          "06_Facilities/Restrooms", -185f, 149f,  -90f,  6f),
             new Place("Restroom",               "Restroom_Kids",          "06_Facilities/Restrooms", -108f,  84f,    0f,  6f),
             new Place("Prop_LakeFountain",      "LakeFountain_East",      "02_Water",                  56f,  95f,    0f,  0f),
             new Place("Prop_LakeFountain",      "LakeFountain_North",     "02_Water",                -120f, 236f,    0f,  0f),
@@ -145,8 +145,8 @@ namespace LotteWorld.MagicIsland
         public static readonly float[] AtlantisRoute =
         {
             11.5f,2.5f,141f,  1f,2.5f,144.5f,  -6f,3f,148f,  -12f,4f,156f,  -24f,26f,176f,  -26f,27f,183f,  -14f,24f,191f,  6f,6f,182f,
-            26f,4f,162f,  42f,6f,126f,  34f,8f,90f,  12f,6f,64f,  -8f,5f,58f,  -16f,6f,70f,  -10f,5f,86f,  -4f,3f,108f,  -6f,2.5f,128f,
-            1f,2.5f,136f,  11.5f,2.5f,136.5f,
+            26f,4f,162f,  42f,6f,126f,  34f,8f,90f,  12f,6f,64f,  -8f,5f,58f,  -16f,6f,70f,  -9f,6.5f,88f,  -7f,7f,104f,  -15f,7.5f,116f,  -26f,7.5f,122f,
+            -28.5f,6.5f,130f,  -21f,5.2f,136.5f,  -9f,2.8f,137.5f,  1f,2.5f,136f,  11.5f,2.5f,136.5f,     // 11/20: last leg swings west of the stair
         };
 
         // ======================================================================================================================
@@ -162,7 +162,7 @@ namespace LotteWorld.MagicIsland
 
         public static Node BuildScene()
         {
-            keep.Clear(); PathLines.Clear();
+            keep.Clear();
             foreach (Place p in Places) if (p.R > 0f) keep.Add(new Vector3(p.X, p.Z, p.R));
 
             var root = new Node("MagicIsland") { Note = "scene root: move/rotate this to re-align the whole outdoor map with the indoor main gate" };
@@ -178,6 +178,8 @@ namespace LotteWorld.MagicIsland
             foreach (string s in new[] { "00_Markers", "01_Terrain", "02_Water", "03_Paths", "04_Buildings", "05_Rides", "06_Facilities", "07_Landscape", "08_Props", "09_Background", "10_Lighting" }) G(s);
 
             List<Vector2> island = Island(), lagoon = Lagoon(), lake = Lake(), outer = GroundOuter();
+            Vector2 dockCoast = new Vector2(Plan.Dock[0], Plan.Dock[1]);
+            var gaps = new List<Vector3> { new Vector3(BridgeIsland.x, BridgeIsland.y, 9f), new Vector3(BridgeShore.x, BridgeShore.y, 9f), new Vector3(dockCoast.x, dockCoast.y, 2.6f) };
 
             // ---------- markers ----------
             G("00_Markers").Add(new Node("IndoorLink") { Note = "outside face of the indoor main gate (NorthGate opening, x -7.8..7.8)" });
@@ -190,18 +192,17 @@ namespace LotteWorld.MagicIsland
             g1.Add(new Node("Ground_Lakeside", gb));
             var ib = new MeshBuilder(); ib.PolyFlat(island, new List<List<Vector2>> { lagoon }, 0f, M.Paving);
             g1.Add(new Node("Island_Ground", ib));
-            var iw = new MeshBuilder(); iw.Skirt(island, BedY, 0f, M.StoneGrey, true); Coping(iw, island); iw.Skirt(lagoon, BedY, 0f, M.StoneGrey, false); Coping(iw, lagoon);
+            var iw = new MeshBuilder(); iw.Skirt(island, BedY, 0f, M.StoneGrey, true); Coping(iw, island, gaps); iw.Skirt(lagoon, BedY, 0f, M.StoneGrey, false); Coping(iw, lagoon, gaps);
             g1.Add(new Node("Island_RetainingWall", iw));
-            var lw = new MeshBuilder(); lw.Skirt(lake, BedY, 0f, M.StoneGrey, false); Coping(lw, lake);
+            var lw = new MeshBuilder(); lw.Skirt(lake, BedY, 0f, M.StoneGrey, false); Coping(lw, lake, gaps);
             g1.Add(new Node("Lakeside_RetainingWall", lw));
             Node lawns = g1.Group("Lawns");
-            AddLawn(lawns, "Lawn_KidsZone", Geo.Circle(new Vector2(-104f, 47f), 25f, 17f, 32), null);
-            AddLawn(lawns, "Lawn_CastleWest", Geo.Rect(-89f, 140f, -85.5f, 156f), null);
-            AddLawn(lawns, "Lawn_CastleEast", Geo.Rect(-46.5f, 120f, -40f, 150f), null);
-            AddLawn(lawns, "Lawn_DropRing", Geo.Circle(new Vector2(-144f, 140f), 15f, 15f, 32), new List<List<Vector2>> { Geo.Circle(new Vector2(-144f, 140f), 12.2f, 12.2f, 32) });
-            AddLawn(lawns, "Lawn_SwingRing", Geo.Circle(new Vector2(-50f, 188f), 15f, 15f, 32), new List<List<Vector2>> { Geo.Circle(new Vector2(-50f, 188f), 7.2f, 7.2f, 24) });
-            AddLawn(lawns, "Lawn_GateWest", Geo.Rect(-18f, 2f, -10f, 16f), null);
-            AddLawn(lawns, "Lawn_GateEast", Geo.Rect(10f, 2f, 18f, 16f), null);
+            foreach (KeyValuePair<string, Plan.FlatMesh> kv in Plan.Meshes)          // 11/20: lawns cut round the walkways and buildings
+                if (kv.Key.StartsWith("Lawn_"))
+                {
+                    var b = new MeshBuilder(); FlatMesh(b, kv.Value, 0f, 0.03f, M.Grass, M.GrassDark);
+                    lawns.Add(new Node(kv.Key, b));
+                }
 
             // ---------- water ----------
             var g2 = G("02_Water");
@@ -214,17 +215,15 @@ namespace LotteWorld.MagicIsland
 
             // ---------- paths, plaza, bridge, dock ----------
             var g3 = G("03_Paths");
-            var plaza = new MeshBuilder(); plaza.PolyFlat(Geo.Rect(-10f, 0f, 10f, 22f), null, 0.08f, M.PavingDark); plaza.Skirt(Geo.Rect(-10f, 0f, 10f, 22f), 0f, 0.08f, M.PavingDark, true);
-            g3.Add(new Node("Plaza_Gate", plaza));
-            var prom = new MeshBuilder(); List<Vector2> pl = Geo.Offset(lake, 3.2f);
-            prom.Ribbon(pl, 5f, 0f, 0.04f, M.PavingDark, M.StoneGrey, 0f, true);
-            g3.Add(new Node("Promenade_Lakeside", prom));
-            Path(g3, "Path_CastleSouth", 6f, -52.5f, 100f, -58f, 107f, -66f, 112f, -66f, 116.5f);
-            Path(g3, "Path_CastleNorth", 6f, -66f, 153.5f, -66f, 164f, -66f, 176f);
-            Path(g3, "Path_WestLoop", 5f, -66f, 166f, -95f, 174f, -128f, 166f, -158f, 145f, -170f, 128f, -168f, 100f, -150f, 80f, -128f, 76f, -108f, 92f, -86f, 100f, -66f, 110f);
-            Path(g3, "Path_East", 5f, -60f, 168f, -36f, 160f, -14f, 140f, -10f, 118f, -28f, 108f, -48f, 102f);
-            Path(g3, "Path_KidsZone", 5f, -72f, 98f, -84f, 84f, -90f, 60f, -96f, 30f, -110f, 18f);
-            Path(g3, "Path_ToDock", 4f, -168f, 100f, -174f, 88f);
+            // 11/20: one merged walkway surface per ground (no overlapping ribbons / kerbs), routed round every building by plan_net.py.
+            // Stone edge band at 0.04 m, paving at 0.06 m (same as the bridge deck and the dock).
+            foreach (string w in new[] { "Island", "Shore" })
+            {
+                var wb = new MeshBuilder();
+                wb.Begin("Edge"); FlatMesh(wb, Plan.Meshes[w == "Island" ? "Walk_Edge" : "Shore_Edge"], 0f, 0.04f, M.StoneGrey, M.StoneGrey);
+                wb.Begin("Paving"); FlatMesh(wb, Plan.Meshes[w == "Island" ? "Walk_Inner" : "Shore_Inner"], 0.04f, 0.06f, M.PavingDark, M.StoneGrey);
+                g3.Add(new Node("Walkways_" + w, wb));
+            }
             var road = new MeshBuilder(); List<Vector2> rl = Geo.Offset(lagoon, 4.4f);
             road.Ribbon(rl, 3.6f, 0f, 0.06f, M.Asphalt, M.White, 0.16f, true);
             g3.Add(new Node("Road_PetitCars_35", road));
@@ -236,11 +235,11 @@ namespace LotteWorld.MagicIsland
 
             // ---------- coasters and ride extras ----------
             List<Vector3> trackPath;
-            var at = Track.Build(Pts3(AtlantisRoute), true, 1.5f, M.PaleBlue, M.PaleBlue, 7f, BedY, out trackPath);
+            var at = Track.Build(Pts3(AtlantisRoute), true, 1.5f, M.PaleBlue, M.PaleBlue, 7f, BedY, OnWalkway, out trackPath);
             G("05_Rides/Atlantis_33").Add(new Node("Atlantis_Track", at));
             var kc = new List<Vector3>();
             for (int i = 0; i < 12; i++) { float a = Mathf.PI * 2f * i / 12f; kc.Add(new Vector3(-106f + Mathf.Cos(a) * 20f, 1.6f + 2.6f * (1f + Mathf.Sin(a * 2f + 0.6f)), 48f + Mathf.Sin(a) * 13f)); }
-            G("05_Rides/KidsZone").Add(new Node("StoneExpress_40_Track", Track.Build(kc, true, 1.0f, M.Purple, M.Purple, 6f, 0f, out trackPath)));
+            G("05_Rides/KidsZone").Add(new Node("StoneExpress_40_Track", Track.Build(kc, true, 1.0f, M.Purple, M.Purple, 6f, 0f, OnWalkway, out trackPath)));
             Node cars = G("05_Rides").Group("PetitCars_35");
             string[] ck = { "Prop_PetitCar_Red", "Prop_PetitCar_Yellow", "Prop_PetitCar_Blue" };
             for (int i = 0; i < 3; i++)
@@ -252,16 +251,9 @@ namespace LotteWorld.MagicIsland
             // ---------- landscape ----------
             var g7 = G("07_Landscape");
             Node it = g7.Group("Trees_Island"), st = g7.Group("Trees_Lakeside"), beds = g7.Group("FlowerBeds"), hed = g7.Group("Hedges");
-            var gaps = new List<Vector3> { new Vector3(BridgeIsland.x, BridgeIsland.y, 9f), new Vector3(BridgeShore.x, BridgeShore.y, 9f), new Vector3(-174f, 88f, 4f) };
             var pos = new List<Vector2>(); var nrm = new List<Vector2>();
-            Geo.Walk(Geo.Offset(island, -4.5f), 11f, 3f, pos, nrm);
-            string[] tk = { "Tree_Green", "Tree_Pine", "Tree_Cherry", "Tree_Green", "Tree_Autumn" };
-            int ti = 0;
-            for (int i = 0; i < pos.Count; i++)
-            {
-                if (!Free(pos[i], 3f) || NearGap(pos[i], gaps, 4f) || !Geo.Inside(island, pos[i]) || Geo.DistToPoly(island, pos[i]) < 3f) continue;
-                it.Add(Node.Inst(tk[ti % tk.Length], "Tree_" + ti.ToString("000"), pos[i].x, pos[i].y, (ti * 47) % 360)); ti++;
-            }
+            for (int i = 0; i < Plan.TreeKeys.Length; i++)                                                   // 11/20: spots checked against walkways / buildings
+                it.Add(Node.Inst(Plan.TreeKeys[i], "Tree_" + i.ToString("000"), Plan.TreePos[i * 3], Plan.TreePos[i * 3 + 1], Plan.TreePos[i * 3 + 2]));
             pos.Clear(); nrm.Clear(); Geo.Walk(Geo.Offset(lake, 10f), 12f, 0f, pos, nrm);
             for (int i = 0; i < pos.Count; i++)
             {
@@ -269,42 +261,27 @@ namespace LotteWorld.MagicIsland
                 if (!Geo.Inside(outer, q) || (Mathf.Abs(q.x) < 22f && q.y < 32f) || Geo.DistToPoly(outer, q) < 3f) continue;
                 st.Add(Node.Inst(i % 3 == 2 ? "Tree_Green" : "Tree_Cherry", "ShoreTree_" + i.ToString("000"), q.x, q.y, (i * 61) % 360));
             }
-            float[] fb = { -66f, 166f, -11f, 9f, 11f, 9f, -96f, 104f, -40f, 112f, -150f, 132f, -88f, 48f, -30f, 146f };
+            float[] fb = Plan.FlowerBeds;
             for (int i = 0; i < fb.Length; i += 2) beds.Add(Node.Inst("FlowerBed", "FlowerBed_" + (i / 2 + 1), fb[i], fb[i + 1]));
-            float[] hd = { -14f, 1.5f, 90f, -14f, 6.5f, 90f, -14f, 11.5f, 90f, 14f, 1.5f, 90f, 14f, 6.5f, 90f, 14f, 11.5f, 90f, -88f, 112f, 0f, -84f, 112f, 0f, -48f, 112f, 0f, -44f, 112f, 0f };
+            foreach (float gx in new[] { -12.8f, 12.8f }) beds.Add(Node.Inst("FlowerBed", "FlowerBed_Gate" + (gx < 0f ? "W" : "E"), gx, 9f));
+            float[] hd = Plan.Hedges;
             for (int i = 0; i < hd.Length; i += 3) hed.Add(Node.Inst("Hedge_4m", "Hedge_" + (i / 3 + 1), hd[i], hd[i + 1], hd[i + 2]));
 
             // ---------- props ----------
             var g8 = G("08_Props");
             Node lamps = g8.Group("Lamps"), benches = g8.Group("Benches"), bins = g8.Group("TrashBins"), paras = g8.Group("Parasols");
-            int li = 0, bi = 0;
-            foreach (float[] pth in PathLines)
-            {
-                var line = new List<Vector2>(); for (int i = 0; i < pth.Length; i += 2) line.Add(new Vector2(pth[i], pth[i + 1]));
-                pos.Clear(); nrm.Clear(); WalkOpen(line, 16f, 6f, pos, nrm);
-                for (int i = 0; i < pos.Count; i++)
-                {
-                    float sd = (i % 2 == 0) ? 1f : -1f; Vector2 q = pos[i] + nrm[i] * (sd * 4.2f);
-                    if (!Free(q, 1.5f) || !Geo.Inside(island, q) || Geo.Inside(lagoon, q) || Geo.DistToPoly(lagoon, q) < 6.5f) continue;
-                    lamps.Add(Node.Inst("Prop_StreetLamp", "Lamp_" + (li++).ToString("000"), q.x, q.y));
-                    if (i % 3 == 1)
-                    {
-                        Vector2 bq = pos[i] - nrm[i] * (sd * 4.0f);
-                        if (Free(bq, 1.5f) && Geo.Inside(island, bq) && Geo.DistToPoly(lagoon, bq) > 6.5f)
-                        {
-                            float yaw = Mathf.Atan2(nrm[i].x * sd, nrm[i].y * sd) * Mathf.Rad2Deg;
-                            benches.Add(Node.Inst("Prop_Bench", "Bench_" + bi.ToString("000"), bq.x, bq.y, yaw));
-                            Vector2 tq = bq + new Vector2(nrm[i].y, -nrm[i].x) * 1.6f;
-                            bins.Add(Node.Inst("Prop_TrashBin", "Bin_" + (bi++).ToString("000"), tq.x, tq.y));
-                        }
-                    }
-                }
-            }
+            int li = 0;
+            for (int i = 0; i < Plan.Lamps.Length; i += 2)                                                    // 11/20: beside the walkways, never on them
+                lamps.Add(Node.Inst("Prop_StreetLamp", "Lamp_" + (li++).ToString("000"), Plan.Lamps[i], Plan.Lamps[i + 1]));
+            for (int i = 0; i < Plan.Benches.Length; i += 3)
+                benches.Add(Node.Inst("Prop_Bench", "Bench_" + (i / 3).ToString("000"), Plan.Benches[i], Plan.Benches[i + 1], Plan.Benches[i + 2]));
+            for (int i = 0; i < Plan.Bins.Length; i += 2)
+                bins.Add(Node.Inst("Prop_TrashBin", "Bin_" + (i / 2).ToString("000"), Plan.Bins[i], Plan.Bins[i + 1]));
             pos.Clear(); nrm.Clear(); Geo.Walk(Geo.Offset(lake, 6f), 24f, 5f, pos, nrm);
             for (int i = 0; i < pos.Count; i++)
                 if (Geo.Inside(outer, pos[i]) && Geo.DistToPoly(outer, pos[i]) > 2f) lamps.Add(Node.Inst("Prop_StreetLamp", "Lamp_Shore_" + i.ToString("000"), pos[i].x, pos[i].y));
             foreach (Vector2 q in new[] { new Vector2(-9f, 3f), new Vector2(9f, 3f), new Vector2(-9f, 19f), new Vector2(9f, 19f) }) lamps.Add(Node.Inst("Prop_StreetLamp", "Lamp_Plaza_" + (li++), q.x, q.y));
-            float[] ps = { -72f, 170f, -60f, 172f, -56f, 158f, -76f, 158f, -30f, 112f, -12f, 112f, -150f, 158f, -160f, 150f, -84f, 70f, -82f, 52f, -96f, 84f };
+            float[] ps = Plan.Parasols;
             for (int i = 0; i < ps.Length; i += 2) paras.Add(Node.Inst("Prop_ParasolSet", "Parasol_" + (i / 2 + 1), ps[i], ps[i + 1]));
             Node rails = g8.Group("Railings");
             AddRailings(rails, "Railing_Island", Geo.Offset(island, -0.45f), gaps);
@@ -320,15 +297,6 @@ namespace LotteWorld.MagicIsland
         }
 
         // ---------------- helpers ----------------
-        static readonly List<float[]> PathLines = new List<float[]>();
-        static void Path(Node g, string name, float w, params float[] xz)
-        {
-            PathLines.Add(xz);
-            var line = new List<Vector2>(); for (int i = 0; i < xz.Length; i += 2) line.Add(new Vector2(xz[i], xz[i + 1]));
-            List<Vector2> sm = line.Count > 2 ? SmoothOpen(line) : line;
-            var b = new MeshBuilder(); b.Ribbon(sm, w, 0f, 0.06f, M.PavingDark, M.StoneGrey, 0.2f);
-            g.Add(new Node(name, b));
-        }
         static List<Vector2> SmoothOpen(List<Vector2> p)
         {
             var o = new List<Vector2>(); int n = p.Count;
@@ -358,13 +326,59 @@ namespace LotteWorld.MagicIsland
         }
         static List<Vector3> Pts3(float[] a) { var o = new List<Vector3>(); for (int i = 0; i < a.Length; i += 3) o.Add(new Vector3(a[i], a[i + 1], a[i + 2])); return o; }
 
-        static void Coping(MeshBuilder b, List<Vector2> poly)
+        static void Coping(MeshBuilder b, List<Vector2> poly, List<Vector3> gaps)
         {
             for (int i = 0; i < poly.Count; i++)
             {
                 Vector2 p = poly[i], q = poly[(i + 1) % poly.Count];
+                if (NearGap((p + q) * 0.5f, gaps, 0f)) continue;                                              // 11/20: no kerb across the bridge / dock
                 b.Member(new Vector3(p.x, 0.12f, p.y), new Vector3(q.x, 0.12f, q.y), 0.5f, M.StoneGrey);
             }
+        }
+
+        /// <summary>Triangulated flat surface from Plan (top at y1) + skirts from y0 round every outline (holes face inwards).</summary>
+        static void FlatMesh(MeshBuilder b, Plan.FlatMesh m, float y0, float y1, M top, M side)
+        {
+            float[] v = m.V; int[] t = m.T;
+            for (int i = 0; i < t.Length; i += 3)
+                b.Tri(new Vector3(v[t[i] * 2], y1, v[t[i] * 2 + 1]), new Vector3(v[t[i + 1] * 2], y1, v[t[i + 1] * 2 + 1]), new Vector3(v[t[i + 2] * 2], y1, v[t[i + 2] * 2 + 1]), top, Vector3.up);
+            for (int r = 0; r < m.Rings.Length; r++)
+            {
+                var ring = new List<Vector2>(); float[] a = m.Rings[r];
+                for (int i = 0; i < a.Length; i += 2) ring.Add(new Vector2(a[i], a[i + 1]));
+                if (ring.Count > 2) b.Skirt(ring, y0, y1, side, m.Outer[r]);
+            }
+        }
+
+        /// <summary>True when p (x, z) is on a walkway (or within 0.9 m of one) or inside a building keep-out circle: no coaster support post there.</summary>
+        public static bool OnWalkway(Vector3 p)
+        {
+            foreach (Place pl in Places)                                                                           // ... or on a building
+                if (pl.R > 0f && (new Vector2(pl.X - p.x, pl.Z - p.z)).magnitude < pl.R) return true;
+            foreach (string k in new[] { "Walk_Edge", "Shore_Edge" })
+            {
+                Plan.FlatMesh m = Plan.Meshes[k];
+                for (int r = 0; r < m.Rings.Length; r++)
+                {
+                    float[] a = m.Rings[r]; int n = a.Length / 2;
+                    for (int i = 0; i < n; i++)                                                                   // near an edge?
+                    {
+                        int j = (i + 1) % n; float ex = a[j * 2] - a[i * 2], ez = a[j * 2 + 1] - a[i * 2 + 1], L2 = ex * ex + ez * ez;
+                        float tt = L2 > 1e-6f ? Mathf.Clamp(((p.x - a[i * 2]) * ex + (p.z - a[i * 2 + 1]) * ez) / L2, 0f, 1f) : 0f;
+                        float dx = p.x - (a[i * 2] + ex * tt), dz = p.z - (a[i * 2 + 1] + ez * tt);
+                        if (dx * dx + dz * dz < 0.81f) return true;
+                    }
+                }
+                int cross = 0;                                                                                   // inside (even-odd over all rings)?
+                for (int r = 0; r < m.Rings.Length; r++)
+                {
+                    float[] a = m.Rings[r]; int n = a.Length / 2;
+                    for (int i = 0, j = n - 1; i < n; j = i++)
+                        if ((a[i * 2 + 1] > p.z) != (a[j * 2 + 1] > p.z) && p.x < (a[j * 2] - a[i * 2]) * (p.z - a[i * 2 + 1]) / (a[j * 2 + 1] - a[i * 2 + 1]) + a[i * 2]) cross++;
+                }
+                if ((cross & 1) == 1) return true;
+            }
+            return false;
         }
 
         static void AddLawn(Node g, string name, List<Vector2> poly, List<List<Vector2>> holes)
@@ -457,25 +471,27 @@ namespace LotteWorld.MagicIsland
         static void BuildDock(Node g)
         {
             var b = new MeshBuilder();
-            var line = new List<Vector2> { new Vector2(-174f, 89f), new Vector2(-181f, 74f) };
+            var line = new List<Vector2> { new Vector2(Plan.Dock[0], Plan.Dock[1]), new Vector2(Plan.Dock[2], Plan.Dock[3]) };   // 11/20: straight out from the coast
             b.Begin("Deck");
-            b.Ribbon(line, 3.2f, -0.35f, 0.25f, M.Wood, M.Timber, 0f);
+            b.Ribbon(line, 3.2f, -0.35f, 0.41f, M.Wood, M.Timber, 0f);                                            // top 0.06 = walkway
             b.Begin("Piles");
             Vector2 d = (line[1] - line[0]).normalized, s = new Vector2(d.y, -d.x);
-            for (float t = 0f; t <= 16.6f; t += 3f)
+            float dl = (line[1] - line[0]).magnitude;
+            for (float t = 1.2f; t <= dl; t += 3f)
                 foreach (float sd in new[] { -1.4f, 1.4f })
                 {
                     Vector2 q = line[0] + d * t + s * sd;
                     b.Cyl(new Vector3(q.x, BedY, q.y), 0.18f, 0.18f, 4.3f, 6, M.Timber);
                 }
-            var rl = new List<Vector3> { new Vector3(line[0].x + s.x * 1.5f, -0.1f, line[0].y + s.y * 1.5f), new Vector3(line[1].x + s.x * 1.5f, -0.1f, line[1].y + s.y * 1.5f) };
+            Vector2 r0 = line[0] + d * 1.2f;                                                                  // railing starts past the island coping
+            var rl = new List<Vector3> { new Vector3(r0.x + s.x * 1.5f, 0.06f, r0.y + s.y * 1.5f), new Vector3(line[1].x + s.x * 1.5f, 0.06f, line[1].y + s.y * 1.5f) };
             b.Begin("Railing");
             Lib.Railing(b, rl, M.Timber, 1.0f);
             var node = new Node("Dock_MoonBoat_20", b);
             g.Add(node);
             for (int i = 0; i < 3; i++)
             {
-                Vector2 q = line[0] + d * (5f + i * 4.5f) - s * 3.2f;
+                Vector2 q = line[0] + d * (4.2f + i * 5.4f) - s * 3.9f;   // 11/20: clear of each other and the piles
                 g.Add(Node.Inst("Prop_MoonBoat", "MoonBoat_" + (i + 1), q.x, q.y, Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg + 90f, 1f, WaterY - 0.25f));
             }
         }

@@ -171,6 +171,58 @@ namespace LotteWorld.MagicIsland
             Debug.Log("Magic Island: 프리팹 배치 복구 — 지운 것 " + removed + "개, 다시 놓은 것 " + placed + "개.");
         }
 
+        // ------------------------------------------------------------------ 11/20 layout fix (keeps other scene roots)
+        /// <summary>Rebuilds only the MagicIsland root of the outdoor scene from the current Layout (merged walkways, lawns, props,
+        /// moved buildings, rerouted coasters, dock) in place. Other roots in the scene (LotteWorld_LotteTower ...) stay. Prefab
+        /// assets are reused as they are; scene objects with a baked FBX (bridge, dock, tracks) use it.</summary>
+        [MenuItem("Tools/LotteWorld/Magic Island/Apply Layout Fix (keep Lotte Tower)", false, 24)]
+        public static void ApplyLayoutFix()
+        {
+            Scene sc = SceneManager.GetActiveScene();
+            if (sc.path != ScenePath)
+            {
+                if (!EditorUtility.DisplayDialog("Magic Island", "야외맵 씬(Map3_MagicIsland)에서 실행해야 합니다. 지금 열까요?", "열기", "취소")) return;
+                if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+                sc = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+            }
+            if (!EditorUtility.DisplayDialog("Magic Island",
+                "MagicIsland 루트를 새 배치(11/20: 길·잔디·소품·건물 위치·트랙·선착장)로 다시 만듭니다.\n" +
+                "롯데타워 등 다른 루트는 그대로 둡니다.\n\nUndo는 안 됩니다. 마음에 안 들면 씬을 저장하지 말고 다시 여세요. 씬 저장은 직접 하세요.", "진행", "취소")) return;
+
+            meshCount = triCount = doorCount = bakedCount = 0; usedMeshPaths.Clear(); prefabAssets.Clear(); mats.Clear();
+            foreach (M k in System.Enum.GetValues(typeof(M))) Mat(k);
+            var missing = new List<string>();
+            foreach (PrefabDef def in Layout.Prefabs)
+            {
+                GameObject pa = AssetDatabase.LoadAssetAtPath<GameObject>(Root + "/Prefabs/" + def.Folder + "/" + def.Key + ".prefab");
+                if (pa == null) missing.Add(def.Key); else prefabAssets[def.Key] = pa;
+            }
+            if (missing.Count > 0) { Debug.LogError("Magic Island: 프리팹이 없습니다 (" + string.Join(", ", missing.ToArray()) + "). Rebuild All을 먼저 하세요."); return; }
+
+            GameObject old = null;
+            foreach (GameObject r in sc.GetRootGameObjects()) if (r.name == "MagicIsland") old = r;
+            int sibling = old != null ? old.transform.GetSiblingIndex() : 0;
+            if (old != null) Object.DestroyImmediate(old);
+            string meshDir = Root + "/Meshes/Scene";
+            AssetDatabase.DeleteAsset(meshDir); EnsureFolder(meshDir);
+            try
+            {
+                EditorUtility.DisplayProgressBar("Magic Island", "Layout fix 11/20", 0.4f);
+                Node root = Layout.BuildScene(); Node.SplitParts(root);
+                buildingScene = true;
+                GameObject rootGo = Make(root, null, meshDir);
+                buildingScene = false;
+                rootGo.transform.SetPositionAndRotation(Layout.RootPosition, Quaternion.Euler(0f, Layout.RootYaw, 0f));
+                rootGo.transform.SetSiblingIndex(sibling);
+                SetupLighting(rootGo);
+                AssetDatabase.SaveAssets();
+            }
+            finally { buildingScene = false; EditorUtility.ClearProgressBar(); }
+            EditorSceneManager.MarkSceneDirty(sc);
+            Debug.Log("Magic Island 11/20 배치 수정 적용: 새 메시 " + meshCount + "개(삼각형 " + triCount.ToString("N0") + "), 구운 씬 FBX " + bakedCount +
+                      "개 사용. 롯데타워 등 다른 루트는 유지. 확인 후 씬을 저장하세요. (밤 조명을 쓰던 중이면 Night 메뉴의 Set Night를 다시 누르세요)");
+        }
+
         /// <summary>Place a prefab instance on top of the prefab root's own transform: a baked FBX whose file has a single top
         /// object keeps the FBX axis turn (e.g. 90 deg about X) on the root, and overwriting it lays the object on its side.</summary>
         static void PlaceInstance(GameObject go, GameObject prefab, Node n)
