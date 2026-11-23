@@ -1,0 +1,9 @@
+v2 2026-11-23 오후 11:22:05
+Deco_Food_IceCream -> Assets/Maps/LotteWorld/Rides/Deco/Prefabs/Deco_Food_IceCream.prefab
+Deco_Food_Popcorn -> Assets/Maps/LotteWorld/Rides/Deco/Prefabs/Deco_Food_Popcorn.prefab
+Deco_Shop_Balloons -> Assets/Maps/LotteWorld/Rides/Deco/Prefabs/Deco_Shop_Balloons.prefab
+Deco_Shop_Headbands -> Assets/Maps/LotteWorld/Rides/Deco/Prefabs/Deco_Shop_Headbands.prefab
+Deco_Shop_Souvenir -> Assets/Maps/LotteWorld/Rides/Deco/Prefabs/Deco_Shop_Souvenir.prefab
+Prop_Cart -> Assets/Maps/LotteWorld/Rides/Props/Prefabs/Prop_Cart.prefab
+Prop_Cart_Balloons -> Assets/Maps/LotteWorld/Rides/Props/Prefabs/Prop_Cart_Balloons.prefab
+n=5 skip=2 miss=0
