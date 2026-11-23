@@ -1,0 +1,96 @@
+{
+  "checked": "2026-11-23",
+  "scope": "V15 produce stock, tenant-specific walls, 2F merchandising, warehouse sliders and escalator/stair construction",
+  "references": [
+    {
+      "not_confirmed": "Not a Korean supermarket plan, store fixture survey or exact retail dimensions.",
+      "confirmed": "Wall standards, separate brackets, rails, shelves and combined hanging/folded storage are documented.",
+      "url": "https://www.ikea.com/kr/ko/files/pdf/0d/1c/0d1ce61f/boaxel_buying_guide_a4_kr.pdf",
+      "use": "Construction reference only; no source image or trademark included.",
+      "author": "IKEA",
+      "checked": "2026-11-23"
+    },
+    {
+      "not_confirmed": "No dimensional floor plan or material scan; not a verified Homeplus tenant.",
+      "confirmed": "Article describes wooden ceiling and natural-material interior with accessible circulation.",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-wheelchair-friendly-interior-opening/",
+      "use": "Material/clear-route reference only.",
+      "author": "Shinsegae Group Newsroom",
+      "checked": "2026-11-23"
+    },
+    {
+      "use": "Composition reference; no photos copied into new surfaces.",
+      "source": "User supplied Korean produce and tenant photographs in this chat",
+      "not_confirmed": "Exact stock quantities, backroom details and dimensions.",
+      "confirmed": "Clear produce packs, contiguous category blocks, layered stock, refrigerated vegetable bays."
+    },
+    {
+      "url": "https://www.samsonite.co.kr/zenex/spinner-69-25-exp/ss-163728-A187.html",
+      "author": "Samsonite Korea",
+      "checked": "2026-11-23",
+      "confirmed": "Official listing documents hard-side PC shell, wheels, and 69 x 47 x 31 cm size including wheels.",
+      "not_confirmed": "Exact product photo could not be fetched by the browser tool; store availability and real display arrangement not confirmed. The original game prop is not a replica.",
+      "use": "Physical-size and construction sanity check. No image or trademark copied."
+    }
+  ],
+  "authored_assets": [
+    {
+      "name": "Department ceramic walls and tenant framed panels",
+      "changes": "Metre UVs, staggered grout, shared relief, fitted timber/brass frames and utility guard rails.",
+      "license": "Original project geometry and generated ceramic textures",
+      "source": "Assets/OutOfService/Editor/MarketDepartmentFitoutV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "1F produce fascia; B1 tenant wall linings"
+    },
+    {
+      "name": "2F wall bays and folded garment stock",
+      "changes": "Nine wall bays, rail brackets, front-facing garments and folded stock.",
+      "license": "Original project geometry; existing cloth and oak material provenance retained",
+      "source": "Assets/OutOfService/Editor/MarketDepartmentFitoutV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "2F west and front perimeter plus three folded-stock tables"
+    },
+    {
+      "name": "Warehouse doors and circulation details",
+      "changes": "Five translating doors, fixed tracks, obstruction reopening; open stock racks; steel jambs and concrete stair soffits.",
+      "license": "Original project geometry; existing finish source terms retained",
+      "source": "Assets/OutOfService/Editor/MarketCirculationFitoutV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "1F stock/freezer rooms, B1 storage rooms, both emergency stair towers"
+    },
+    {
+      "name": "Continuous escalator fitout",
+      "changes": "Loop handrail, vertical glass profile, ribbed horizontal treads, flush service landings and comb teeth.",
+      "license": "Original project geometry",
+      "source": "Assets/OutOfService/Editor/MarketEscalatorFitoutV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "B1-1F and 1F-2F pairs"
+    },
+    {
+      "name": "Travel luggage and soft tote retail stock",
+      "changes": "Original rounded shells, fabric gussets, handles, spinner wheels, zipper strips and retail tickets. Three fitted bays, 24 cases and 48 totes.",
+      "license": "Original project meshes; no third-party product image incorporated",
+      "source": "Assets/OutOfService/Editor/MarketUpperAccessoriesV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "2F east perimeter at z 21, 29 and 37"
+    },
+    {
+      "name": "Shared tomato packaging ribs",
+      "changes": "Fourteen clear pack rib primitives combined into one shared mesh per pack; no claimed frame-rate improvement until measured.",
+      "license": "Original project geometry",
+      "source": "Assets/OutOfService/Editor/MarketVegetableRebuildV7.cs",
+      "creator": "Original project procedural authoring",
+      "used_at": "1F tomato punnets"
+    },
+    {
+      "name": "Corrugated stock cartons and four handling labels",
+      "source": "Assets/OutOfService/Editor/MarketWarehouseStockV7.cs; Tools/DrawWarehouseLabels.ps1",
+      "creator": "Original project geometry and typography",
+      "license": "Original project artwork; no brand packaging or third-party photo copied",
+      "used_at": "1F stock and freezer rooms, B1 support storage",
+      "changes": "Kraft fibres, bevelled folds, tape, edge creases, two-sided readable labels; three cold cartons replace each oversize case. Decorative barcode is not a real SKU."
+    }
+  ],
+  "reuse": "Existing surveyed oak/plaster, authored fabric and steel materials retain their previous credits. No new third-party asset downloaded, no image generation, no paid asset.",
+  "design_status": "Composite game store, not a surveyed real Homeplus. Actual verification is recorded separately."
+}

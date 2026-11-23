@@ -1,0 +1,1 @@
+PASS: 1920x1080 | normal camera | AI disabled | real startup preparation 650.19 ms / 9 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 4385 rendered | 8/8 route legs | distance 38.57 m | p95 3.89 ms | p99 4.42 ms | max 6.85 ms | over 16.67ms 0/4385 | gen0 collections 6

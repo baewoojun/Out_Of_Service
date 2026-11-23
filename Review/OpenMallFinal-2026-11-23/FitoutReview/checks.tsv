@@ -1,0 +1,41 @@
+PASS	five operational warehouse sliders
+PASS	B1 storage sliding door - 매장 비품실 reachable closed leaf
+PASS	B1 storage sliding door - 매장 비품실 fully opens without rotating
+PASS	B1 storage sliding door - 매장 비품실 leaf, handles and lettering render at their moved positions
+PASS	B1 storage sliding door - 매장 비품실 clears original opening
+PASS	B1 storage sliding door - 매장 비품실 reopens when a character blocks closing
+PASS	B1 storage sliding door - 매장 비품실 returns exactly closed
+PASS	B1 storage sliding door - 매장 비품실 resting transform remains untouched
+PASS	1F stockroom sliding door reachable closed leaf
+PASS	1F stockroom sliding door fully opens without rotating
+PASS	1F stockroom sliding door leaf, handles and lettering render at their moved positions
+PASS	1F stockroom sliding door clears original opening
+PASS	1F stockroom sliding door reopens when a character blocks closing
+PASS	1F stockroom sliding door returns exactly closed
+PASS	1F stockroom sliding door resting transform remains untouched
+PASS	B1 storage sliding door - 몰 공동창고 reachable closed leaf
+PASS	B1 storage sliding door - 몰 공동창고 fully opens without rotating
+PASS	B1 storage sliding door - 몰 공동창고 leaf, handles and lettering render at their moved positions
+PASS	B1 storage sliding door - 몰 공동창고 clears original opening
+PASS	B1 storage sliding door - 몰 공동창고 reopens when a character blocks closing
+PASS	B1 storage sliding door - 몰 공동창고 returns exactly closed
+PASS	B1 storage sliding door - 몰 공동창고 resting transform remains untouched
+PASS	B1 storage sliding door - 식음료 입고실 reachable closed leaf
+PASS	B1 storage sliding door - 식음료 입고실 fully opens without rotating
+PASS	B1 storage sliding door - 식음료 입고실 leaf, handles and lettering render at their moved positions
+PASS	B1 storage sliding door - 식음료 입고실 clears original opening
+PASS	B1 storage sliding door - 식음료 입고실 reopens when a character blocks closing
+PASS	B1 storage sliding door - 식음료 입고실 returns exactly closed
+PASS	B1 storage sliding door - 식음료 입고실 resting transform remains untouched
+PASS	1F freezer sliding door reachable closed leaf
+PASS	1F freezer sliding door fully opens without rotating
+PASS	1F freezer sliding door leaf, handles and lettering render at their moved positions
+PASS	1F freezer sliding door clears original opening
+PASS	1F freezer sliding door reopens when a character blocks closing
+PASS	1F freezer sliding door returns exactly closed
+PASS	1F freezer sliding door resting transform remains untouched
+PASS	tomato retail punnets increased beyond former maximum 64: 91
+PASS	prepared vegetable front plus reserve stock: 204
+PASS	nine fitted 2F wall departments
+PASS	three fitted accessories bays
+PASS	existing wall stock plus 22 arrival-display luggage and tote products: 94

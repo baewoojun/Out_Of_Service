@@ -1,0 +1,53 @@
+{
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "stage": "Physical finish pass, before beverage changes",
+  "build": "Succeeded, 2026-11-23 03:43 KST, Windows standalone, Unity 6000.6.8f1 / URP 17.6",
+  "resolution": "1920x1080 native, SMAA High, MSAA 1",
+  "graphics": {
+    "views": 42,
+    "reflection_textures": "29/29",
+    "manually_inspected": [
+      "cafe-seat-on.jpg",
+      "cookware-open-on.jpg",
+      "family-exterior-on.jpg",
+      "cafe-room-on.jpg",
+      "2f-fashion-on.jpg",
+      "checkout-floor-on.jpg",
+      "b1-shopfront-on.jpg"
+    ],
+    "findings": "Fine physical wood grain verified in the listed furniture views. Cookware rim specular aliasing, overly simple garment shapes and near-black background remained and led to subsequent work. Unlisted renders are not visually approved."
+  },
+  "normal_camera_visibility": {
+    "player": true,
+    "active_ai": 1,
+    "frames": 240,
+    "loading_ms": 691.75,
+    "p95_ms": 9.639,
+    "max_ms": 12.304,
+    "over_16_67_ms": 0,
+    "mass_visibility_transitions": 2
+  },
+  "normal_camera_pepper": {
+    "distance_m": 6,
+    "frames": 1048,
+    "loading_ms": 666.96,
+    "p95_ms": 5.76,
+    "p99_ms": 7.6,
+    "max_ms": 11.91,
+    "over_16_67_ms": 0
+  },
+  "normal_camera_basement": {
+    "distance_m": 38.57,
+    "legs": "8/8",
+    "frames": 4043,
+    "loading_ms": 665.59,
+    "p95_ms": 4.79,
+    "p99_ms": 5.95,
+    "max_ms": 8.08,
+    "over_16_67_ms": 0,
+    "gen0_collections": 7,
+    "ai": false
+  },
+  "evidence": "Review/PhysicalFinish-2026-11-23, including scene-hash.json and original output reports",
+  "limitations": "Measured on this RTX 4070 SUPER machine. Not a multiplayer, combat, low-end hardware or whole-game worst-case benchmark. Controlled graphics readback timings are not game FPS. No claim that every product meets the final visual target."
+}

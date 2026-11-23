@@ -1,0 +1,13 @@
+{
+  "title": "다른 대화에 전달할 변경 요약",
+  "date": "2026-11-18",
+  "scope": "B1 꽃·소품 재질과 벽·천장 마감 개선",
+  "map": "B1 몰 / 1F 식품·생활·가전 / 2F 패션·고객센터 유지. 비상계단과 에스컬레이터, 문, 상점 동선 위치 변경 없음.",
+  "architecture": "6개 점포의 천장 패널·환기구·점검구·노출 전선관·벽 하부 패널·걸레받이 추가. 중앙 통로 천장은 12 m씩 7개 구역, 양쪽 서비스 통로에는 덕트. 새 천장/설비는 고정 장식이며 기존 구조 충돌체를 유지.",
+  "effects": "추가 실시간 조명 없음. 꽃잎은 얇은 면의 그림자 얼룩을 피하도록 그림자 생성만 제외. 잎·줄기·화분·주요 구조물 그림자는 유지. HUD와 연출 상태 코드 변경 없음.",
+  "gameplay": "점프·낙하 피해·스태미나·손전등 배터리·필수 아이템·AI·멀티 상태 변경 없음. 새 장식에는 개별 네트워크 동기화나 매 프레임 갱신이 없음.",
+  "generation": "MarketThreeFloorsV7 -> TenantFinish / BasementConcourseFinish, 구현 MarketBasementFinishV7.cs. 꽃은 MarketMallDetailsV7.cs. 재생성해도 유지됨.",
+  "verified": "실제 Windows 1920×1080 빌드에서 19개 화면 검사, 이동·문 검사 193개 통과. 꽃집 38.56 m 검사 3691프레임 중 16.67 ms 초과 0. AI 제외·GPU 동기화 조건. 첫 렌더 초기화 243 ms는 별도 기록.",
+  "remaining": "근접 꽃잎 곡면·식물 종류와 세탁소 의류/일부 가전 소품 형태는 추가 개선 여지 있음. L4D2 수준 완료 또는 AI·멀티 성능 검증으로 간주하지 말 것.",
+  "records": ["Review/b1-finish-pass-2026-11-18.json", "Review/b1-finish-assets-2026-11-18.json", "Review/b1-finish-tested-build.json"]
+}

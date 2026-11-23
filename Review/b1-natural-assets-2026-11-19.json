@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-19",
+  "policy": "Reference photographs stay outside Assets and are not included in the game. New meshes and surface patterns are authored locally; no manufacturer branding or photo pixels are copied into game assets.",
+  "references": [
+    {
+      "name": "Mayra's Bridal Pink garden rose",
+      "author": "Alexandra Farms",
+      "url": "https://www.alexandrafarms.com/varieties/mayras-bridal-pink/",
+      "image_url": "https://www.alexandrafarms.com/wp-content/uploads/2026/08/mayras-bridal-pink-01-v3.jpg",
+      "original_file": "Review/B1References/garden-rose-reference.jpg",
+      "license": "Copyrighted photograph, visual reference only; not an imported game asset",
+      "observed": "Broad rounded outer petals, rolled edges, densely overlapping central petals, pale outer surface and deeper centre.",
+      "not_verified": "A complete botanical scan, every petal's geometry or the real flower's underside.",
+      "interpretation": "Three shared low-poly bloom variations with rounded lobes and unequal rotations. Reduced petal count is a game approximation.",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "name": "Washed Oxford stand collar shirt",
+      "author": "MUJI",
+      "url": "https://www.muji.us/collections/mens-shirts-polos/products/mens-washed-oxford-stand-collar-long-sleeve-shirt-ac20q24a",
+      "image_url": "https://www.muji.us/cdn/shop/files/4550584185977_org_baeff2be-821f-4517-80e2-32531e611627_700x.jpg?v=1762816311",
+      "original_file": "Review/B1References/oxford-reference.jpg",
+      "license": "Copyrighted photograph, visual reference only; not an imported game asset",
+      "observed": "Separate long sleeves, a narrow standing collar, front button placket, chest pocket, rounded hem and fine plain cotton texture on a worn shirt.",
+      "not_verified": "Exact hanging drape without a wearer; photographed shirt is not a dry-cleaning rack reference.",
+      "interpretation": "Original shirt, short-sleeve shirt and long coat; rack spacing, plain fabric colours and hanging folds are authored.",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "name": "Linea Classic S commercial espresso machine",
+      "author": "La Marzocco",
+      "url": "https://www.lamarzoccousa.com/commercial-products/espresso-machines/linea-classic-s/",
+      "image_url": "https://lamarzoccousa.com/wp-content/uploads/2023/04/linea-classic_s_av_2-group_front_3-4_high_legs.png",
+      "original_file": "Review/B1References/espresso-reference.png",
+      "license": "Copyrighted photograph, visual reference only; not an imported game asset",
+      "observed": "Metal front fascia, pressure dial, black steam valve knobs, separate group heads and handles, drainage grate and cup-warming rails.",
+      "not_verified": "Internal boiler geometry, operation, or exact texture roughness.",
+      "interpretation": "Generic unbranded machine with original proportions, additional service pitcher and tamper; decorative only.",
+      "checked_date": "2026-11-19"
+    }
+  ],
+  "assets": [
+    {
+      "name": "Rounded flower heads V7/V6",
+      "source": "Assets/OutOfService/Editor/MarketMallDetailsV7.cs: RoundedRose / FlowerHead",
+      "author": "Project-authored procedural geometry",
+      "license": "Original project asset; no third-party model dependency",
+      "location": "B1 florist buckets and wrapped bouquets",
+      "modification": "Rounded petal boundary and smooth curl, three shared variants per flower family; retained non-shadow-casting petal material",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_rose_elliptic_v7_* and MallDetailV3_petal_rounded_v6_1_*",
+      "vertices_per_mesh": {
+        "rose": 1200,
+        "daisy": 1100
+      },
+      "checked_date": "2026-11-19"
+    },
+    {
+      "name": "Sewn laundry garments V2",
+      "source": "Assets/OutOfService/Editor/MarketLaundryNaturalV7.cs",
+      "author": "Project-authored procedural geometry and cotton texture",
+      "license": "Original project asset; no third-party model or photo dependency",
+      "location": "B1 laundry rack, 11 garments",
+      "modification": "Three separate garment silhouettes, hollow neck, shaped sleeves, standing collar, placket, chest pocket, buttons, varied hanging angles. Existing collision envelope retained. 2F clothing unchanged.",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_laundry_sewn_v2_* and LaundryOxfordV1.asset",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "name": "Hollow cups and café service details V1",
+      "source": "Assets/OutOfService/Editor/MarketCafeNaturalV7.cs",
+      "author": "Project-authored procedural geometry and coffee-bean pattern",
+      "license": "Original project asset; no third-party model or photo dependency",
+      "location": "B1 café, restaurant ceramic/paper cups and coffee machine",
+      "modification": "Actual interior cup wall and bottom replacing the flat black cap; pitcher with spout, gauge and steam knobs, warming tray rails, tamper and shared hopper fill",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_ceramic_hollow_v1.asset, MallDetailV3_milk_pitcher_v1.asset, RoastedBeansV1.asset",
+      "vertices_per_cup": 377,
+      "checked_date": "2026-11-19"
+    }
+  ]
+}

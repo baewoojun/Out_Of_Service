@@ -1,0 +1,53 @@
+{
+  "checked_date": "2026-11-21",
+  "policy": "Reference photos stay under Review; none of their pixels, logos or proprietary meshes are imported into the game. New models and MOA labels are project-authored. Existing material provenance remains in the prior asset registers.",
+  "sources": [
+    {
+      "name": "IKEA STENSELE cafe table",
+      "creator": "IKEA; designer Maja Ganszyniec",
+      "url": "https://www.ikea.com/kr/en/p/stensele-table-anthracite-anthracite-s09323920/",
+      "image_url": "https://www.ikea.com/kr/en/images/products/stensele-table-anthracite-anthracite__1538330_pe1017333_s5.jpg",
+      "reference_file": "Review/VarietyReferences/cafe-table-reference.jpg",
+      "license": "Copyrighted retailer reference; not an imported game asset",
+      "confirmed": "70 x 70 cm table option; laminate surface, plastic edge, powder-coated metal pedestal. Photo shows curved chair backs, upholstered seats and branched table feet.",
+      "not_confirmed": "Any Korean supermarket branch inventory or furniture location; round-table dimensions; exact chair dimensions",
+      "authored_use": "B1 cafe and restaurant: 0.86 m round, 0.80 m square, 1.05 x 0.70 m rectangular tabletops; original curved plywood, cushioned and open slat chairs. Dimensions and arrangement are game design choices. No traced mesh."
+    },
+    {
+      "name": "Olive Young skincare categories",
+      "creator": "CJ Olive Young",
+      "url": "https://www.oliveyoung.co.kr/store/display/getCategoryShop.do?dispCatNo=10000010001",
+      "license": "Retail reference only",
+      "confirmed": "Korean skincare category distinguishes toner, lotion, cream and serum products.",
+      "not_confirmed": "Exact supermarket assortment, dimensions, material roughness or planogram",
+      "authored_use": "Six MOA parody product families, grouped by shelf bay rather than randomly mixed."
+    },
+    {
+      "name": "Redence skincare product form reference",
+      "creator": "Redence / Qoo10 retailer listing",
+      "url": "https://www.qoo10.jp/gmkt.inc/Catalog/Goods/Goods.aspx?catalogno=21779",
+      "image_url": "https://dp.image-qoo10.jp/dp2016/JP/GMKT.IMG/catalogue_img/2025/08/27/7bc5bb07-fd0d-4b60-af18-c1086b5c4b05.s_400-w-fs_s.png",
+      "reference_file": "Review/VarietyReferences/skincare-forms-reference.png",
+      "license": "Copyrighted retail reference; not an imported game asset",
+      "confirmed": "Photo visibly contrasts a tall capped toner bottle, flat crimped tube with bottom closure, and short dropper bottle with threaded collar and rounded bulb.",
+      "not_confirmed": "Cross-section dimensions, mesh topology, physical glass transmission or Korean supermarket availability",
+      "authored_use": "Original sealed tube, amber dropper bottle and oval airless-pump meshes. MOA Korean product names and graphics are drawn locally by Tools/DrawMallServiceLabels.ps1; no real packaging copied."
+    },
+    {
+      "name": "LG top-load washer structural reference",
+      "creator": "LG Electronics",
+      "url": "https://www.lge.co.kr/product/washing-machines/tr12bl-dkor",
+      "additional_url": "https://www.lge.co.kr/product/washing-machines/t18wx7",
+      "license": "Manufacturer reference only",
+      "confirmed": "Top-loading configuration with wide top glass lid and rear control area distinguishes it from front-loading display washers.",
+      "not_confirmed": "Exact hinge mechanism, dimensions, material shader values or actual selling price",
+      "authored_use": "Two original 0.64 m top-load display washers, recessed drum, rear hinge, glass/frame/pull moving as one door. Fictional price/specification ticket; no manufacturer branding."
+    }
+  ],
+  "authored_assets": [
+    {"name":"Dining tables and chairs", "source":"Assets/OutOfService/Editor/MarketFurnitureVarietyV7.cs", "creator":"Project procedural authoring", "license":"Original project content; no external model license", "location":"B1 cafe and restaurant", "original":"Procedural C# source; generated meshes under Assets/OutOfService/Generated", "changes":"Three table forms, three chair constructions, planar tabletop veneer UV, shared material sectors"},
+    {"name":"MOA skincare range", "source":"Assets/OutOfService/Editor/MarketCosmeticVarietyV7.cs", "creator":"Project procedural authoring", "license":"Original project content", "location":"B1 beauty shop", "original":"C# meshes and Tools/DrawMallServiceLabels.ps1", "changes":"Three added silhouettes, six original labels, 18 facings per shelf in two stock depths"},
+    {"name":"Appliance display variety", "source":"Assets/OutOfService/Editor/MarketApplianceVarietyV7.cs", "creator":"Project procedural authoring", "license":"Original project content", "location":"1F appliance department", "original":"C# source; top-load-price.png produced by DrawMallServiceLabels.ps1", "changes":"Two top-load and two front-load washers; three TV sizes and two stand constructions"},
+    {"name":"Source-linked indirect light approximation", "source":"Assets/OutOfService/Editor/MarketIndirectLightingV7.cs", "creator":"Project lighting authoring", "license":"Original project content", "location":"B1 cafe, beauty and two concourse positions; 1F checkout and produce; 2F apparel", "original":"Seven authored spotlight links", "changes":"Low-energy shadowed ceiling/wall fill follows source enable, colour and intensity. This is an authored approximation, not baked diffuse GI."}
+  ]
+}

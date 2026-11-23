@@ -1,0 +1,71 @@
+[
+  {
+    "floor": "1F",
+    "zone": "produce",
+    "fixture": "tomato refrigerated retail stock",
+    "product": "tomatoes",
+    "model": "six ripe tomato retail punnet",
+    "count": 91,
+    "contentsPerPack": 6,
+    "labels": "original parody produce labels",
+    "closeView": true,
+    "interactive": false,
+    "collision": "fixture only",
+    "source": "MarketVegetableRebuildV7.cs",
+    "layout": "Four columns, six pack rows; intentional availability gaps; contained tomato variation"
+  },
+  {
+    "floor": "1F",
+    "zone": "prepared vegetables",
+    "fixture": "west chilled vegetable wall",
+    "product": "cut leek, peeled potato, curry vegetables",
+    "count": 204,
+    "model": "three food-specific clear bag meshes",
+    "labels": "original Korean parody headers",
+    "closeView": true,
+    "interactive": false,
+    "collision": "fixture only",
+    "source": "MarketPrototypeBuilderV7.cs",
+    "layout": "Front sale row and rear reserve row"
+  },
+  {
+    "floor": "2F",
+    "zone": "fashion",
+    "fixture": "nine fitted perimeter clothing bays + three fold tables",
+    "product": "women, children, menswear",
+    "model": "sewn garments and soft folded knit",
+    "labels": "original garment ticket",
+    "closeView": true,
+    "interactive": false,
+    "collision": "shelves and display furniture",
+    "source": "MarketDepartmentFitoutV7.cs",
+    "layout": "Grouped sizes and colors; small rotation and fold deviations"
+  },
+  {
+    "floor": "2F",
+    "zone": "accessories",
+    "fixture": "east wall bays 0,1,2",
+    "product": "24 travel cases and 48 totes",
+    "count": 72,
+    "model": "rounded hard shell / soft gusseted tote",
+    "labels": "original stock tickets",
+    "closeView": true,
+    "interactive": false,
+    "collision": "fixture only",
+    "source": "MarketUpperAccessoriesV7.cs",
+    "layout": "Large cases at base, bags at upper shelves"
+  },
+  {
+    "floor": "2F",
+    "zone": "footwear",
+    "fixture": "east destination displays at (40,24) and (40,35)",
+    "product": "trainers, loafers, boots",
+    "model": "existing shaped shoes with sole, upper, laces and opening",
+    "labels": "original size tickets",
+    "closeView": true,
+    "interactive": false,
+    "collision": "shelves and fitting benches",
+    "source": "MarketShoesV7.cs",
+    "layout": "Three tiers and paired stock, shoe boxes beneath"
+  }
+]

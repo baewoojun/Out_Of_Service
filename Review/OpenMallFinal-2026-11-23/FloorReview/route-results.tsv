@@ -1,0 +1,418 @@
+check	result	x	y	z
+WEST 1F fire door open	PASS	0.000	0.900	-38.000
+EAST B1 fire door open	PASS	0.000	0.900	-38.000
+EAST 2F fire door open	PASS	0.000	0.900	-38.000
+WEST B1 fire door open	PASS	0.000	0.900	-38.000
+WEST 2F fire door open	PASS	0.000	0.900	-38.000
+EAST 1F fire door open	PASS	0.000	0.900	-38.000
+stair entry	PASS	-46.000	-4.020	-33.970
+lower landing	PASS	-47.470	-4.020	-33.999
+first flight up	PASS	-47.500	-1.520	-40.719
+mid landing	PASS	-44.561	-1.520	-40.798
+second flight up	PASS	-44.501	0.980	-34.079
+upper landing	PASS	-45.969	0.980	-34.002
+stair exit	PASS	-46.000	0.980	-31.832
+stair entry	PASS	-46.000	0.980	-33.932
+lower landing	PASS	-47.468	0.980	-33.999
+first flight up	PASS	-47.500	3.480	-40.718
+mid landing	PASS	-44.561	3.480	-40.798
+second flight up	PASS	-44.501	5.980	-34.079
+upper landing	PASS	-45.969	5.980	-34.002
+stair exit	PASS	-46.000	5.980	-31.832
+descending entry	PASS	-46.000	5.980	-33.932
+descending upper landing	PASS	-44.532	5.980	-33.999
+second flight down	PASS	-44.500	3.480	-40.719
+descending mid landing	PASS	-47.439	3.480	-40.798
+first flight down	PASS	-47.499	0.980	-34.079
+descending lower landing	PASS	-46.031	0.980	-34.002
+descending exit	PASS	-46.000	0.980	-31.832
+descending entry	PASS	-46.000	0.980	-33.932
+descending upper landing	PASS	-44.532	0.980	-33.999
+second flight down	PASS	-44.500	-1.520	-40.718
+descending mid landing	PASS	-47.439	-1.520	-40.798
+first flight down	PASS	-47.499	-4.020	-34.079
+descending lower landing	PASS	-46.031	-4.020	-34.002
+descending exit	PASS	-46.000	-4.020	-31.832
+stair entry	PASS	46.000	-4.020	-33.970
+lower landing	PASS	44.530	-4.020	-33.999
+first flight up	PASS	44.500	-1.520	-40.719
+mid landing	PASS	47.439	-1.520	-40.798
+second flight up	PASS	47.499	0.980	-34.079
+upper landing	PASS	46.031	0.980	-34.002
+stair exit	PASS	46.000	0.980	-31.832
+stair entry	PASS	46.000	0.980	-33.932
+lower landing	PASS	44.532	0.980	-33.999
+first flight up	PASS	44.500	3.480	-40.718
+mid landing	PASS	47.439	3.480	-40.798
+second flight up	PASS	47.499	5.980	-34.079
+upper landing	PASS	46.031	5.980	-34.002
+stair exit	PASS	46.000	5.980	-31.832
+descending entry	PASS	46.000	5.980	-33.932
+descending upper landing	PASS	47.469	5.980	-33.999
+second flight down	PASS	47.500	3.480	-40.719
+descending mid landing	PASS	44.561	3.480	-40.798
+first flight down	PASS	44.501	0.980	-34.079
+descending lower landing	PASS	45.969	0.980	-34.002
+descending exit	PASS	46.000	0.980	-31.832
+descending entry	PASS	46.000	0.980	-33.932
+descending upper landing	PASS	47.468	0.980	-33.999
+second flight down	PASS	47.500	-1.520	-40.718
+descending mid landing	PASS	44.561	-1.520	-40.798
+first flight down	PASS	44.501	-4.020	-34.079
+descending lower landing	PASS	45.969	-4.020	-34.002
+descending exit	PASS	46.000	-4.020	-31.832
+B1 escalator ascent	PASS	34.500	0.980	6.930
+B1 escalator descent	PASS	34.500	-4.020	-6.930
+2F escalator ascent	PASS	34.500	5.980	6.930
+2F escalator descent	PASS	34.500	0.980	-6.930
+B1 escalator ascent	PASS	41.500	0.980	6.930
+B1 escalator descent	PASS	41.500	-4.020	-6.930
+2F escalator ascent	PASS	41.500	5.980	6.930
+2F escalator descent	PASS	41.500	0.980	-6.930
+B1 west circulation	PASS	-46.000	-4.020	-27.040
+B1 cross concourse	PASS	45.910	-4.020	-27.000
+B1 central concourse	PASS	3.000	-4.020	35.930
+1F complete retail loop	PASS	28.960	0.980	-21.000
+1F complete retail loop	PASS	29.000	0.980	28.630
+1F complete retail loop	PASS	-14.960	0.980	28.700
+1F complete retail loop	PASS	-15.000	0.980	-20.930
+1F cross aisle approach	PASS	-15.000	0.980	0.420
+1F cross aisle	PASS	28.960	0.980	0.500
+2F complete fashion loop	PASS	29.440	5.980	-34.500
+2F complete fashion loop	PASS	29.500	5.980	29.340
+2F complete fashion loop	PASS	-44.407	5.980	29.397
+2F complete fashion loop	PASS	-44.500	5.980	-31.433
+2F complete fashion loop	PASS	-40.090	5.980	-31.499
+2F complete fashion loop	PASS	-40.002	5.980	-34.437
+B1 tenant - 모퉁이 커피 widened side entrance	PASS	-11.710	-4.020	-19.050
+B1 tenant - 모퉁이 커피 open storefront lateral circulation	PASS	-11.799	-4.020	-16.041
+B1 tenant - 모퉁이 커피 open storefront exit	PASS	-8.789	-4.020	-16.001
+B1 tenant - 모퉁이 커피 widened side entrance	PASS	-11.710	-4.020	-12.950
+B1 tenant - 모퉁이 커피 open storefront lateral circulation	PASS	-11.799	-4.020	-15.959
+B1 tenant - 모퉁이 커피 open storefront exit	PASS	-8.789	-4.020	-15.999
+B1 tenant - 모퉁이 커피 public access	PASS	-15.910	-4.020	-16.000
+B1 tenant - 한끼 식당 widened side entrance	PASS	-11.710	-4.020	0.950
+B1 tenant - 한끼 식당 open storefront lateral circulation	PASS	-11.799	-4.020	3.959
+B1 tenant - 한끼 식당 open storefront exit	PASS	-8.789	-4.020	3.999
+B1 tenant - 한끼 식당 widened side entrance	PASS	-11.710	-4.020	7.050
+B1 tenant - 한끼 식당 open storefront lateral circulation	PASS	-11.799	-4.020	4.041
+B1 tenant - 한끼 식당 open storefront exit	PASS	-8.789	-4.020	4.001
+B1 tenant - 한끼 식당 public access	PASS	-15.910	-4.020	4.000
+washroom entrance	PASS	-11.360	-4.020	24.000
+washroom privacy turn	PASS	-11.399	-4.020	28.830
+washroom access	PASS	-13.919	-4.020	28.898
+washroom stall approach	PASS	-13.996	-4.020	26.799
+B1 tenant - 온유 약국 widened side entrance	PASS	11.710	-4.020	-13.750
+B1 tenant - 온유 약국 open storefront lateral circulation	PASS	11.797	-4.020	-15.918
+B1 tenant - 온유 약국 open storefront exit	PASS	8.788	-4.020	-15.998
+B1 tenant - 온유 약국 widened side entrance	PASS	11.710	-4.020	-18.250
+B1 tenant - 온유 약국 open storefront lateral circulation	PASS	11.797	-4.020	-16.082
+B1 tenant - 온유 약국 open storefront exit	PASS	8.788	-4.020	-16.002
+B1 tenant - 온유 약국 public access	PASS	15.910	-4.020	-16.000
+B1 tenant - 잎새 화원 widened side entrance	PASS	11.710	-4.020	7.050
+B1 tenant - 잎새 화원 open storefront lateral circulation	PASS	11.799	-4.020	4.041
+B1 tenant - 잎새 화원 open storefront exit	PASS	8.789	-4.020	4.001
+B1 tenant - 잎새 화원 widened side entrance	PASS	11.710	-4.020	0.950
+B1 tenant - 잎새 화원 open storefront lateral circulation	PASS	11.799	-4.020	3.959
+B1 tenant - 잎새 화원 open storefront exit	PASS	8.789	-4.020	3.999
+B1 tenant - 잎새 화원 public access	PASS	15.910	-4.020	4.000
+B1 tenant - 잎새 화원 detailed shop circulation	PASS	22.770	-4.020	4.000
+B1 tenant - 잎새 화원 detailed shop circulation	PASS	22.799	-4.020	1.550
+B1 tenant - 잎새 화원 detailed shop circulation	PASS	17.060	-4.020	1.501
+B1 tenant - 잎새 화원 detailed shop circulation	PASS	17.001	-4.020	3.950
+B1 tenant - 잎새 화원 detailed shop circulation	PASS	11.051	-4.020	4.000
+B1 tenant - 바늘 세탁·수선 widened side entrance	PASS	11.710	-4.020	27.050
+B1 tenant - 바늘 세탁·수선 open storefront lateral circulation	PASS	11.799	-4.020	24.041
+B1 tenant - 바늘 세탁·수선 open storefront exit	PASS	8.789	-4.020	24.001
+B1 tenant - 바늘 세탁·수선 widened side entrance	PASS	11.710	-4.020	20.950
+B1 tenant - 바늘 세탁·수선 open storefront lateral circulation	PASS	11.799	-4.020	23.959
+B1 tenant - 바늘 세탁·수선 open storefront exit	PASS	8.789	-4.020	23.999
+B1 tenant - 바늘 세탁·수선 public access	PASS	15.910	-4.020	24.000
+B1 tenant - 바늘 세탁·수선 detailed shop circulation	PASS	22.770	-4.020	24.000
+B1 tenant - 바늘 세탁·수선 detailed shop circulation	PASS	22.799	-4.020	21.550
+B1 tenant - 바늘 세탁·수선 detailed shop circulation	PASS	17.060	-4.020	21.501
+B1 tenant - 바늘 세탁·수선 detailed shop circulation	PASS	17.001	-4.020	23.950
+B1 tenant - 바늘 세탁·수선 detailed shop circulation	PASS	11.051	-4.020	24.000
+B1 tenant - 모아 뷰티 widened side entrance	PASS	-26.950	-4.020	-29.710
+B1 tenant - 모아 뷰티 open storefront lateral circulation	PASS	-29.959	-4.020	-29.799
+B1 tenant - 모아 뷰티 open storefront exit	PASS	-29.999	-4.020	-26.789
+B1 tenant - 모아 뷰티 widened side entrance	PASS	-33.050	-4.020	-29.710
+B1 tenant - 모아 뷰티 open storefront lateral circulation	PASS	-30.041	-4.020	-29.799
+B1 tenant - 모아 뷰티 open storefront exit	PASS	-30.001	-4.020	-26.789
+B1 tenant - 모아 뷰티 public access	PASS	-30.000	-4.020	-33.910
+B1 tenant - 모아 뷰티 customer route return	PASS	-30.000	-4.020	-39.720
+B1 tenant - 모아 뷰티 customer route return	PASS	-31.818	-4.020	-39.797
+B1 tenant - 모아 뷰티 customer route return	PASS	-31.899	-4.020	-30.067
+B1 tenant - 모아 뷰티 customer route return	PASS	-30.081	-4.020	-30.003
+B1 tenant - 모아 뷰티 customer route return	PASS	-30.002	-4.020	-26.084
+B1 tenant - 바른 안경 widened side entrance	PASS	-6.950	-4.020	-29.710
+B1 tenant - 바른 안경 open storefront lateral circulation	PASS	-9.959	-4.020	-29.799
+B1 tenant - 바른 안경 open storefront exit	PASS	-9.999	-4.020	-26.789
+B1 tenant - 바른 안경 widened side entrance	PASS	-13.050	-4.020	-29.710
+B1 tenant - 바른 안경 open storefront lateral circulation	PASS	-10.041	-4.020	-29.799
+B1 tenant - 바른 안경 open storefront exit	PASS	-10.001	-4.020	-26.789
+B1 tenant - 바른 안경 public access	PASS	-10.000	-4.020	-33.910
+B1 tenant - 바른 안경 customer route return	PASS	-10.000	-4.020	-39.720
+B1 tenant - 바른 안경 customer route return	PASS	-11.818	-4.020	-39.797
+B1 tenant - 바른 안경 customer route return	PASS	-11.899	-4.020	-30.067
+B1 tenant - 바른 안경 customer route return	PASS	-10.081	-4.020	-30.003
+B1 tenant - 바른 안경 customer route return	PASS	-10.002	-4.020	-26.084
+B1 tenant - 픽셀 모바일 widened side entrance	PASS	13.050	-4.020	-29.710
+B1 tenant - 픽셀 모바일 open storefront lateral circulation	PASS	10.041	-4.020	-29.799
+B1 tenant - 픽셀 모바일 open storefront exit	PASS	10.001	-4.020	-26.789
+B1 tenant - 픽셀 모바일 widened side entrance	PASS	6.950	-4.020	-29.710
+B1 tenant - 픽셀 모바일 open storefront lateral circulation	PASS	9.959	-4.020	-29.799
+B1 tenant - 픽셀 모바일 open storefront exit	PASS	9.999	-4.020	-26.789
+B1 tenant - 픽셀 모바일 public access	PASS	10.000	-4.020	-33.910
+B1 tenant - 픽셀 모바일 customer route return	PASS	10.000	-4.020	-39.720
+B1 tenant - 픽셀 모바일 customer route return	PASS	8.182	-4.020	-39.797
+B1 tenant - 픽셀 모바일 customer route return	PASS	8.101	-4.020	-30.067
+B1 tenant - 픽셀 모바일 customer route return	PASS	9.919	-4.020	-30.003
+B1 tenant - 픽셀 모바일 customer route return	PASS	9.998	-4.020	-26.084
+B1 tenant - 맡김 보관서비스 widened side entrance	PASS	33.050	-4.020	-29.710
+B1 tenant - 맡김 보관서비스 open storefront lateral circulation	PASS	30.041	-4.020	-29.799
+B1 tenant - 맡김 보관서비스 open storefront exit	PASS	30.001	-4.020	-26.789
+B1 tenant - 맡김 보관서비스 widened side entrance	PASS	26.950	-4.020	-29.710
+B1 tenant - 맡김 보관서비스 open storefront lateral circulation	PASS	29.959	-4.020	-29.799
+B1 tenant - 맡김 보관서비스 open storefront exit	PASS	29.999	-4.020	-26.789
+B1 tenant - 맡김 보관서비스 public access	PASS	30.000	-4.020	-33.910
+B1 tenant - 맡김 보관서비스 customer route return	PASS	30.000	-4.020	-39.720
+B1 tenant - 맡김 보관서비스 customer route return	PASS	28.182	-4.020	-39.797
+B1 tenant - 맡김 보관서비스 customer route return	PASS	28.101	-4.020	-30.067
+B1 tenant - 맡김 보관서비스 customer route return	PASS	29.919	-4.020	-30.003
+B1 tenant - 맡김 보관서비스 customer route return	PASS	29.998	-4.020	-26.084
+2F infill merchandise picking loop	PASS	-35.200	5.980	29.320
+2F infill merchandise picking loop	PASS	-19.063	5.980	29.382
+2F infill merchandise picking loop	PASS	-19.000	5.980	-31.938
+2F infill merchandise picking loop	PASS	-35.170	5.980	-32.000
+2F travel department arrival loop	PASS	46.650	5.980	-29.000
+2F travel department arrival loop	PASS	46.700	5.980	-11.640
+2F travel department arrival loop	PASS	33.050	5.980	-11.600
+2F travel department arrival loop	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+staff kitchen door - 모퉁이 커피 opens	PASS	33.000	5.980	-28.960
+family room privacy door opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+washroom stall door opens	PASS	33.000	5.980	-28.960
+staff kitchen door - 한끼 식당 opens	PASS	33.000	5.980	-28.960
+appliance fridge door - E opens	PASS	33.000	5.980	-28.960
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-20.500	-4.020	-10.960
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-23.019	-4.020	-10.901
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-23.078	-4.020	-11.669
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-24.057	-4.020	-11.699
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-24.100	-4.020	-15.969
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-24.100	-4.020	-19.959
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-24.100	-4.020	-11.769
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-23.122	-4.020	-11.703
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-23.082	-4.020	-10.934
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-20.562	-4.020	-10.901
+B1 tenant - 모퉁이 커피 staff kitchen round trip	PASS	-20.501	-4.020	-15.940
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-20.500	-4.020	9.040
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-23.019	-4.020	9.099
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-23.078	-4.020	8.331
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-24.057	-4.020	8.301
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-24.100	-4.020	4.032
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-24.100	-4.020	0.041
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-24.100	-4.020	8.232
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-23.122	-4.020	8.297
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-23.082	-4.020	9.066
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-20.562	-4.020	9.099
+B1 tenant - 한끼 식당 staff kitchen round trip	PASS	-20.501	-4.020	4.060
+family room entrance / both nursing bays / return	PASS	-44.600	0.980	-25.370
+family room entrance / both nursing bays / return	PASS	-47.120	0.980	-25.399
+family room entrance / both nursing bays / return	PASS	-47.197	0.980	-27.217
+family room entrance / both nursing bays / return	PASS	-47.917	0.980	-27.650
+family room entrance / both nursing bays / return	PASS	-47.288	0.980	-27.343
+family room entrance / both nursing bays / return	PASS	-44.838	0.980	-27.301
+family room entrance / both nursing bays / return	PASS	-44.805	0.980	-27.649
+family room entrance / both nursing bays / return	PASS	-47.160	0.980	-27.306
+family room entrance / both nursing bays / return	PASS	-47.198	0.980	-25.486
+family room entrance / both nursing bays / return	PASS	-44.680	0.980	-25.403
+family room entrance / both nursing bays / return	PASS	-44.601	0.980	-21.834
+WEST fire-door approach remains clear after family room relocation	PASS	-40.680	0.980	-31.600
+WEST fire-door approach remains clear after family room relocation	PASS	-40.601	0.980	-21.430
+WEST fire-door approach remains clear after family room relocation	PASS	-44.520	0.980	-21.401
+WEST fire-door approach remains clear after family room relocation	PASS	-40.670	0.980	-21.400
+WEST fire-door approach remains clear after family room relocation	PASS	-40.606	0.980	-31.550
+WEST fire-door approach remains clear after family room relocation	PASS	-45.926	0.980	-31.599
+cookware corner perimeter and cross aisle	PASS	-29.750	0.980	-34.300
+cookware corner perimeter and cross aisle	PASS	-29.700	0.980	-26.180
+cookware corner perimeter and cross aisle	PASS	-40.550	0.980	-26.100
+cookware corner perimeter and cross aisle	PASS	-40.599	0.980	-29.040
+cookware corner perimeter and cross aisle	PASS	-29.749	0.980	-29.100
+cookware corner perimeter and cross aisle	PASS	-29.701	0.980	-34.210
+cookware corner perimeter and cross aisle	PASS	-40.550	0.980	-34.300
+two fresh prep doors exist	PASS	-40.550	0.980	-34.300
+수산 staff door - E to open opens	PASS	-40.550	0.980	-34.300
+정육 staff door - E to open opens	PASS	-40.550	0.980	-34.300
+meat staff room and walk-in access	PASS	-39.000	1.050	33.440
+meat staff room and walk-in access	PASS	-39.000	1.050	37.430
+meat staff room and walk-in access	PASS	-41.939	1.050	37.499
+meat staff room and walk-in access	PASS	-41.999	1.050	40.438
+meat staff room and walk-in access	PASS	-42.000	1.050	42.468
+meat staff room and walk-in access	PASS	-42.000	1.050	37.568
+meat staff room and walk-in access	PASS	-39.061	1.050	37.501
+meat staff room and walk-in access	PASS	-39.001	1.050	33.582
+meat staff room and walk-in access	PASS	-39.000	0.980	30.572
+fish staff room and walk-in access	PASS	-24.000	1.050	33.440
+fish staff room and walk-in access	PASS	-24.000	1.050	37.430
+fish staff room and walk-in access	PASS	-26.939	1.050	37.499
+fish staff room and walk-in access	PASS	-26.999	1.050	40.438
+fish staff room and walk-in access	PASS	-27.000	1.050	42.468
+fish staff room and walk-in access	PASS	-27.000	1.050	37.568
+fish staff room and walk-in access	PASS	-24.061	1.050	37.501
+fish staff room and walk-in access	PASS	-24.001	1.050	33.582
+fish staff room and walk-in access	PASS	-24.000	0.980	30.572
+수산 staff door - E to open closes	PASS	-24.000	0.980	30.572
+정육 staff door - E to open closes	PASS	-24.000	0.980	30.572
+B1 support room - 몰 공동창고 door opens	PASS	-24.000	0.980	30.572
+B1 support room - 몰 공동창고 entry and return	PASS	-33.420	-4.020	-16.000
+B1 support room - 몰 공동창고 entry and return	PASS	-37.900	-4.020	-16.000
+B1 support room - 몰 공동창고 entry and return	PASS	-43.920	-4.020	-16.000
+B1 support room - 몰 공동창고 entry and return	PASS	-33.560	-4.020	-16.000
+B1 support room - 몰 공동창고 entry and return	PASS	-30.270	-4.020	-16.000
+B1 support room - 몰 공동창고 door closes	PASS	-30.270	-4.020	-16.000
+B1 support room - 식음료 입고실 door opens	PASS	-30.270	-4.020	-16.000
+B1 support room - 식음료 입고실 entry and return	PASS	-33.420	-4.020	4.000
+B1 support room - 식음료 입고실 entry and return	PASS	-37.900	-4.020	4.000
+B1 support room - 식음료 입고실 entry and return	PASS	-43.920	-4.020	4.000
+B1 support room - 식음료 입고실 entry and return	PASS	-33.560	-4.020	4.000
+B1 support room - 식음료 입고실 entry and return	PASS	-30.270	-4.020	4.000
+B1 support room - 식음료 입고실 door closes	PASS	-30.270	-4.020	4.000
+B1 support room - 매장 비품실 door opens	PASS	-30.270	-4.020	4.000
+B1 support room - 매장 비품실 entry and return	PASS	-33.420	-4.020	24.000
+B1 support room - 매장 비품실 entry and return	PASS	-37.900	-4.020	24.000
+B1 support room - 매장 비품실 entry and return	PASS	-43.920	-4.020	24.000
+B1 support room - 매장 비품실 entry and return	PASS	-33.560	-4.020	24.000
+B1 support room - 매장 비품실 entry and return	PASS	-30.270	-4.020	24.000
+B1 support room - 매장 비품실 door closes	PASS	-30.270	-4.020	24.000
+B1 support room - 시설 관리실 door opens	PASS	-30.270	-4.020	24.000
+B1 support room - 시설 관리실 entry and return	PASS	33.420	-4.020	-16.000
+B1 support room - 시설 관리실 entry and return	PASS	37.900	-4.020	-16.000
+B1 support room - 시설 관리실 entry and return	PASS	43.920	-4.020	-16.000
+B1 support room - 시설 관리실 entry and return	PASS	33.560	-4.020	-16.000
+B1 support room - 시설 관리실 entry and return	PASS	30.270	-4.020	-16.000
+B1 support room - 시설 관리실 door closes	PASS	30.270	-4.020	-16.000
+B1 support room - 직원 준비실 door opens	PASS	30.270	-4.020	-16.000
+B1 support room - 직원 준비실 entry and return	PASS	33.420	-4.020	24.000
+B1 support room - 직원 준비실 entry and return	PASS	37.900	-4.020	24.000
+B1 support room - 직원 준비실 entry and return	PASS	43.920	-4.020	24.000
+B1 support room - 직원 준비실 entry and return	PASS	33.560	-4.020	24.000
+B1 support room - 직원 준비실 entry and return	PASS	30.270	-4.020	24.000
+B1 support room - 직원 준비실 door closes	PASS	30.270	-4.020	24.000
+five occupied B1 support rooms	PASS	30.270	-4.020	24.000
+1F complete public restroom suite exists	PASS	30.270	-4.020	24.000
+1F restroom main entrance	PASS	18.000	1.004	-36.720
+1F restroom lobby approach 0	PASS	22.129	1.004	-36.799
+1F public washroom entrance 0 initially closed	PASS	22.129	1.004	-36.799
+1F public washroom entrance 0 open	PASS	22.129	1.004	-36.799
+1F restroom washbasin access 0	PASS	22.199	1.004	-40.648
+1F public washroom cubicle 0-0 opens	PASS	22.199	1.004	-40.648
+1F public washroom cubicle 0-0 approach	PASS	23.108	1.004	-40.695
+1F public washroom cubicle 0-0 enter	PASS	23.197	1.004	-42.583
+1F public washroom cubicle 0-0 leave	PASS	23.200	1.004	-40.763
+1F public washroom cubicle 0-0 closes	PASS	23.200	1.004	-40.763
+1F public washroom cubicle 0-1 opens	PASS	23.200	1.004	-40.763
+1F public washroom cubicle 0-1 approach	PASS	21.241	1.004	-40.701
+1F public washroom cubicle 0-1 enter	PASS	21.201	1.004	-42.591
+1F public washroom cubicle 0-1 leave	PASS	21.200	1.004	-40.771
+1F public washroom cubicle 0-1 closes	PASS	21.200	1.004	-40.771
+1F return from cubicles 0	PASS	22.108	1.004	-40.707
+1F restroom return to lobby 0	PASS	22.199	1.004	-36.858
+1F public washroom entrance 0 closes	PASS	22.199	1.004	-36.858
+1F restroom lobby approach 1	PASS	18.069	1.004	-36.801
+1F public washroom entrance 1 initially closed	PASS	18.069	1.004	-36.801
+1F public washroom entrance 1 open	PASS	18.069	1.004	-36.801
+1F restroom washbasin access 1	PASS	18.001	1.004	-40.650
+1F public washroom cubicle 1-0 opens	PASS	18.001	1.004	-40.650
+1F public washroom cubicle 1-0 approach	PASS	18.910	1.004	-40.696
+1F public washroom cubicle 1-0 enter	PASS	18.997	1.004	-42.584
+1F public washroom cubicle 1-0 leave	PASS	19.000	1.004	-40.764
+1F public washroom cubicle 1-0 closes	PASS	19.000	1.004	-40.764
+1F return from cubicles 1	PASS	18.092	1.004	-40.706
+1F restroom return to lobby 1	PASS	18.001	1.004	-36.857
+1F public washroom entrance 1 closes	PASS	18.001	1.004	-36.857
+1F restroom lobby approach 2	PASS	13.872	1.004	-36.801
+1F public washroom entrance 2 initially closed	PASS	13.872	1.004	-36.801
+1F public washroom entrance 2 open	PASS	13.872	1.004	-36.801
+1F restroom washbasin access 2	PASS	13.801	1.004	-40.650
+1F family restroom toilet approach	PASS	13.800	1.004	-42.330
+1F family restroom return	PASS	13.800	1.004	-40.790
+1F restroom return to lobby 2	PASS	13.800	1.004	-36.870
+1F public washroom entrance 2 closes	PASS	13.800	1.004	-36.870
+1F restroom lobby return	PASS	17.929	1.004	-36.801
+1F restroom return to shop concourse	PASS	17.998	0.980	-34.282
+2F complete public restroom suite exists	PASS	17.998	0.980	-34.282
+2F restroom main entrance	PASS	18.000	6.004	-36.720
+2F restroom lobby approach 0	PASS	22.129	6.004	-36.799
+2F public washroom entrance 0 initially closed	PASS	22.129	6.004	-36.799
+2F public washroom entrance 0 open	PASS	22.129	6.004	-36.799
+2F restroom washbasin access 0	PASS	22.199	6.004	-40.648
+2F public washroom cubicle 0-0 opens	PASS	22.199	6.004	-40.648
+2F public washroom cubicle 0-0 approach	PASS	23.108	6.004	-40.695
+2F public washroom cubicle 0-0 enter	PASS	23.197	6.004	-42.583
+2F public washroom cubicle 0-0 leave	PASS	23.200	6.004	-40.763
+2F public washroom cubicle 0-0 closes	PASS	23.200	6.004	-40.763
+2F public washroom cubicle 0-1 opens	PASS	23.200	6.004	-40.763
+2F public washroom cubicle 0-1 approach	PASS	21.241	6.004	-40.701
+2F public washroom cubicle 0-1 enter	PASS	21.201	6.004	-42.591
+2F public washroom cubicle 0-1 leave	PASS	21.200	6.004	-40.771
+2F public washroom cubicle 0-1 closes	PASS	21.200	6.004	-40.771
+2F return from cubicles 0	PASS	22.108	6.004	-40.707
+2F restroom return to lobby 0	PASS	22.199	6.004	-36.858
+2F public washroom entrance 0 closes	PASS	22.199	6.004	-36.858
+2F restroom lobby approach 1	PASS	18.069	6.004	-36.801
+2F public washroom entrance 1 initially closed	PASS	18.069	6.004	-36.801
+2F public washroom entrance 1 open	PASS	18.069	6.004	-36.801
+2F restroom washbasin access 1	PASS	18.001	6.004	-40.650
+2F public washroom cubicle 1-0 opens	PASS	18.001	6.004	-40.650
+2F public washroom cubicle 1-0 approach	PASS	18.910	6.004	-40.696
+2F public washroom cubicle 1-0 enter	PASS	18.997	6.004	-42.584
+2F public washroom cubicle 1-0 leave	PASS	19.000	6.004	-40.764
+2F public washroom cubicle 1-0 closes	PASS	19.000	6.004	-40.764
+2F return from cubicles 1	PASS	18.092	6.004	-40.706
+2F restroom return to lobby 1	PASS	18.001	6.004	-36.857
+2F public washroom entrance 1 closes	PASS	18.001	6.004	-36.857
+2F restroom lobby approach 2	PASS	13.872	6.004	-36.801
+2F public washroom entrance 2 initially closed	PASS	13.872	6.004	-36.801
+2F public washroom entrance 2 open	PASS	13.872	6.004	-36.801
+2F restroom washbasin access 2	PASS	13.801	6.004	-40.650
+2F family restroom toilet approach	PASS	13.800	6.004	-42.330
+2F family restroom return	PASS	13.800	6.004	-40.790
+2F restroom return to lobby 2	PASS	13.800	6.004	-36.870
+2F public washroom entrance 2 closes	PASS	13.800	6.004	-36.870
+2F restroom lobby return	PASS	17.929	6.004	-36.801
+2F restroom return to shop concourse	PASS	17.998	5.980	-34.282
+WEST 1F fire door closed	PASS	-44.500	6.000	11.000
+EAST B1 fire door closed	PASS	-44.500	6.000	11.000
+EAST 2F fire door closed	PASS	-44.500	6.000	11.000
+WEST B1 fire door closed	PASS	-44.500	6.000	11.000
+WEST 2F fire door closed	PASS	-44.500	6.000	11.000
+EAST 1F fire door closed	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+staff kitchen door - 모퉁이 커피 closes	PASS	-44.500	6.000	11.000
+family room privacy door closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000
+washroom stall door closes	PASS	-44.500	6.000	11.000
+staff kitchen door - 한끼 식당 closes	PASS	-44.500	6.000	11.000
+appliance fridge door - E closes	PASS	-44.500	6.000	11.000

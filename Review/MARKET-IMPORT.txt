@@ -1,0 +1,68 @@
+Out Of Service - three-floor market, 2026-11-23
+
+Open the repository root as a Unity project using Unity 6000.6.8f1.
+The team project and the market source both use URP 17.6.0.
+After Unity finishes importing, open Assets/Scenes/MarketPrototype_v7.unity
+and enter Play mode. The intended game output is 1920 x 1080.
+
+Layout: B1 mall and convenience shops; 1F groceries, homewares and appliances;
+2F fashion and customer services. Both emergency stairs and escalators connect
+the levels. This is a work-in-progress composite Korean supermarket, not a
+replica of a specific store. Product and shop brands are original parodies.
+
+The team's existing scenes, characters, Packages and ProjectSettings are kept.
+The existing build scene list is unchanged. PC_RPAsset retains PC_Renderer as
+its default (index 0); Market_Renderer is an additional entry used only by the
+market camera. MarketRenderProfile selects it by name in generated scenes and
+when applying runtime settings. The team's default ambient occlusion is kept.
+Do not replace the default renderer with the market renderer for other scenes.
+
+Esc opens the single-player settings menu: display mode and resolution, render
+scale, shadows, texture quality, anti-aliasing, VSync/frame limit, sensitivity,
+FOV, inversion, keyboard/mouse rebinding and volume. Display changes require
+confirmation within 15 seconds. HUD and calculator remain disabled. Settings
+persist locally; multiplayer pause integration is not implemented.
+
+Standalone Windows build from the saved market scene:
+  Unity.exe -batchmode -quit -projectPath <checkout> -executeMethod MarketPlayerBuildReview.BuildPlayer -logFile <build-log>
+Output: Builds/MarketReview/Market.exe and build-result.txt (not committed).
+Use a normal graphics device; reflection capture and scene regeneration need it.
+
+Regeneration (optional, replaces the generated market scene):
+  Unity menu: Out Of Service > Build Market Prototype V7
+  Or executeMethod MarketPlayerBuildReview.RebuildSceneAndPlayer to regenerate
+  the scene and build the Windows player together. Save other scene work first.
+  Keep gameplay and art changes in the generator sources if they must survive
+  regeneration. Tools contains the original packaging/sign artwork generators.
+
+Upload contents:
+  Saved scene, dependency assets and their original .meta GUIDs, all market
+  scripts, source art, print-generation tools, asset credits and review records.
+  Review/market-publish-dependencies.json lists exported scene/render dependencies.
+  Review/market-snapshot-validation-2026-11-23.json records their hash comparison
+  with the standalone-tested source project, scene hash and GUID checks.
+  Current generated batches are included. Obsolete unreferenced batches, local
+  reference-photo downloads, screenshots, Library, Temp, Logs and builds are not.
+
+Validation evidence:
+  Review/market-latest-handoff-2026-11-23.json records the latest source Windows
+  build and 1080p checks on an RTX 4070 SUPER. OpenMallFinal-2026-11-23 contains
+  floor/fixture tests; SettingsPublish-2026-11-23 contains settings/persistence
+  checks. RendererMergeFinal-2026-11-23 checks the isolated market renderer, runtime
+  settings, doors and a 2F traversal. These are source-project player tests.
+  The complete merged project has not been imported or built in this checkout.
+  Historical review records may point to local screenshots/builds not uploaded.
+
+Remaining work:
+  Overall visual quality is still under active revision. The requested Left 4
+  Dead comparison target and a full 186-product visual sign-off are not claimed.
+  Multiplayer, combat performance and lower-end hardware are not validated by
+  these recorded map tests. Fixed reflection captures are not dynamic GI.
+
+Art licenses and sources:
+  Assets/OutOfService/Art/**/SOURCES.md and FRESH_SOURCES.md
+  Assets/StreamingAssets/ArtCredits/RetailPhotography.json
+  Assets/StreamingAssets/ArtCredits/RetailPhotoLicense.txt
+  Review/*assets*.json and *reference-register*.json
+  Keep attribution and applicable ShareAlike terms with adapted print artwork;
+  no blanket license for all third-party assets is implied by this upload.

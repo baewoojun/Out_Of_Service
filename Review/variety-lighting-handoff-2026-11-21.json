@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-21",
+  "purpose": "다른 대화에 전달할 변경 요약 — 가구·상품 형태 / 간접조명 / 시작 렌더 준비",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "generation": "변경은 생성기에 포함되어 있다. BuildIndirectBounce는 ApplyAfterHoursLightBalance 뒤, BakeShopReflections와 BatchSmallProps 앞에서 실행한다. 바닥 AO는 SizedFloor 복제 전에 FloorFinish에서 설정한다.",
+  "furniture": "B1 카페·식당의 기존 배치와 0.79m 상판 높이를 유지하면서 원형·사각·직사각 상판, 십자 받침·트레슬 다리, 곡면 합판·쿠션·슬랫 의자를 구분했다. 원형 상판 UV를 평면 투영으로 고쳐 방사형 나뭇결 늘어남을 제거했다.",
+  "products": "B1 모아 뷰티: 로션·토너·크림에 밀봉 튜브·스포이트 병·타원 에어리스 펌프를 더해 6개 형태, 864개 선반 상품과 24개 테스터. 패러디 라벨을 자체 제작했다. 튜브 라벨의 상단 표면 관통을 근접 화면 확인 후 수정했다. 이 수치는 기존 186개 식품 카탈로그를 다시 검수했다는 뜻이 아니다.",
+  "appliances": "1F: 앞문형 2대 + 상부 투입형 2대, TV 3개 크기와 두 가지 받침. 일반 세탁기용 안내표를 따로 제작했다. 새 뚜껑 2개는 MarketSwingDoor를 사용하므로 총 81개 문/뚜껑 상태가 있다.",
+  "interaction_contract": "세탁기 뚜껑의 로컬 Y축을 월드 수평 경첩 축으로 배치하고 openAngle=-100을 사용한다. 유리·프레임·손잡이·충돌체가 함께 움직이며 본체/조작판은 고정된다. 네트워크 담당은 기존 문 상태 동기화에 이 두 뚜껑도 포함할 것. 이번 작업에서는 멀티 동기화를 구현하거나 검증하지 않았다.",
+  "lighting_contract": "7개 저강도 그림자 스포트로 벽·천장 확산광을 근사한다. MarketBounceLighting은 실행 순서 200에서 source의 enabled/intensity/color를 따라간다. 원광 정전·감광 시 반사광도 갱신된다. 제어기를 정적 메시의 조상에 붙이면 배칭 대상에서 빠지므로 반드시 별도 빈 자식 오브젝트에 둔다. 실시간 GI나 라이트맵 베이크가 아니며 기존 27개 고정 반사 맵의 한계는 유지된다.",
+  "startup_contract": "MarketRenderPreparation은 임시 7개 시점 준비 후 원래 출력 대상으로 손전등 ON/OFF를 포함한 4프레임을 준비한 다음 화면 가림을 해제하고 입력/AI를 복원한다. PreparedOutputFrames=4를 검증한다. HUD·배터리·스태미나·피해·점프 규칙은 변경하지 않았다.",
+  "performance_contract": "14만여 고정 소품을 2,067개 재질·공간 묶음으로 합쳤다. 움직이는 뚜껑은 별도 유지한다. 거리 가림 설정 전환이 손전등의 그림자 필터 품질까지 바꾸지 않도록 Medium으로 고정했다. 2048 그림자 atlas와 기존 거리 예산을 유지한다.",
+  "tests": "-graphicsReview: 26개 ON/OFF 시점 및 열린 세탁기 뚜껑. -refinementReview: 27개 기능 검사 / 81개 문. -startupReview: 원래 출력과 새 출력 분리, 동기 렌더/읽기. -startupGameplayReview: 실제 보이는 창에서 원래 백버퍼·플레이어·AI를 유지한 240개 일반 카메라 프레임. 숨긴 창에서는 정상 렌더가 생략되어 실패하며 대체 렌더로 통과시키지 않는다.",
+  "preserved": "B1 몰 / 1F 식품·생활·가전 / 2F 패션·고객센터, 양쪽 비상계단, 에스컬레이터, 기존 목표와 이동 규칙.",
+  "references": "Review/variety-reference-register-2026-11-21.json",
+  "validation": "Review/variety-lighting-validation-2026-11-21.json",
+  "remaining": "다른 코너의 반복되는 가구와 186개 식품 전체의 추가 근접 개선은 남아 있다. 고정 반사 맵은 동적 정전을 그대로 반영하지 않는다. 대량 가림 토글 뒤 새 렌더타깃을 그리는 인위적인 시험에서 약 45ms 단발 지연이 남는다. 일반 시작 시점/파프리카/B1 경로 검사와 구분한다. 전투·멀티·드라이버 셰이더 캐시가 없는 최초 설치 성능은 검증하지 않았다. L4D2와 동일한 완성도라는 판정이 아니다."
+}

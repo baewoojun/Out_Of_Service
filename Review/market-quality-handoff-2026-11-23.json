@@ -1,0 +1,46 @@
+{
+  "checked": "2026-11-23",
+  "scope": "Map art, merchandising and rendering. Preserve team gameplay and package settings during upload.",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "unity": "6000.6.8f1",
+  "render_pipeline": "URP 17.6.0, native 1920x1080, SMAA High",
+  "floor_contract": {
+    "B1": "Mall and support rooms",
+    "connections": "Two emergency stair towers, escalators; saved floors at -5 / 0 / 5 m",
+    "1F": "Food, household, appliances",
+    "2F": "Fashion and customer service"
+  },
+  "cross_chat_changes": [
+    "Small deterministic shelf rotations/setbacks and front stock gaps: generators preserve the arrangement. No added product simulation or network state.",
+    "Original ingredient/photo-backed parody graphics with package-specific physical sizes, folds, necks, handles and seals.",
+    "Explicit per-light flashlight shadow bias .04/.12; generic URP defaults no longer silently override this lamp.",
+    "HUD remains disabled. Stamina, flashlight battery and three-stage damage logic were not redesigned.",
+    "Staff-room furnishing and surface changes are decorative; no objective chain or multiplayer state change."
+  ],
+  "validation": {
+    "v13": "Build succeeded. 186 front crops and held/frozen profiles generated; representative fronts and side/reverse captures inspected. 58 graphics views and 29/29 reflections passed automated capture.",
+    "v14": "Build succeeded. Mandarin pile/peel and printed dairy lids inspected. 273 floor, 27 door/culling and 83 resting-door checks passed; 23 merchandising and 58 graphics views generated. Seven original-backbuffer 1080p routes/startup checks passed with no sampled frame above 16.67 ms.",
+    "earlier": "273 floor checks in V10 and 27 door/culling plus 83 resting-door checks in V9 passed.",
+    "final_print": "Header-only correction built successfully and latest blueberry/strawberry/mango fronts/oblique views inspected. No geometry or shader-count changes after V14 route tests.",
+    "manual_play": "Not completed. Computer Use launch call lost its node_repl continuation; no manual input or navigation acceptance claimed. Automated standalone visual and route results remain valid."
+  },
+  "performance_report": "Review/retail-refresh-performance-validation-2026-11-23.json",
+  "visual_audit": "Review/product-redesign-audit-2026-11-23.json",
+  "asset_register": "Review/retail-refresh-assets-2026-11-23.json",
+  "limits": [
+    "Not L4D2 quality parity or final approval of every face of all 186 products.",
+    "Water PET still weak against dark backgrounds; some frozen/snack folds and ingredient subjects remain repetitive or mismatched.",
+    "Garment shoulders, hardware details and some produce fixtures need more art refinement.",
+    "No networking package found in the source Packages/manifest.json; complete multiplayer integration is unverified.",
+    "Tests do not establish a complete singleplayer objective chain, balanced monster combat or multiplayer synchronization.",
+    "Performance results describe finite runs on one RTX 4070 SUPER PC, not low-end or worst-case guarantees."
+  ],
+  "repository": {
+    "draft_pr": "https://github.com/baewoojun/Out_Of_Service/pull/1",
+    "branch": "codex/market-map-2026-11-22",
+    "status": "Uploaded and verified against GitHub remote branch; draft PR description updated. No merge into main.",
+    "url": "https://github.com/baewoojun/Out_Of_Service",
+    "content_commit": "8903379d2f1af9d0f8f02fe6a3801cba1a568970",
+    "verified_at_kst": "2026-11-23 09:51"
+  }
+}

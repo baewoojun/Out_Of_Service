@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-21",
+  "policy": "Reference photographs remain in Review, outside Assets. Authored geometry and surface functions are original. The vetted Poly Haven Potted Plant 04 model and 1K textures are the only new third-party game assets in this pass, under CC0. No purchased asset or image-generation service was used.",
+  "references": [
+    {
+      "name": "Garden rose, Mayra's Bridal Pink",
+      "author": "Alexandra Farms",
+      "url": "https://www.alexandrafarms.com/varieties/mayras-bridal-pink/",
+      "original_file": "Review/B1References/garden-rose-reference.jpg",
+      "checked_date": "2026-11-19 (previous inspected reference retained)",
+      "license": "Copyrighted reference only, not redistributed in game",
+      "observed": "Rounded overlapping cupped petals and denser rolled centre.",
+      "unverified": "Complete petal underside and exact geometry.",
+      "interpretation": "16 authored petals with three curved rings and three bloom variants; not a scan."
+    },
+    {
+      "name": "Oxford stand-collar shirt",
+      "author": "MUJI",
+      "url": "https://www.muji.us/collections/mens-shirts-polos/products/mens-washed-oxford-stand-collar-long-sleeve-shirt-ac20q24a",
+      "original_file": "Review/B1References/oxford-reference.jpg",
+      "checked_date": "2026-11-21",
+      "license": "Copyrighted reference only",
+      "observed": "Plain woven cloth, front placket, chest pocket, narrow collar.",
+      "unverified": "Hanging garment drape; reference is worn by a person.",
+      "interpretation": "Original hanging forms and coarse stitched seams, no brand marks."
+    },
+    {
+      "name": "Linea Classic S commercial espresso machine",
+      "author": "La Marzocco",
+      "url": "https://www.lamarzoccousa.com/commercial-products/espresso-machines/linea-classic-s/",
+      "original_file": "Review/B1References/espresso-reference.png",
+      "checked_date": "2026-11-21",
+      "license": "Copyrighted reference only",
+      "observed": "Metal panels, separate group heads, knobs, gauge and cup rail.",
+      "unverified": "Exact roughness, internal parts or operating simulation.",
+      "interpretation": "Original generic equipment, shared brushed steel and ceramic/paper finishes."
+    },
+    {
+      "name": "Potted rubber plant",
+      "author": "Margaret Shear / NC State Extension Plant Toolbox",
+      "url": "https://plants.ces.ncsu.edu/plants/ficus-elastica/",
+      "image_url": "https://eit-planttoolbox-prod.s3.amazonaws.com/media/images/Ficus-elastica--Margaret-Shear--CC-BY-SA.jpg",
+      "original_file": "Review/B1References/rubber-plant-reference.jpg",
+      "checked_date": "2026-11-21",
+      "license": "Photograph credited CC BY-SA 4.0 on source; viewed as reference only and not included in game",
+      "observed": "Elliptical glossy leaves at different heights on upright stems, thick central ribs, irregular crown.",
+      "unverified": "Exact cultivar, full back/underside and scale.",
+      "interpretation": "Low-poly authored nursery plant with 11 leaves, three shared leaf variations and shared stem mesh."
+    },
+    {
+      "name": "Potted peace lily",
+      "author": "UF/IFAS Gardening Solutions",
+      "url": "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/peace-lily/",
+      "image_url": "https://gardeningsolutions.ifas.ufl.edu/images/plants/foliage/peace_lily.jpg",
+      "original_file": "Review/B1References/peace-lily-reference.jpg",
+      "checked_date": "2026-11-21",
+      "license": "No reuse license verified; visual reference only, excluded from game",
+      "observed": "Arching basal clump, long ribbed leaves, white spathes and pale upright spadices.",
+      "unverified": "Exact cultivar, dimensions and photographic surface properties.",
+      "interpretation": "13 leaves with curved petioles, two authored spathes; reduced density for gameplay silhouette and draw budget."
+    }
+  ],
+  "assets": [
+    {
+      "name": "Cupped roses V9",
+      "author": "Project-authored",
+      "license": "Original project geometry",
+      "source": "Assets/OutOfService/Editor/MarketBotanicalV7.cs",
+      "location": "B1 florist buckets/bouquets",
+      "modification": "20-sample boundaries and three radial spans per petal, three shared variants, 1952 vertices/head. A family-specific 2000-vertex batching exception keeps these heads in material sectors; other mesh limits stay unchanged.",
+      "original_file": "Procedural source; no imported model",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_rose_cupped_v9_*.asset"
+    },
+    {
+      "name": "Botanical potted foliage V2",
+      "author": "Project-authored",
+      "license": "Original project geometry and textures",
+      "source": "Assets/OutOfService/Editor/MarketBotanicalV7.cs",
+      "location": "B1 florist nursery benches",
+      "modification": "Two growth habits, six shared 306-vertex leaf meshes, two stem meshes, softer leaf edges and upright young leaves. Original compost and vein textures.",
+      "original_file": "Procedural source; no imported model",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_potted_*.asset"
+    },
+    {
+      "name": "Laundry V4 surface and seams",
+      "author": "Project-authored",
+      "license": "Original project geometry and textures",
+      "source": "Assets/OutOfService/Editor/MarketFineSurfaceV7.cs and MarketLaundryNaturalV7.cs",
+      "location": "B1 laundry 11-garment rack",
+      "modification": "More curved torso/shoulder/sleeve samples, cloth-following pockets/buttons and shared seam meshes, original woven normal and albedo.",
+      "original_file": "Procedural source",
+      "generated": "Assets/OutOfService/Generated/MallDetailV3_laundry_sewn_v4_*.asset; MallDetailV3_tailoring_front_seams_v2_*.asset; LaundryWeaveReliefV2.asset; LaundryOxfordV2.asset"
+    },
+    {
+      "name": "Ceramic, paper and steel finish V2",
+      "author": "Project-authored",
+      "license": "Original project material and surface functions",
+      "source": "Assets/OutOfService/Editor/MarketFineSurfaceV7.cs",
+      "location": "B1 café/restaurant cups and coffee service equipment",
+      "modification": "Separate matte paper/fired glaze, subtle shared relief and brushed metal roughness variation.",
+      "original_file": "Procedural source",
+      "generated": "Assets/OutOfService/Generated/CafeSheet*.asset; CeramicGlazeReliefV2.asset; PaperCupFiberV2.asset"
+    },
+    {
+      "name": "Potted Plant 04",
+      "author": "James Ray Cock / Poly Haven",
+      "license": "CC0 1.0",
+      "license_url": "https://polyhaven.com/license",
+      "url": "https://polyhaven.com/a/potted_plant_04",
+      "checked_date": "2026-11-21",
+      "source": "Assets/OutOfService/Editor/MarketAccentPlantV7.cs",
+      "location": "B1 florist nursery bench: local (5.05,0.34,5.80), (5.05,0.34,8.56), (6.00,0.91,9.94)",
+      "modification": "Shared FBX mesh normalized to 0.30 m height, slight per-instance yaw/scale. Original 1K diffuse and GL normal. ARM repacked to URP metallic R, occlusion G, smoothness A. Opaque instanced material; no individual collider or runtime scripts.",
+      "original_file": "Assets/OutOfService/Art/Models/potted_plant_04/ (FBX and 3 original 1K maps retained and checked against official MD5)",
+      "generated": "Assets/OutOfService/Generated/AccentSucculentV1.asset; Assets/OutOfService/Art/Models/potted_plant_04/potted_plant_04_urp_mask.png",
+      "selection": "Official page lists 6K source faces; Unity import was inspected as 5660 vertices and 8929 triangles, source height 0.27 m. Three instances use one shared mesh/material. Larger 70K/96K candidates were not adopted."
+    }
+  ]
+}

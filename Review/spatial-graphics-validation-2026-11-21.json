@@ -1,0 +1,418 @@
+{
+  "date": "2026-11-21T13:27:58.3036983+09:00",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_saved": "2026-11-21T13:19:09.1503908+09:00",
+  "scene_sha256": "FCA8D1CC9566948D9A8C8A3AB60D9A5CB32BDB18B92015A15B2B5EF9E0B9F7B3",
+  "build": "Builds/MarketReview/Market.exe",
+  "build_completed": "2026-11-21T13:19:45.8473424+09:00",
+  "build_result": "Succeeded",
+  "archive": "Review/GraphicsCompleted-2026-11-21-1319",
+  "baseline_archive": "Review/GraphicsBefore-2026-11-21",
+  "graphics_check": "PASS: 18 views at 1920x1080 / FOV75, torch ON/OFF, 27/27 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.",
+  "graphics_before": [
+    {
+      "view": "cafe-metal",
+      "torch": "0",
+      "p95_render_sync_ms": "3.940",
+      "mean_srgb": "0.0402",
+      "black_fraction": "0.5772",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "cafe-metal",
+      "torch": "1",
+      "p95_render_sync_ms": "3.905",
+      "mean_srgb": "0.1467",
+      "black_fraction": "0.4294",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "0",
+      "p95_render_sync_ms": "3.142",
+      "mean_srgb": "0.0546",
+      "black_fraction": "0.6586",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "1",
+      "p95_render_sync_ms": "3.617",
+      "mean_srgb": "0.0580",
+      "black_fraction": "0.6213",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "0",
+      "p95_render_sync_ms": "3.832",
+      "mean_srgb": "0.0321",
+      "black_fraction": "0.6914",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "1",
+      "p95_render_sync_ms": "3.536",
+      "mean_srgb": "0.0343",
+      "black_fraction": "0.6379",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "0",
+      "p95_render_sync_ms": "4.790",
+      "mean_srgb": "0.0726",
+      "black_fraction": "0.4354",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "1",
+      "p95_render_sync_ms": "4.675",
+      "mean_srgb": "0.2021",
+      "black_fraction": "0.3586",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "0",
+      "p95_render_sync_ms": "7.026",
+      "mean_srgb": "0.0442",
+      "black_fraction": "0.5828",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "1",
+      "p95_render_sync_ms": "7.062",
+      "mean_srgb": "0.0726",
+      "black_fraction": "0.4226",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "0",
+      "p95_render_sync_ms": "2.154",
+      "mean_srgb": "0.0316",
+      "black_fraction": "0.5807",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "1",
+      "p95_render_sync_ms": "2.800",
+      "mean_srgb": "0.0496",
+      "black_fraction": "0.5280",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "0",
+      "p95_render_sync_ms": "2.851",
+      "mean_srgb": "0.0208",
+      "black_fraction": "0.6030",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "1",
+      "p95_render_sync_ms": "3.093",
+      "mean_srgb": "0.0345",
+      "black_fraction": "0.5719",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "0",
+      "p95_render_sync_ms": "3.440",
+      "mean_srgb": "0.0262",
+      "black_fraction": "0.6568",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "1",
+      "p95_render_sync_ms": "3.542",
+      "mean_srgb": "0.0725",
+      "black_fraction": "0.5971",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "8"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "0",
+      "p95_render_sync_ms": "3.853",
+      "mean_srgb": "0.0072",
+      "black_fraction": "0.9653",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "1",
+      "p95_render_sync_ms": "3.509",
+      "mean_srgb": "0.0189",
+      "black_fraction": "0.8242",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "8"
+    }
+  ],
+  "graphics_after": [
+    {
+      "view": "cafe-metal",
+      "torch": "0",
+      "p95_render_sync_ms": "4.290",
+      "mean_srgb": "0.1188",
+      "black_fraction": "0.3556",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-metal",
+      "torch": "1",
+      "p95_render_sync_ms": "4.031",
+      "mean_srgb": "0.1848",
+      "black_fraction": "0.3369",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "0",
+      "p95_render_sync_ms": "3.616",
+      "mean_srgb": "0.0571",
+      "black_fraction": "0.6357",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "1",
+      "p95_render_sync_ms": "3.736",
+      "mean_srgb": "0.0601",
+      "black_fraction": "0.5980",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "0",
+      "p95_render_sync_ms": "3.875",
+      "mean_srgb": "0.0325",
+      "black_fraction": "0.6882",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "1",
+      "p95_render_sync_ms": "3.620",
+      "mean_srgb": "0.0346",
+      "black_fraction": "0.6347",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "0",
+      "p95_render_sync_ms": "4.469",
+      "mean_srgb": "0.1823",
+      "black_fraction": "0.3704",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "1",
+      "p95_render_sync_ms": "4.692",
+      "mean_srgb": "0.2768",
+      "black_fraction": "0.3153",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "0",
+      "p95_render_sync_ms": "7.170",
+      "mean_srgb": "0.0442",
+      "black_fraction": "0.5814",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "1",
+      "p95_render_sync_ms": "7.295",
+      "mean_srgb": "0.0719",
+      "black_fraction": "0.4193",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "0",
+      "p95_render_sync_ms": "2.486",
+      "mean_srgb": "0.0322",
+      "black_fraction": "0.5712",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "1",
+      "p95_render_sync_ms": "2.489",
+      "mean_srgb": "0.0503",
+      "black_fraction": "0.5181",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "0",
+      "p95_render_sync_ms": "3.122",
+      "mean_srgb": "0.0364",
+      "black_fraction": "0.5630",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "1",
+      "p95_render_sync_ms": "3.051",
+      "mean_srgb": "0.0452",
+      "black_fraction": "0.5381",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "0",
+      "p95_render_sync_ms": "3.529",
+      "mean_srgb": "0.0621",
+      "black_fraction": "0.5908",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "1",
+      "p95_render_sync_ms": "3.574",
+      "mean_srgb": "0.1405",
+      "black_fraction": "0.5401",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "0",
+      "p95_render_sync_ms": "3.482",
+      "mean_srgb": "0.0075",
+      "black_fraction": "0.9633",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "27"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "1",
+      "p95_render_sync_ms": "3.597",
+      "mean_srgb": "0.0192",
+      "black_fraction": "0.8236",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "27"
+    }
+  ],
+  "floor_check": "PASS: 253 checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances, four new mall customer route returns, five support rooms with doors, 1F retail loop/cross aisle, 2F fashion loop, appliance/kitchen/family doors, both fresh prep rooms and walk-ins return with staff doors. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.",
+  "regression_check": "PASS: 15 door and culling regression checks; 79 resting doors verified.",
+  "pepper_route": "1920x1080 | real startup preparation 566.59 ms / 7 views | offscreen GPU sync 801 rendered | distance 6.00 m | p95 5.49 ms | p99 5.96 ms | max 8.16 ms | frames over 16.67ms 0/801",
+  "basement_route": "1920x1080 | offscreen GPU sync | AI disabled | real startup preparation 542.02 ms / 7 views (includes B1) | test target initialization 28.44 ms | first controllable B1 visit after loading | 2982 rendered | 8/8 route legs | distance 38.56 m | p95 4.39 ms | p99 4.68 ms | max 7.55 ms | over 16.67ms 0/2982 | gen0 collections 0",
+  "regression_render": "1920x1080 controlled render/readback, AI disabled, not full-game FPS. Real startup preparation 574.17 ms / 7 views. First test-target draw after startup 27.17 ms, 180-sample render sequence INCLUDING cold samples p95 7.47 ms / max 40.16 ms. Whole scripted-loop frame intervals p95 8.52 ms / max 41.92 ms. Main-thread allocations across sample frames including QA/render callbacks 0 bytes. See hitches.tsv for sample indices; no warmup spikes have been discarded.",
+  "regression_hitches": [
+    {
+      "sample": "0",
+      "render_sync_ms": "40.161",
+      "loop_interval_ms": "41.916"
+    },
+    {
+      "sample": "30",
+      "render_sync_ms": "8.175",
+      "loop_interval_ms": "17.485"
+    }
+  ],
+  "shadow_atlas_downscale_warnings": 0,
+  "new_error_logs": 0,
+  "visual_inspection": [
+    "Cafe steel brushing, ceramic/paper cup separation and contact shade",
+    "Service countertop fine grain and correct thickness",
+    "Clothing replaced with sleeved volumes instead of folded boards",
+    "Refrigerator display and near floor under flashlight",
+    "B1 room dark silhouette with counter focal light",
+    "Produce and checkout local light/shadows",
+    "Wall plaster under grazing flashlight"
+  ],
+  "limitations": [
+    "No claim of L4D2-equivalent completion. Repetitive furniture/product silhouettes and indirect diffuse lighting still require work.",
+    "Performance uses Windows 1920x1080 controlled render/readback with AI disabled, not whole-game FPS or multiplayer.",
+    "A 40.16ms cold render sample and 41.92ms whole-loop interval remain after allocating a separate QA render target; sample 30 also recorded a 17.49ms loop interval. These are retained, not discarded. Root cause outside the measured phase is not proven.",
+    "Reflection volumes are static, not real-time mirrors. Door, monster, blackout and light state changes do not update the baked room image.",
+    "One west perimeter review eye remains outside local reflection volumes. Global diffuse bounce/lightmap coverage is not completed.",
+    "Non-development player cannot report reliable texture memory through Profiler.GetRuntimeMemorySizeLong; not reported as zero.",
+    "Existing warnings for stripped unused depth-of-field and Panini passes persist, also seen in baseline.",
+    "This work is not a new 186-SKU close-up or all-label-orientation audit."
+  ],
+  "source_hashes": [
+    {
+      "path": "Assets/OutOfService/Editor/MarketPrototypeBuilderV7.cs",
+      "sha256": "F49FB8766769C6C6F52F67203D37795E8BDE3B5298CB248DD2AFA59478709A05"
+    },
+    {
+      "path": "Assets/OutOfService/Editor/MarketSpatialGraphicsV7.cs",
+      "sha256": "C26B620E83CC8EBB3784E0B72DA103E4520FFAE5E69FD3DB25A81E7389D753F5"
+    },
+    {
+      "path": "Assets/OutOfService/Editor/MarketSurfaceFinishV7.cs",
+      "sha256": "B3F73A562AFF0D8DEED16D965F9FD70AB75E94C08859213505CEFE8A280E0247"
+    },
+    {
+      "path": "Assets/OutOfService/Editor/MarketClothingV7.cs",
+      "sha256": "CE27BEF49A2182C8C3920414C5F75A9DA7873C2ABB91B7AA9FDBB4ECB2C9A695"
+    },
+    {
+      "path": "Assets/OutOfService/Editor/MarketLaundryNaturalV7.cs",
+      "sha256": "D014DA795107D58C3BBEBF0B7C8EC9705A1AD96510DBFFE0F826C85F5C43C22B"
+    },
+    {
+      "path": "Assets/OutOfService/MarketDetailVisibility.cs",
+      "sha256": "068904E528EEE0BDAADAF5B664BC33DD744922113624174CD35779640AE8FF7F"
+    },
+    {
+      "path": "Assets/OutOfService/MarketGraphicsReview.cs",
+      "sha256": "B428FC6A5C19901D60E6A789626FC96A5B88C377337C034369BAC13DABB3DBF0"
+    },
+    {
+      "path": "Assets/OutOfService/MarketRefinementReview.cs",
+      "sha256": "42A5425D3B203A071B642AC514C958FB2EBB6994F74AF9E6F5A8A67CAC31F30D"
+    },
+    {
+      "path": "Assets/Settings/PC_Renderer.asset",
+      "sha256": "8548AA6179D81F012F23DA6FEF10C414473D5D8CA72FB20019D330377653C865"
+    }
+  ],
+  "handoff": "Review/spatial-graphics-handoff-2026-11-21.json",
+  "sources": "Review/spatial-graphics-sources-2026-11-21.json"
+}

@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-23T13:31:19.7692966+09:00",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_sha256": "89D6AD72FBBEEF0A77751D388CD3C1564700CA21BF6D56431A209116A53A1931",
+  "changes": [
+    "Widened and furnished B1 mall shops",
+    "Filled 2F folded clothing and luggage displays",
+    "Public women/men/family restroom suites on 1F and 2F; B1 existing toilets preserved",
+    "Dense tomatoes and prepared vegetable stock, warehouse sliding doors, stairs and escalator refinements",
+    "Esc settings menu: graphics, display, mouse sensitivity/FOV, remappable keyboard/mouse input, volume and persistence",
+    "Dedicated market renderer keeps the team default renderer and scene appearance separate",
+    "Display confirmation shows and persists the actual accepted mode and dimensions if Windows rejects exclusive fullscreen"
+  ],
+  "validation": {
+    "SettingsReview": "PASS: 44 standalone settings checks; Input System events, real camera/controller/door, isolated profile.",
+    "SettingsReloadReview": "PASS: 12 standalone settings checks; Input System events, real camera/controller/door, isolated profile.",
+    "RefinementReview": "PASS: 27 door and culling regression checks; 92 resting doors verified.",
+    "GraphicsReview": "PASS: 132 views at 1920x1080 / FOV75, torch ON/OFF, 29/29 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.",
+    "UpperRetailWalk": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 138.82 m, 19603 rendered, 19603 samples, p95 3.425 ms, p99 4.345 ms, max 6.381 ms, over 16.67ms 0, Gen0 41. Loading 666.21 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer."
+  },
+  "menu": "Menu rendering disabled while closed; preview time uses wall-clock and continues while menu is unfocused; scoped to MarketPlayer scenes",
+  "performance_note": "Finite 138.82 m scripted 2F traversal, 1080p normal backbuffer, all 19,603 traversal frames included. Editor closed. AI disabled; this does not measure combat, multiplayer or every area.",
+  "manual": "Inspected fresh produce-contact, B1 shopfront, 2F folded clothing and display confirmation images. No missing shaders in these samples. Repeated produce silhouettes and folded garment forms still need art refinement. 132 rendered views are not 132 manual art sign-offs.",
+  "remaining": [
+    "Multiplayer menu pause behavior needs network integration",
+    "Decorative sanitary fixtures and live mirror behavior not implemented",
+    "Whole team checkout with extra packages not built; source Windows player built and tested"
+  ],
+  "handoff": "Review/SettingsPublish-2026-11-23/handoff.json",
+  "repository_branch": "codex/market-map-2026-11-22",
+  "publish_scope": "Latest saved map, scene dependencies, generators, runtime scripts and validation. Packages and ProjectSettings retained.",
+  "renderer": "Shared PC_Renderer unchanged; dedicated Market_Renderer is pipeline entry 1 and selected by market cameras. Pipeline prefilter and global runtime-list changes are Unity build caches.",
+  "cross_chat_changes": [
+    "Map: preserve Market_Renderer in the pipeline list; generators must never edit shared PC_Renderer.",
+    "HUD/effects: use MarketRenderProfile.Select for market cameras; use MarketSettings.IsOpen/InputBlocked and MarketControls for menu/input.",
+    "Menu: confirmation records accepted display mode; exclusive fullscreen was rejected by Windows during the final test, borderless fallback and persistence passed."
+  ],
+  "review_directory": "Review/RendererMergeFinal-2026-11-23"
+}

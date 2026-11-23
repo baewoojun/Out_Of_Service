@@ -1,0 +1,5 @@
+Potted Plant 04 by James Ray Cock / Poly Haven
+Source: https://polyhaven.com/a/potted_plant_04
+License: CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/
+Verified: 2026-11-21
+Original 1K FBX, diffuse, normal GL and ARM files retained. Unity uses an origin/scale-normalized shared mesh and a derived URP packed mask. No trademark artwork.

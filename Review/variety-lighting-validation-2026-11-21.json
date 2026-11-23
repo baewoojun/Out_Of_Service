@@ -1,0 +1,493 @@
+{
+  "date": "2026-11-21T15:05:56.8156715+09:00",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_saved": "2026-11-21T14:53:55.8948057+09:00",
+  "scene_sha256": "A09D2CC1838310724200A4AA52DEC758F40B043FEF4110B52A3F804E8F020C07",
+  "build": "Builds/MarketReview/Market.exe",
+  "build_completed": "2026-11-21T14:57:29.7477604+09:00",
+  "build_result": "Succeeded",
+  "archive": "Review/VarietyCompleted-2026-11-21-1503",
+  "environment": "Unity 6000.6.8f1, URP 17.6.0, Windows D3D12, RTX 4070 SUPER, 1920x1080. Same workstation; no driver cache purge. Editor remained open.",
+  "batching": {
+    "sectors": 2067,
+    "dynamic_door_count": 81,
+    "fixed_renderers_merged": 140945
+  },
+  "normal_startup": "PASS: 1920x1080, original backbuffer, normal camera, player enabled, 1 active AI; 240 camera frames. Loading 668.79 ms. Ready-to-first camera end 3.235 ms (partial frame). Subsequent frame cadence p95 5.672 ms / max 6.782 ms / over 16.67ms 0/239. No manual Camera.Render, GPU readback, target allocation, warmup-frame deletion or simulation disabling after loading. Uncapped static starting viewpoint, not a combat/network benchmark or isolated GPU time.",
+  "controlled_startup_before": [
+    {
+      "phase": "first_control",
+      "count": 60,
+      "first_sync_ms": 16.008,
+      "p95_sync_ms": 7.158,
+      "max_sync_ms": 16.008,
+      "over_16_67ms": 0
+    },
+    {
+      "phase": "new_target",
+      "count": 60,
+      "first_sync_ms": 7.642,
+      "p95_sync_ms": 6.59,
+      "max_sync_ms": 7.642,
+      "over_16_67ms": 0
+    }
+  ],
+  "controlled_startup_after": [
+    {
+      "phase": "first_control",
+      "count": 60,
+      "first_sync_ms": 15.278,
+      "p95_sync_ms": 6.961,
+      "max_sync_ms": 15.278,
+      "over_16_67ms": 0
+    },
+    {
+      "phase": "new_target",
+      "count": 60,
+      "first_sync_ms": 7.09,
+      "p95_sync_ms": 6.896,
+      "max_sync_ms": 7.173,
+      "over_16_67ms": 0
+    }
+  ],
+  "startup_caveat": "Controlled target timings are not normal-game FPS. Original-output first draw 16.008ms before versus 15.278ms after is too small a single-run difference to establish a significant speed-up. Four destination renders are now explicitly verified under the loading cover. Normal visible-window cadence was measured only after the change; no pre-change normal-game speed-up claim.",
+  "graphics": "PASS: 26 views at 1920x1080 / FOV75, torch ON/OFF, 27/27 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.",
+  "graphics_before_after": [
+    {
+      "view": "cafe-metal",
+      "torch": "0",
+      "before_p95_sync_ms": 4.29,
+      "after_p95_sync_ms": 4.005,
+      "before_mean_srgb": 0.1188,
+      "after_mean_srgb": 0.1319
+    },
+    {
+      "view": "cafe-metal",
+      "torch": "1",
+      "before_p95_sync_ms": 4.031,
+      "after_p95_sync_ms": 4.103,
+      "before_mean_srgb": 0.1848,
+      "after_mean_srgb": 0.1883
+    },
+    {
+      "view": "cafe-room",
+      "torch": "0",
+      "before_p95_sync_ms": 3.616,
+      "after_p95_sync_ms": 3.658,
+      "before_mean_srgb": 0.0571,
+      "after_mean_srgb": 0.0588
+    },
+    {
+      "view": "cafe-room",
+      "torch": "1",
+      "before_p95_sync_ms": 3.736,
+      "after_p95_sync_ms": 3.804,
+      "before_mean_srgb": 0.0601,
+      "after_mean_srgb": 0.0617
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "0",
+      "before_p95_sync_ms": 3.875,
+      "after_p95_sync_ms": 4.023,
+      "before_mean_srgb": 0.0325,
+      "after_mean_srgb": 0.0325
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "1",
+      "before_p95_sync_ms": 3.62,
+      "after_p95_sync_ms": 3.86,
+      "before_mean_srgb": 0.0346,
+      "after_mean_srgb": 0.0346
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "0",
+      "before_p95_sync_ms": 4.469,
+      "after_p95_sync_ms": 4.463,
+      "before_mean_srgb": 0.1823,
+      "after_mean_srgb": 0.1804
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "1",
+      "before_p95_sync_ms": 4.692,
+      "after_p95_sync_ms": 4.977,
+      "before_mean_srgb": 0.2768,
+      "after_mean_srgb": 0.2739
+    },
+    {
+      "view": "produce-contact",
+      "torch": "0",
+      "before_p95_sync_ms": 7.17,
+      "after_p95_sync_ms": 7.088,
+      "before_mean_srgb": 0.0442,
+      "after_mean_srgb": 0.0441
+    },
+    {
+      "view": "produce-contact",
+      "torch": "1",
+      "before_p95_sync_ms": 7.295,
+      "after_p95_sync_ms": 7.175,
+      "before_mean_srgb": 0.0719,
+      "after_mean_srgb": 0.0719
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "0",
+      "before_p95_sync_ms": 2.486,
+      "after_p95_sync_ms": 2.337,
+      "before_mean_srgb": 0.0322,
+      "after_mean_srgb": 0.0322
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "1",
+      "before_p95_sync_ms": 2.489,
+      "after_p95_sync_ms": 2.694,
+      "before_mean_srgb": 0.0503,
+      "after_mean_srgb": 0.0502
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "0",
+      "before_p95_sync_ms": 3.122,
+      "after_p95_sync_ms": 3.071,
+      "before_mean_srgb": 0.0364,
+      "after_mean_srgb": 0.0366
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "1",
+      "before_p95_sync_ms": 3.051,
+      "after_p95_sync_ms": 3.406,
+      "before_mean_srgb": 0.0452,
+      "after_mean_srgb": 0.0454
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "0",
+      "before_p95_sync_ms": 3.529,
+      "after_p95_sync_ms": 3.406,
+      "before_mean_srgb": 0.0621,
+      "after_mean_srgb": 0.0621
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "1",
+      "before_p95_sync_ms": 3.574,
+      "after_p95_sync_ms": 3.683,
+      "before_mean_srgb": 0.1405,
+      "after_mean_srgb": 0.1405
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "0",
+      "before_p95_sync_ms": 3.482,
+      "after_p95_sync_ms": 3.501,
+      "before_mean_srgb": 0.0075,
+      "after_mean_srgb": 0.0074
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "1",
+      "before_p95_sync_ms": 3.597,
+      "after_p95_sync_ms": 3.608,
+      "before_mean_srgb": 0.0192,
+      "after_mean_srgb": 0.0192
+    }
+  ],
+  "graphics_all_after": [
+    {
+      "view": "cafe-metal",
+      "torch": "0",
+      "p95_render_sync_ms": "4.005",
+      "mean_srgb": "0.1319",
+      "black_fraction": "0.3488",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-metal",
+      "torch": "1",
+      "p95_render_sync_ms": "4.103",
+      "mean_srgb": "0.1883",
+      "black_fraction": "0.3356",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "0",
+      "p95_render_sync_ms": "3.658",
+      "mean_srgb": "0.0588",
+      "black_fraction": "0.6350",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-room",
+      "torch": "1",
+      "p95_render_sync_ms": "3.804",
+      "mean_srgb": "0.0617",
+      "black_fraction": "0.5992",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "0",
+      "p95_render_sync_ms": "4.023",
+      "mean_srgb": "0.0325",
+      "black_fraction": "0.6892",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "b1-shopfront",
+      "torch": "1",
+      "p95_render_sync_ms": "3.860",
+      "mean_srgb": "0.0346",
+      "black_fraction": "0.6356",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "0",
+      "p95_render_sync_ms": "4.463",
+      "mean_srgb": "0.1804",
+      "black_fraction": "0.3770",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-counter",
+      "torch": "1",
+      "p95_render_sync_ms": "4.977",
+      "mean_srgb": "0.2739",
+      "black_fraction": "0.3188",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "0",
+      "p95_render_sync_ms": "7.088",
+      "mean_srgb": "0.0441",
+      "black_fraction": "0.5832",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "produce-contact",
+      "torch": "1",
+      "p95_render_sync_ms": "7.175",
+      "mean_srgb": "0.0719",
+      "black_fraction": "0.4209",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "0",
+      "p95_render_sync_ms": "2.337",
+      "mean_srgb": "0.0322",
+      "black_fraction": "0.5730",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "fridge-glass",
+      "torch": "1",
+      "p95_render_sync_ms": "2.694",
+      "mean_srgb": "0.0502",
+      "black_fraction": "0.5199",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "0",
+      "p95_render_sync_ms": "3.071",
+      "mean_srgb": "0.0366",
+      "black_fraction": "0.5593",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "checkout-floor",
+      "torch": "1",
+      "p95_render_sync_ms": "3.406",
+      "mean_srgb": "0.0454",
+      "black_fraction": "0.5340",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "0",
+      "p95_render_sync_ms": "3.406",
+      "mean_srgb": "0.0621",
+      "black_fraction": "0.5927",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "2f-fashion",
+      "torch": "1",
+      "p95_render_sync_ms": "3.683",
+      "mean_srgb": "0.1405",
+      "black_fraction": "0.5413",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "0",
+      "p95_render_sync_ms": "3.501",
+      "mean_srgb": "0.0074",
+      "black_fraction": "0.9640",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "27"
+    },
+    {
+      "view": "wall-grazing",
+      "torch": "1",
+      "p95_render_sync_ms": "3.608",
+      "mean_srgb": "0.0192",
+      "black_fraction": "0.8241",
+      "probe_volumes_at_eye": "0",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-seat",
+      "torch": "0",
+      "p95_render_sync_ms": "4.011",
+      "mean_srgb": "0.0491",
+      "black_fraction": "0.4437",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "cafe-seat",
+      "torch": "1",
+      "p95_render_sync_ms": "3.562",
+      "mean_srgb": "0.0761",
+      "black_fraction": "0.3815",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "restaurant-seat",
+      "torch": "0",
+      "p95_render_sync_ms": "3.643",
+      "mean_srgb": "0.0492",
+      "black_fraction": "0.4272",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "restaurant-seat",
+      "torch": "1",
+      "p95_render_sync_ms": "3.486",
+      "mean_srgb": "0.0778",
+      "black_fraction": "0.3811",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-range",
+      "torch": "0",
+      "p95_render_sync_ms": "4.233",
+      "mean_srgb": "0.0898",
+      "black_fraction": "0.4705",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "beauty-range",
+      "torch": "1",
+      "p95_render_sync_ms": "5.187",
+      "mean_srgb": "0.1369",
+      "black_fraction": "0.4077",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "appliance-lid",
+      "torch": "0",
+      "p95_render_sync_ms": "4.904",
+      "mean_srgb": "0.0813",
+      "black_fraction": "0.4745",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    },
+    {
+      "view": "appliance-lid",
+      "torch": "1",
+      "p95_render_sync_ms": "4.875",
+      "mean_srgb": "0.1152",
+      "black_fraction": "0.3930",
+      "probe_volumes_at_eye": "1",
+      "active_probes": "27"
+    }
+  ],
+  "regression": "PASS: 27 door and culling regression checks; 81 resting doors verified.",
+  "regression_timing": "1920x1080 controlled render/readback, AI disabled, not full-game FPS. Real startup preparation 651.29 ms / 7 views. First NEW test-target draw after door, light and mass culling toggles 24.89 ms, 180-sample render sequence INCLUDING cold samples p95 7.00 ms / max 45.14 ms. Whole scripted-loop frame intervals p95 7.77 ms / max 46.99 ms. Main-thread allocations across sample frames including QA/render callbacks 0 bytes. See hitches.tsv for sample indices; no warmup spikes have been discarded. Use StartupReview separately to measure the original output immediately after loading.",
+  "regression_checks": [
+    "PASS startup preparation completed all seven real-game views",
+    "PASS startup prepares destination before releasing input",
+    "PASS startup restores time and player input",
+    "PASS startup restores main camera and render target",
+    "PASS startup preserves initial torch and HUD state",
+    "PASS swing doors present",
+    "PASS all 81 resting doors leave transforms untouched",
+    "PASS fire door available",
+    "PASS door moves before reaching end stop",
+    "PASS mid-swing reversal returns to closed hinge pose",
+    "PASS direct open-state assignment is supported",
+    "PASS direct close-state assignment is supported",
+    "PASS closed door stops writing transform again",
+    "PASS standing player can target closed washer lid",
+    "PASS washer lid opens upward on rear hinge",
+    "PASS standing player can target open washer lid to close it",
+    "PASS washer lid closes to exact resting position",
+    "PASS standing player can target closed washer lid",
+    "PASS washer lid opens upward on rear hinge",
+    "PASS standing player can target open washer lid to close it",
+    "PASS washer lid closes to exact resting position",
+    "PASS seven source-linked bounce lights present",
+    "PASS source blackout also extinguishes bounce",
+    "PASS source dimming updates bounce",
+    "PASS decorative visibility group present",
+    "PASS unoptimized mode restores every decorative renderer",
+    "PASS optimized mode still culls remote sectors"
+  ],
+  "floor_routes": "PASS: 253 checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances, four new mall customer route returns, five support rooms with doors, 1F retail loop/cross aisle, 2F fashion loop, appliance/kitchen/family doors, both fresh prep rooms and walk-ins return with staff doors. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.",
+  "pepper_route": "1920x1080 | real startup preparation 615.04 ms / 7 views | offscreen GPU sync 771 rendered | distance 6.00 m | p95 5.59 ms | p99 5.93 ms | max 7.71 ms | frames over 16.67ms 0/771",
+  "b1_route": "1920x1080 | offscreen GPU sync | AI disabled | real startup preparation 610.98 ms / 7 views (includes B1) | test target initialization 28.07 ms | first controllable B1 visit after loading | 2941 rendered | 8/8 route legs | distance 38.59 m | p95 4.45 ms | p99 4.81 ms | max 8.33 ms | over 16.67ms 0/2941 | gen0 collections 0",
+  "route_test_scope": "Floor/pepper/B1 routes passed on the 14:47 player with identical placement, furniture, lighting and collision. Subsequent scene change only corrected the cosmetic tube label mesh; the 14:57 player reran graphics, 27 interaction/culling checks, controlled startup and normal-game startup. No unrelated full-route rerun.",
+  "visual_inspection": [
+    "Compared real IKEA photo with cafe chairs and table bases",
+    "Compared retail toner/tube/dropper photo with six MOA forms",
+    "Confirmed original Korean labels readable in front view; fixed upper tube label/body intersection",
+    "Confirmed round-table veneer grain runs straight, no radial UV star",
+    "Confirmed open and closed top-load lid, fixed matching generic price/specification ticket",
+    "Confirmed slatted restaurant backs retain open gaps and matched seat/table height",
+    "Confirmed dark cafe room retains readable tables and weak ceiling return without uniform ambient brightening"
+  ],
+  "resolved_failures": [
+    "Iteration1: bounce MonoBehaviour on common root excluded all static props from batching. Regression correctly failed remote-sector culling. Controller moved to independent child; 140945 renderers merged into 2067 sectors; tests pass.",
+    "Hidden normal-camera test: zero callbacks because hidden player suppresses ordinary rendering. Retained failure under Review/StartupGameplayHidden-2026-11-21; rerun with visible window passed, without a substitute render target."
+  ],
+  "remaining": [
+    "Mass renderer visibility toggles followed by a new render target still give 24.89ms first draw and a 45.14ms sample. Ordinary startup and measured travel routes did not reproduce that hitch.",
+    "Static reflection maps do not follow dynamic blackout states; the seven new diffuse fill lights do.",
+    "Other repeated furniture, all 186 grocery SKU closeups, combat, multiplayer, first-install uncached drivers and lower-end GPUs are not fully validated in this pass.",
+    "Existing stripped inactive DoF/Panini postprocess warnings remain in player logs. No additional shadow-atlas resolution reduction warning in these final runs."
+  ],
+  "references": "Review/variety-reference-register-2026-11-21.json",
+  "handoff": "Review/variety-lighting-handoff-2026-11-21.json"
+}

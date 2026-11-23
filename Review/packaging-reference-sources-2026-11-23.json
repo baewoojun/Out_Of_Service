@@ -1,0 +1,89 @@
+[
+  {
+    "url": "https://www.dongwonmall.com/product/detail.do?productId=000781141",
+    "image": "https://img.dongwonmall.com/dwmall/static_root/model_img/main/477/47719_1_a.jpg",
+    "checked": "2026-11-23",
+    "observed": "Ramen multipack, large product name, meal serving picture, contrasting corner and count labels, crimped wrapper edges.",
+    "unknown": "Exact pack dimensions, shader roughness, inner packaging construction and in-store facing positions.",
+    "use": "Visual reference only; original photograph not included in game assets. Original parody names and graphic composition authored."
+  },
+  {
+    "url": "https://m.nongshimmall.com/product/detail.html?cate_no=1&product_no=2742",
+    "image": "https://m.nongshimmall.com/web/product/big/202510/6c97b7e0a351917cdd8533e3d46e2494.jpg",
+    "checked": "2026-11-23",
+    "observed": "Inflated snack pillow pouch, transverse top/bottom seals, title hierarchy and contents illustration.",
+    "unknown": "Measured film thickness, material response and shelf layout.",
+    "use": "Reference only; final front uses original parody lettering and separately licensed ingredient photos."
+  },
+  {
+    "url": "https://harimpetfood.com/product/detail.html?product_no=1292",
+    "image": "https://harimpetfood.com/web/product/big/202110/2e9a7613df6dd68054b8fa88eafabeae.jpg",
+    "checked": "2026-11-23",
+    "observed": "Upright pet-food pouch, top sealed strip, flatter filled base, dry-food image, animal/age and net-weight information.",
+    "unknown": "Exact dimensions, bag layers, physical filling simulation and in-store inventory.",
+    "use": "Reference only; final uses original 꼬리식탁 parody layout, own paw graphic and attributed CC BY-SA ingredient images."
+  },
+  {
+    "url": "https://m.seoulmilk.co.kr/mobile/product/product_view.sm?gubun=&nmNo=10000000000535&page=2&subname=P4",
+    "image": "https://m.seoulmilk.co.kr/Product_Data/pimages/v_1.jpg",
+    "checked": "2026-11-23",
+    "observed": "Official outer pack artwork depicts cylindrical string cheese and individually wrapped sticks; official description lists 72/144 g selling units and 18 g per piece.",
+    "unknown": "Physical dimensions, wrapper thickness, exact contents arrangement behind the opaque bag, and store SKU position.",
+    "use": "Reference only. Fictional 서리식탁 five-stick 100 g clear-window pack is an original game design, not an exact product replica. Original reference image stays outside Assets."
+  },
+  {
+    "url": "https://prod.danawa.com/info/?pcode=14077991",
+    "image": "https://img.danawa.com/prod_img/500000/991/077/img/14077991_1.jpg?_v=20210503145755&shrink=360%3A360",
+    "checked": "2026-11-23",
+    "observed": "Red laundry jug with asymmetric shoulder, molded open handle, ribbed screw/measuring cap and conforming label inset inside the body silhouette.",
+    "unknown": "Measured physical size, polymer roughness and mold construction. The source lists a 3 L product, not the fictional 2 L SKU.",
+    "use": "Reference only. New salimgyeol body, modeled grip and label are original authored geometry. Retail image remains outside Assets."
+  },
+  {
+    "use": "Reference only. Original basak confectionery typography and separately licensed plain chocolate/nut photographs; reference artwork never imported into Assets.",
+    "unknown": "Measured size, rear fin position and foil laminate. Fictional game SKUs use 34/36/46 g units rather than copying this 45 g product.",
+    "url": "https://www.orionworld.com/goods/view/31?goodsno=77",
+    "image": "https://www.orionworld.com/upload/goods/3c4c25af103428d9cb80f7a93760994c.png",
+    "checked": "2026-11-23",
+    "observed": "Official 45 g horizontal chocolate-bar flow wrap: crimped end jaws, large horizontal product name, ingredient cross-section and weight indication."
+  },
+  {
+    "use": "Reference only; original seorisiktak farm silhouette and typography, no copied logo or pack pixels.",
+    "url": "https://lottemartzetta.com/products/OS8801115114154/details",
+    "checked": "2026-11-23",
+    "observed": "Retail listing confirms refrigerated 1000 mL milk; inspected image shows tall narrow gable carton, front hierarchy, folded sealed top, and lower colored band.",
+    "unknown": "Physical dimensions, paper thickness, rear printing and precise store location. 75 mm by 238 mm model dimensions are game estimates, not measured product data.",
+    "image": "https://lottemartzetta.com/images-v3/932dcbc7-fca8-4d43-bcde-f73d1ce3cc7d/6e89e841-d53c-4164-8b75-8a04110cd3a1/500x500.jpg"
+  },
+  {
+    "use": "Reference only. Original golmokchanbang navy/gold typography; prepared-food images separately licensed.",
+    "url": "https://www.dongwonmall.com/product/detail.do?productId=001019166",
+    "checked": "2026-11-23",
+    "observed": "Official retail photo shows low cylindrical tuna can, rolled metal rims, horizontal side label and printed top.",
+    "unknown": "Exact can dimensions, full reverse label and lid geometry; game dimensions are estimated.",
+    "image": "https://img.dongwonmall.com/dwmall/static_root/model_img/main/111/11184_1_a.jpg"
+  },
+  {
+    "observed": "Search excerpt from manufacturer manual describes the cup heater and depicts upside-down ceramic cups; full PDF fetch timed out. No exact machine dimensions verified.",
+    "url": "https://www.nespresso.com/ecom/medias/sys_master/public/12993327955998/Momento-200.pdf",
+    "unknown": "Not an exact reference for the fictional commercial machine geometry or particular cafe layout.",
+    "checked": "2026-11-23",
+    "use": "Construction reference only; original cups, warming-tray arrangement and machine geometry."
+  },
+  {
+    "url": "https://lottemartzetta.com/products/OS8805489201168/details",
+    "image": "https://lottemartzetta.com/images-v3/932dcbc7-fca8-4d43-bcde-f73d1ce3cc7d/197541cd-b38f-403e-8a65-df0bda83e410/500x500.jpg",
+    "checked": "2026-11-23",
+    "observed": "Personally inspected retail image: tall strawberry stand-up bag, resealable top, rounded shoulders, lower gusset, large fruit artwork. Listing confirms 1 kg frozen selling unit.",
+    "unknown": "Actual thickness, underside geometry, dimensions, exact fill volume and store shelf position.",
+    "use": "Reference only. Original seorisiktak graphic layout and separately licensed ingredient image; reference photo outside Assets."
+  },
+  {
+    "url": "https://emart.ssg.com/item/itemDtl.ssg?itemId=1000020992610",
+    "image": "https://sitem.ssgcdn.com/10/26/99/item/1000020992610_i1_1200.jpg",
+    "checked": "2026-11-23",
+    "observed": "Personally inspected retail image: broad flattened blueberry pouch with zipper track, pressed edge seals, asymmetric edge folds and large fruit artwork; listing is 1.3 kg.",
+    "unknown": "Measured geometry and film properties. Fictional game SKU remains 1 kg; not an exact replica.",
+    "use": "Reference only. Original parody front and licensed ingredient photo; no retailer pack pixels in game."
+  }
+]

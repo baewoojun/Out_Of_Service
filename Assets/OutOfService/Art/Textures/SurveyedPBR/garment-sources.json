@@ -1,0 +1,77 @@
+[
+  {
+    "checked_date": "2026-11-23",
+    "name": "Cotton Jersey",
+    "authors": {
+      "colormass": "Photography",
+      "Rico Cilliers": "Processing"
+    },
+    "license": "CC0-1.0",
+    "dimensions_mm": [
+      263.6027473872483,
+      263.7999951839447
+    ],
+    "id": "cotton_jersey",
+    "source": "https://polyhaven.com/a/cotton_jersey",
+    "modifications": "Original photos retained. Compressed Unity mask conversion, reduced micro-normal strength, physical-scale garment UVs. Original garment model and labels; no real clothing brand graphics copied.",
+    "usage": "T-shirts, hanging knit tops and soft upholstery; not labelled as Oxford woven fabric",
+    "original_files": [
+      {
+        "md5": "911fa5b8031c69d7051489f813b170ac",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/cotton_jersey_Diffuse_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/cotton_jersey/cotton_jersey_diff_2k.jpg",
+        "bytes": 3009673
+      },
+      {
+        "md5": "6252598a3fdc5d229ed9aa50e77be587",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/cotton_jersey_nor_gl_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/cotton_jersey/cotton_jersey_nor_gl_2k.jpg",
+        "bytes": 3302722
+      },
+      {
+        "md5": "77cfbbe30d92f90b8c2cc22bd2510baf",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/cotton_jersey_arm_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/cotton_jersey/cotton_jersey_arm_2k.jpg",
+        "bytes": 4615270
+      }
+    ],
+    "license_url": "https://polyhaven.com/license"
+  },
+  {
+    "checked_date": "2026-11-23",
+    "name": "Fabric Pattern 07",
+    "authors": {
+      "Rob Tuytel": "All"
+    },
+    "license": "CC0-1.0",
+    "dimensions_mm": [
+      400.0000059604645,
+      400.00003576278687
+    ],
+    "id": "fabric_pattern_07",
+    "source": "https://polyhaven.com/a/fabric_pattern_07",
+    "modifications": "Original photos retained. Compressed Unity mask conversion, reduced micro-normal strength, physical-scale garment UVs. Original garment model and labels; no real clothing brand graphics copied.",
+    "usage": "Casual checked shirts on 2F and customer clothing in B1 laundry",
+    "original_files": [
+      {
+        "md5": "ad5b3f69e889a6890d6413ea1568ff25",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/fabric_pattern_07_col_1_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fabric_pattern_07/fabric_pattern_07_col_1_2k.jpg",
+        "bytes": 2650991
+      },
+      {
+        "md5": "bf1eb2488da43265bd49e42778b6ae51",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/fabric_pattern_07_nor_gl_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fabric_pattern_07/fabric_pattern_07_nor_gl_2k.jpg",
+        "bytes": 2572375
+      },
+      {
+        "md5": "61384156e3e50ee66815a885c9d40c81",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/fabric_pattern_07_arm_2k.jpg",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/fabric_pattern_07/fabric_pattern_07_arm_2k.jpg",
+        "bytes": 822275
+      }
+    ],
+    "license_url": "https://polyhaven.com/license"
+  }
+]

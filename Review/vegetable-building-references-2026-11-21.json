@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-21",
+  "policy": "실물 사진은 모델링 비교용으로 Review에만 저장한다. 게임의 형태·표면·글자는 직접 제작하며 실제 포장 사진과 상표를 게임 에셋으로 사용하지 않는다.",
+  "references": [
+    {
+      "name": "다다기오이 3입(봉)",
+      "publisher": "홈플러스",
+      "url": "https://mfront.homeplus.co.kr/item?itemNo=114122743&storeType=HYPER",
+      "image_url": "https://image.homeplus.kr/td/2fb4e297-7abd-49f6-bff0-96f228299a68",
+      "local_reference": "Review/VegetableReferences/dadagi-cucumber-3.jpg",
+      "license": "저작권 있는 참고 사진; 게임에 포함하지 않음",
+      "observed": "3개가 나란히 든 투명 봉지, 원통에 가까운 긴 몸체, 끝부분의 연두색과 꼭지 쪽 진녹색, 작은 돌기와 완만한 굴곡",
+      "not_verified": "정확한 길이·굵기와 특정 점포의 진열 위치",
+      "authored_interpretation": "게임용 27~30cm 길이와 약 4cm 지름으로 만든 5개 형태 변형, 공유 색·노멀, 투명 봉지"
+    },
+    {
+      "name": "스테비아 완숙 토마토",
+      "publisher": "메가마트몰",
+      "url": "https://www.megamart.com/product/13317386",
+      "image_url": "https://static.megamart.com/product/image/1331/13317386/13317386_6_960.jpg",
+      "local_reference": "Review/VegetableReferences/ripe-tomato-punnet.jpg",
+      "license": "저작권 있는 참고 사진; 게임에 포함하지 않음",
+      "observed": "6개의 매끈하고 약간 납작한 토마토, 별 모양 꽃받침, 투명 성형 용기, 모서리 리브와 작은 정보표",
+      "not_verified": "정확한 크기 및 모든 제품이 동일한 6입 구성인지 여부",
+      "authored_interpretation": "5개 몸체와 3개 꽃받침 원형, 자체 완숙 토마토 표기와 투명 용기. 실제 상표 복제 없음"
+    },
+    {
+      "name": "감자 2kg(박스)",
+      "publisher": "홈플러스",
+      "url": "https://mfront.homeplus.co.kr/item?itemNo=127904788&storeType=HYPER",
+      "image_url": "https://image.homeplus.kr/rtd/c6d46936-acfe-4668-a99a-ceb452439f77?w=750",
+      "local_reference": "Review/VegetableReferences/potato-box.jpg",
+      "license": "저작권 있는 참고 사진; 게임에 포함하지 않음",
+      "observed": "연한 황갈색 껍질, 약한 흙 자국, 매끈하지만 비대칭인 덩어리, 줄무늬가 아닌 작은 반점",
+      "not_verified": "정확한 크기·품종 및 특정 점포 벌크 매대 방식",
+      "authored_interpretation": "3차원 좌표 기반의 연속적인 표면색, 5개 비대칭 몸체, 격자가 아닌 물리적 접촉을 근사한 적재"
+    },
+    {
+      "name": "사용자가 제공한 채소 냉장 매대 및 간편대파·채소 팩 사진",
+      "publisher": "사용자 첨부 참고자료",
+      "url": null,
+      "observed": "잎채소 겹침, 흰 줄기와 갈라진 녹색 대파 잎, 상품군별 투명 소포장",
+      "not_verified": "사진 원저작자·치수·실제 점포 평면도",
+      "authored_interpretation": "겹치는 곡면 잎과 분리된 잎맥, 대파의 흰 줄기와 곡면 녹색 잎으로 제작"
+    }
+  ],
+  "layout_authorship": "B1 지원 공간 5개와 남쪽 뷰티·안경·통신·보관 서비스 4개 점포, 점포 전면과 3개 층 벽체 마감은 게임을 위한 합성 설계다. 특정 홈플러스 점포의 실제 평면도로 주장하지 않는다.",
+  "new_third_party_game_assets": [],
+  "original_assets": [
+    {"name":"Tomato, cucumber, potato, pepper, scallion and leafy vegetable mesh/material families","creator":"OutOfService project procedural authoring","license":"Original project assets; external photos retained as reference only","date":"2026-11-21","location":"1F fresh produce islands and chilled produce packs","original_file":"Assets/OutOfService/Editor/MarketVegetableRebuildV7.cs","changes":"Retail silhouettes, original continuous skin/normal textures, non-grid loose potato piling, separate calyx, stem, roots and curved leaves"},
+    {"name":"B1 service shop fixtures and parody cosmetics labels","creator":"OutOfService project procedural authoring","license":"Original project assets, no downloaded packaging imagery","date":"2026-11-21","location":"B1 south band, shops centred at x=-30,-10,10,30 and z=-28 facing north","original_file":"Assets/OutOfService/Editor/MarketMallServicesV7.cs; Tools/DrawMallServiceLabels.ps1","changes":"Separate cosmetics, optical, mobile and parcel storage fittings; 600 cosmetic captions replaced by shared curved label meshes and three original small textures for batching"}
+  ],
+  "regeneration_sources": ["Assets/OutOfService/Editor/MarketVegetableRebuildV7.cs", "Assets/OutOfService/Editor/MarketBuildingFinishV7.cs", "Assets/OutOfService/Editor/MarketMallServicesV7.cs", "Tools/DrawMallServiceLabels.ps1"]
+}

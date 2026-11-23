@@ -1,0 +1,1 @@
+PASS: 41 standalone stock / articulated door checks. Not a multiplayer synchronization test.

@@ -1,0 +1,27 @@
+PASS startup preparation completed nine real-game views including 2F stock
+PASS startup prepares destination before releasing input
+PASS startup restores time and player input
+PASS startup restores main camera and render target
+PASS startup preserves initial torch and HUD state
+PASS swing doors present
+PASS all 92 resting doors leave transforms untouched
+PASS fire door available
+PASS door moves before reaching end stop
+PASS mid-swing reversal returns to closed hinge pose
+PASS direct open-state assignment is supported
+PASS direct close-state assignment is supported
+PASS closed door stops writing transform again
+PASS standing player can target closed washer lid
+PASS washer lid opens upward on rear hinge
+PASS standing player can target open washer lid to close it
+PASS washer lid closes to exact resting position
+PASS standing player can target closed washer lid
+PASS washer lid opens upward on rear hinge
+PASS standing player can target open washer lid to close it
+PASS washer lid closes to exact resting position
+PASS seven source-linked bounce lights present
+PASS source blackout also extinguishes bounce
+PASS source dimming updates bounce
+PASS decorative visibility group present
+PASS unoptimized mode restores every decorative renderer
+PASS optimized mode still culls remote sectors

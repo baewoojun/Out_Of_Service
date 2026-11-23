@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-21",
+  "purpose": "다른 대화에 전달할 변경 요약 — 맵 담당 변경. 최종 실행 결과는 vegetable-building-validation-2026-11-21.json 확인.",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "floor_layout_preserved": "B1 몰·편의시설 / 1F 식품·생활·가전 / 2F 패션·고객센터",
+  "new_b1_public_units": ["모아 뷰티", "바른 안경", "픽셀 모바일", "맡김 보관서비스"],
+  "new_b1_support_units": ["몰 공동창고", "식음료 입고실", "매장 비품실", "시설 관리실", "직원 준비실"],
+  "navigation": "남쪽 z=-27 횡단 통로와 동서 비상계단, 중앙 에스컬레이터는 기존 위치 유지. 지원실 문 5개가 MarketSwingDoor를 사용한다. 새 점포는 장식 공간이며 퍼즐·필수 아이템·네트워크 상태를 추가하지 않는다.",
+  "rendering": "신규 장식 메시와 화장품 곡면 라벨은 기존 6m 구획별 재질 배칭 적용. 조작 문은 배칭 제외. 신규 실내등은 층별 가림 처리에 포함된다. HUD 꺼짐, 어두운 전역 조명·안개·시야 설정 유지.",
+  "regeneration": "MarketPrototypeBuilderV7.BuildWithCatalogViews가 신규 소스들을 호출한다. 새 화장품 라벨은 Tools/DrawMallServiceLabels.ps1로 재생성 가능하다. 씬만 수작업으로 변경하지 않았다.",
+  "gameplay_unchanged": "스태미나·손전등 배터리·점프·낙하 피해·3단계 피해 시스템을 이 변경에서 수정하지 않았다.",
+  "limitations": "실제 점포 설계도 복제 아님. 새 점포의 안경·휴대폰·보관함은 장식이며 조작 기능 없음. 모든 186종 상품 재검수 및 AI 전체 층 추격·멀티 동기화·완성된 탈출 흐름 검증은 이 기록의 범위가 아니다. 최종 L4D2 수준의 완성도를 달성했다는 의미가 아니다."
+}

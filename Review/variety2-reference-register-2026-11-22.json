@@ -1,0 +1,42 @@
+{
+  "checked_date": "2026-11-22",
+  "policy": "Public photographs are visual references kept under Review, not textures or meshes imported into the game. DAMUM names, illustrations and prices are fictional project artwork. No purchased asset or downloaded model was added.",
+  "sources": [
+    {
+      "name": "IKEA 365+ 2L saucepan structural reference",
+      "creator": "IKEA / designer David Wahl",
+      "url": "https://www.ikea.com/kr/ko/p/ikea-365-saucepan-with-lid-stainless-steel-50484236/",
+      "image_url": "https://www.ikea.com.hk/dairyfarm/hk/images/061/1006179_PE825764_S4.jpg",
+      "reference_file": "Review/Variety2References/saucepan.jpg",
+      "license": "Copyrighted manufacturer photo, reference only",
+      "confirmed": "Steel body with rolled lip, long handle with hanging hole, separate lid and raised loop handle. Korean product page lists 17cm diameter, 10cm body height and 35cm length including handle.",
+      "not_confirmed": "Supermarket stock, planogram, shader parameters, exact topology or concealed construction",
+      "authored_use": "Original DAMUM 18cm saucepan and related cookware profiles; own dimensions, packaging, fixture arrangement and fictional price. Photo pixels and logos are not used."
+    },
+    {
+      "name": "IKEA Korea cookware category",
+      "creator": "IKEA",
+      "url": "https://www.ikea.com/kr/ko/cat/cookware-kt003/",
+      "license": "Retail reference only",
+      "confirmed": "Different retail forms include lidded pots, long-handle saucepans, shallow frying pans, glass food storage and ceramic cookware.",
+      "not_confirmed": "Any Homeplus branch assortment, shelf positions, price or inventory",
+      "authored_use": "Six physically different product families: two-handle pot, saucepan, shallow pan, deep wok, clipped rectangular container, open handled ceramic mug. The low table, upright rack and hanging rail are authored composite-store merchandising."
+    },
+    {
+      "name": "POANG armchair bent-frame and seat proportions",
+      "creator": "IKEA / Noboru Nakamura",
+      "url": "https://www.ikea.com/kr/ko/p/poaeng-armchair-birch-veneer-knisa-light-beige-s19240788/",
+      "image_url": "https://www.ikea.com/kr/en/images/products/poaeng-armchair-birch-veneer-knisa-light-beige__1314996_pe940336_s5.jpg",
+      "reference_file": "Review/Variety2References/armchair.jpg",
+      "license": "Copyrighted manufacturer illustration, reference only",
+      "confirmed": "Image shows continuous bent side frame, separate upholstered seat/back, supported head position; dimensions 68cm width, 82cm depth, 100cm height and 40cm seat height.",
+      "not_confirmed": "Use in an actual supermarket nursing room, certified medical suitability, exact bending radius or cushion construction",
+      "authored_use": "Original approximately 70 x 80 x 106cm nursing chair with curved frame, reclining padded back and arms. Not a traced or imported manufacturer model."
+    }
+  ],
+  "authored_assets": [
+    {"name":"Public seating and compact nursing room", "creator":"Project procedural authoring", "license":"Original project content", "source":"Assets/OutOfService/Editor/MarketSeatingAndFamilyV7.cs", "original_file":"Same C# generator; generated meshes under Assets/OutOfService/Generated", "used_at":"B1 concourse, B1 locker shop, 2F customer service, west-wall 1F family room", "modifications":"Slatted bench / separated cushioned waiting seats / bent-frame armchair; 6.4 x 5.6m room, privacy partitions, changing pad and basin"},
+    {"name":"DAMUM cookware and storage display", "creator":"Project procedural authoring", "license":"Original project content", "source":"Assets/OutOfService/Editor/MarketHomewaresV7.cs", "original_file":"Same generator and Tools/DrawHomewares.ps1", "used_at":"Former 1F family-room footprint near x=-36.8 and x=-32,z=-31", "modifications":"Hollow vessel profiles, open handles, lids, clips, mug interiors; original Korean illustrated cards; boxed reserve stock beneath exposed samples"},
+    {"name":"New-room fixed reflection maps", "creator":"Project scene bake", "license":"Project scene-derived content; existing surface source terms remain applicable", "source":"Assets/OutOfService/Editor/MarketSpatialGraphicsV7.cs", "original_file":"Generated SpatialReflectionV1_family_west.exr and SpatialReflectionV1_cookware_corner.exr", "used_at":"1F nursing room and cookware corner", "modifications":"Two local 128px reflection volumes, total 29 probes; not realtime GI"}
+  ]
+}

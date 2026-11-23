@@ -1,0 +1,114 @@
+[
+  {
+    "license": "CC0-1.0",
+    "authors": {
+      "Jenelle van Heerden": "All"
+    },
+    "modifications": "Original photos retained. Unity mask conversion: R metal, G occlusion, A smoothness. Tinted shared materials; physical-scale UVs. No product labels copied.",
+    "original_files": [
+      {
+        "md5": "38d61468709c2bcd17ae9efbef8b0ad0",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/white_oak_veneer_Diffuse_2k.jpg",
+        "bytes": 2537257
+      },
+      {
+        "md5": "23e481c227af299f5a7a0526372a7b38",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_nor_gl_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/white_oak_veneer_nor_gl_2k.jpg",
+        "bytes": 2840866
+      },
+      {
+        "md5": "2919ebc55e7d643e9d175974b6ca2edd",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_arm_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/white_oak_veneer_arm_2k.jpg",
+        "bytes": 2675614
+      }
+    ],
+    "source": "https://polyhaven.com/a/white_oak_veneer",
+    "usage": "Shared cafe tables/chairs, benches, shopfront timber and display shelves",
+    "checked_date": "2026-11-23",
+    "dimensions_mm": [
+      500,
+      500
+    ],
+    "license_url": "https://polyhaven.com/license",
+    "id": "white_oak_veneer",
+    "name": "White Oak Veneer"
+  },
+  {
+    "license": "CC0-1.0",
+    "authors": {
+      "Amal Kumar": "All"
+    },
+    "modifications": "Original photos retained. Unity mask conversion: R metal, G occlusion, A smoothness. Tinted shared materials; physical-scale UVs. No product labels copied.",
+    "original_files": [
+      {
+        "md5": "b66f912016257faa7e71a1530e387545",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/painted_plaster_wall/painted_plaster_wall_arm_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/painted_plaster_wall_arm_2k.jpg",
+        "bytes": 2159906
+      }
+    ],
+    "source": "https://polyhaven.com/a/painted_plaster_wall",
+    "usage": "Existing plaster / staff floor / stockroom metal; physical roughness and occlusion",
+    "checked_date": "2026-11-23",
+    "dimensions_mm": [
+      2000,
+      2000
+    ],
+    "license_url": "https://polyhaven.com/license",
+    "id": "painted_plaster_wall",
+    "name": "Painted Plaster Wall"
+  },
+  {
+    "license": "CC0-1.0",
+    "authors": {
+      "Dimitrios Savva": "All"
+    },
+    "modifications": "Original photos retained. Unity mask conversion: R metal, G occlusion, A smoothness. Tinted shared materials; physical-scale UVs. No product labels copied.",
+    "original_files": [
+      {
+        "md5": "081885fbb0eb5c715f0d591e2c7a1588",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/worn_concrete_floor/worn_concrete_floor_arm_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/worn_concrete_floor_arm_2k.jpg",
+        "bytes": 3788615
+      }
+    ],
+    "source": "https://polyhaven.com/a/worn_concrete_floor",
+    "usage": "Existing plaster / staff floor / stockroom metal; physical roughness and occlusion",
+    "checked_date": "2026-11-23",
+    "dimensions_mm": [
+      2000,
+      2000
+    ],
+    "license_url": "https://polyhaven.com/license",
+    "id": "worn_concrete_floor",
+    "name": "Worn Concrete Floor"
+  },
+  {
+    "license": "CC0-1.0",
+    "authors": {
+      "Rob Tuytel": "All"
+    },
+    "modifications": "Original photos retained. Unity mask conversion: R metal, G occlusion, A smoothness. Tinted shared materials; physical-scale UVs. No product labels copied.",
+    "original_files": [
+      {
+        "md5": "4034385b453f33877eb7619bb834a8ea",
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/metal_plate_02/metal_plate_02_arm_2k.jpg",
+        "path": "Assets/OutOfService/Art/Textures/SurveyedPBR/metal_plate_02_arm_2k.jpg",
+        "bytes": 4445975
+      }
+    ],
+    "source": "https://polyhaven.com/a/metal_plate_02",
+    "usage": "Existing plaster / staff floor / stockroom metal; physical roughness and occlusion",
+    "checked_date": "2026-11-23",
+    "dimensions_mm": [
+      2000,
+      2000
+    ],
+    "license_url": "https://polyhaven.com/license",
+    "id": "metal_plate_02",
+    "name": "Metal Plate 02"
+  }
+]

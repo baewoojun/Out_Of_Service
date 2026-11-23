@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-23",
+  "version": "V18",
+  "status": "Verified in standalone; Unity restored to MarketPrototype_v7",
+  "scene": "Assets/Scenes/MarketPrototype_v7.unity",
+  "scene_sha256": "C6C395981AECE23CB94E1CB4F2A48CDBFC4B2A93EEB778833783D35623136A31",
+  "scene_bytes": 63114305,
+  "build_result": "Succeeded",
+  "build_result_time": "2026-11-23T12:08:27.9343079+09:00",
+  "environment": {
+    "editor_closed_for_tests": true,
+    "resolution": "1920x1080",
+    "api": "Direct3D 12",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "unity": "6000.6.8f1",
+    "pipeline": "URP 17.6.0"
+  },
+  "checks": {
+    "FloorReview": "PASS: 417 checks; six fire doors, both stairs B1-2F return, four escalator flights both directions, B1 concourse and ten tenant entrances including widened side entries, mall customer returns, five support rooms, 1F retail loop, 2F fashion and travel picking loops, 1F/2F women-men-family restroom returns and twelve privacy doors, appliance/kitchen/family doors, both fresh prep rooms and walk-ins. 1920x1080 Windows player. Timings are controlled render+GPU synchronization, not full-game FPS.",
+    "GraphicsReview": "PASS: 132 views at 1920x1080 / FOV75, torch ON/OFF, 29/29 custom reflection textures; profiler texture memory: unavailable in this non-development player. AI disabled, controlled render + GPU readback, not full-game FPS.",
+    "FitoutReview": "PASS: 41 standalone stock / articulated door checks. Not a multiplayer synchronization test.",
+    "UpperRetailWalk": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 138.83 m, 18298 rendered, 18298 samples, p95 3.823 ms, p99 5.022 ms, max 6.893 ms, over 16.67ms 0, Gen0 39. Loading 658.19 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "FashionWalk": "PASS: 1920x1080 normal camera / original backbuffer. 3/3 legs, 115.77 m, 23596 rendered, 23596 samples, p95 2.239 ms, p99 2.498 ms, max 12.561 ms, over 16.67ms 0, Gen0 51. Loading 648.10 ms. All traversal samples retained; no Camera.Render/readback/test render target. Scripted controller movement, AI disabled, not combat or multiplayer.",
+    "MallFirstVisit": "PASS: 1920x1080 | normal camera | AI disabled | real startup preparation 650.19 ms / 9 views (includes B1) | test target initialization 0.00 ms | first controllable B1 visit after loading | 4385 rendered | 8/8 route legs | distance 38.57 m | p95 3.89 ms | p99 4.42 ms | max 6.85 ms | over 16.67ms 0/4385 | gen0 collections 6"
+  },
+  "manual_visual": {
+    "method": "Direct inspection of actual standalone renders; selected new/changed views, not a claim to manually inspect every captured view.",
+    "confirmed": [
+      "open B1 cafe and florist frontage and low product displays",
+      "2F folded garments and luggage arrival group",
+      "restroom entry labels and closed privacy doors",
+      "hollow basin and WC proportions",
+      "fixed wall tile visibility and family WC support-rail mounting"
+    ]
+  },
+  "performance_limits": "Scripted character-controller walking with normal camera/backbuffer. AI disabled, no multiplayer. Loading separately reported. Every traversal sample retained. Gen0 collections remain observable despite no >16.67 ms samples.",
+  "prior_iteration_failures": [
+    "V16 initial editor compilation: undefined wood material references, fixed before final scene regeneration",
+    "V16 route script passed through existing column, corrected to go around column",
+    "V17 outdated accessories count assertion, updated for verified 94 objects",
+    "V17 visual tile occlusion and floating rail mounts, corrected and visually rechecked"
+  ],
+  "remaining": "Decorative tap/flush/assistance functions, live mirror rendering, door audio/network synchronization, combat/chase balance and placeholder pickups/enemy visuals remain outside this increment.",
+  "editor_restored": {
+    "responding": true,
+    "pid": 19208,
+    "scene": "Assets/Scenes/MarketPrototype_v7.unity"
+  }
+}
