@@ -12,8 +12,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_FadedRed_P
+    second: {fileID: 2100000, guid: 49530d108b339484c87ec0087d95f888, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_GateL_NW_Gold
     second: {fileID: 2100000, guid: 5b78a66579d65fb41ac91002495dcc56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_Gold_P
+    second: {fileID: 2100000, guid: bb6a81874b018b94ab29755f2739012c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -22,8 +32,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_GateL_NW_Timber_P
+    second: {fileID: 2100000, guid: f0649bf434ed64646b5765d97372b0df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_GateR_NW_FadedRed
     second: {fileID: 2100000, guid: f8013613838b63045882ce293a49f64c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_FadedRed_P
+    second: {fileID: 2100000, guid: e7549202fe5a75f4ca36392dc2964174, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -32,8 +52,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_Gold_P
+    second: {fileID: 2100000, guid: 35b9d84be90817a4aac4c3263a9d8dbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_GateR_NW_Timber
     second: {fileID: 2100000, guid: fea27abd9d4b3954599e950871e7e6c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_GateR_NW_Timber_P
+    second: {fileID: 2100000, guid: 6f3680fbf2700d44d91ee3268c5e0f1a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -42,8 +72,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Gold_P
+    second: {fileID: 2100000, guid: 527f3aaf4a2f79045a194feab76cb3c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop1_NW_Recess
     second: {fileID: 2100000, guid: cc6239aca3bb0dd4aab0c57c8e2160cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Recess_P
+    second: {fileID: 2100000, guid: da83fc5fce920c241964a28217d2c067, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,8 +92,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop1_NW_Timber_P
+    second: {fileID: 2100000, guid: fd80a81740df0e34a8d1d840676558e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop2_NW_Gold
     second: {fileID: 2100000, guid: 407d00ea03bbbce48880dae50330ebae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Gold_P
+    second: {fileID: 2100000, guid: fda7ab0365bc31b49b7c620215fe5e18, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -62,8 +112,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Recess_P
+    second: {fileID: 2100000, guid: 489e5c83f102872489a7c34e89992f8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop2_NW_Timber
     second: {fileID: 2100000, guid: 3b98da08ee35d894e8518b75d042b30c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop2_NW_Timber_P
+    second: {fileID: 2100000, guid: bb54dd2c50564464bad8e1996e6175ff, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -72,8 +132,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Gold_P
+    second: {fileID: 2100000, guid: e8ebf68af893e254f9339d005d34d66a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop3_NW_Recess
     second: {fileID: 2100000, guid: e9427ab5e4ca3a64da53c31374efdcce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Recess_P
+    second: {fileID: 2100000, guid: 15a02caedb21a4c479ab8d130eeae13c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -82,8 +152,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop3_NW_Timber_P
+    second: {fileID: 2100000, guid: a60ed88ea417ceb419512ad781367018, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop4_NW_Gold
     second: {fileID: 2100000, guid: a88bda6e4cefb7c4eae5d88770a5f304, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Gold_P
+    second: {fileID: 2100000, guid: 9da86dee985304944a1193229d1b3017, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -92,13 +172,103 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Recess_P
+    second: {fileID: 2100000, guid: 740ed86c44c491441a27f4e4832ba806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Shop4_NW_Timber
     second: {fileID: 2100000, guid: 84df6175a97ab65429e722efb4bcd63b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Shop4_NW_Timber_P
+    second: {fileID: 2100000, guid: 64dfcd68dba049c47b37a3fea0d0bfed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL1_NW_Gold_P
+    second: {fileID: 2100000, guid: 934db75841c814a4ba799c5b5baf64b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL1_NW_Recess_P
+    second: {fileID: 2100000, guid: 2c9e91588e4f2e2408837bf495dd0e44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL1_NW_Timber_P
+    second: {fileID: 2100000, guid: e257defaa0d5e7d4aa8dd52cd25c7783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL2_NW_Gold_P
+    second: {fileID: 2100000, guid: 3199a7b46ac1b534090051626a0055f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL2_NW_Recess_P
+    second: {fileID: 2100000, guid: 9f0790f1732c3ff41a699c9a6d370b6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL2_NW_Timber_P
+    second: {fileID: 2100000, guid: 3fb9e7d0098415e4a987a405ee1cd905, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL3_NW_Gold_P
+    second: {fileID: 2100000, guid: 79378fa521c07b546b687cf62b011a31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL3_NW_Recess_P
+    second: {fileID: 2100000, guid: 772321bfe42f81b4ba185cd9bc9d1ffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL3_NW_Timber_P
+    second: {fileID: 2100000, guid: 5facca48622f23546b069a8493f039be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL4_NW_Gold_P
+    second: {fileID: 2100000, guid: 157cf22cc56adf54780f3c92463204f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL4_NW_Recess_P
+    second: {fileID: 2100000, guid: fa14d73db5bdb0a4caf9cb114eb1e71b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_ShopL4_NW_Timber_P
+    second: {fileID: 2100000, guid: bcafb51813f029641b18b272c1d96890, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: NW_BulbOn
     second: {fileID: 2100000, guid: 783cb3746a130fe47ab0fc46a325e579, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static.001_Detail_Iron_P
+    second: {fileID: 2100000, guid: a33851d93db28bb438d6e4d36b06218e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static.001_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: ccc8197b45c5591488bdccbf2ba950f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static.001_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: b1309566215a9c342922c8646d286995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static.001_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: 4c8b0188b78c56c44a5cae0e7c082779, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -112,13 +282,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_NW_FadedRed_P
+    second: {fileID: 2100000, guid: 33c6e3897ccb22a4ca94caaefb707dd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_NW_Glass
     second: {fileID: 2100000, guid: cb55d09108db92c4aa8ae2a22f20dae6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_NW_Glass_P
+    second: {fileID: 2100000, guid: c04ada19fefbd9d47b81f39bfba0981d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_NW_Gold
     second: {fileID: 2100000, guid: 99fd9e2de36f8a142bac638832c7f008, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Gold_P
+    second: {fileID: 2100000, guid: 8605611390feb3e4b8887a9ba2546803, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -129,6 +314,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Static_NW_Recess
     second: {fileID: 2100000, guid: 7eb9a46508062e44dbe14cb260c8e5dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_Recess_P
+    second: {fileID: 2100000, guid: 1f06e821ca3a83a458d43590d190c588, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -147,13 +337,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_NW_Teal_P
+    second: {fileID: 2100000, guid: 229ad9d8d168ba44fb5ce21567540f64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_NW_TileA
     second: {fileID: 2100000, guid: ef9db5393811abe49ae9aecebbca30c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_NW_TileA_P
+    second: {fileID: 2100000, guid: b1ed15812ff5e5d4bb1f030f73182394, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_NW_TileB
     second: {fileID: 2100000, guid: 11c117fe4bc5c0c4b905a10fc7e4afaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_TileB_P
+    second: {fileID: 2100000, guid: 50b9c1a92e4949947b8512e5e0833f59, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -167,8 +372,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_NW_White_P
+    second: {fileID: 2100000, guid: 49febbe42a93214478d24e18995ebfbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_NW_WoodFloor
     second: {fileID: 2100000, guid: d657756f379546f428b0d8fb1d6fde10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_NW_WoodFloor_P
+    second: {fileID: 2100000, guid: c510233999d24bf498d7563862905c07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_CreamWhite
+    second: {fileID: 2100000, guid: 0c20b948b41f738429c02073164395b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_RoofRed
+    second: {fileID: 2100000, guid: 2b505c24d52fd574f9b3a3f079bf13e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_StoneGrey
+    second: {fileID: 2100000, guid: 730223273d4039546831b364c4db76ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_Timber
+    second: {fileID: 2100000, guid: f44a2df54aa3fdd4b8d694a7d5fec77d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

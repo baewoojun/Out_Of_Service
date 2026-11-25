@@ -3,7 +3,242 @@ guid: d1d9f32522e722a4cabcac0e63194c41
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienEyes
+    second: {fileID: 2100000, guid: c335623b15f112b4da7aba2b04a0931f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienGum
+    second: {fileID: 2100000, guid: cecfac99e5801d7438383e02a17c73f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienLips.001
+    second: {fileID: 2100000, guid: 71b0958dcd3c14541aa912eddd63584d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienPupil
+    second: {fileID: 2100000, guid: 706fcc1eb6a22a8449498e1df5d60ffb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienSkin
+    second: {fileID: 2100000, guid: 2a6f20f497068d347aa2b7efca9881e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienTeeth
+    second: {fileID: 2100000, guid: 0a70e7764c320594b9be90c81bb7f270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AlienThroat
+    second: {fileID: 2100000, guid: bdd012419037a0b4f9c5572bf3c967e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_AsteroidRock
+    second: {fileID: 2100000, guid: af52653c729dfce4e99f9ebb6c24d8ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_BoothGlass
+    second: {fileID: 2100000, guid: 6749c9f3a294a96438acc7ca0ae5e9c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_CableBlack
+    second: {fileID: 2100000, guid: b33f928007aceaf4e99019f59141fe47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_CableTray
+    second: {fileID: 2100000, guid: f0b266b9c8029ca4fb0466e9bd3c6260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_CarChassis
+    second: {fileID: 2100000, guid: 788951902f7035340a1f3df186ea8e1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_CeilSpace
+    second: {fileID: 2100000, guid: 8c74aa02e42c10847b1cfbb4dd6784a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_Chrome
+    second: {fileID: 2100000, guid: 6a5bc38df5e16b046aae864da8ffbf03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_CometStreak
+    second: {fileID: 2100000, guid: 791aa462a40018c4d8736197d6be5691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_EdgeYellow
+    second: {fileID: 2100000, guid: 3e4b53a70bbb12140b593c59e8cfd54d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_ExitGlow
+    second: {fileID: 2100000, guid: a8ca25d250941004599dd05ddba338a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_FloorConcrete
+    second: {fileID: 2100000, guid: aa76062dd252899498768df36fd08302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_GateYellow
+    second: {fileID: 2100000, guid: 675237decfda3d0468244b31364479f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_GrateSteel
+    second: {fileID: 2100000, guid: 606fb26b8f7c59540ae6108aad3bcd49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_Hazard
+    second: {fileID: 2100000, guid: 88d3a9f80b13d4d46845104a63711489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_LampWarm
+    second: {fileID: 2100000, guid: 268749972ffe15846a636bf307447886, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_LedBlue
+    second: {fileID: 2100000, guid: e6e254978efa3554d8fc9c29e2f23dc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_LedDead
+    second: {fileID: 2100000, guid: 18a986bb70ea10f44bd55f7cca4388b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PanelBlack
+    second: {fileID: 2100000, guid: 91d12b6e3e9d6484cb6c2c6558a8f284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PanelLamp
+    second: {fileID: 2100000, guid: fe6245e5dcc87884cb18d87d7c894a31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PlanetEarth
+    second: {fileID: 2100000, guid: 84df20cbc9def6a4f9a192c2856efed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PlanetIce
+    second: {fileID: 2100000, guid: b7eaa3b2827b8a2469f46d80e9e7ae47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PlanetRed
+    second: {fileID: 2100000, guid: 0f150722e49d0e04da53f1302f095181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PlanetViolet
+    second: {fileID: 2100000, guid: 738e7b6efc0a6cf40a44b7a68d000eeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_PlatformFloor
+    second: {fileID: 2100000, guid: a680563300fedb14ab41266bed21a044, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_RailSteel
+    second: {fileID: 2100000, guid: 49b40f35dc8091a489b670a6e846c585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_RedLamp
+    second: {fileID: 2100000, guid: 4a538cdee7b67644db6b12780fb3aa52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_RingSteel
+    second: {fileID: 2100000, guid: 0aabf97eb9a4496459895e94c39248bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_SaturnBands
+    second: {fileID: 2100000, guid: b6229acd93baab7498b9ee6aea8c2f1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_SaturnRingGlow2
+    second: {fileID: 2100000, guid: 4dd60ed2d19909e49801398f11adae8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_ScreenNebula
+    second: {fileID: 2100000, guid: 19330b30b9851ea41829cb1531620dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_SeatBlack
+    second: {fileID: 2100000, guid: ae5a3ee3bba7f5a4f871269839d484c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_SpineNavy
+    second: {fileID: 2100000, guid: 74d0b194ebeb7cf459fb1ab889bd5a1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_StairCore
+    second: {fileID: 2100000, guid: f52f4afd4d2b5f844bce741af33294ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_SupportGrey
+    second: {fileID: 2100000, guid: 23c65c120a3f3304688b66babf9760ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_Tyre
+    second: {fileID: 2100000, guid: 2e476c485dd25104eab45c9fabb6820c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_UfoBeam
+    second: {fileID: 2100000, guid: ebeb64f6521dcd04880dfa36554f9f99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_UfoDome
+    second: {fileID: 2100000, guid: 22b57a5f3da76b6499c502541978442d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_UfoHull
+    second: {fileID: 2100000, guid: 8f89b34110fa3534290c665ff9eacde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_UfoLights
+    second: {fileID: 2100000, guid: e722ba31d9e567d4db3c220d63ed6a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI38_CE_WallSpace
+    second: {fileID: 2100000, guid: cb130731c66a3b44db8e77e488b8b7bd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +288,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

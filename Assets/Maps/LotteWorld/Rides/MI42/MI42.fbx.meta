@@ -3,7 +3,122 @@ guid: 878211d290701384b801a57adcf9c7d2
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BlockGreen
+    second: {fileID: 2100000, guid: 7f5d55c6e7df501489c75540663dba8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BlockLightBlue
+    second: {fileID: 2100000, guid: 9d7e77a9820f63342a3bfcc1561e2657, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BlockPink
+    second: {fileID: 2100000, guid: eff375d452ead1249a0ede0afaa67b5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BlockRed
+    second: {fileID: 2100000, guid: b77c22ee03e8a884ead0784f0c5959df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BoothCream
+    second: {fileID: 2100000, guid: 34f277ea895729b4fa71dbe5cbefc564, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BoothGlass
+    second: {fileID: 2100000, guid: d73d942ea375ee34eab4c986477e7260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_Bulb
+    second: {fileID: 2100000, guid: bf972dfe038e6d349aedc5ae58e2d911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_BulbDead
+    second: {fileID: 2100000, guid: 708d3adca858cc74495cdf773b0c77e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_FigureCream
+    second: {fileID: 2100000, guid: a26020d4a36b7e14bac6d8d5b0cfe904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_HarnessBlack
+    second: {fileID: 2100000, guid: affb4a6d3f9a2214e9bb80b690a4dce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_HoopOrange
+    second: {fileID: 2100000, guid: bfe0c8c35b2da604da20b55b6437f158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_MachineGrey
+    second: {fileID: 2100000, guid: a6e32220358547b4891ef3ae599bf677, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_PaintRed
+    second: {fileID: 2100000, guid: 9e016672318dede4dbd2595a5e4711cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_PaintYellow
+    second: {fileID: 2100000, guid: 6eb96b2678489714f98cdcdb2812cdb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_RimYellow
+    second: {fileID: 2100000, guid: fceb4321344fb264bbfd0c113d09722d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_SeatBlack
+    second: {fileID: 2100000, guid: a5dbb4f2fcc2bde41b75ff21298ff3bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_SignBlank
+    second: {fileID: 2100000, guid: 026fca2578b958042864fb341b6cfc72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_SteelGrey
+    second: {fileID: 2100000, guid: c830597720284c742bd668758cb662d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_TopPink
+    second: {fileID: 2100000, guid: 89b166eeb1986ed4d9f0307c7da04dca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_ToyBlue
+    second: {fileID: 2100000, guid: b0c80da4f555b1b47a706619b4b6ddd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_ToyBrickYellow
+    second: {fileID: 2100000, guid: 01c8a6d84d05b594abcf6ba31a41adfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_TreadPlate
+    second: {fileID: 2100000, guid: b041e113f1a5d164aa65140d20750131, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI42_EOS_WindowDark
+    second: {fileID: 2100000, guid: d55b025387761174399b04705765a7b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +168,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

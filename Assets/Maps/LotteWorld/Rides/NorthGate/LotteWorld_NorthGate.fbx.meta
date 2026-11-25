@@ -7,8 +7,58 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: A06_Detail_Iron_P
+    second: {fileID: 2100000, guid: 01fc715e97e3c9c4999e0b1959439d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_Detail_LW_CreamWhite_P
+    second: {fileID: 2100000, guid: 0da3cde0b3deac34fab7700882112298, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: a847f6cd588ed7148bd34a2a092b3d10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: f00d57871361f564f8fe9e5d76b68b32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_Detail_LW_RoofRed_P
+    second: {fileID: 2100000, guid: 7d1075c2fd8e58948830c81a2d937e6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_Detail_LW_Timber_P
+    second: {fileID: 2100000, guid: fa263d823ac2e884c814038c863d2a1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_LW_Gold_P
+    second: {fileID: 2100000, guid: 0e3b851b9bb291242a573b863e69e1b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_LW_Opening_P
+    second: {fileID: 2100000, guid: 24ea49746e5afa44490b5322ed315d07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: A06_LW_Timber_P
+    second: {fileID: 2100000, guid: 5076bcc9267b48c4b9cb4775ce88735f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_Exit_LW_Gold
     second: {fileID: 2100000, guid: 82e68783e97c93146ad26eafdde1c7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_Exit_LW_Gold_P
+    second: {fileID: 2100000, guid: 5d60d7273417a964b8477804759421e5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,8 +67,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_Exit_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 86c48caf9dc12224ca87c9e7d9f39b99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_Exit_LW_Timber
     second: {fileID: 2100000, guid: 59395325a0918c9459bb9d63e00d440f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_Exit_LW_Timber_P
+    second: {fileID: 2100000, guid: 8688755751bbe4a4f9cb81395df97782, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,8 +87,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_L_LW_Gold_P
+    second: {fileID: 2100000, guid: d7c76b16079fe924bb2a6e571c393e61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_L_LW_Terracotta
     second: {fileID: 2100000, guid: 2b22cc6c692751e4180aad4be16cbbc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_L_LW_Terracotta_P
+    second: {fileID: 2100000, guid: b86ce1d9a434b98438bd27d1f2e19cad, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -37,8 +107,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_L_LW_Timber_P
+    second: {fileID: 2100000, guid: 11fefb36d0311bc468c188e7a66ddc48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_R_LW_Gold
     second: {fileID: 2100000, guid: 3bd1b769be14d7b40a217a6a03727649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_R_LW_Gold_P
+    second: {fileID: 2100000, guid: b36f7da3e14cc074a9e12b5df1ddc71b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -47,8 +127,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_R_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 1fd1d1789b55ebb4b98a455190264362, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_R_LW_Timber
     second: {fileID: 2100000, guid: d7e49ec78dbc32b44ad0d03c7463e823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_R_LW_Timber_P
+    second: {fileID: 2100000, guid: 59b6ba21f1927144daf513f669dcaa0a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -57,8 +147,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_Side_LW_Gold_P
+    second: {fileID: 2100000, guid: f6e32d7870370784fb4381c573230274, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_A06_Side_LW_Terracotta
     second: {fileID: 2100000, guid: ff35980b99e7cf64c9a8c4fcc5bd18b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_A06_Side_LW_Terracotta_P
+    second: {fileID: 2100000, guid: f1470162c7a8a3b4794e1c605da07d86, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -67,8 +167,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_A06_Side_LW_Timber_P
+    second: {fileID: 2100000, guid: 3820cbd5aac2efd46a816eac84cc3ab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F1_L_LW_Gold
     second: {fileID: 2100000, guid: b29c0bc7e9da65b408c09ca9ada35ca8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F1_L_LW_Gold_P
+    second: {fileID: 2100000, guid: 60d6e9e9efe91bf4894e0ea270f8c61f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -77,8 +187,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F1_L_LW_Opening_P
+    second: {fileID: 2100000, guid: 0a28e889fb201ab488ab4d8803699784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F1_L_LW_Terracotta
     second: {fileID: 2100000, guid: 98f8e0b2488031f42b2c1bea04283364, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F1_L_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 5b699d9401649a348bf93cc5381eab1c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -87,8 +207,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F1_L_LW_Timber_P
+    second: {fileID: 2100000, guid: 8deb9fccebe5c6943a2d6c8905119cbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F1_R_LW_Gold
     second: {fileID: 2100000, guid: a0afb354cae8d9b419209b7a8097f388, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F1_R_LW_Gold_P
+    second: {fileID: 2100000, guid: 00b8093b8aaaf2e4d89094a5058b9d33, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -97,8 +227,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F1_R_LW_Opening_P
+    second: {fileID: 2100000, guid: e8972b9ef5cec0b40bcf160dcbaead03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F1_R_LW_Terracotta
     second: {fileID: 2100000, guid: 00fa94d704c9f2d44968d051765bf824, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F1_R_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 9564171e4aefc8d44b8f6c5cc4118d9a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -107,8 +247,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F1_R_LW_Timber_P
+    second: {fileID: 2100000, guid: 3358830dc362c7a42a1cac1f3c875833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F2_LW_Gold
     second: {fileID: 2100000, guid: b7aa2ba3671977543925f482c2bb2bb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F2_LW_Gold_P
+    second: {fileID: 2100000, guid: d79b35baee9347d42b5971caf27531a2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -117,8 +267,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F2_LW_Opening_P
+    second: {fileID: 2100000, guid: 1c84efc45430b1948bfaa0cf7e8d5009, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_F2_LW_Terracotta
     second: {fileID: 2100000, guid: aeb0f784ef3b1de44ade4bab66bee60c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_F2_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 597b0bfed5c1b264896ff5a852a9c507, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -127,8 +287,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_F2_LW_Timber_P
+    second: {fileID: 2100000, guid: d9439414e7e02a14f9d14974bb1808db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Gate_E_LW_Gold
     second: {fileID: 2100000, guid: cca167ac3e168fb4c91868a4048e5326, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Gate_E_LW_Gold_P
+    second: {fileID: 2100000, guid: fe3cbd36c572b3140a752150dbdd8e7e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -137,8 +307,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Gate_E_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 95f59eb421c10cb448814c24eeb99da8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Gate_E_LW_Timber
     second: {fileID: 2100000, guid: 8c53344333fcbbe4796ee3ede665ef68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Gate_E_LW_Timber_P
+    second: {fileID: 2100000, guid: 9458ccf4b7b210e4ea33ac8469c24a9b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -147,8 +327,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Gate_W_LW_Gold_P
+    second: {fileID: 2100000, guid: 22d59860df1bc2f47922257676cc605f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_Gate_W_LW_Terracotta
     second: {fileID: 2100000, guid: 8f03fa7459be32747b35b8cff661687e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Gate_W_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 05aa1c26522a90d42b2b6ee4118cffe9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -157,8 +347,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Gate_W_LW_Timber_P
+    second: {fileID: 2100000, guid: 5478793835156814886215857d348f2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_K5_LW_Gold
     second: {fileID: 2100000, guid: 3858081614bc33447ae7d147e61f76c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_K5_LW_Gold_P
+    second: {fileID: 2100000, guid: 6177809e2e7518c4589056d91187a8fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -167,8 +367,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_K5_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 1d4aaaf86d0fa2f46a71262d0f2b6814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_K5_LW_Timber
     second: {fileID: 2100000, guid: 67953f6672e63b6498541e76bb12ec4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_K5_LW_Timber_P
+    second: {fileID: 2100000, guid: f55ac04a53a11104da3819c0989b85cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -177,8 +387,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_S06_LW_Gold_P
+    second: {fileID: 2100000, guid: 3e97ee59df01bf44e9ccf2d2a42733b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_S06_LW_Terracotta
     second: {fileID: 2100000, guid: 3f4d27ee9f5288442a684e89e4047e84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_S06_LW_Terracotta_P
+    second: {fileID: 2100000, guid: cdde3287ecdf2fd44b244261b63b7a62, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -187,8 +407,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_S06_LW_Timber_P
+    second: {fileID: 2100000, guid: 4236eb97d62a2c346ba74bab3650f679, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_C_L_LW_Gold
     second: {fileID: 2100000, guid: 1475474e02a491145a1293eab905c3d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_C_L_LW_Gold_P
+    second: {fileID: 2100000, guid: f9fab76983d343b4db10dd2154c60577, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -197,8 +427,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_C_L_LW_Opening_P
+    second: {fileID: 2100000, guid: af738dae4b950a04290127600b6d0ca9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_C_L_LW_Terracotta
     second: {fileID: 2100000, guid: aa8da49bdaaeec34faa0745fdbf862e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_C_L_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 97658d670c766f84d91ca2c63b469488, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -207,8 +447,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_C_L_LW_Timber_P
+    second: {fileID: 2100000, guid: 06231641b6ca4324286a33f386744637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_C_R_LW_Gold
     second: {fileID: 2100000, guid: 8ff8ead668294144fb0d81e55958cdcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_C_R_LW_Gold_P
+    second: {fileID: 2100000, guid: 10e9ae013565185489250e2c5a208795, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -217,8 +467,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_C_R_LW_Opening_P
+    second: {fileID: 2100000, guid: 316e1983cb01da640b1e736006229cdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_C_R_LW_Terracotta
     second: {fileID: 2100000, guid: 6313e7c8d5a27cb4d85f2b687ea88308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_C_R_LW_Terracotta_P
+    second: {fileID: 2100000, guid: ee17ef8d9fbc5cb42b76dd309145d221, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -227,8 +487,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_C_R_LW_Timber_P
+    second: {fileID: 2100000, guid: f9571b14f2a92364baa52735c1bf807f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_E_L_LW_Gold
     second: {fileID: 2100000, guid: 6596e1e8b779c6a43a4e61e944f98a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_E_L_LW_Gold_P
+    second: {fileID: 2100000, guid: bbd0df3ad61d76349a10ba8a9d90f2ca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -237,8 +507,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_E_L_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 35302187970f9724faec0a1165e221ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_E_L_LW_Timber
     second: {fileID: 2100000, guid: e7cb32b8973fd45469019ba494367761, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_E_L_LW_Timber_P
+    second: {fileID: 2100000, guid: da322754660d813408352e18656272fd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -247,8 +527,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_E_R_LW_Gold_P
+    second: {fileID: 2100000, guid: eba88db60a5425b4996b41804f3a9506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_E_R_LW_Terracotta
     second: {fileID: 2100000, guid: 9ea193c6a9fb10a469c29fbb6da06cc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_E_R_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 871bea95a36d25346993b72e2d453f02, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -257,8 +547,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_E_R_LW_Timber_P
+    second: {fileID: 2100000, guid: 54fe70237e7754940b340b572ac2aead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_W_L_LW_Gold
     second: {fileID: 2100000, guid: c681cdad688f46644aa62392920ae7aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_W_L_LW_Gold_P
+    second: {fileID: 2100000, guid: d0ba4c77fb7ada74b8aa7ff2933dc367, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -267,8 +567,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_W_L_LW_Terracotta_P
+    second: {fileID: 2100000, guid: fedfa869f9a07e24c9aa776f577969d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_W_L_LW_Timber
     second: {fileID: 2100000, guid: 13f63649d20e723479c64531f201585d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_W_L_LW_Timber_P
+    second: {fileID: 2100000, guid: c3198e76dea491542865c21876d9cc33, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -277,13 +587,253 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_W_R_LW_Gold_P
+    second: {fileID: 2100000, guid: 938a911777acd9840a4bb60c9d85d29c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_W_R_LW_Terracotta
     second: {fileID: 2100000, guid: 8aea85904251c8f4db161e5250e57998, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_SN_W_R_LW_Terracotta_P
+    second: {fileID: 2100000, guid: d5329a5567732bf47903bb87f181db22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_SN_W_R_LW_Timber
     second: {fileID: 2100000, guid: 3ac8822f6b16e67479dd7935352f9ce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_SN_W_R_LW_Timber_P
+    second: {fileID: 2100000, guid: 31f18d866494e5c4fac9a88712c43072, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_Iron_P
+    second: {fileID: 2100000, guid: 3deadbafeb8677c479753af38d073815, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: e8fb85e3ea6b78b488d9e17a86456b4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: 92a93261d923fa2408a5b5d1b5da1e21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_LW_RoofRed_P
+    second: {fileID: 2100000, guid: ca164ae4d8bc39b409263c36ef362b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: 4ec4a42aad390274c937dc0187fe99e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_Detail_LW_Shutter_P
+    second: {fileID: 2100000, guid: ef3deb5d3d100eb4991fbe0899fde23b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_LW_Gold_P
+    second: {fileID: 2100000, guid: c929e6b7e9a580b41b4d917c0f09b1f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_LW_Opening_P
+    second: {fileID: 2100000, guid: c405e097298f9864dae4b57946e02a2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new1_LW_Timber_P
+    second: {fileID: 2100000, guid: 58dee460110617a4f9dc018d8dc2fc91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_Iron_P
+    second: {fileID: 2100000, guid: 1eec966343a151d468558572370e46e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_CreamWhite_P
+    second: {fileID: 2100000, guid: 38aa07751dd5ed64ab0db3c9870b518e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: 0e634d43681edcc478f5a6038dbe69bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: 564a2f73189d21d428e26e77dc31fb7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_RoofRed_P
+    second: {fileID: 2100000, guid: 7d4a080d576095c40b9f3518df0b7768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: 9b8694dfd39e6c74aac1011fe54e859e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_Shutter_P
+    second: {fileID: 2100000, guid: dd32006624f87c04cb8c115e314f86d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_Detail_LW_Timber_P
+    second: {fileID: 2100000, guid: 48bd9eaddd41e0d46a334e1159f8e3d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_LW_Gold_P
+    second: {fileID: 2100000, guid: 8f65116ac118dc94796d4a4e0240b6c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_LW_Opening_P
+    second: {fileID: 2100000, guid: b7983d64d51965e47b590c74df9a9ca5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: F_new2_LW_Terracotta_P
+    second: {fileID: 2100000, guid: 7e92c9cd1dc6d5d42a61c54c2cdefc21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kiosks_Detail_Iron_P
+    second: {fileID: 2100000, guid: 37f04bd16c5838143a350744cf237f7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kiosks_LW_Gold_P
+    second: {fileID: 2100000, guid: 70421a8935cfc3a4cbfe290e552cc088, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kiosks_LW_Opening_P
+    second: {fileID: 2100000, guid: dc00483ed9c6c474c88e9f9e6974645c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kiosks_LW_Timber_P
+    second: {fileID: 2100000, guid: c8f98d7c9d960064bbe6a5ef1f09c667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_Iron_P
+    second: {fileID: 2100000, guid: f9b9104f076d15440973496bc0fd9796, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_CreamWhite_P
+    second: {fileID: 2100000, guid: 06adf3882acd9c9418d6ceeb54378176, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: 276c606b77d6dbb4892e2b41b01ba698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: b09414cd67b763043982ac027a4cf988, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_RoofRed_P
+    second: {fileID: 2100000, guid: 0a211deb37c06634c9b74c86b61cde7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: 50f12220435ad034b87be17ee849a3e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_Shutter_P
+    second: {fileID: 2100000, guid: 0d0a869008239a046b4fe5332e4cf144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_Detail_LW_Timber_P
+    second: {fileID: 2100000, guid: e1b5b1b865a364b489562b365e79cf5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_LW_DarkTeal_P
+    second: {fileID: 2100000, guid: d15dca88de1d8f64fbfb3a8930993227, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_LW_Gold_P
+    second: {fileID: 2100000, guid: 39c186ca8b60bd842b0be2494e78efb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_LW_Opening_P
+    second: {fileID: 2100000, guid: 0a0228b462d2fb84087c635a226830cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainGate_LW_Timber_P
+    second: {fileID: 2100000, guid: 7ce89ab77a6f1864a83466404d0be326, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: 8d2726d910420274ebdcb4d746aa97ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: 4aa441020af51f3409d0ca3fae845fcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: a6b6f473b38d7ff47b5d1886329acddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_Detail_LW_Shutter_P
+    second: {fileID: 2100000, guid: 840e8132bb1c7e044ad92d66028950a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_LW_Gold_P
+    second: {fileID: 2100000, guid: 3c3072575822e2749917fb03ddb7e301, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_LW_Opening_P
+    second: {fileID: 2100000, guid: 83086682d2d08fa4194ab13e7d52b486, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_LW_RockDark_P
+    second: {fileID: 2100000, guid: 0121b1d9ec0049d48beb76aa7e9c8846, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_LW_Rock_P
+    second: {fileID: 2100000, guid: c1556132c5b93b44a80d6cd994c911ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: S_new1_LW_Timber_P
+    second: {fileID: 2100000, guid: 7f028611aafea7e4e87f826125b15ea8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -344,6 +894,71 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Static_LW_Water
     second: {fileID: 2100000, guid: a491d374fc98b6243b046283ba8fa37c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_CreamWhite
+    second: {fileID: 2100000, guid: 0c20b948b41f738429c02073164395b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_DarkTeal
+    second: {fileID: 2100000, guid: 0d8cb16d3605b494c9c799589fa9e6b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_RoofRed
+    second: {fileID: 2100000, guid: 2b505c24d52fd574f9b3a3f079bf13e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_StoneGrey
+    second: {fileID: 2100000, guid: 730223273d4039546831b364c4db76ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_Terracotta
+    second: {fileID: 2100000, guid: 3e3b815af8604e64880271fcd3879e97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_Timber
+    second: {fileID: 2100000, guid: f44a2df54aa3fdd4b8d694a7d5fec77d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_WarmBeige
+    second: {fileID: 2100000, guid: 3b2314a5727a78f48b2aaca7584e94a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_Detail_LW_StoneGrey_P
+    second: {fileID: 2100000, guid: ebcd92f6c6498044ca1f67170f22610d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_LW_CreamWhite_P
+    second: {fileID: 2100000, guid: 91fd8278975d02145baa027063ee6f71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_LW_Opening_P
+    second: {fileID: 2100000, guid: 51b07a278761b7840ba4dac53fb85952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_LW_RockDark_P
+    second: {fileID: 2100000, guid: 1611c117526ebb247a8e87089e76076a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_LW_Rock_P
+    second: {fileID: 2100000, guid: 3d0672f28b3206f4b9b34d8a9741ba3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Waterfall_LW_Water_P
+    second: {fileID: 2100000, guid: 0b81c700c7519524b9237caf6d320b74, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,742 @@ guid: 07baa662a0ce0ab419c54d6422fb3c57
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_AwningStripe
+    second: {fileID: 2100000, guid: b03a4c8d2edbd534ebc52c2291d64d13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Bark
+    second: {fileID: 2100000, guid: 39560cf109e9f6f47ad93a65053ca853, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BlackPaint
+    second: {fileID: 2100000, guid: b14b21eeb986aca49a23892d1ceb92a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BookB
+    second: {fileID: 2100000, guid: da06f43f71609e44786ba448c773e9ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BookG
+    second: {fileID: 2100000, guid: db9d9a374ce338042b36d476be0b6f28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BookK
+    second: {fileID: 2100000, guid: 1a7cf5935561644418e9821b04abc080, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BookR
+    second: {fileID: 2100000, guid: 974c1882edfd5e04c9e70a0031c61e51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BookY
+    second: {fileID: 2100000, guid: a3db0170aa488e04d90143eace6deacc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BoothStripe
+    second: {fileID: 2100000, guid: 63d5013ac95849c468bb3ae17f191735, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Brass
+    second: {fileID: 2100000, guid: 5f4193af11e7f6f468418fa5743ac422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbB
+    second: {fileID: 2100000, guid: 9000960c437740e45810e124f39483bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbG
+    second: {fileID: 2100000, guid: 2ee3888319dbc8a4f86adc1a9caf79d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbOff
+    second: {fileID: 2100000, guid: 91a8ce2ca88476148913ae3a12fd25c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbP
+    second: {fileID: 2100000, guid: 4959ad62eaf19ff439014dc6cc31f690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbR
+    second: {fileID: 2100000, guid: 6a56ca1a40a8ada43a9ab0691574d22f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_BulbY
+    second: {fileID: 2100000, guid: 57f31a188e5947e4a8c98e981949e349, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Cable
+    second: {fileID: 2100000, guid: c5a6db357b0012549a714e899e2a831e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CandyBricks
+    second: {fileID: 2100000, guid: 17dce7a7c32c6f1488886d1a215878a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CandyBricks2
+    second: {fileID: 2100000, guid: 247d35fdd749d574396777c36f540c6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CarRed
+    second: {fileID: 2100000, guid: e8793855b14441b4aa996cbc5a86ef10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CeilingPipe
+    second: {fileID: 2100000, guid: ffb556999f69abc458b6c140117c2b83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CeilingTile
+    second: {fileID: 2100000, guid: 161d39cd26ddb3b4ab3cfccf70cd3bb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Chocolate
+    second: {fileID: 2100000, guid: 35f0d5f8a61b5a34481b714e39068e89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Chrome
+    second: {fileID: 2100000, guid: 7bdbfc2256c1d4849bb79a50896416c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_CircusStripe
+    second: {fileID: 2100000, guid: 287cb31d6d0ef0942b0b062d4c3bac25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Cobweb
+    second: {fileID: 2100000, guid: c691ca224b5edf5448c3a54a90d24b48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Concrete
+    second: {fileID: 2100000, guid: 88b276e0b75627042b4935272a3805b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_DirtyGlass
+    second: {fileID: 2100000, guid: fcb3fc98a5d47874cbb80f0e9bf0f3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_EmergencyRed
+    second: {fileID: 2100000, guid: c1a9683aa5995d145b983c4d645b4171, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_EndoEye
+    second: {fileID: 2100000, guid: 3d8912cf13103564dbf52fb0fb92283e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_EndoMetal
+    second: {fileID: 2100000, guid: 28d865a6ed3deb345a71beda5018bf1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_ExitGreen
+    second: {fileID: 2100000, guid: 77f371514322b6047b7a5c7a58387222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_EyeRed
+    second: {fileID: 2100000, guid: 472833a8b4b468c47947f5762f7ba864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Flame
+    second: {fileID: 2100000, guid: dd540db45e5e32c46b7265abdc279180, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Floor
+    second: {fileID: 2100000, guid: 92416677e5054fb49af07f2ec39a761f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_FloorYellow
+    second: {fileID: 2100000, guid: a27b8a835de150b4a94fdffee1e732b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_FluorHousing
+    second: {fileID: 2100000, guid: 4a56aa7a652eb7d4c89c16d777d5d4d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_FluorTube
+    second: {fileID: 2100000, guid: 55ac4a60d6571314584cdf674ea72268, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_FluorTubeDead
+    second: {fileID: 2100000, guid: f6afb1682c6593f43bc62ab30f60c41d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_FrameBlue
+    second: {fileID: 2100000, guid: bf29f58c174e1764b8358e4d6566ad53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Gold
+    second: {fileID: 2100000, guid: d67dc7dfe214cc34fbbaa398ee5db699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_LocoBlue
+    second: {fileID: 2100000, guid: 96dcef587d49c8c43b8b3813873e63da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_LocoOrange
+    second: {fileID: 2100000, guid: e9124b75a99c8cf4381390a937ac487d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_OldWood
+    second: {fileID: 2100000, guid: 2507595e3990e254e9f7faf4b90bd139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_PaperRed
+    second: {fileID: 2100000, guid: dda009781d9057f49b1e97b9aa4ce16a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_PaperWhite
+    second: {fileID: 2100000, guid: 7388a5c1fa2016e498226fb5ebd7ab79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Plaster
+    second: {fileID: 2100000, guid: 9815570d2b3b44242851e2a3436a0dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Poster0
+    second: {fileID: 2100000, guid: 83c87bbdac9074046a91506d64d395fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Poster1
+    second: {fileID: 2100000, guid: ac050008be081dc49b073bc70697f76e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Puddle
+    second: {fileID: 2100000, guid: bc64f7759d7d42a4884f66314460ae39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Pupil
+    second: {fileID: 2100000, guid: 2cc52efb98dfbf94a9b05bdb9490bdb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Rail
+    second: {fileID: 2100000, guid: 82f0db89bf3eaed45b231e454b624b14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_RailingGreen
+    second: {fileID: 2100000, guid: 9dd2c8f489cedf841911cf5da346f2db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_RoofTeal
+    second: {fileID: 2100000, guid: f2fefebdaeaf1274ca7236e71f870925, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Rubber
+    second: {fileID: 2100000, guid: 12932fbccf3f70a4eae952b4adeb1f18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Stanchion
+    second: {fileID: 2100000, guid: e6129b666b2db6348b6fc8eb15be6222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Stuffing
+    second: {fileID: 2100000, guid: 98fbb93f8ce941644a750dacde7b1d0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_SwampWater
+    second: {fileID: 2100000, guid: bbd20e4222e192f4b8e094176948982b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Teddy
+    second: {fileID: 2100000, guid: 3a98c0ebe0a481442af65ec93950b348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Timber
+    second: {fileID: 2100000, guid: 66f81f5e105663941b3a9f6fb2dbf63b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_Velvet
+    second: {fileID: 2100000, guid: 47f12995918de724c9daf7835d97a2a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_WetSign
+    second: {fileID: 2100000, guid: 49d18fd03c056ab49bd0f4ca6d69b663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_WireRed
+    second: {fileID: 2100000, guid: acc4e1ac421ccd444955fdf14fd7c534, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD2_WireYellow
+    second: {fileID: 2100000, guid: c5a880d0d461adc46a05ea63fac42ca1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Blush
+    second: {fileID: 2100000, guid: b3de6dfca1f10dc4b8a00101ea069f1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Burlap
+    second: {fileID: 2100000, guid: 03ddcd2d37e760e45a3eea79b5e1d9ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothBlack
+    second: {fileID: 2100000, guid: fc056ee591254da4487ad49762fc2999, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothBlue
+    second: {fileID: 2100000, guid: 63d6e87d6b9d845448fc27683c1f2053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothGreen
+    second: {fileID: 2100000, guid: 79881d4e9030971448a95a66735dac5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothLace
+    second: {fileID: 2100000, guid: 4c2c7bfbc5bfa38488b8524c78fa663c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothMustard
+    second: {fileID: 2100000, guid: c3f825d9bbeb1c14ead95b408ff74992, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClothRose
+    second: {fileID: 2100000, guid: e2b6316ac395cde44a983417e09f8712, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClownFace
+    second: {fileID: 2100000, guid: 311a1e39d10f8634b9c9e95f848be06c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClownHairDead
+    second: {fileID: 2100000, guid: b11d2af4b5871474aac62eb0077bbf75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_ClownNoseDead
+    second: {fileID: 2100000, guid: da9d0dd0603b1f644afa1848065ba8f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_DarkPanel
+    second: {fileID: 2100000, guid: 104c576a3518572438580765b2aee628, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_DeadLeaf
+    second: {fileID: 2100000, guid: 907cbfc3d3d249644bb26dfafd4693fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_DeadReed
+    second: {fileID: 2100000, guid: 776140f71ce765f4a9fc45a3589f5299, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_EyePlate
+    second: {fileID: 2100000, guid: f8e4197cdfaf28249b2eea8bcbe39d8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_EyeSick
+    second: {fileID: 2100000, guid: 196bdfd819b11bf4faf71fbcd6c5cada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcB
+    second: {fileID: 2100000, guid: a337a31ba253fde4aa8172f16b933e03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcG
+    second: {fileID: 2100000, guid: 4c0e3f3ab7f8b8845938ab256f599ed8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcP
+    second: {fileID: 2100000, guid: ae97dc195e0011b4384afa5d6a879b2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcR
+    second: {fileID: 2100000, guid: 49a7e803c6bc8e34cae36d6ed9f813d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcW
+    second: {fileID: 2100000, guid: f34c3d5f9b83cc442a71f5914a299d3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_FadedcY
+    second: {fileID: 2100000, guid: 2532411084c0e434f901cbd7b5d297ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_GlassEyeWhite
+    second: {fileID: 2100000, guid: 5232f5063b4cdf24bac832e8faf8922f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_HairBlond
+    second: {fileID: 2100000, guid: fde6ec5fd5108e6418b3b860cf5f97ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_HairDark
+    second: {fileID: 2100000, guid: 391a8fd6e0ac0104593db75f624752cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_HairGrey
+    second: {fileID: 2100000, guid: 09dec442fd4f5724db2408e30e4b4993, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_HairRed
+    second: {fileID: 2100000, guid: cc2603e35fce7fc4f906d3f907f145cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Hole
+    second: {fileID: 2100000, guid: 31fe438c333e361489ecd0e99f4103c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_IrisB
+    second: {fileID: 2100000, guid: 65bebbaab0d22644094459eb4a71ca7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_IrisBr
+    second: {fileID: 2100000, guid: 9794b11d131816a44aecbd2f903a05b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_IrisG
+    second: {fileID: 2100000, guid: 0d2be0019484b3c46bbb4833a3e22531, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_IrisW
+    second: {fileID: 2100000, guid: df54f81497d33414792fbda284be5a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Lips
+    second: {fileID: 2100000, guid: 92869241a46368f47b28d932c2735fc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_MascotFurBrown
+    second: {fileID: 2100000, guid: 24a9b89a701b36a45b7b933f4a536db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_MascotFurGrey
+    second: {fileID: 2100000, guid: 6c762f30a60a3614ebd466548c089190, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_NightLamp
+    second: {fileID: 2100000, guid: 92a2f276dfcc9cf47aa9ab43a79c16bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Porcelain
+    second: {fileID: 2100000, guid: 97c55a97a76a62e4296bccb7c8c3cdce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_PorcelainGrey
+    second: {fileID: 2100000, guid: 8fa8df6e34b26e24d98263e84b1172b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_RedLamp
+    second: {fileID: 2100000, guid: f854525ec41c51f49b032e6d9480788b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_RotCarpet
+    second: {fileID: 2100000, guid: 2e787f6e9a2b1a64c99d922aeb8da9b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Shoe
+    second: {fileID: 2100000, guid: 117dac7ca81ec3e4193b0a202f784e3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_Straw
+    second: {fileID: 2100000, guid: aa34f94836496d74ba0d7e7b91c52603, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_String
+    second: {fileID: 2100000, guid: 5e8a6cd16634d034c930b29494ccfd5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_TeethYellow
+    second: {fileID: 2100000, guid: f7994db005122264ca7b83156ee1df13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_WallpaperBlue
+    second: {fileID: 2100000, guid: dfb2911eba573be4da4d795e210b60b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_WallpaperRose
+    second: {fileID: 2100000, guid: 76c9f65e51f88fc429ec818afc764956, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD3_WallpaperStripe
+    second: {fileID: 2100000, guid: d1412fda5078aeb4293c397a4e1d690c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_FurBear
+    second: {fileID: 2100000, guid: 8d9f24a2d0d94654898324f71a6251be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_FurBelly
+    second: {fileID: 2100000, guid: 36ae2e7ebd036b147a5bdb27b7b52753, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_FurRabbit
+    second: {fileID: 2100000, guid: 1231b44e4319407419ab15c9771d8e2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_FurRabbitBelly
+    second: {fileID: 2100000, guid: cf3c7c6b9c95bc24692603233ce6542d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_GlossEye
+    second: {fileID: 2100000, guid: 8736b145bf35acc45aea42cf399c79d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_Gums
+    second: {fileID: 2100000, guid: 5fdb66d5e7ff48c408a7335930233edd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_HumanTeeth
+    second: {fileID: 2100000, guid: bf7d38cb7bd019f4eb62cabcbf82a71f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_InnerEar
+    second: {fileID: 2100000, guid: a5093ea86d52ad14392ad3c17ee14e3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_IrisBlue
+    second: {fileID: 2100000, guid: 7d4a3d8957b1e3449b2c02f8d2135566, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_IrisViolet
+    second: {fileID: 2100000, guid: 2296ab2b35661ae489bd04179fc86414, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_Lace
+    second: {fileID: 2100000, guid: 865bc139b76868942abf09e17927f4e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_NoseGloss
+    second: {fileID: 2100000, guid: 80dae5b2bc2577f469427bbffc7658a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD4_PaintBrow
+    second: {fileID: 2100000, guid: a366aabd6c9a1cb48a2d193314fa7c67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ClownBlack
+    second: {fileID: 2100000, guid: 88cd73d950e93a446a028703eee19dee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ClownBluePaint
+    second: {fileID: 2100000, guid: 6aba56fce939fb342ac803429093482b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ClownPaint
+    second: {fileID: 2100000, guid: 0e22601da316f9145a216635768366e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ClownRedPaint
+    second: {fileID: 2100000, guid: a6a0717b19b13104fab6165bfe42a412, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ClownShoe
+    second: {fileID: 2100000, guid: 38293f47bcff8ad439404df8904b6dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_DirtyGlove
+    second: {fileID: 2100000, guid: 61463c0c2e9584e43b6e2d02c7262eae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_FeltTongue
+    second: {fileID: 2100000, guid: 15cbc5d142777ec45b6c91c3c989d95e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_MascotCat
+    second: {fileID: 2100000, guid: af15eb6313fe9a942954eca8bcf159e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_MascotMuzzle
+    second: {fileID: 2100000, guid: 22a152a46415f7041a153d3478816b95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_MascotPup
+    second: {fileID: 2100000, guid: 054229ecb75885b4a83465200a15d904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_OldFoam
+    second: {fileID: 2100000, guid: 3174f653244735a408879cfaa14d5d23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_Overalls
+    second: {fileID: 2100000, guid: f97baf9f01a545d4da7a60256e450142, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_PaleIris
+    second: {fileID: 2100000, guid: 39a09688e2130334e8dd2a5f699c31c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_PolkaSuit
+    second: {fileID: 2100000, guid: 9ecdbcfc963a51f488014a3c92946345, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD5_ToonEyeWhite
+    second: {fileID: 2100000, guid: 10dcd5f8c8649f144936d0ec56b192fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD6_FrizzGreen
+    second: {fileID: 2100000, guid: 494df595b8f20e64d832e3eef93afdb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD6_SeamThread
+    second: {fileID: 2100000, guid: 9365909c1fa4f584884e137c9c83486d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD6_ToothBad
+    second: {fileID: 2100000, guid: 5434c7cfd00252f42a89ece088a06c12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_FD6_VeinyEye
+    second: {fileID: 2100000, guid: 8d371ea866ec5254cb01319bc271fc2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_bear
+    second: {fileID: 2100000, guid: fc3a22f7c99d1f84387b4db5c6418282, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_dummy
+    second: {fileID: 2100000, guid: bad1c9b71699c324b925deb924932f56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_jester
+    second: {fileID: 2100000, guid: 1fef8b80ca2d9a840ac1df98c913fdf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI37_mannequin
+    second: {fileID: 2100000, guid: 0cd16fe979e1e504caec04c60d1b5ee4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +788,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

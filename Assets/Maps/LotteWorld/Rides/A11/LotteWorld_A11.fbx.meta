@@ -7,13 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_StoneGrey_P
+    second: {fileID: 2100000, guid: e74f77076d92b404b8787f1e9290cf7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_LW_CreamWhite
     second: {fileID: 2100000, guid: 354f42239b510de45b5504f095f0e7e3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_LW_CreamWhite_P
+    second: {fileID: 2100000, guid: bf469fe343639164b960082ffcf897f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_LW_Gold
     second: {fileID: 2100000, guid: 03b918cbc35fb3041829d3004945cfae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Gold_P
+    second: {fileID: 2100000, guid: 7144e2269e43a1a4cb508ad40485c730, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,6 +42,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_LW_RockDark_P
+    second: {fileID: 2100000, guid: f25bb857eb31727439c76d985c40494e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_Rock_P
+    second: {fileID: 2100000, guid: 7eb2121d32f00e04eac27802d7f54bfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_LW_StoneGrey
     second: {fileID: 2100000, guid: 9346b114e28e777429996c19e938337a, type: 2}
   - first:
@@ -37,8 +62,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_LW_Timber_P
+    second: {fileID: 2100000, guid: 7b6dca4b4f2ed6c418133df3585feb6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_LW_WarmBeige
     second: {fileID: 2100000, guid: 97bf94df8a33e1544bc02cd90ca3ccb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LW_WarmBeige_P
+    second: {fileID: 2100000, guid: f70872cd2b3efca46b86c336a413c479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_StoneGrey
+    second: {fileID: 2100000, guid: 730223273d4039546831b364c4db76ff, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

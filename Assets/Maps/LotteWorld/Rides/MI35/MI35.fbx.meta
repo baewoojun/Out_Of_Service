@@ -3,7 +3,247 @@ guid: 660835844f052454aaf811d2cd075001
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_G_FallenLeaves
+    second: {fileID: 2100000, guid: 97859ceea9d4112428e6706fea2bb8e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_G_Trunk
+    second: {fileID: 2100000, guid: 9590d7dd36cea8e45b32f71f268e974e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BalustradeStone
+    second: {fileID: 2100000, guid: 8bd28e638f618d2429c004f0f826d737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbBlue
+    second: {fileID: 2100000, guid: ed2daef2a08162e4a9b21c5f1803130c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbGreen
+    second: {fileID: 2100000, guid: 2b7725a62e4f6214a98005b57b699afd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbOff
+    second: {fileID: 2100000, guid: 5ce44f93634e4774ca3887bddb01b505, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbPink
+    second: {fileID: 2100000, guid: c626c5b8b149970489ea53a11850bdcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbRed
+    second: {fileID: 2100000, guid: 5e1ce67e970e95f47b79feaf5c894f77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_BulbYellow
+    second: {fileID: 2100000, guid: 139ad12702c89c0468e58a13fcc4a51c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CanopyBlue
+    second: {fileID: 2100000, guid: 38f9b2ae0daa55b41a5f84e5d5037abe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CanopyPink
+    second: {fileID: 2100000, guid: d43f2f6c2f16b5e4fb6eaa84193b2fce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CanopyYellow
+    second: {fileID: 2100000, guid: 85a2968139ccb684e92cda51655d55de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CarBlue
+    second: {fileID: 2100000, guid: 078706edddf0e064eaf5f51eaed0b496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CarFloor
+    second: {fileID: 2100000, guid: 676d1ba521d25cd469e9c95eba4cfa22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CarMint
+    second: {fileID: 2100000, guid: 382f728888a8b5e429943bac7804ed8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CarOrange
+    second: {fileID: 2100000, guid: 6294931748ea91a43b3490c298c79b26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_CarRed
+    second: {fileID: 2100000, guid: c089551b0d3d7ea43ad645b211ae49f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_Chrome
+    second: {fileID: 2100000, guid: 7f1abd3da54fb894b91b417a6cf414af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_Concrete
+    second: {fileID: 2100000, guid: 65d593dad5758d2459a12ef143757812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_FlowerPurple
+    second: {fileID: 2100000, guid: b5103a5707453f14b86292b05e12dc93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_FlowerRed
+    second: {fileID: 2100000, guid: 335c39f934969384182c400c49b0e506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_FlowerYellow
+    second: {fileID: 2100000, guid: e28dd1938bec39d43bed54bdb6e01cea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_FountainWater
+    second: {fileID: 2100000, guid: 4899a3ade9b179d47aae6b56ce3c53f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_FringeWhite
+    second: {fileID: 2100000, guid: 37ed187767de9ce4786d95ae0f7a8acb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_GlassDirty
+    second: {fileID: 2100000, guid: 4a6526804cd7a1641aab8932719b9ee6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_GuideRail
+    second: {fileID: 2100000, guid: d46132fc7224e2f4eacd283813e45863, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_HeadlightPupil
+    second: {fileID: 2100000, guid: decf4533a1b95b94889fa9bf4897af84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_HeadlightYellow
+    second: {fileID: 2100000, guid: 1fd4d0515b43e2a4ca73d77f1d53c45d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_IronFence
+    second: {fileID: 2100000, guid: 0f0bb8f9f7fbb2f4e8338190afc5f47e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_LagoonWall
+    second: {fileID: 2100000, guid: 7d6691c10cf75c545a371ca216c96a34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_LampSodium
+    second: {fileID: 2100000, guid: c51336cf87087ae48917707f23f93835, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PennantBlue
+    second: {fileID: 2100000, guid: b5ddf050154ded143875b9a71da826fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PennantGreen
+    second: {fileID: 2100000, guid: ede582032074d4943aec5438c4d24576, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PennantRed
+    second: {fileID: 2100000, guid: fae8bcd47fbdb1747a752a2ae5c852fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PennantWhite
+    second: {fileID: 2100000, guid: 9cab08c87b0de9441b7a8a3a91c0e309, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PennantYellow
+    second: {fileID: 2100000, guid: 17a97e6176a526a4294c4b10fa69a894, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_Plaster
+    second: {fileID: 2100000, guid: e7819f2668066b241ba01ffd44be964c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PoleRed
+    second: {fileID: 2100000, guid: edb875862d4cd5e41a8f9f54f84c1386, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_PoleWhite
+    second: {fileID: 2100000, guid: b37aa444c56a31241ab1de3e4104ad37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_RailTie
+    second: {fileID: 2100000, guid: 68abd5413536a3542ba3edcda23e7398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_RoadConcrete
+    second: {fileID: 2100000, guid: 9a1ceca79b8e1824a9dccbd6b95ba18b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_RoadLine
+    second: {fileID: 2100000, guid: b3088afa12e22954f992913d0cfb8d81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_RoofSlate
+    second: {fileID: 2100000, guid: fa88d5928cf1ce24280154f73c240e2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_SeatYellow
+    second: {fileID: 2100000, guid: c78efda395b750842a4e7d7471c52f07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_SignBlank
+    second: {fileID: 2100000, guid: 989ae3a60ba1993448f0b26c0422ec38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_SteelDark
+    second: {fileID: 2100000, guid: d63d7024fbf99074e829fdb82da73af0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_Timber
+    second: {fileID: 2100000, guid: fd4d2436cfc79c949b34dd382609344a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI35_PP_Tire
+    second: {fileID: 2100000, guid: 13abe31b5dd17684d970f51143554288, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +293,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

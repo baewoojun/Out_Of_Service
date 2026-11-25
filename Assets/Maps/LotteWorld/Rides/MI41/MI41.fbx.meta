@@ -3,7 +3,207 @@ guid: ce4fcd66926d1fc4dae5836b96158211
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_BalloonFaded
+    second: {fileID: 2100000, guid: 47cd4c4af61c6f4459a3251d1cb6acec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_BaseLilac
+    second: {fileID: 2100000, guid: 452f0023351091546a3c69d593571b8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_BeltBlack
+    second: {fileID: 2100000, guid: 33200b714bb1f14489d84f147113e0fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_BoothGlass
+    second: {fileID: 2100000, guid: ec7b7e16e1bc58346ada0386d92f9980, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_CautionTape
+    second: {fileID: 2100000, guid: de2c86ca5125fd647ae1e046f4d0113a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_CautionTapeBlack
+    second: {fileID: 2100000, guid: 7a4dad934732d4c45921ebaa28124cb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_Crystal
+    second: {fileID: 2100000, guid: f7031323f57df1f41a3f6a443a9d9e7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_DeadLeaves
+    second: {fileID: 2100000, guid: 25659e3f585ce6d449cf3b4d1e89a1b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_FenceFramePurple
+    second: {fileID: 2100000, guid: f5b25ba3e0bfa244eb0b6091fbe7855b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_FenceSlatLilac
+    second: {fileID: 2100000, guid: cd8b5cc7f4742054384d02ba03aa35d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_FloorEdgeLilac
+    second: {fileID: 2100000, guid: 6741f6317ebbbfb49b2d095222505b8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_FloorGreyMetal
+    second: {fileID: 2100000, guid: 518513d02e11e3643a0ccf5dd56d1826, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_IslandGrey
+    second: {fileID: 2100000, guid: 1b689c66320dd1d4aac1afd241cb567a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_KioskCapRed
+    second: {fileID: 2100000, guid: 3b1d1719c47bf8e44a9072ebfd40cd7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_KioskDoorWood
+    second: {fileID: 2100000, guid: 9ee8ebe57f43ce148be884d24e863154, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_KioskSpot
+    second: {fileID: 2100000, guid: 4f4e02f96451733439c425ea72caf994, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_KioskWallCream
+    second: {fileID: 2100000, guid: b92076d3153992a43bf2b7c1d3552a53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_LogGrainLilac
+    second: {fileID: 2100000, guid: c026343e739be59498764a45550748a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_LogViolet
+    second: {fileID: 2100000, guid: 6d2484a049e1dd245938edd3abec1868, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_LogViolet2
+    second: {fileID: 2100000, guid: e93f408dcfdf57647a5e457e7eba56bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SafetyYellow
+    second: {fileID: 2100000, guid: 8f97b5a5315c70c43a900d2613c3e4f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SeatLavender
+    second: {fileID: 2100000, guid: a3d0c434cddeb6949a026499e8923ece, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SignBoardFaded
+    second: {fileID: 2100000, guid: 2ed29b5ff4d7eca4ab5b86d3b27e4ba7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SlotDark
+    second: {fileID: 2100000, guid: 53e2f238dd6c56b40b9cddaa98367c8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SpiritBark
+    second: {fileID: 2100000, guid: 330be23eca564164f8124ae7f6ec04a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SpiritCap
+    second: {fileID: 2100000, guid: 43751728c8960d144bd1765e5da1ea12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SpiritCapScale
+    second: {fileID: 2100000, guid: d7fcd448be4305b4796d12fd5027fc76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SpiritOrb
+    second: {fileID: 2100000, guid: e854681b0f584854ea489adbc159ea6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SpiritRootBark
+    second: {fileID: 2100000, guid: 55cd0f924b8dfb94abeb5305e329f01e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_SteelDark
+    second: {fileID: 2100000, guid: d3c9ee71a0a606b46bddef93c2d0defd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_ARC_TrimGold
+    second: {fileID: 2100000, guid: 5000240f610641249901933fa918f379, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_Chain
+    second: {fileID: 2100000, guid: 18a4a819e096a9f44932bbee4573372d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_DoorIron
+    second: {fileID: 2100000, guid: 793fd545c0b68124285796b56e56195e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_LampBroken
+    second: {fileID: 2100000, guid: 124a6b7fb496f1c4e878236e4e2a20d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_LampBulb
+    second: {fileID: 2100000, guid: 1657ffe4a6c76ba47991097b8fb2ae9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_Leaves
+    second: {fileID: 2100000, guid: 4b92c57633a32824babbc77648467c04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_MushroomCap
+    second: {fileID: 2100000, guid: 3210881891ac5924987dd7ff87a49bca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_MushroomStem
+    second: {fileID: 2100000, guid: d9d1d8f8fc059d8499a915ce1ad3428f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_Paving
+    second: {fileID: 2100000, guid: 7ed7ac1c28aa5d3408332fac430a5b6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI41_STX_WoodDeck
+    second: {fileID: 2100000, guid: 35bd8800d90ff13428e0ded241ca44dd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +253,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

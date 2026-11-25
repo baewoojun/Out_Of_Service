@@ -17,8 +17,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_mainL_DoorWood_P
+    second: {fileID: 2100000, guid: 5bb10d7103f76f941b3bafeb18e7b05e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_mainL_Gold
     second: {fileID: 2100000, guid: a0628a7ed3295bf4ab5f577945c905b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_mainL_Gold_P
+    second: {fileID: 2100000, guid: 4bb51b414aa92c447ad80f1505bd3c20, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,8 +37,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_mainR_DoorWood_P
+    second: {fileID: 2100000, guid: 4f1e3724b74682b46acc30e6060f6927, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_mainR_Gold
     second: {fileID: 2100000, guid: f54f893af9494b04e91af58a4cf5fdae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_mainR_Gold_P
+    second: {fileID: 2100000, guid: 9b95c0cf421c4a84396f7d572d0ba432, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -37,8 +57,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_mill_DoorWood_P
+    second: {fileID: 2100000, guid: 90477f60bdadc3348be885870ae0aec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_mill_Gold
     second: {fileID: 2100000, guid: ffcc4586441590e4a9c2db933cee02ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_mill_Gold_P
+    second: {fileID: 2100000, guid: 5aff070fd91d91f4da3b33756f96b898, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -47,8 +77,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_tA1_DoorWood_P
+    second: {fileID: 2100000, guid: 06558da84ad821b42bb0db6ef999aeb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_tA1_Gold
     second: {fileID: 2100000, guid: b62f9818b3e0da34787eb8f0649cb44d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_tA1_Gold_P
+    second: {fileID: 2100000, guid: 70d86fe7428ba8f4d93e0aa04a796123, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -57,8 +97,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_tA2_DoorWood_P
+    second: {fileID: 2100000, guid: 7850e713776998c459c496b2946b8af4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_tA2_Gold
     second: {fileID: 2100000, guid: 25ca86519ba0ff047aadb37e5a3f957b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_tA2_Gold_P
+    second: {fileID: 2100000, guid: f734885af4cc2f04d9ccc3b9a48ba8e8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -67,8 +117,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_tB_DoorWood_P
+    second: {fileID: 2100000, guid: 2581f7f70af38644796d08d4a274236f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_tB_Gold
     second: {fileID: 2100000, guid: 476cb9de56b70d9439589e77b10400d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_tB_Gold_P
+    second: {fileID: 2100000, guid: 38005684f0341c840a96f9d08283ae82, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -77,8 +137,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Sail_Gold_P
+    second: {fileID: 2100000, guid: ebb0bcd9d2c7e044ca52891735e1bb27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Sail_SailRed
     second: {fileID: 2100000, guid: 8880498dbb229c742852b506838e9814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sail_SailRed_P
+    second: {fileID: 2100000, guid: c93f46616cf6b7149b53cbaa82001f52, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -87,8 +157,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Sail_Spar_P
+    second: {fileID: 2100000, guid: e680ee75a8ab82c48b9b829f88ae6139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Sail_White
     second: {fileID: 2100000, guid: 7be31570cbc1b1e41bd8b5db5e0711f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sail_White_P
+    second: {fileID: 2100000, guid: 6be2219ddd059634ebaa979da860efde, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -97,8 +177,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_Awning_P
+    second: {fileID: 2100000, guid: 564b78350c88d0c4fae8e84bea4d6794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_Checker
     second: {fileID: 2100000, guid: b9178240b19d80b46bd3ac557b7da69f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Checker_P
+    second: {fileID: 2100000, guid: 52354e6f3f788b544a42e395745995e6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -107,8 +197,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_Detail_Iron_P
+    second: {fileID: 2100000, guid: 44c365479294e9c4ebeb5d73498a64b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_Gold_P
+    second: {fileID: 2100000, guid: d9384cdce52fde148b0bad048a8814b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_Gutter_P
+    second: {fileID: 2100000, guid: 1cb93fb567c16f143ad94273d84b9df0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_RoofRed_P
+    second: {fileID: 2100000, guid: bd6bdb23e3211374f86046a0f2892b48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_Sash_P
+    second: {fileID: 2100000, guid: cbbc3e63ecf468e42a3020f03fa9a0ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Detail_LW_Shutter_P
+    second: {fileID: 2100000, guid: 12acb394218afb441b1f8ec6cf34445c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_FloorWood
     second: {fileID: 2100000, guid: a3f16a09e8c6b7946bc62dbade0abae3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_FloorWood_P
+    second: {fileID: 2100000, guid: c2f9a1330b9a63348879fd593f167283, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -117,13 +242,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_Gold_P
+    second: {fileID: 2100000, guid: ff5a74e2f2f8a3a46a01918720610c0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_Hedge
     second: {fileID: 2100000, guid: 6f2064ab83a5c2748a345e6daf437f8d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_Hedge_P
+    second: {fileID: 2100000, guid: 938e90fdf2960fe4a8f5ea8d88467df4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_LampPost
     second: {fileID: 2100000, guid: 91cb2c1cf465af64991ea996516348ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_LampPost_P
+    second: {fileID: 2100000, guid: 99db8877bb0493a4db8e7b398b975990, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -134,6 +274,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Static_Planter
     second: {fileID: 2100000, guid: 21bb6f8e219932748900076b0e60ed38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Planter_P
+    second: {fileID: 2100000, guid: c99e823c5d783f341af5d230dc481aff, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -164,6 +309,51 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Static_Window
     second: {fileID: 2100000, guid: 1a8c6fd47b44ef247aa4f480f4566e87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Window_P
+    second: {fileID: 2100000, guid: 7935fb0d75f141d4babbd616933e7642, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_CreamWhite
+    second: {fileID: 2100000, guid: 0c20b948b41f738429c02073164395b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_Mint
+    second: {fileID: 2100000, guid: 2820b64ed78e8ad4bb5a7fb682d7fbbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_RoofRed
+    second: {fileID: 2100000, guid: 2b505c24d52fd574f9b3a3f079bf13e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_StoneGrey
+    second: {fileID: 2100000, guid: 730223273d4039546831b364c4db76ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_Timber
+    second: {fileID: 2100000, guid: f44a2df54aa3fdd4b8d694a7d5fec77d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_TimberRed
+    second: {fileID: 2100000, guid: 875f62c352c63994e9539a8e156ab883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_WarmBeige
+    second: {fileID: 2100000, guid: 3b2314a5727a78f48b2aaca7584e94a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_White
+    second: {fileID: 2100000, guid: 1f4d913ec0f11aa46b1b19aea7b86639, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

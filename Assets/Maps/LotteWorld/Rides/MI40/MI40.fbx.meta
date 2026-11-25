@@ -3,7 +3,287 @@ guid: 499ae471b0578dc42b783c2610c1c2c9
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_BeamWood
+    second: {fileID: 2100000, guid: 73234148ded5d4046bf1e9272fa44e88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_Brass
+    second: {fileID: 2100000, guid: ebdc820ce2cafef4bb8220ace738ffa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_CaveRock
+    second: {fileID: 2100000, guid: bb6c78ce3a991814b93cfde31a1dd6b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_ClayPot
+    second: {fileID: 2100000, guid: 0789b3e9730c4bd4d8171128b13cdca0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_Cord
+    second: {fileID: 2100000, guid: 16d0ef3e75cd6444fba7907cd60b4c8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_CrystalGlow
+    second: {fileID: 2100000, guid: 63b0535900d99ac4db05437d704d3617, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_CrystalGlowPurple
+    second: {fileID: 2100000, guid: c76f4aedb8108434199f2678ea4f17ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_FlagPurple
+    second: {fileID: 2100000, guid: c0e39c2cb55ab7a4dbc1809a647661ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_FlagRed
+    second: {fileID: 2100000, guid: 90c5a0884a693a3468fbe50e9b915bcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_FlagTeal
+    second: {fileID: 2100000, guid: c28af596d79621b49959c2bf7862222c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_FlagYellow
+    second: {fileID: 2100000, guid: 2cc5ec2c6b63e13448d7272229520e10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_FloorChecker
+    second: {fileID: 2100000, guid: 9e0eced7f2a4ece45a2a70134fac034e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_LampCapRed
+    second: {fileID: 2100000, guid: af416721fb9669e44b8af4bd1e373fda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_LampCapTeal
+    second: {fileID: 2100000, guid: cf6b7e67cb2cfc748b6b64c5e5eb2edd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_MuralPaint
+    second: {fileID: 2100000, guid: d7fc243210b2aec4d826986425b301bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_PlantLeaf
+    second: {fileID: 2100000, guid: 3f245315bc58aa048a09f1223b1ade56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_PlasterCream
+    second: {fileID: 2100000, guid: 1c750633c6c78c046ac2da1b59cf54da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_PlasterRose
+    second: {fileID: 2100000, guid: f67c40012efee394cb1b0ce55e07cd2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_PlasterTeal
+    second: {fileID: 2100000, guid: 3d00d52dc0138344192cefcade594840, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_RiserMustard
+    second: {fileID: 2100000, guid: 024b1524caa6ff54b99a29cc5b8b932d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_RiserRose
+    second: {fileID: 2100000, guid: 6cf312bca4efcc2478bab5ad0dfaa2cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_RiserTeal
+    second: {fileID: 2100000, guid: 1edf4074fdb12394b95abf97620285cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_RugRed
+    second: {fileID: 2100000, guid: bb515d1f31e7bbd48ad1b10082e30d6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_SafetyYellow
+    second: {fileID: 2100000, guid: 2268724108c059e4097e5483163be859, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_SignBoardBlank
+    second: {fileID: 2100000, guid: 9e4e530160e2d544f8fb92c4171bfdb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_StairTread
+    second: {fileID: 2100000, guid: 3a69b6213102f6d458e7ef6df0d6ee52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_VaultBlue
+    second: {fileID: 2100000, guid: b74ed76705dbb3045b237b6bbb067929, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_WoodPanel
+    second: {fileID: 2100000, guid: 2b6d17a7c8f636e41905cb521e15b946, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_INT_WoodTrimDark
+    second: {fileID: 2100000, guid: 7850dbba5e8a1c54e8a7e57c190856b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Bark
+    second: {fileID: 2100000, guid: fa372af7f5cbd5c45911c41dcffdae1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Bush
+    second: {fileID: 2100000, guid: 5f973d70235a4ca43a8f0e75c5462e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_CarRock
+    second: {fileID: 2100000, guid: 53f62ea0882476c4187ae920badd33ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Chain
+    second: {fileID: 2100000, guid: 1520ee32d2ecc32419c09e9a5d0ece5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Concrete
+    second: {fileID: 2100000, guid: 04abc953919c14748a36f075cd3f69ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_DoorIron
+    second: {fileID: 2100000, guid: f73b5ad3245b1be4fbcf9f0e1dae1bca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Ivy
+    second: {fileID: 2100000, guid: 930a0f9425e45da4fb67fec74f4df114, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_LampBroken
+    second: {fileID: 2100000, guid: cfb9af65ef3ce314e941fe7ccf69665d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_LampBulb
+    second: {fileID: 2100000, guid: 25769bb0cbf0baa4bbf12cb135d6770f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_LapBarYellow
+    second: {fileID: 2100000, guid: 9af7c9290c321124eac21a60713a4047, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_Lawn
+    second: {fileID: 2100000, guid: 8d2bd621c3ff7b749a6e9c91ebffd3e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_MossGrass
+    second: {fileID: 2100000, guid: 02cf0aa163e697c4991750c07c8fa51a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_MushroomCap
+    second: {fileID: 2100000, guid: 97118d577c68bcf4ea62519421ff0937, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_MushroomGills
+    second: {fileID: 2100000, guid: 9ac2dbc0976f71b45bb9d36b78d373a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_MushroomRoofCap
+    second: {fileID: 2100000, guid: d9fb3ede4126f5f45bbb7b54c294b509, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_MushroomStem
+    second: {fileID: 2100000, guid: 77d773ba27f32194cbc258f6cd3a2d2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_PlazaWhite
+    second: {fileID: 2100000, guid: 28f5e21228aac6243a330a61f2d88cd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_RailPurple
+    second: {fileID: 2100000, guid: 4de7f15b788304442b99543561d646ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_RoofSlate
+    second: {fileID: 2100000, guid: cfa9fe8e1e70e4f4b896e7fb7e14d3a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_SeatRed
+    second: {fileID: 2100000, guid: ce6f4985b0394f2488ef53cfc2bde025, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_SpinePurple
+    second: {fileID: 2100000, guid: 13b29cd4fd7925046a894b0b4419b1b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_StoneDark
+    second: {fileID: 2100000, guid: 0bc34466fb9bd6d40bd7fdd607583067, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_StoneGrey
+    second: {fileID: 2100000, guid: 15be2e2074c2831428dd60e21f2731b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_SupportPurple
+    second: {fileID: 2100000, guid: cef0753f36ed126428773b5cf576dde4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_TunnelDark
+    second: {fileID: 2100000, guid: 52f52b406d156214996980528266f6f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_WindowYellow
+    second: {fileID: 2100000, guid: fb9be9fdd84afa943ae3543078af6bd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI40_STX_WoodDeck
+    second: {fileID: 2100000, guid: 07c129fab77d1204fbdca82ec01c7c8f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +333,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

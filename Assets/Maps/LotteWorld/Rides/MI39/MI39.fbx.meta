@@ -3,7 +3,97 @@ guid: 7ce15cc381de529439f5dd4a4a14cc66
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_BoothGlass
+    second: {fileID: 2100000, guid: c2b98a5fcaa681a44885aaad93a07eff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_DeckPink
+    second: {fileID: 2100000, guid: fa21b304c6a533643b9578767b2d4c5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_DeckPinkLight
+    second: {fileID: 2100000, guid: 2886347fa28e12341a8ea6d3c9ff0a13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_DiscCream
+    second: {fileID: 2100000, guid: de854e33614f6c74c8490edf2c83d6ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_DiscPink
+    second: {fileID: 2100000, guid: db4957d82f988634fb0f21f674d8bdbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_DiscStarDeep
+    second: {fileID: 2100000, guid: 137251ac4de424d469a8a8b2f8ed97e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_SeatPurple
+    second: {fileID: 2100000, guid: d3a506773d3ffdc408da72e9973e4b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_SkirtPink
+    second: {fileID: 2100000, guid: b8417aebc8891774ca139950ea6bc595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_SteelGrey
+    second: {fileID: 2100000, guid: dbd17579ab242e447abbf8433c531158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_TieDarkPurple
+    second: {fileID: 2100000, guid: 3e82223edd494e443be45812123a002c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_TrackLavender
+    second: {fileID: 2100000, guid: 517c360bad8863e47be78cd9d56a688b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_GS_TrussLavender
+    second: {fileID: 2100000, guid: 303ebbccd2a0a25459cfa4d6335bd599, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_INT_Brass
+    second: {fileID: 2100000, guid: 8be21dea88a196a4eabb88339321c0e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_STX_Concrete
+    second: {fileID: 2100000, guid: 9567186c8e894dd49935ed10af10ee71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_STX_DoorIron
+    second: {fileID: 2100000, guid: d1f56b35a211dc349ab46588d44a2342, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_STX_LampBulb
+    second: {fileID: 2100000, guid: 781554573b0e39c40b53f988fcb28fe7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_STX_LapBarYellow
+    second: {fileID: 2100000, guid: 0c2c90976d0bcea40bbbe290d37d482c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI39_STX_RailPurple
+    second: {fileID: 2100000, guid: ca61e28e4561e8d40ba65310e16739a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +143,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

@@ -3,7 +3,142 @@ guid: 8ec13992c2afbdc41a324dc2e0ea7538
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_AviationRed
+    second: {fileID: 2100000, guid: 8194e6901a93a3c4aaf7891ca070831b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_BoothPaint
+    second: {fileID: 2100000, guid: 6b453e5b3b40d6d4cb0429cae1533f52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_BulbOff
+    second: {fileID: 2100000, guid: 47b1235b9c6bc8e4e9706decdf2f1069, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_BulbOn
+    second: {fileID: 2100000, guid: b3997ce386289bb49835c696d2710005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_CapRedBand
+    second: {fileID: 2100000, guid: 24cd3b8bbbbf5c940ae3999126d8d968, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_Concrete
+    second: {fileID: 2100000, guid: 046cdf6e57bd6754ca54ca3d041ecb25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_CushionBlack
+    second: {fileID: 2100000, guid: 3afee8cd2bfb64549a0a0f4f1c4b5eae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_DeckGrating
+    second: {fileID: 2100000, guid: 9f8b90b5f86747f4ca40fd588c291b21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_FenceBlue
+    second: {fileID: 2100000, guid: a7983dc80fac65e4d8c62647452e8586, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_GlassDirty
+    second: {fileID: 2100000, guid: e80b93e2bda0a484e994ff9bd5414588, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_HandleYellow
+    second: {fileID: 2100000, guid: 56f3a8971e3b19c49b397202be19820b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_HarnessPad
+    second: {fileID: 2100000, guid: 5109903e80bc87e4bb9409e09e6879a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_HazardYellow
+    second: {fileID: 2100000, guid: c727690f2de36424198843a9cf45efab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_LampSodium
+    second: {fileID: 2100000, guid: 61d3051ecf6d9a242a0f232d2d1b5500, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_PlatformPaint
+    second: {fileID: 2100000, guid: 268a6c57361a21c4bb1e931eb474220b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_RingUnderLight
+    second: {fileID: 2100000, guid: 2d8616cef8547e541800c4b32d6fe803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_RingYellow
+    second: {fileID: 2100000, guid: 8015511e39ee1ff42928ade067896ac7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_Rubber
+    second: {fileID: 2100000, guid: 0773cdf7cb004fb4082e137f71a21ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_SeatShellRed
+    second: {fileID: 2100000, guid: cd42535b4c3d11f4480681527f1ce808, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_SignBlank
+    second: {fileID: 2100000, guid: 1debeae7ea18ea24b866940cbc9d8693, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_SteelBare
+    second: {fileID: 2100000, guid: b1b1eec9730a8524b8903dcea4cbde96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_SteelDark
+    second: {fileID: 2100000, guid: 07568809d94718246b75031df4d62351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_StripeBlue
+    second: {fileID: 2100000, guid: 7d006d427dc092b4d83e0096437b1a0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_StripeBlue2
+    second: {fileID: 2100000, guid: 1e90f2af91352934b8d67763f9b77131, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_StripeBlue3
+    second: {fileID: 2100000, guid: bb219e0f512bbdc469963e7e30ca371c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_TowerWhite
+    second: {fileID: 2100000, guid: aebcdedc917470d42b9337a9ca1d2d0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI36_GD_TrackGrey
+    second: {fileID: 2100000, guid: 20edcd9a1edc7de4aa22cd311bbec54b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +188,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

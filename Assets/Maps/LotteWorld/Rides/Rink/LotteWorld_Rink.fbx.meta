@@ -7,13 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: LW_Gold_P
+    second: {fileID: 2100000, guid: 5a7096445f6a8f24ebac882f12571832, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Blue
     second: {fileID: 2100000, guid: 9846a93918bb6f44090ceaf192b45666, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Blue_baked_P
+    second: {fileID: 2100000, guid: 5d1997e6c8f4c824687462c15f72b6eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Ceil
     second: {fileID: 2100000, guid: 1c951c5a760fed84eb28c30191f56a32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Ceil_baked_P
+    second: {fileID: 2100000, guid: a86a242591e27274ca92174ec4c11b21, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -27,8 +42,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Dark_baked_P
+    second: {fileID: 2100000, guid: b190660df20b09f41a4ae9bfdc33c391, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Glass
     second: {fileID: 2100000, guid: ec0edf7d02b4c034abdef7b033659b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Glass_baked_P
+    second: {fileID: 2100000, guid: e7c03dcc72ab7a244bba367c72f832ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -42,8 +67,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Green_baked_P
+    second: {fileID: 2100000, guid: 45b2175cd5929904895dfae731f7437a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Ice
     second: {fileID: 2100000, guid: 34a7448fc300baa428932f75555cec4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Ice_baked_P
+    second: {fileID: 2100000, guid: 43cedc0fe9bfcd24bae6013d3ef159e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,8 +87,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_LightR_baked
+    second: {fileID: 2100000, guid: 4e30a28d8628da142bf3131207dd3c58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_LightW
     second: {fileID: 2100000, guid: ab1d45124c683c842baef1f6cb4a3664, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_LightW_baked
+    second: {fileID: 2100000, guid: 79a1fa91704d7f247a572c6b96c3fbba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -62,8 +107,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Pink_baked_P
+    second: {fileID: 2100000, guid: 79e98d68d66d392498d9aff8bd3e9210, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Red
     second: {fileID: 2100000, guid: 7edf6a440661dd34e8e2c498b96723eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Red_baked_P
+    second: {fileID: 2100000, guid: 84d49850ff6d874418748e705ac9430e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -72,8 +127,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Shop_baked_P
+    second: {fileID: 2100000, guid: 4bfe40362b5234c4faae4361a2505ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Silver
     second: {fileID: 2100000, guid: 23e029d259c5ec4419ef99f010ee4819, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Silver_baked_P
+    second: {fileID: 2100000, guid: 670316c196610e0419d59a093f57a993, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -82,8 +147,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rink_Teal_baked_P
+    second: {fileID: 2100000, guid: 08fc06d986cef474a92aaa719d25671c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rink_Tile
     second: {fileID: 2100000, guid: a399f4f8083b6c248ad92b2280aa558c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Tile_baked_P
+    second: {fileID: 2100000, guid: 204625fef6429c14bb262d39f63d67f2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -94,6 +169,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Rink_Yellow
     second: {fileID: 2100000, guid: fcbd8ba8cdc721b41aaa5d91f8adf076, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rink_Yellow_baked_P
+    second: {fileID: 2100000, guid: 5635013a6ad0cae499321da3e48901bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_CreamWhite
+    second: {fileID: 2100000, guid: 0c20b948b41f738429c02073164395b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_White
+    second: {fileID: 2100000, guid: 1f4d913ec0f11aa46b1b19aea7b86639, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Facade_Blue_baked_P
+    second: {fileID: 2100000, guid: 63dd10498c6e8574e9f2227a4ba25d89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Facade_Cream
     second: {fileID: 2100000, guid: 7933b92d827cba44bb292e4b7cbaa6b2, type: 2}
   - first:
@@ -19,6 +24,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Facade_Dark
     second: {fileID: 2100000, guid: 8e56c7fef08548b419cc4358fab92f9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Facade_Dark_baked_P
+    second: {fileID: 2100000, guid: 71197863005034e4199513505aec99dc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -32,8 +42,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Facade_Maroon_baked_P
+    second: {fileID: 2100000, guid: 61fef35929d79be46be4f855b4fb3f4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Facade_MintRoof
     second: {fileID: 2100000, guid: 38ceef962d536db40a84f98d035ae9e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Facade_MintRoof_baked_P
+    second: {fileID: 2100000, guid: ecd0422d1846f224cb8ce5b82f8b4834, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -47,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Facade_Steel_baked_P
+    second: {fileID: 2100000, guid: e24baec93e5efb5429c77ce9a1e60ab2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Facade_Stone
     second: {fileID: 2100000, guid: cceb9c7cad035104981dd91f55b01c90, type: 2}
   - first:
@@ -54,6 +79,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Facade_White
     second: {fileID: 2100000, guid: 6b53831307c313c488600345ce5ec4e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LW_Gold_P
+    second: {fileID: 2100000, guid: 01b0eb81cab69344abed14742b07d567, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_CreamWhite
+    second: {fileID: 2100000, guid: 0c20b948b41f738429c02073164395b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_StoneGrey
+    second: {fileID: 2100000, guid: 730223273d4039546831b364c4db76ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_WarmBeige
+    second: {fileID: 2100000, guid: 3b2314a5727a78f48b2aaca7584e94a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile_LW_White
+    second: {fileID: 2100000, guid: 1f4d913ec0f11aa46b1b19aea7b86639, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
