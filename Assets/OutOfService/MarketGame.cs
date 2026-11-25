@@ -30,7 +30,7 @@ namespace OutOfService
         void Update()
         {
             damageFlash = Mathf.MoveTowards(damageFlash, 0f, Time.deltaTime * 0.38f);
-            if (failed && MarketControls.Pressed(MarketAction.Restart))
+            if (failed && !CaughtCutscene.Playing && MarketControls.Pressed(MarketAction.Restart))
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
@@ -48,6 +48,19 @@ namespace OutOfService
         {
             if (failed) return;
             failed = true;
+            RaiseLost();
+        }
+
+        // 괴물에게 잡혀 죽었을 때: 잡힘 컷신을 보여 준 뒤 사망 화면으로 넘어간다.
+        public void LoseCaught(Transform caughtBy)
+        {
+            if (failed) return;
+            failed = true;
+            if (!CaughtCutscene.Play(MarketPlayer.Instance, caughtBy, RaiseLost)) RaiseLost();
+        }
+
+        void RaiseLost()
+        {
             Lost?.Invoke();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -136,7 +149,11 @@ namespace OutOfService
                 GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), bloodVignette, ScaleMode.StretchToFill, true);
                 GUI.color = previous;
             }
-            if (EndScreen.Instance && (failed || finished))
+            if (CaughtCutscene.Playing)
+            {
+                // 잡힘 컷신 중에는 HUD 를 그리지 않는다.
+            }
+            else if (EndScreen.Instance && (failed || finished))
             {
                 // 새 사망·탈출 화면이 대신 보여 준다.
             }

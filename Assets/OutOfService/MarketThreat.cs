@@ -24,7 +24,7 @@ namespace OutOfService
                 if (distance < 1.7f && Time.time >= nextHit)
                 {
                     nextHit = Time.time + 2f;
-                    player.TakeDamage(18f);
+                    player.TakeDamage(18f, transform);
                     MarketGame.Instance.Show("무언가가 바로 뒤에 있다!", 2f);
                 }
             }

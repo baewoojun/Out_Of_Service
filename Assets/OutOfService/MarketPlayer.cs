@@ -91,6 +91,9 @@ namespace OutOfService
                 flashlight.enabled = !flashlight.enabled;
 #if UNITY_EDITOR
             if (Keyboard.current.kKey.wasPressedThisFrame) TakeDamage(25f);
+            // 에디터 전용: J 로 잡힘 컷신을 바로 본다.
+            if (Keyboard.current.jKey.wasPressedThisFrame)
+                MarketGame.Instance?.LoseCaught(FindAnyObjectByType<MarketThreat>()?.transform);
 #endif
             if (MarketControls.Pressed(MarketAction.Interact))
             {
@@ -133,12 +136,15 @@ namespace OutOfService
             MarketGame.Instance.Show("건전지를 교체했다.");
         }
 
-        public void TakeDamage(float amount)
+        // source: 때린 괴물. 괴물에게 맞아 죽으면 잡힘 컷신이 나온다.
+        public void TakeDamage(float amount, Transform source = null)
         {
             if (amount <= 0 || DamageStacks >= 3) return;
             DamageStacks++;
             MarketGame.Instance?.ShowDamage(DamageStacks);
-            if (DamageStacks >= 3) MarketGame.Instance?.Lose();
+            if (DamageStacks < 3 || MarketGame.Instance == null) return;
+            if (source) MarketGame.Instance.LoseCaught(source);
+            else MarketGame.Instance.Lose();
         }
 
         void SelectSlot(int slot)
