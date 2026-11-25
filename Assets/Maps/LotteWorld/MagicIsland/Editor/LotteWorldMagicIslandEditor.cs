@@ -388,6 +388,8 @@ namespace LotteWorld.MagicIsland
                 {
                     Camera cam = go.AddComponent<Camera>();
                     cam.depth = -10f; cam.nearClipPlane = 0.1f; cam.farClipPlane = 1500f; cam.fieldOfView = 60f;
+                    // 구도 확인용이라 꺼 둔다. 켜 두면 플레이 중 MainCamera 밑에서 맵 전체를 한 번 더 그려 프레임이 두 배 넘게 느려진다.
+                    cam.enabled = false;
                 }
                 if (n.IsStatic && n.Mesh != null)
                     GameObjectUtility.SetStaticEditorFlags(go, StaticEditorFlags.BatchingStatic | StaticEditorFlags.OccludeeStatic | StaticEditorFlags.OccluderStatic);

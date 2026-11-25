@@ -56,7 +56,22 @@ namespace LotteWorld.MagicIsland
             if (txt == null) { Debug.LogError("[MI v7] 배치 json 이 없어: " + JsonPath); return null; }
             var d = JsonUtility.FromJson<Data>(txt);
             if (d == null || d.items == null) { Debug.LogError("[MI v7] json 읽기 실패"); return null; }
+            ReadGaps(txt, d);
             return d;
+        }
+        // json 의 난간 틈은 "gaps":[[x,z,r],...] 중첩 배열 → JsonUtility 가 못 읽어서 늘 비어 있었음.
+        // 나오는 순서대로(= rails 순서) 직접 읽어 x,z,r 평평한 배열로 넣음.
+        static void ReadGaps(string txt, Data d)
+        {
+            if (d.rails == null) return;
+            var ms = System.Text.RegularExpressions.Regex.Matches(txt, "\"gaps\"\\s*:\\s*\\[((?:\\s*\\[[^\\]]*\\]\\s*,?)*)\\s*\\]");
+            for (int i = 0; i < d.rails.Length && i < ms.Count; i++)
+            {
+                var nums = new List<float>();
+                foreach (System.Text.RegularExpressions.Match n in System.Text.RegularExpressions.Regex.Matches(ms[i].Groups[1].Value, "-?[0-9]+(?:\\.[0-9]+)?(?:[eE][-+]?[0-9]+)?"))
+                    nums.Add(float.Parse(n.Value, System.Globalization.CultureInfo.InvariantCulture));
+                d.rails[i].gaps = nums.ToArray();
+            }
         }
 
         // ---------------- 씬 그룹 ----------------
@@ -428,10 +443,23 @@ namespace LotteWorld.MagicIsland
                 int j = (i + 1) % n;
                 float ax = r.pts[2 * i], az = r.pts[2 * i + 1], bx = r.pts[2 * j], bz = r.pts[2 * j + 1];
                 float len = Mathf.Sqrt((bx - ax) * (bx - ax) + (bz - az) * (bz - az)); if (len < 0.01f) continue;
-                float mx = (ax + bx) / 2, mz = (az + bz) / 2;
-                if (inGap(mx, mz)) { carry = 0; continue; }
-                Seg(v, t, ax, az, bx, bz, r.y + r.h - 0.04f, 0.08f, 0.07f);   // 손잡이
-                Seg(v, t, ax, az, bx, bz, r.y + r.h * 0.5f, 0.04f, 0.04f);    // 가로대
+                // 손잡이·가로대: 구간을 0.5 m 조각으로 나눠 틈(gaps) 안 조각만 뺌.
+                // (예전엔 구간 가운데 점만 봐서, 긴 구간이 틈을 지나가면 다리·선착장 입구를 그대로 막았음)
+                int pieces = Mathf.Max(1, Mathf.CeilToInt(len / 0.5f));
+                int runStart = -1;
+                for (int pc = 0; pc <= pieces; pc++)
+                {
+                    bool open = pc < pieces && !inGap(ax + (bx - ax) * (pc + 0.5f) / pieces, az + (bz - az) * (pc + 0.5f) / pieces);
+                    if (open && runStart < 0) runStart = pc;
+                    if (!open && runStart >= 0)
+                    {
+                        float u0 = (float)runStart / pieces, u1 = (float)pc / pieces;
+                        float sx = ax + (bx - ax) * u0, sz = az + (bz - az) * u0, ex = ax + (bx - ax) * u1, ez = az + (bz - az) * u1;
+                        Seg(v, t, sx, sz, ex, ez, r.y + r.h - 0.04f, 0.08f, 0.07f);   // 손잡이
+                        Seg(v, t, sx, sz, ex, ez, r.y + r.h * 0.5f, 0.04f, 0.04f);    // 가로대
+                        runStart = -1;
+                    }
+                }
                 float s = carry;
                 for (; s < len; s += 2.4f)
                 {

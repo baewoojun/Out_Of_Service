@@ -3,7 +3,137 @@ guid: ac0af595d53dbd945be3295edbfbbe2c
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Awning
+    second: {fileID: 2100000, guid: 9d3b9985deb3ac34186191c3d8ed7b6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_ClothBlue
+    second: {fileID: 2100000, guid: 9da629dbfe567574dbb5aca21669adb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_ClothRed
+    second: {fileID: 2100000, guid: 6397f1ec4ae74184da1351b091a849c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_ClothYellow
+    second: {fileID: 2100000, guid: 371697da9b09a01419ad1240b4717024, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Cream
+    second: {fileID: 2100000, guid: 54864761eb2134743aad89a44926b3bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_DeadPlant
+    second: {fileID: 2100000, guid: 3c3b74b8dd1ab1e41b591bf97bbfab14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_EscPanel
+    second: {fileID: 2100000, guid: 0c57c5e28a42fd44ea609e28aeb24f72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Glass
+    second: {fileID: 2100000, guid: c8da7700170727146a7bb06e0a9c1bde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Gold
+    second: {fileID: 2100000, guid: bb24e57b0da154146b9ebea5cd3c5240, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Iron
+    second: {fileID: 2100000, guid: e6509eb2f9783f0429bda1ad25d68118, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_LampOff
+    second: {fileID: 2100000, guid: 978f98d4ac76a4e48998732b50f387ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_LampOn
+    second: {fileID: 2100000, guid: dec39f0c78aa5f74fa7b61238dfdccfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Leaves
+    second: {fileID: 2100000, guid: 17e4c9a374ef3f649b9cfcf2b4170a11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Paving
+    second: {fileID: 2100000, guid: 817a7d56d70e29a409781a618d37c692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Puddle
+    second: {fileID: 2100000, guid: 17a6c58f04b88a84a8137b3a6de44e01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_RoofTile
+    second: {fileID: 2100000, guid: f7111f97cac69494b96c3e0f43c68b1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Rubber
+    second: {fileID: 2100000, guid: b45d5398471ded0438b5c83f9f2e3885, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_SignBlank
+    second: {fileID: 2100000, guid: f31d57672ebdcd24cb83b4c0edce2fca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Slate
+    second: {fileID: 2100000, guid: 3ed23fbe02b495541be8b015f9855057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Soil
+    second: {fileID: 2100000, guid: d0b144d5342698e4ea42e12c63250551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Steel
+    second: {fileID: 2100000, guid: ede3d51d9ee85fd4098b69945aefd468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Step
+    second: {fileID: 2100000, guid: 85a291f670fa0294f80c57a8e6280cec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_StoneBlock
+    second: {fileID: 2100000, guid: 27dd45fb6f9ef3b43b55e0d9bc1fd6b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_StoneTrim
+    second: {fileID: 2100000, guid: 80a01d5cdaa003c43a22c7dfcb68c8de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_StoneWet
+    second: {fileID: 2100000, guid: 25a3fcd25ce993d4fb47e4bd000d08b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIBR_Br_Timber
+    second: {fileID: 2100000, guid: ba81d65bd266f8a4b9bd24dfb02e5f59, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -53,7 +183,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4

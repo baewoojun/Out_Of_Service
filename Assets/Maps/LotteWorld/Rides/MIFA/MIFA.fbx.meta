@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: 9b858ab45e66ecd4cb08d7caf908a68d
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_floor_stain
+    second: {fileID: 2100000, guid: 68121897cebd828429fac837095a3e12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_grime
+    second: {fileID: 2100000, guid: f0725c2b11bcf114a995b091db13fb60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_poster_blank
+    second: {fileID: 2100000, guid: a44a93bf0c2ebbb49b3caee2495a530f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_rust_drips
+    second: {fileID: 2100000, guid: c93a7b7305badbd4e8bf9851a2672d6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_scratches
+    second: {fileID: 2100000, guid: dde3e6da0e006b74b9d294725c008e41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_Decal_water_stain
+    second: {fileID: 2100000, guid: ce153d5ea74e2f447a04d3c84ac889e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_AwningBlue
+    second: {fileID: 2100000, guid: cc5f1a92d6c67054399bc20a666179d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_AwningGreen
+    second: {fileID: 2100000, guid: f4b8c38472291a445b6292ae524fde18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_AwningPink
+    second: {fileID: 2100000, guid: 3babbea6b0a778840a98141875bcf6d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_AwningRed
+    second: {fileID: 2100000, guid: 685aac9708570ed4c9fdf5e64fdab208, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_BalloonFaded
+    second: {fileID: 2100000, guid: 432a75c88a4f5534e94c3f0e9631ca63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_BalloonFadedB
+    second: {fileID: 2100000, guid: 58e69c9497ea5774980800168b4f1f92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Brick
+    second: {fileID: 2100000, guid: af7f0c9cb767be0408d6adb30e86832d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Crate
+    second: {fileID: 2100000, guid: 341b69f6b40395646b509aa4f3b24d90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_DeadPlant
+    second: {fileID: 2100000, guid: d2c81ff0f5500cf4786f9f2960fb3dda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_DeckWood
+    second: {fileID: 2100000, guid: f9b1b82eef06d3c43b4555728de1c03e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Door
+    second: {fileID: 2100000, guid: 8bb42380e094f0f418c2fdab497a4f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Giwa
+    second: {fileID: 2100000, guid: 04b04b97a6286c84e8c06e476ea6d6b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_GlassDark
+    second: {fileID: 2100000, guid: ac2846423e319ae4b84895048dd15f36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Gold
+    second: {fileID: 2100000, guid: 1faf1a00d503da54e9ecf79010acee71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_GutterZinc
+    second: {fileID: 2100000, guid: 4521e469442cee2469909245544c28a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Iron
+    second: {fileID: 2100000, guid: b6787586d77dc8b4f9e70ba487171cff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_LampOff
+    second: {fileID: 2100000, guid: c3086c65eb185b242b0a29b1710ebc08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_LampOn
+    second: {fileID: 2100000, guid: dea86c1410f7f5d49a455263b5a48c96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Metal
+    second: {fileID: 2100000, guid: 9ff6f1fad236d1f4493d4172b7e79477, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_MoonBoat
+    second: {fileID: 2100000, guid: 6653b60cfb51a264190f6a6bca6409a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Paper
+    second: {fileID: 2100000, guid: 7147c5275cf44e24abb4c4c1af32c2e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Plaster
+    second: {fileID: 2100000, guid: 1234f433892c25248afbd29ae46120f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_PlasterRose
+    second: {fileID: 2100000, guid: c15b755a4f1f38d4c9fbcab7113b210b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_PlasterWhite
+    second: {fileID: 2100000, guid: c009d9764cd107b46a042656246004da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_RedWood
+    second: {fileID: 2100000, guid: e1add3985ca506d4d88620d8f021ffb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_RoofTile
+    second: {fileID: 2100000, guid: c5371cb4d072d9d40a9b4de7411a98e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ShutterBlue
+    second: {fileID: 2100000, guid: 463c2025a1de7ea49bbca923350fed0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ShutterGreen
+    second: {fileID: 2100000, guid: 90b5a3cdba27f684f9fc259a168798fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ShutterRed
+    second: {fileID: 2100000, guid: a04d4a0c3707b714bb49c0d7ab234378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_SignBlank
+    second: {fileID: 2100000, guid: 896ab9061f5e2a74ebbbda833c5c9f36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_SignWhite
+    second: {fileID: 2100000, guid: f81389bb91d7d2a4485ed54a56e19120, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Slate
+    second: {fileID: 2100000, guid: 4be7f7940f44ae34496760680478296e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_SlateBrown
+    second: {fileID: 2100000, guid: af1d14f0c7d898542ade3d21e8037c68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_SlateGreen
+    second: {fileID: 2100000, guid: 7649ee35625e3dc459a460650e4dbf38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Soil
+    second: {fileID: 2100000, guid: ff44fb2635ea59641867a93d0a8fba0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Stone
+    second: {fileID: 2100000, guid: ca0a3c1cfc0f0db4e8a4d398501a06fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Timber
+    second: {fileID: 2100000, guid: 31c98c6e305a0c943bab0a9e53ac1d9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ToyBlue
+    second: {fileID: 2100000, guid: 37ff2ab2e79648f47b716578473f7c4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ToyGreen
+    second: {fileID: 2100000, guid: 28a8fc4bf0d16ae4ab2aa03ac2148c27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ToyPink
+    second: {fileID: 2100000, guid: 97d321361bc447944a9084ea6c171ff3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ToyPurple
+    second: {fileID: 2100000, guid: e6b52392ae10ae0498cfd0a8ee6159d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_ToyYellow
+    second: {fileID: 2100000, guid: e1d547fb025916c459ed03e6c353dd9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_TrashBag
+    second: {fileID: 2100000, guid: 011578a8983070948ab95a73c3330a84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Trim
+    second: {fileID: 2100000, guid: cceeff78d8e4ebd42aed757d8e807432, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_Wood
+    second: {fileID: 2100000, guid: 2130be4661f6890488a32502f16f7116, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

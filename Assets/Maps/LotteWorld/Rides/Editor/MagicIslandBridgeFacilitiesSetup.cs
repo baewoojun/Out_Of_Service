@@ -26,7 +26,12 @@ public static class MagicIslandBridgeFacilitiesSetup
             if (fbx == null) { Debug.LogWarning($"[MI 11-25] {Root}/{p}/{p}.fbx 없음"); continue; }
             var old = parentT.Find(p); if (old) Undo.DestroyObjectImmediate(old.gameObject);
             var go = (GameObject)PrefabUtility.InstantiatePrefab(fbx, parentT);
-            go.name = p; go.transform.localPosition = new Vector3(0, -6f, 0); go.transform.localRotation = Quaternion.identity; go.transform.localScale = Vector3.one;
+            go.name = p;
+            // FBX 루트 회전(임포트가 넣은 X 89.98 등)은 그대로 둠 — v7 놀이기구 '제자리'와 같은 방식
+            go.transform.localPosition = go.transform.localPosition + new Vector3(0, -6f, 0);
+            // 자식 좌표가 블렌더 그대로(x, 북, -위)로 들어온 경우 → v7 놀이기구(MI19 등 루트 X 89.98)처럼 루트를 X 90 돌림
+            var ex = go.transform.localEulerAngles.x;
+            if (Mathf.Abs(Mathf.DeltaAngle(ex, 0f)) < 1f) go.transform.localRotation = Quaternion.Euler(90f, 0f, 0f) * go.transform.localRotation;
             Undo.RegisterCreatedObjectUndo(go, "Place " + p);
             foreach (var mf in go.GetComponentsInChildren<MeshFilter>(true))
             {
