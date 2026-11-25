@@ -7,6 +7,31 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Decal_floor_stain
+    second: {fileID: 2100000, guid: f2f6e27ec61afd44dad2d4329d9f1e16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decal_grime
+    second: {fileID: 2100000, guid: 202d6cf219144364b96956cf21b53775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decal_poster_blank
+    second: {fileID: 2100000, guid: 61910d28083fe3c45919aa8c39f614f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decal_rust_drips
+    second: {fileID: 2100000, guid: f0d540f6f2770f84790707bbcb5fc706, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decal_water_stain
+    second: {fileID: 2100000, guid: 13b047453bf6df5438705768ef536575, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LW_PHQ_Bark
     second: {fileID: 2100000, guid: 1575f589fccc8f642b46cf175dcd0d7d, type: 2}
   - first:

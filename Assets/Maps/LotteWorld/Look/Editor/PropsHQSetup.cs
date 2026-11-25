@@ -7,6 +7,7 @@
 //                      옛 렌더러만 끈다. 옛 콜라이더·조명·깜빡임은 그대로. 씬 인스턴스는 프리팹이라 자동 반영
 //   3. 옛 모델 보이기·숨기기 : 비교용 (프리팹을 고침)
 //   4. 되돌리기      : HQ 지우고 옛 렌더러 다시 켬
+//   5. HQ 새로 교체  : 다시 구운 FBX로 HQ를 지우고 새로 넣음 (11/24 The Park 단계 + 데칼)
 // 방향: 옛 프리팹 안 FBX 자식(Prop_X)과 같은 회전·배율로 넣음 (두 FBX가 같은 방식으로 내보내져서 맞음)
 // LOD 기준(화면 높이 비율): 아래 Lod0Height. 크로스페이드를 쓰려면 URP 에셋에서 LOD Cross Fade 켜기
 using System.Collections.Generic;
@@ -75,6 +76,7 @@ namespace LotteWorldLook
                     mat.globalIlluminationFlags = MaterialGlobalIlluminationFlags.BakedEmissive;
                 }
                 if (n.Contains("Glass")) MakeGlass(mat);
+                if (n.StartsWith("Decal_")) MakeDecal(mat, AssetDatabase.LoadAssetAtPath<Texture2D>(tex + "/" + n + ".png"));
                 mat.enableInstancing = true;
                 EditorUtility.SetDirty(mat);
                 mi.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), n), mat);
@@ -96,6 +98,19 @@ namespace LotteWorldLook
             mat.DisableKeyword("_METALLICSPECGLOSSMAP"); mat.SetTexture("_MetallicGlossMap", null);
         }
 
+        static void MakeDecal(Material mat, Texture2D t)
+        {
+            mat.SetTexture("_BaseMap", t); mat.SetColor("_BaseColor", Color.white);
+            mat.SetFloat("_Surface", 1f); mat.SetFloat("_Blend", 0f);
+            mat.SetOverrideTag("RenderType", "Transparent");
+            mat.SetFloat("_SrcBlend", (float)BlendMode.SrcAlpha); mat.SetFloat("_DstBlend", (float)BlendMode.OneMinusSrcAlpha);
+            mat.SetFloat("_ZWrite", 0f); mat.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            mat.renderQueue = (int)RenderQueue.Transparent - 10;
+            mat.SetFloat("_Smoothness", .2f); mat.SetFloat("_Metallic", 0f);
+            mat.DisableKeyword("_METALLICSPECGLOSSMAP"); mat.SetTexture("_MetallicGlossMap", null);
+            mat.DisableKeyword("_NORMALMAP"); mat.SetTexture("_BumpMap", null);
+        }
+
         static List<string> PropNames(GameObject fbx)
         {
             return fbx.transform.Cast<Transform>().Select(t => t.name).Where(n => n.StartsWith("Prop_")).ToList();
@@ -109,7 +124,13 @@ namespace LotteWorldLook
         }
 
         [MenuItem("Tools/LotteWorld/Look/소품 고퀄 2. 프리팹에 적용")]
-        public static void Apply()
+        public static void Apply() { ApplyImpl(false); }
+
+        // 다시 구운 FBX(The Park 단계, 데칼 추가)로 바꿀 때: 있던 HQ를 지우고 새로 넣는다
+        [MenuItem("Tools/LotteWorld/Look/소품 고퀄 5. HQ 새로 교체 (다시 구운 뒤)")]
+        public static void Replace() { ApplyImpl(true); }
+
+        static void ApplyImpl(bool replace)
         {
             var fbx = AssetDatabase.LoadAssetAtPath<GameObject>(Fbx);
             if (fbx == null) { Debug.LogError("[PropsHQ] FBX가 없어: " + Fbx); return; }
@@ -125,7 +146,8 @@ namespace LotteWorldLook
                     var root = PrefabUtility.LoadPrefabContents(pp);
                     try
                     {
-                        if (root.transform.Find(Child) != null) { skip++; continue; }
+                        var had = root.transform.Find(Child);
+                        if (had != null) { if (!replace) { skip++; continue; } Object.DestroyImmediate(had.gameObject); }
                         var src = temp.transform.Find(name);
                         var hq = Object.Instantiate(src.gameObject, root.transform, false);
                         hq.name = Child;
@@ -141,7 +163,8 @@ namespace LotteWorldLook
                             new LOD(Lod0Height(name), l0.GetComponentsInChildren<Renderer>(true)),
                             new LOD(CullHeight, l1.GetComponentsInChildren<Renderer>(true)) });
                         g.RecalculateBounds();
-                        foreach (var r in hq.GetComponentsInChildren<Renderer>(true)) r.shadowCastingMode = ShadowCastingMode.On;
+                        foreach (var r in hq.GetComponentsInChildren<Renderer>(true))
+                            r.shadowCastingMode = r.sharedMaterial != null && r.sharedMaterial.name.StartsWith("Decal_") ? ShadowCastingMode.Off : ShadowCastingMode.On;
                         SetOldRenderers(root, false);
                         PrefabUtility.SaveAsPrefabAsset(root, pp);
                         n++;

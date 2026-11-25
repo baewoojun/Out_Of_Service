@@ -67,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Rotor_HoofBlack
+    second: {fileID: 2100000, guid: b8f1e8b79b0aeef42aa78ef42bf416da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rotor_HorseWhite
     second: {fileID: 2100000, guid: f08b43868cef28542bfa9efd1d7c6000, type: 2}
   - first:

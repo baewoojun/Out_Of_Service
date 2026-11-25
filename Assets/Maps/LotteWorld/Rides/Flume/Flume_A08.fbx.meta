@@ -212,6 +212,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Static_SocketBrass
+    second: {fileID: 2100000, guid: 921cab9f684de8b49927090ad1bf3419, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Static_Soil
     second: {fileID: 2100000, guid: 10ff7716b45cbe949aec7822073e48d7, type: 2}
   - first:
@@ -244,6 +249,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Static_Water
     second: {fileID: 2100000, guid: 305335e46cadff64bb4be96f847ce116, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_WinDark
+    second: {fileID: 2100000, guid: 4e4f0ba5b6c0e1c41bddc104441763fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_boulder_01
+    second: {fileID: 2100000, guid: 1ae54c4947e29e042af72c9a6de0f2a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_boulder_01.001
+    second: {fileID: 2100000, guid: dba1205208e999f458bd27455c7e420b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_boulder_03
+    second: {fileID: 2100000, guid: 281a3138a8ef2114c8bfddfcf6d68014, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_boulder_04
+    second: {fileID: 2100000, guid: 1987de2303ddfdc409e0f0bcb7f9946a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
