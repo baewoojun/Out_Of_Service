@@ -40,9 +40,15 @@ namespace OutOfService
             damageFlash = Mathf.Min(0.8f, damageFlash + 0.46f);
         }
 
+        // 사망·탈출 화면(EndScreen)이 이 두 이벤트를 받는다.
+        public static event System.Action Lost;
+        public static event System.Action Finished;
+
         public void Lose()
         {
+            if (failed) return;
             failed = true;
+            Lost?.Invoke();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -61,7 +67,9 @@ namespace OutOfService
 
         public void Finish()
         {
+            if (finished) return;
             finished = true;
+            Finished?.Invoke();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -128,10 +136,14 @@ namespace OutOfService
                 GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), bloodVignette, ScaleMode.StretchToFill, true);
                 GUI.color = previous;
             }
-            if (failed)
+            if (EndScreen.Instance && (failed || finished))
+            {
+                // 새 사망·탈출 화면이 대신 보여 준다.
+            }
+            else if (failed)
             {
                 GUI.Box(new Rect(Screen.width / 2 - 230, Screen.height / 2 - 65, 460, 130), "");
-                GUI.Label(new Rect(Screen.width / 2 - 190, Screen.height / 2 - 40, 420, 40), "의식을 잃었다", titleStyle);
+                GUI.Label(new Rect(Screen.width / 2 - 190, Screen.height / 2 - 40, 420, 40), "사망", titleStyle);
                 GUI.Label(new Rect(Screen.width / 2 - 190, Screen.height / 2 + 5, 420, 35), "R을 눌러 다시 시작", bodyStyle);
             }
             else if (finished)

@@ -14,7 +14,7 @@ namespace OutOfService
     {
         public static MarketSettings Instance {get;private set;}
         public static bool IsOpen=>Instance&&Instance.open;
-        public static bool InputBlocked=>Instance&&(Instance.open||Time.frameCount<=Instance.ignoreGameplayUntil);
+        public static bool InputBlocked=>Instance&&(Instance.open||Time.frameCount<=Instance.ignoreGameplayUntil)||PauseMenu.IsOpen;
         public MarketSettingsData Current {get;private set;}
         public MarketSettingsData Draft {get;private set;}
         public string StoragePath {get;private set;}
@@ -79,7 +79,7 @@ namespace OutOfService
             if(open)Close();ApplyRuntime(Current,false);
         }
         void OnApplicationQuit(){quitting=true;}
-        void OnApplicationFocus(bool focus){if(!focus&&!automatedReview&&Current!=null&&Current.pauseOnFocusLoss&&MarketRenderPreparation.IsReady)Open();}
+        void OnApplicationFocus(bool focus){if(!focus&&!automatedReview&&Current!=null&&Current.pauseOnFocusLoss&&MarketRenderPreparation.IsReady){if(PauseMenu.Instance)PauseMenu.Instance.Pause();else Open();}}
         void Update()
         {
             if(!MarketPlayer.Instance||!MarketRenderPreparation.IsReady)return;
@@ -93,7 +93,7 @@ namespace OutOfService
                 return;
             }
             if(pending!=null&&Time.realtimeSinceStartup>=confirmUntil)RevertDisplay();
-            if(keyboard!=null&&keyboard.escapeKey.wasPressedThisFrame){if(DisplayPending)RevertDisplay();else if(open)Close();else Open();}
+            if(keyboard!=null&&keyboard.escapeKey.wasPressedThisFrame){if(DisplayPending)RevertDisplay();else if(open)Close();else if(!PauseMenu.Instance)Open();}
         }
         public void Open()
         {
