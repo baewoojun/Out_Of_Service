@@ -33,7 +33,7 @@ public static class LotteWorldFacade
                 string path = p.Replace('\\', '/'); var ti = (TextureImporter)AssetImporter.GetAtPath(path); bool dirty = false;
                 if (path.EndsWith("_Normal.png") && ti.textureType != TextureImporterType.NormalMap) { ti.textureType = TextureImporterType.NormalMap; dirty = true; }
                 if (path.EndsWith("_MS.png") && ti.sRGBTexture) { ti.sRGBTexture = false; dirty = true; }
-                if (ti.maxTextureSize < 2048) { ti.maxTextureSize = 2048; dirty = true; }
+                if (LotteWorldTextureLimits.Apply(ti, path, 2048)) dirty = true;   // _MS 512, _Normal 1024, 나머지는 2048 까지
                 if (dirty) ti.SaveAndReimport();
             }
         var mi = (ModelImporter)AssetImporter.GetAtPath(Fbx);

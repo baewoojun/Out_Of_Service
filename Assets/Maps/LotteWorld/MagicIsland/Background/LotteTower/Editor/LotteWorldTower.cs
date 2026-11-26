@@ -50,7 +50,7 @@ public static class LotteWorldTower
                 string path = p.Replace('\\', '/'); var ti = (TextureImporter)AssetImporter.GetAtPath(path); bool dirty = false;
                 if (path.EndsWith("_MS.png") && ti.sRGBTexture) { ti.sRGBTexture = false; dirty = true; }
                 int want = path.Contains("LT_TowerGlass") ? 4096 : 2048;              // 몸통은 2048x4096 한 장 (반복 없음)
-                if (ti.maxTextureSize < want) { ti.maxTextureSize = want; dirty = true; }
+                if (LotteWorldTextureLimits.Apply(ti, path, want)) dirty = true;      // 몸통(LT_TowerGlass)은 상한 예외
                 if (path.Contains("LT_TowerGlass") && ti.wrapMode != TextureWrapMode.Clamp) { ti.wrapMode = TextureWrapMode.Clamp; dirty = true; }
                 if (dirty) ti.SaveAndReimport();
             }

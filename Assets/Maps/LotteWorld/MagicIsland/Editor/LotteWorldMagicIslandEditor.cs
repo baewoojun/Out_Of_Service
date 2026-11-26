@@ -453,6 +453,7 @@ namespace LotteWorld.MagicIsland
             if (mat.HasProperty("_Smoothness")) mat.SetFloat("_Smoothness", Palette.Smoothness(k));
             if (mat.HasProperty("_Glossiness")) mat.SetFloat("_Glossiness", Palette.Smoothness(k));
             if (mat.HasProperty("_Metallic")) mat.SetFloat("_Metallic", Palette.Metallic(k));
+            LotteWorld.Look.LotteWorldSurfaceMaps.Attach(mat);   // 땅 텍스처 옆에 _MS 가 있으면 붙인다 (_Smoothness 1)
             if (Palette.Transparent(k)) MakeTransparent(mat);
             if (Palette.Emissive(k))
             {
@@ -488,7 +489,7 @@ namespace LotteWorld.MagicIsland
             if (normal && ti.textureType != TextureImporterType.NormalMap) { ti.textureType = TextureImporterType.NormalMap; dirty = true; }
             if (!normal && linear && ti.sRGBTexture) { ti.sRGBTexture = false; dirty = true; }
             if (ti.wrapMode != TextureWrapMode.Repeat) { ti.wrapMode = TextureWrapMode.Repeat; dirty = true; }
-            if (ti.maxTextureSize < 4096) { ti.maxTextureSize = 4096; dirty = true; }
+            if (LotteWorldTextureLimits.Apply(ti, path, 4096)) dirty = true;   // _MS 512, _Normal 1024, 나머지는 4096 까지
             if (dirty) ti.SaveAndReimport();
             return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         }

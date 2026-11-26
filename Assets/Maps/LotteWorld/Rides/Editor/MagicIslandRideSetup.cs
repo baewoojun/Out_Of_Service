@@ -62,7 +62,7 @@ public static class MagicIslandRideSetup
                 var ti = (TextureImporter)AssetImporter.GetAtPath(path); if (ti == null) continue; bool dirty = false;
                 if (path.EndsWith("_Normal.png") && ti.textureType != TextureImporterType.NormalMap) { ti.textureType = TextureImporterType.NormalMap; dirty = true; }
                 if (path.EndsWith("_MS.png") && ti.sRGBTexture) { ti.sRGBTexture = false; dirty = true; }
-                if (ti.maxTextureSize < 4096) { ti.maxTextureSize = 4096; dirty = true; }
+                if (LotteWorldTextureLimits.Apply(ti, path, 4096)) dirty = true;   // _MS 512, _Normal 1024, 나머지는 4096 까지
                 if (dirty) ti.SaveAndReimport();
             }
         var table = ReadTable($"{dir}/{name}_mats.txt");
