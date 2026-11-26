@@ -495,6 +495,9 @@ namespace LotteWorld.Night
                 Undo.DestroyObjectImmediate(vol.gameObject);
             }
 
+            // 낮 전용 후처리·실내 반사(LW_DayLook)는 밤에 끈다
+            LotteWorld.Look.LotteWorldDayLook.SetForTod(isNight, dirtyScenes);
+
             if (!string.IsNullOrEmpty(snap.mainCamPath))
             {
                 var ct = FindByPath(snap.mainCamPath);
