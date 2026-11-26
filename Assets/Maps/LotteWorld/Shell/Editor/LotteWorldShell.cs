@@ -165,6 +165,7 @@ namespace LotteWorld.Shell
                 mat.EnableKeyword("_EMISSION"); mat.SetColor("_EmissionColor", c * (m == "LampOn" ? 3f : 2f));
                 mat.globalIlluminationFlags = MaterialGlobalIlluminationFlags.BakedEmissive;
             }
+            LotteWorld.Look.LotteWorldSurfaceMaps.Attach(mat);   // 색상 텍스처 옆에 _Normal / _MS 가 있으면 붙인다 (_Smoothness 1)
             EditorUtility.SetDirty(mat); return mat;
         }
 
