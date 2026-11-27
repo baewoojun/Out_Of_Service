@@ -67,6 +67,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MIFA_F_BlackMetal
+    second: {fileID: 2100000, guid: 54dc12af1d9d18445b28107e1dbd2812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MIFA_F_Brick
     second: {fileID: 2100000, guid: af7f0c9cb767be0408d6adb30e86832d, type: 2}
   - first:
@@ -142,6 +147,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MIFA_F_PaperCup
+    second: {fileID: 2100000, guid: e217bd38d00bb284dad9958f6a72f911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MIFA_F_Plaster
     second: {fileID: 2100000, guid: 1234f433892c25248afbd29ae46120f6, type: 2}
   - first:
@@ -187,6 +197,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MIFA_F_SignBlankRed
+    second: {fileID: 2100000, guid: c32c2edce9e978a46974444cf0106d7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MIFA_F_SignWhite
     second: {fileID: 2100000, guid: f81389bb91d7d2a4485ed54a56e19120, type: 2}
   - first:
@@ -207,6 +222,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: MIFA_F_SofaRed
+    second: {fileID: 2100000, guid: 0caa61fe7ce3bef4c8703fc989151de3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MIFA_F_Soil
     second: {fileID: 2100000, guid: ff44fb2635ea59641867a93d0a8fba0c, type: 2}
   - first:
@@ -214,6 +234,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: MIFA_F_Stone
     second: {fileID: 2100000, guid: ca0a3c1cfc0f0db4e8a4d398501a06fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MIFA_F_TileWhite
+    second: {fileID: 2100000, guid: 4fb14c947a72eae4ba26dd685ba07f76, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
