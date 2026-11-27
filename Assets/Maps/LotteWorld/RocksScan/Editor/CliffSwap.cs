@@ -12,28 +12,44 @@ public static class CliffSwap
     const string Dir = "Assets/Maps/LotteWorld/RocksScan/Cliff/";
     const string NewRoot = "LotteWorld_CliffNew";
 
-    struct Job { public string model, rootHint; public string[] old; }
+    struct Job { public string model, rootHint; public string[] old; public float mPerUv; }
     static readonly Job[] Jobs =
     {
-        new Job { model = "Cliff_A15", rootHint = "A15", old = new[] { "Static_LW_DarkRock", "Static_LW_RockLight" } },
-        new Job { model = "Cliff_NorthGate", rootHint = "NorthGate", old = new[] { "Waterfall_LW_Rock", "Waterfall_LW_RockDark", "S_new1_LW_Rock", "S_new1_LW_RockDark" } },
+        new Job { model = "Cliff_A15", rootHint = "A15", mPerUv = 291.2f, old = new[] { "Static_LW_DarkRock", "Static_LW_RockLight" } },
+        new Job { model = "Cliff_NorthGate", rootHint = "NorthGate", mPerUv = 115.57f, old = new[] { "Waterfall_LW_Rock", "Waterfall_LW_RockDark", "S_new1_LW_Rock", "S_new1_LW_RockDark" } },
     };
 
-    static Material Mat()
+    const float DetailTileM = 9f;   // 잔무늬 한 장이 덮는 길이(m)
+
+    static void AsNormal(string p)
     {
-        string mp = Dir + "LW_CliffRock.mat";
-        var nImp = AssetImporter.GetAtPath(Dir + "LW_CliffRock_Normal.png") as TextureImporter;
-        if (nImp != null && nImp.textureType != TextureImporterType.NormalMap) { nImp.textureType = TextureImporterType.NormalMap; nImp.SaveAndReimport(); }
+        var imp = AssetImporter.GetAtPath(p) as TextureImporter;
+        if (imp != null && imp.textureType != TextureImporterType.NormalMap) { imp.textureType = TextureImporterType.NormalMap; imp.SaveAndReimport(); }
+    }
+
+    // 바탕(구운 큰 색 얼룩 + 틈 그늘) + 구운 노멀 + 반복 잔무늬(디테일 맵)
+    static Material Mat(Job job)
+    {
+        string mp = Dir + "LW_" + job.model + ".mat";
+        AsNormal(Dir + job.model + "_Nrm.png"); AsNormal(Dir + "LW_CliffDetail_Nrm.png");
         var m = AssetDatabase.LoadAssetAtPath<Material>(mp);
         if (m == null) { m = new Material(Shader.Find("Universal Render Pipeline/Lit")); AssetDatabase.CreateAsset(m, mp); }
-        m.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + "LW_CliffRock_BaseColor.png"));
-        m.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + "LW_CliffRock_Normal.png"));
+        m.SetTexture("_BaseMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + job.model + "_BaseColor.png"));
+        m.SetTexture("_BumpMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + job.model + "_Nrm.png"));
         m.EnableKeyword("_NORMALMAP");
-        m.SetFloat("_BumpScale", 1.2f);
-        m.SetFloat("_Smoothness", 0.12f);
+        m.SetFloat("_BumpScale", 1f);
+        float k = job.mPerUv / DetailTileM;
+        m.SetTexture("_DetailAlbedoMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + "LW_CliffDetail_Albedo.png"));
+        m.SetTexture("_DetailNormalMap", AssetDatabase.LoadAssetAtPath<Texture2D>(Dir + "LW_CliffDetail_Nrm.png"));
+        m.SetTextureScale("_DetailAlbedoMap", new Vector2(k, k));
+        m.SetTextureScale("_DetailNormalMap", new Vector2(k, k));
+        m.SetFloat("_DetailAlbedoMapScale", 1f);
+        m.SetFloat("_DetailNormalMapScale", 0.7f);
+        m.EnableKeyword("_DETAIL_MULX2"); m.EnableKeyword("_DETAIL_SCALED");
+        m.SetFloat("_Smoothness", 0.08f);
         m.SetFloat("_Metallic", 0f);
+        m.SetFloat("_SpecularHighlights", 0f); m.EnableKeyword("_SPECULARHIGHLIGHTS_OFF");
         m.SetColor("_BaseColor", Color.white);
-        m.enableInstancing = true;
         EditorUtility.SetDirty(m);
         return m;
     }
@@ -50,11 +66,11 @@ public static class CliffSwap
     [MenuItem("Tools/LotteWorld/Look/바위벽 교체 (열린 씬)", false, 205)]
     static void Swap()
     {
-        var mat = Mat();
         var all = Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         var log = new System.Text.StringBuilder("[CliffSwap] ");
         foreach (var job in Jobs)
         {
+            var mat = Mat(job);
             string path = Dir + job.model + ".fbx";
             var imp = AssetImporter.GetAtPath(path) as ModelImporter;
             if (imp == null) { log.Append(job.model + ": FBX 없음 / "); continue; }

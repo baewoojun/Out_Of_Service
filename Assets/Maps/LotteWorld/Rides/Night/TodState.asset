@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp-Editor::LotteWorld.Night.TodState
   isNight: 0
   bootstrapped: 1
+  nightExposure: -2.93
+  nightAmbient: 2
+  nightMoon: 13.7
+  nightFog: 0

@@ -32,6 +32,21 @@ namespace LotteWorld.Night
 
         public bool IsOn { get; private set; }
 
+        public Light SpotLight => spotLight != null ? spotLight : GetComponent<Light>();
+
+        /// <summary>켜져 있을 때의 밝기. Play 중에 바꿔도 바로 반영된다.</summary>
+        public float BaseIntensity
+        {
+            get => Application.isPlaying ? _baseIntensity : (SpotLight != null ? SpotLight.intensity : _baseIntensity);
+            set
+            {
+                _baseIntensity = Mathf.Max(0f, value);
+                var l = SpotLight;
+                if (l != null && (!Application.isPlaying || (IsOn && !_flickerDim)))
+                    l.intensity = _baseIntensity;
+            }
+        }
+
         float _battery01 = 1f;
         float _baseIntensity;
         float _flickerTimer;

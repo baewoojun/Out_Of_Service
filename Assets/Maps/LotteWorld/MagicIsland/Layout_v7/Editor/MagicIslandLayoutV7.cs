@@ -29,7 +29,7 @@ using UnityEngine.SceneManagement;
 
 namespace LotteWorld.MagicIsland
 {
-    public static class MagicIslandLayoutV7
+    public static partial class MagicIslandLayoutV7
     {
         const string Dir = "Assets/Maps/LotteWorld/MagicIsland/Layout_v7";
         const string JsonPath = Dir + "/mi_layout_v7.json";
@@ -371,7 +371,7 @@ namespace LotteWorld.MagicIsland
 
         // ---------------- 3·4 바닥 ----------------
         [MenuItem(Menu + "3 길·광장·잔디·물 바닥 만들기", false, 13)]
-        public static void Floors() { BuildMeshes("03_Floors", l => l == "road" || l == "plaza" || l == "lawn" || l == "water", "길·광장·잔디·물"); }
+        public static void Floors() { BuildMeshes("03_Floors", l => l == "road" || l == "plaza" || l == "lawn" || l == "water", "길·광장·잔디·물"); SmoothPaths(); }
         [MenuItem(Menu + "4 섬·호수 지형 새로 만들기", false, 14)]
         public static void IslandGround()
         {

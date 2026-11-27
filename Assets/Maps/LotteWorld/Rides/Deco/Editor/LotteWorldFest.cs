@@ -25,6 +25,7 @@ namespace LotteWorld.Fest
         const string RootName = "LotteWorld_Fest";
         const string PropDir = "Assets/Maps/LotteWorld/Rides/Props/Prefabs";
         const string DecoDir = "Assets/Maps/LotteWorld/Rides/Deco/Prefabs";
+        const string FoliageDir = "Assets/Maps/LotteWorld/Foliage/Prefabs";
         static bool[] on;
         Vector2 scroll;
 
@@ -142,19 +143,19 @@ namespace LotteWorld.Fest
             new F("Prop_Bunting12", -52.095f, 4.300f, -17.735f, 64.49f, 1.113f, 12),
             new F("Prop_Bunting12", -44.590f, 4.300f, -28.565f, 46.06f, 1.112f, 12),
             new F("Prop_Bunting12", -34.045f, 4.300f, -36.465f, 27.62f, 1.113f, 12),
-            new F("Prop_Planter_Tree", 20.000f, 0.000f, 52.000f, 243.77f, 1.000f, 12),
+            new F("Tree_Leafy_A", 20.000f, 0.000f, 52.000f, 243.77f, 1.000f, 12),
             new F("Prop_Bench", 21.500f, 0.000f, 47.980f, 112.20f, 1.000f, 12),
             new F("Prop_Bench", 18.207f, 0.000f, 50.727f, -67.80f, 1.000f, 12),
             new F("Prop_Bin", 18.942f, 0.000f, 46.408f, -157.80f, 1.000f, 12),
-            new F("Prop_Planter_TreeDry", -28.586f, 0.000f, 49.414f, 282.57f, 1.000f, 12),
+            new F("Tree_Dead_A", -28.586f, 0.000f, 49.414f, 282.57f, 1.000f, 12),
             new F("Prop_Bench", -27.710f, 0.000f, 49.431f, 57.99f, 1.000f, 12),
             new F("Prop_Bench", -30.169f, 0.000f, 48.690f, -122.01f, 1.000f, 12),
             new F("Prop_Bin", -28.516f, 0.000f, 47.626f, 147.99f, 1.000f, 12),
-            new F("Prop_Planter_Tree", 62.000f, 0.000f, 10.000f, 187.37f, 1.000f, 12),
+            new F("Tree_Leafy_A", 62.000f, 0.000f, 10.000f, 187.37f, 1.000f, 12),
             new F("Prop_Bench", 62.430f, 0.000f, 7.334f, 170.84f, 1.000f, 12),
             new F("Prop_Bench", 61.570f, 0.000f, 12.666f, -9.16f, 1.000f, 12),
             new F("Prop_Bin", 59.236f, 0.000f, 9.554f, -99.16f, 1.000f, 12),
-            new F("Prop_Planter_TreeDry", -61.000f, 0.000f, 6.000f, 184.14f, 1.000f, 12),
+            new F("Tree_Dead_A", -61.000f, 0.000f, 6.000f, 184.14f, 1.000f, 12),
             new F("Prop_Bench", -62.744f, 0.000f, 8.688f, 5.44f, 1.000f, 12),
             new F("Prop_Bench", -62.256f, 0.000f, 3.312f, -174.56f, 1.000f, 12),
             new F("Prop_Bin", -60.213f, 0.000f, 5.735f, 95.44f, 1.000f, 12),
@@ -237,7 +238,7 @@ namespace LotteWorld.Fest
             new F("Prop_Bunting12", 40.000f, 4.300f, 49.600f, 6.84f, 1.007f, 3),
             new F("Prop_Bunting12", 52.000f, 4.300f, 48.160f, 6.84f, 1.007f, 3),
             new F("Prop_Bunting18", 48.980f, 4.300f, 40.405f, 142.05f, 1.271f, 3),
-            new F("Prop_Planter_Tree", 40.707f, 0.000f, 57.207f, 135.58f, 1.000f, 3),
+            new F("Tree_Leafy_A", 40.707f, 0.000f, 57.207f, 135.58f, 1.000f, 3),
             new F("Prop_Bench", 37.300f, 0.000f, 56.500f, -90.00f, 1.000f, 3),
             new F("Prop_Bench", 42.700f, 0.000f, 56.500f, 90.00f, 1.000f, 3),
             new F("Prop_Bin", 40.000f, 0.000f, 59.300f, 0.00f, 1.000f, 3),
@@ -256,7 +257,7 @@ namespace LotteWorld.Fest
             new F("Prop_Bunting18", -138.661f, 4.300f, -40.236f, -138.87f, 1.278f, 13),
             new F("Prop_Cart_Balloons", -140.000f, 0.000f, 8.000f, -90.00f, 1.000f, 13),
             new F("Prop_Cart", -140.000f, 0.000f, 31.000f, -90.00f, 1.000f, 13),
-            new F("Prop_Planter_TreeDry", -138.500f, 0.000f, -14.000f, 243.85f, 1.000f, 13),
+            new F("Tree_Dead_A", -138.500f, 0.000f, -14.000f, 243.85f, 1.000f, 13),
             new F("Prop_Bench", -138.500f, 0.000f, -11.300f, -0.00f, 1.000f, 13),
             new F("Prop_Bench", -138.500f, 0.000f, -16.700f, 180.00f, 1.000f, 13),
             new F("Prop_Bin", -135.700f, 0.000f, -14.000f, 90.00f, 1.000f, 13),
@@ -315,7 +316,7 @@ namespace LotteWorld.Fest
             new F("Prop_Dining_Cloth", 101.347f, 0.000f, 37.157f, 76.92f, 1.000f, 6),
             new F("Prop_Dining_Cloth", 104.747f, 0.000f, 33.757f, 180.71f, 1.000f, 6),
             new F("Prop_Dining_ClothTopple", 104.747f, 0.000f, 37.157f, 104.64f, 1.000f, 6),
-            new F("Prop_Planter_Tree", 88.480f, 0.000f, 37.313f, 289.49f, 1.000f, 6),
+            new F("Tree_Leafy_A", 88.480f, 0.000f, 37.313f, 289.49f, 1.000f, 6),
             new F("Prop_Bench", 91.152f, 0.000f, 36.928f, 98.21f, 1.000f, 6),
             new F("Prop_Bench", 85.808f, 0.000f, 37.699f, -81.79f, 1.000f, 6),
             new F("Prop_Bin", 88.080f, 0.000f, 34.542f, -171.79f, 1.000f, 6),
@@ -367,7 +368,7 @@ namespace LotteWorld.Fest
             new F("Prop_Cart", -167.500f, 0.000f, -63.000f, -90.00f, 1.000f, 8),
             new F("Prop_Bench", -174.000f, 0.000f, -65.000f, 0.00f, 1.000f, 8),
             new F("Prop_Bin", -172.200f, 0.000f, -65.000f, 0.00f, 1.000f, 8),
-            new F("Prop_Planter_TreeDry", -181.000f, 0.000f, -61.000f, 40.00f, 1.000f, 8),
+            new F("Tree_Dead_A", -181.000f, 0.000f, -61.000f, 40.00f, 1.000f, 8),
             new F("Prop_Litter", -170.732f, 0.000f, -65.014f, 220.74f, 1.000f, 8),
             new F("Prop_Litter", -173.889f, 0.000f, -62.348f, 300.86f, 1.000f, 8),
             new F("Prop_Bunting12", -92.500f, 4.300f, -95.670f, -120.00f, 0.833f, 9),
@@ -388,8 +389,8 @@ namespace LotteWorld.Fest
             new F("Prop_Dining_Cloth", -100.000f, 0.000f, -98.200f, 264.32f, 1.000f, 9),
             new F("Prop_Dining_Cloth", -96.400f, 0.000f, -101.800f, 272.36f, 1.000f, 9),
             new F("Prop_Dining_ClothTopple", -96.400f, 0.000f, -98.200f, 187.17f, 1.000f, 9),
-            new F("Prop_Planter_Tree", -112.000f, 0.000f, -96.000f, 10.00f, 1.000f, 9),
-            new F("Prop_Planter_TreeDry", -88.000f, 0.000f, -108.000f, 60.00f, 1.000f, 9),
+            new F("Tree_Leafy_A", -112.000f, 0.000f, -96.000f, 10.00f, 1.000f, 9),
+            new F("Tree_Dead_A", -88.000f, 0.000f, -108.000f, 60.00f, 1.000f, 9),
             new F("Prop_Bin", -94.500f, 0.000f, -94.500f, 0.00f, 1.000f, 9),
             new F("Prop_Bin_Tipped", -105.000f, 0.000f, -106.000f, 120.00f, 1.000f, 9),
             new F("Prop_Sign", -95.000f, 0.000f, -87.000f, 0.00f, 1.000f, 9),
@@ -425,7 +426,7 @@ namespace LotteWorld.Fest
             new F("Prop_Dining_Plain", 48.300f, 0.000f, -63.300f, 79.69f, 1.000f, 11),
             new F("Prop_Dining_ClothTopple", 51.700f, 0.000f, -66.700f, 96.46f, 1.000f, 11),
             new F("Prop_Dining_Cloth", 51.700f, 0.000f, -63.300f, 257.58f, 1.000f, 11),
-            new F("Prop_Planter_TreeDry", 51.000f, 0.000f, -55.500f, 272.40f, 1.000f, 11),
+            new F("Tree_Dead_A", 51.000f, 0.000f, -55.500f, 272.40f, 1.000f, 11),
             new F("Prop_Bench", 48.300f, 0.000f, -55.500f, -90.00f, 1.000f, 11),
             new F("Prop_Bench", 53.700f, 0.000f, -55.500f, 90.00f, 1.000f, 11),
             new F("Prop_Bin", 51.000f, 0.000f, -52.700f, 0.00f, 1.000f, 11),
@@ -478,7 +479,7 @@ namespace LotteWorld.Fest
                 if (zoneOn != null && !zoneOn[it.zone]) continue;
                 if (!cache.TryGetValue(it.n, out GameObject pf))
                 {
-                    string dir = it.n.StartsWith("Deco_") ? DecoDir : PropDir;
+                    string dir = it.n.StartsWith("Deco_") ? DecoDir : it.n.StartsWith("Tree_") ? FoliageDir : PropDir;   // 나무는 Foliage 프리팹 (예전 저폴리 화분 나무 대신)
                     pf = AssetDatabase.LoadAssetAtPath<GameObject>(dir + "/" + it.n + ".prefab");
                     cache[it.n] = pf;
                 }
@@ -489,7 +490,7 @@ namespace LotteWorld.Fest
                 }
                 var g = (GameObject)PrefabUtility.InstantiatePrefab(pf, holders[it.zone]);
                 g.transform.position = new Vector3(it.x, it.y, it.z);
-                g.transform.rotation = Quaternion.Euler(0f, it.yaw, 0f);
+                g.transform.rotation = Quaternion.Euler(0f, it.yaw, 0f) * pf.transform.localRotation;   // FBX 나무는 뿌리에 회전이 들어 있음
                 if (Mathf.Abs(it.sx - 1f) > 0.001f) g.transform.localScale = new Vector3(it.sx, 1f, 1f);
                 lights += g.GetComponentsInChildren<Light>(true).Length;
                 counts[it.zone]++;

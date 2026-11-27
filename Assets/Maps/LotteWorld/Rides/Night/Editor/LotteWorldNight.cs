@@ -118,6 +118,7 @@ namespace LotteWorld.Night
             // 하위호환 DaySnapshot.nightApplied
             var day = LoadSnap(DaySnapPath);
             if (day != null) { day.nightApplied = true; EditorUtility.SetDirty(day); }
+            ApplyNightLightLevels();
             AssetDatabase.SaveAssets();
 
             if (saveScenes) SaveOpenMapScenes();
@@ -190,6 +191,7 @@ namespace LotteWorld.Night
                 ApplyFromSnap(night, isNight: true);
                 tod.isNight = true;
                 day.nightApplied = true;
+                ApplyNightLightLevels();
             }
             else
             {
@@ -935,7 +937,8 @@ namespace LotteWorld.Night
             tone.mode.overrideState = true; tone.mode.value = TonemappingMode.ACES;
 
             var color = GetOrAdd<ColorAdjustments>(profile);
-            color.postExposure.overrideState = true; color.postExposure.value = -0.75f;
+            var tod = LoadOrCreateTod();
+            color.postExposure.overrideState = true; color.postExposure.value = tod != null ? tod.nightExposure : DefaultNightExposure;
             color.saturation.overrideState = true; color.saturation.value = -30f;
 
             var bloom = GetOrAdd<Bloom>(profile);
@@ -948,6 +951,158 @@ namespace LotteWorld.Night
             var grain = GetOrAdd<FilmGrain>(profile);
             grain.intensity.overrideState = true; grain.intensity.value = 0.2f;
             grain.type.overrideState = true; grain.type.value = FilmGrainLookup.Medium1;
+        }
+
+        // ---------------------------------------------------------- 밤 밝기
+        public const float DefaultNightExposure = -0.75f;
+        public const float MinNightExposure = -3f;
+        public const float MaxNightExposure = 3f;
+        // 주변광·달빛은 NightSnapshot 값(기준)에 곱하는 배율
+        public const float MinNightMult = 0.25f;
+        public const float MaxNightMult = 20f;
+
+        public static float GetNightExposure()
+        {
+            var tod = LoadOrCreateTod();
+            return tod != null ? tod.nightExposure : DefaultNightExposure;
+        }
+        public static float GetNightAmbient()
+        {
+            var tod = LoadOrCreateTod();
+            return tod != null ? tod.nightAmbient : 1f;
+        }
+        public static float GetNightMoon()
+        {
+            var tod = LoadOrCreateTod();
+            return tod != null ? tod.nightMoon : 1f;
+        }
+
+        public static void SetNightAmbient(float mult)
+        {
+            var tod = LoadOrCreateTod();
+            if (tod == null) return;
+            mult = Mathf.Clamp(mult, MinNightMult, MaxNightMult);
+            if (!Mathf.Approximately(tod.nightAmbient, mult))
+            {
+                Undo.RecordObject(tod, "밤 주변광");
+                tod.nightAmbient = mult;
+                EditorUtility.SetDirty(tod);
+            }
+            ApplyNightLightLevels();
+        }
+
+        public const float MaxNightFog = 1.5f;
+        public static float GetNightFog()
+        {
+            var tod = LoadOrCreateTod();
+            return tod != null ? tod.nightFog : 1f;
+        }
+        public static void SetNightFog(float mult)
+        {
+            var tod = LoadOrCreateTod();
+            if (tod == null) return;
+            mult = Mathf.Clamp(mult, 0f, MaxNightFog);
+            if (!Mathf.Approximately(tod.nightFog, mult))
+            {
+                Undo.RecordObject(tod, "밤 안개");
+                tod.nightFog = mult;
+                EditorUtility.SetDirty(tod);
+            }
+            ApplyNightLightLevels();
+        }
+
+        public static void SetNightMoon(float mult)
+        {
+            var tod = LoadOrCreateTod();
+            if (tod == null) return;
+            mult = Mathf.Clamp(mult, MinNightMult, MaxNightMult);
+            if (!Mathf.Approximately(tod.nightMoon, mult))
+            {
+                Undo.RecordObject(tod, "밤 달빛");
+                tod.nightMoon = mult;
+                EditorUtility.SetDirty(tod);
+            }
+            ApplyNightLightLevels();
+        }
+
+        // NightSnapshot 의 주변광 색·Directional 세기에 배율을 곱해 지금 씬에 적용한다 (밤일 때만).
+        // 스냅샷 자체는 바꾸지 않는다. 편집 모드에서는 씬이 변경됨으로 표시된다(저장은 직접).
+        public static void ApplyNightLightLevels()
+        {
+            var tod = LoadOrCreateTod();
+            if (tod == null || !tod.isNight) return;
+            var night = LoadSnap(NightSnapPath);
+            if (night == null) return;
+            bool playing = EditorApplication.isPlaying;
+            float amb = tod.nightAmbient, moon = tod.nightMoon;
+
+            RenderSettings.ambientSkyColor = Mul(night.ambientSky, amb);
+            RenderSettings.ambientEquatorColor = Mul(night.ambientEquator, amb);
+            RenderSettings.ambientGroundColor = Mul(night.ambientGround, amb);
+            RenderSettings.ambientLight = Mul(night.ambientLight, amb);
+            // 안개: 짙기는 안개 배율, 색은 주변광을 따라 밝아진다 (어두운 안개가 먼 곳을 까맣게 덮지 않게)
+            RenderSettings.fogColor = Mul(night.fogColor, amb);
+            RenderSettings.fogDensity = night.fogDensity * tod.nightFog;
+            RenderSettings.fog = night.fog && tod.nightFog > 0.001f;
+            DynamicGI.UpdateEnvironment();
+
+            var dirty = new HashSet<Scene>();
+            var map3 = FindOpenScene(Map3Path);
+            if (map3.IsValid()) dirty.Add(map3);
+            foreach (var d in night.directionals)
+            {
+                if (!d.enabled) continue;
+                var t = FindByPath(d.path);
+                var l = t != null ? t.GetComponent<Light>() : null;
+                if (l == null) continue;
+                float want = d.intensity * moon;
+                if (Mathf.Approximately(l.intensity, want)) continue;
+                if (!playing) Undo.RecordObject(l, "밤 달빛");
+                l.intensity = want;
+                if (!playing) { EditorUtility.SetDirty(l); dirty.Add(l.gameObject.scene); }
+            }
+            if (!playing)
+                foreach (var s in dirty) if (s.IsValid()) EditorSceneManager.MarkSceneDirty(s);
+            SceneView.RepaintAll();
+            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+        }
+
+        static Color Mul(Color c, float m) => new Color(c.r * m, c.g * m, c.b * m, c.a);
+
+        // Play 중에 바꾼 주변광·달빛은 Play 를 끄면 씬 값으로 되돌아가므로 다시 적용한다.
+        [InitializeOnLoadMethod]
+        static void HookPlayModeExit()
+        {
+            EditorApplication.playModeStateChanged += st =>
+            {
+                if (st == PlayModeStateChange.EnteredEditMode) ApplyNightLightLevels();
+            };
+        }
+
+        // 밤 볼륨 프로필(LW_NightProfile)의 Post Exposure 를 바꾸고 TodState 에 기억한다.
+        // 프로필 에셋을 바꾸므로 씬 저장 없이 바로 반영되고, Play 중에도 바로 보인다.
+        public static void SetNightExposure(float ev)
+        {
+            ev = Mathf.Clamp(ev, MinNightExposure, MaxNightExposure);
+            var tod = LoadOrCreateTod();
+            if (tod != null && !Mathf.Approximately(tod.nightExposure, ev))
+            {
+                Undo.RecordObject(tod, "밤 밝기");
+                tod.nightExposure = ev;
+                EditorUtility.SetDirty(tod);
+            }
+
+            var profile = AssetDatabase.LoadAssetAtPath<VolumeProfile>(ProfilePath);
+            if (profile == null) return;
+            var color = GetOrAdd<ColorAdjustments>(profile);
+            if (color.postExposure.overrideState && Mathf.Approximately(color.postExposure.value, ev)) return;
+            Undo.RecordObject(color, "밤 밝기");
+            color.postExposure.overrideState = true;
+            color.postExposure.value = ev;
+            EditorUtility.SetDirty(color);
+            EditorUtility.SetDirty(profile);
+            SceneView.RepaintAll();
+            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }
 
         static T GetOrAdd<T>(VolumeProfile profile) where T : VolumeComponent
@@ -1198,10 +1353,98 @@ namespace LotteWorld.Night
     {
         bool saveScenes = true;
 
+        // ------------------------------------------------------ 손전등
+        // Flashlight(Spot) 기본값 — LotteWorldFlashlightSetup.ConfigureLight 와 같게
+        const float DefFlashIntensity = 280f, DefFlashRange = 450f, DefFlashAngle = 45f;
+        const float MaxFlashIntensity = 3000f, MinFlashRange = 5f, MaxFlashRange = 1000f;
+        const float MinFlashAngle = 10f, MaxFlashAngle = 120f;
+        const float InnerRatio = 25f / 45f; // 안쪽 원뿔 = 바깥 각도 × 비율
+
+        // Play 중에 바꾼 값 — Play 를 끄면 씬 손전등에 다시 넣는다
+        struct FlashValues { public float intensity, range, angle; }
+        static FlashValues? s_playEdits;
+
+        [InitializeOnLoadMethod]
+        static void HookFlashPlayExit()
+        {
+            EditorApplication.playModeStateChanged += st =>
+            {
+                if (st != PlayModeStateChange.EnteredEditMode || s_playEdits == null) return;
+                var v = s_playEdits.Value;
+                s_playEdits = null;
+                foreach (var fx in FindFlashlights()) ApplyFlash(fx, v.intensity, v.range, v.angle);
+                Debug.Log("[Flashlight] Play 중 바꾼 손전등 값을 씬에 반영 — 밝기 " + v.intensity + ", 사거리 " + v.range + ", 각도 " + v.angle + " (씬 저장은 직접)");
+            };
+        }
+
+        static LotteWorldFlashlight[] FindFlashlights() =>
+            UnityEngine.Object.FindObjectsByType<LotteWorldFlashlight>(FindObjectsInactive.Include);
+
+        static void ApplyFlash(LotteWorldFlashlight fx, float intensity, float range, float angle)
+        {
+            var l = fx.SpotLight;
+            if (l == null) return;
+            bool playing = EditorApplication.isPlaying;
+            if (!playing) { Undo.RecordObject(l, "손전등"); Undo.RecordObject(fx, "손전등"); }
+            fx.BaseIntensity = intensity;
+            l.range = range;
+            l.spotAngle = angle;
+            l.innerSpotAngle = angle * InnerRatio;
+            if (!playing)
+            {
+                EditorUtility.SetDirty(l);
+                EditorUtility.SetDirty(fx);
+                EditorSceneManager.MarkSceneDirty(fx.gameObject.scene);
+            }
+            else s_playEdits = new FlashValues { intensity = intensity, range = range, angle = angle };
+            SceneView.RepaintAll();
+        }
+
+        void DrawFlashlightGUI()
+        {
+            EditorGUILayout.LabelField("손전등 (F 키)", EditorStyles.boldLabel);
+            var lights = FindFlashlights();
+            if (lights.Length == 0)
+            {
+                EditorGUILayout.HelpBox("열린 씬에 손전등이 없습니다. Tools > LotteWorld > Night > Add Flashlight To Player", MessageType.None);
+                return;
+            }
+            var fx = lights[0];
+            var l = fx.SpotLight;
+            if (l == null) return;
+
+            float prevLabel = EditorGUIUtility.labelWidth;
+            EditorGUIUtility.labelWidth = 70;
+            float inten = fx.BaseIntensity, range = l.range, angle = l.spotAngle;
+
+            EditorGUI.BeginChangeCheck();
+            EditorGUILayout.BeginHorizontal();
+            inten = EditorGUILayout.Slider(new GUIContent("밝기", "손전등 세기(칸델라). 멀리까지 밝게 비추려면 이걸 올리세요."), inten, 0f, MaxFlashIntensity);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) { inten = DefFlashIntensity; GUI.changed = true; }
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            range = EditorGUILayout.Slider(new GUIContent("사거리", "빛이 닿는 최대 거리(m). 이 거리에서 빛이 완전히 끊긴다."), range, MinFlashRange, MaxFlashRange);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) { range = DefFlashRange; GUI.changed = true; }
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            angle = EditorGUILayout.Slider(new GUIContent("빛 각도", "빛이 퍼지는 원뿔 각도(도). 넓히면 넓게, 좁히면 멀리 모인 느낌."), angle, MinFlashAngle, MaxFlashAngle);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) { angle = DefFlashAngle; GUI.changed = true; }
+            EditorGUILayout.EndHorizontal();
+            if (EditorGUI.EndChangeCheck())
+                foreach (var f in lights) ApplyFlash(f, inten, range, angle);
+
+            EditorGUIUtility.labelWidth = prevLabel;
+            EditorGUILayout.LabelField(EditorApplication.isPlaying
+                ? "Play 중 바꾼 값은 Play 를 끄면 씬에 들어갑니다"
+                : "멀리 비추려면 밝기↑ (사거리는 빛이 끊기는 거리)", EditorStyles.centeredGreyMiniLabel);
+        }
+
         public static void Open()
         {
             var w = GetWindow<LotteWorldDayNightWindow>("롯데월드 낮·밤");
-            w.minSize = new Vector2(280, 160);
+            w.minSize = new Vector2(340, 480);
             w.Show();
         }
 
@@ -1211,6 +1454,60 @@ namespace LotteWorld.Night
             string cur = tod != null && tod.isNight ? "밤" : "낮";
             EditorGUILayout.Space(8);
             EditorGUILayout.LabelField("현재", cur, EditorStyles.boldLabel);
+
+            // 밤 밝기 바 — Play 중에도 조절 가능
+            EditorGUILayout.Space(6);
+            EditorGUILayout.LabelField("밤 밝기", EditorStyles.boldLabel);
+            float prevLabel = EditorGUIUtility.labelWidth;
+            EditorGUIUtility.labelWidth = 70;
+
+            // 1) 전체 노출 — 가로등·전구까지 화면 전체가 같이 밝아진다
+            EditorGUILayout.BeginHorizontal();
+            EditorGUI.BeginChangeCheck();
+            float ev = EditorGUILayout.Slider(new GUIContent("전체 노출", "화면 전체(조명·전구 포함)를 밝게. EV, 1 올리면 약 2배."),
+                LotteWorldNight.GetNightExposure(), LotteWorldNight.MinNightExposure, LotteWorldNight.MaxNightExposure);
+            if (EditorGUI.EndChangeCheck()) LotteWorldNight.SetNightExposure(ev);
+            if (GUILayout.Button("기본", GUILayout.Width(44)))
+                LotteWorldNight.SetNightExposure(LotteWorldNight.DefaultNightExposure);
+            EditorGUILayout.EndHorizontal();
+
+            // 2) 주변광 — 조명이 안 닿는 그늘·벽·바닥이 밝아진다
+            EditorGUILayout.BeginHorizontal();
+            EditorGUI.BeginChangeCheck();
+            float amb = EditorGUILayout.Slider(new GUIContent("주변광", "조명이 안 닿는 어두운 곳을 밝게. 원래 밤 = 1배."),
+                LotteWorldNight.GetNightAmbient(), LotteWorldNight.MinNightMult, LotteWorldNight.MaxNightMult);
+            if (EditorGUI.EndChangeCheck()) LotteWorldNight.SetNightAmbient(amb);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) LotteWorldNight.SetNightAmbient(1f);
+            EditorGUILayout.EndHorizontal();
+
+            // 3) 달빛 — 하늘에서 내리는 푸른 빛과 그림자
+            EditorGUILayout.BeginHorizontal();
+            EditorGUI.BeginChangeCheck();
+            float moon = EditorGUILayout.Slider(new GUIContent("달빛", "달빛(Directional Light) 세기. 원래 밤 = 1배."),
+                LotteWorldNight.GetNightMoon(), LotteWorldNight.MinNightMult, LotteWorldNight.MaxNightMult);
+            if (EditorGUI.EndChangeCheck()) LotteWorldNight.SetNightMoon(moon);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) LotteWorldNight.SetNightMoon(1f);
+            EditorGUILayout.EndHorizontal();
+
+            // 4) 안개 — 짙을수록 먼 곳이 어둠에 묻힌다
+            EditorGUILayout.BeginHorizontal();
+            EditorGUI.BeginChangeCheck();
+            float fog = EditorGUILayout.Slider(new GUIContent("안개", "밤 안개 짙기. 0 = 없음, 1 = 원래 밤. 낮추면 먼 곳이 보인다."),
+                LotteWorldNight.GetNightFog(), 0f, LotteWorldNight.MaxNightFog);
+            if (EditorGUI.EndChangeCheck()) LotteWorldNight.SetNightFog(fog);
+            if (GUILayout.Button("기본", GUILayout.Width(44))) LotteWorldNight.SetNightFog(1f);
+            EditorGUILayout.EndHorizontal();
+            EditorGUIUtility.labelWidth = prevLabel;
+
+            EditorGUILayout.LabelField("먼 곳이 까마면 안개↓, 그늘이 까마면 주변광·달빛↑, 전부는 전체 노출", EditorStyles.centeredGreyMiniLabel);
+            if (tod == null || !tod.isNight)
+                EditorGUILayout.HelpBox("지금은 낮입니다. 값은 저장되고 밤으로 바꾸면 적용됩니다.", MessageType.None);
+            else if (!EditorApplication.isPlaying)
+                EditorGUILayout.HelpBox("주변광·달빛·안개는 씬에 들어갑니다. 마음에 들면 씬을 저장하세요 (Ctrl+S).", MessageType.None);
+            EditorGUILayout.Space(8);
+            DrawFlashlightGUI();
+            EditorGUILayout.Space(8);
+
             if (EditorApplication.isPlayingOrWillChangePlaymode)
             {
                 EditorGUILayout.HelpBox("Play 중에는 전환할 수 없습니다. Play를 끈 뒤 낮/밤을 바꾸세요.", MessageType.Warning);
